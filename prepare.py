@@ -28,22 +28,22 @@ import tiktoken
 # Constants (fixed, do not modify)
 # ---------------------------------------------------------------------------
 
-MAX_SEQ_LEN = 2048
-TIME_BUDGET = 300
-EVAL_TOKENS = 3 * 524288
+MAX_SEQ_LEN = int(os.environ.get("AUTORESEARCH_MAX_SEQ_LEN", "2048"))
+TIME_BUDGET = int(os.environ.get("AUTORESEARCH_TIME_BUDGET", "300"))
+EVAL_TOKENS = int(os.environ.get("AUTORESEARCH_EVAL_TOKENS", str(3 * 524288)))
 
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
 
-CACHE_DIR = os.path.join(os.path.expanduser("~"), ".cache", "autoresearch")
+CACHE_DIR = os.environ.get("AUTORESEARCH_CACHE_DIR", os.path.join(os.path.expanduser("~"), ".cache", "autoresearch"))
 DATA_DIR = os.path.join(CACHE_DIR, "data")
 TOKENIZER_DIR = os.path.join(CACHE_DIR, "tokenizer")
 BASE_URL = "https://huggingface.co/datasets/karpathy/climbmix-400b-shuffle/resolve/main"
 MAX_SHARD = 6542
 VAL_SHARD = MAX_SHARD
 VAL_FILENAME = f"shard_{VAL_SHARD:05d}.parquet"
-VOCAB_SIZE = 8192
+VOCAB_SIZE = int(os.environ.get("AUTORESEARCH_VOCAB_SIZE", "8192"))
 
 SPLIT_PATTERN = r"""'(?i:[sdmt]|ll|ve|re)|[^\r\n\p{L}\p{N}]?+\p{L}+|\p{N}{1,2}| ?[^\s\p{L}\p{N}]++[\r\n]*|\s*[\r\n]|\s+(?!\S)|\s+"""
 
