@@ -5,16 +5,18 @@ Usage: uv run train.py
 """
 
 import gc
+import json
 import math
 import os
 import time
 from dataclasses import dataclass
+from pathlib import Path
 
 import mlx.core as mx
 import mlx.nn as nn
 from mlx.utils import tree_flatten, tree_map
 
-from prepare import MAX_SEQ_LEN, TIME_BUDGET, Tokenizer, evaluate_bpb, make_dataloader
+from prepare import MAX_SEQ_LEN, TIME_BUDGET, TOKENIZER_DIR, Tokenizer, evaluate_bpb, make_dataloader
 
 os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
 
@@ -385,6 +387,9 @@ DEPTH = 4
 DEVICE_BATCH_SIZE = 16
 FINAL_EVAL_BATCH_SIZE = 256
 STARTUP_EXCLUDE_STEPS = 1
+CHECKPOINT_DIR = os.environ.get("AUTORESEARCH_CHECKPOINT_DIR", "checkpoints/navspec")
+CHECKPOINT_NAME = os.environ.get("AUTORESEARCH_CHECKPOINT_NAME", "latest")
+SAVE_CHECKPOINT = os.environ.get("AUTORESEARCH_SAVE_CHECKPOINT", "1") != "0"
 
 
 def get_lr_multiplier(progress):
@@ -396,139 +401,192 @@ def get_lr_multiplier(progress):
     return cooldown * 1.0 + (1 - cooldown) * FINAL_LR_FRAC
 
 
-t_start = time.time()
-mx.random.seed(42)
-
-tokenizer = Tokenizer.from_directory()
-vocab_size = tokenizer.get_vocab_size()
-train_loader = make_dataloader(tokenizer, DEVICE_BATCH_SIZE, MAX_SEQ_LEN, "train")
-x, y, epoch = next(train_loader)
-t_data = time.time()
-print(f"Data/tokenizer loaded in {t_data - t_start:.1f}s")
-
-model_dim = ((DEPTH * ASPECT_RATIO + HEAD_DIM - 1) // HEAD_DIM) * HEAD_DIM
-config = GPTConfig(
-    sequence_len=MAX_SEQ_LEN,
-    vocab_size=vocab_size,
-    n_layer=DEPTH,
-    n_head=model_dim // HEAD_DIM,
-    n_kv_head=model_dim // HEAD_DIM,
-    n_embd=model_dim,
-    window_pattern=WINDOW_PATTERN,
-)
-
-model = GPT(config)
-model.init_weights()
-mx.eval(model.parameters())
-num_params = sum(param.size for _, param in tree_flatten(model.parameters()))
-
-tokens_per_fwdbwd = DEVICE_BATCH_SIZE * MAX_SEQ_LEN
-assert TOTAL_BATCH_SIZE % tokens_per_fwdbwd == 0
-grad_accum_steps = TOTAL_BATCH_SIZE // tokens_per_fwdbwd
-
-optimizer = AdamW(
-    model,
-    unembedding_lr=UNEMBEDDING_LR,
-    embedding_lr=EMBEDDING_LR,
-    matrix_lr=MATRIX_LR,
-    weight_decay=WEIGHT_DECAY,
-    adam_betas=ADAM_BETAS,
-    scalar_lr=SCALAR_LR,
-)
-
-loss_grad_fn = nn.value_and_grad(model, lambda model, inputs, targets: model(inputs, targets=targets))
-
-print(f"Time budget: {TIME_BUDGET}s")
-print(f"Gradient accumulation steps: {grad_accum_steps}")
-
-smooth_train_loss = 0.0
-total_training_time = 0.0
-step = 0
-t_compiled = None
-
-while True:
-    t0 = time.time()
-    accum_grads = None
-    train_loss = None
-
-    for _ in range(grad_accum_steps):
-        loss, grads = loss_grad_fn(model, x, y)
-        mx.eval(loss, grads)
-        if t_compiled is None:
-            t_compiled = time.time()
-            print(f"Model compiled in {t_compiled - t_data:.1f}s")
-        train_loss = loss
-        if accum_grads is None:
-            accum_grads = grads
-        else:
-            accum_grads = tree_map(lambda lhs, rhs: lhs + rhs, accum_grads, grads)
-        x, y, epoch = next(train_loader)
-
-    if grad_accum_steps > 1:
-        accum_grads = tree_map(lambda grad: grad * (1.0 / grad_accum_steps), accum_grads)
-
-    progress = min(total_training_time / TIME_BUDGET, 1.0)
-    lrm = get_lr_multiplier(progress)
-    optimizer.set_lr_multiplier(lrm)
-    optimizer.update(model, accum_grads)
-    mx.eval(model.parameters(), *optimizer.state)
-
-    train_loss_f = float(train_loss.item())
-    if train_loss_f > 100:
-        print("FAIL")
-        raise SystemExit(1)
-
-    dt = time.time() - t0
-    if step >= STARTUP_EXCLUDE_STEPS:
-        total_training_time += dt
-
-    ema_beta = 0.9
-    smooth_train_loss = ema_beta * smooth_train_loss + (1 - ema_beta) * train_loss_f
-    debiased_smooth_loss = smooth_train_loss / (1 - ema_beta ** (step + 1))
-    pct_done = 100 * progress
-    tok_per_sec = int(TOTAL_BATCH_SIZE / dt) if dt > 0 else 0
-    remaining = max(0.0, TIME_BUDGET - total_training_time)
-
-    print(
-        f"\rstep {step:05d} ({pct_done:.1f}%) | loss: {debiased_smooth_loss:.6f} | "
-        f"lrm: {lrm:.2f} | dt: {dt*1000:.0f}ms | tok/sec: {tok_per_sec:,} | "
-        f"epoch: {epoch} | remaining: {remaining:.0f}s    ",
-        end="",
-        flush=True,
+def make_config(vocab_size):
+    model_dim = ((DEPTH * ASPECT_RATIO + HEAD_DIM - 1) // HEAD_DIM) * HEAD_DIM
+    return GPTConfig(
+        sequence_len=MAX_SEQ_LEN,
+        vocab_size=vocab_size,
+        n_layer=DEPTH,
+        n_head=model_dim // HEAD_DIM,
+        n_kv_head=model_dim // HEAD_DIM,
+        n_embd=model_dim,
+        window_pattern=WINDOW_PATTERN,
     )
 
-    if step == 0:
-        gc.collect()
-        gc.freeze()
-        gc.disable()
-    elif (step + 1) % 5000 == 0:
-        gc.collect()
 
-    step += 1
-    if step >= STARTUP_EXCLUDE_STEPS and total_training_time >= TIME_BUDGET:
-        break
+def save_checkpoint(model, config, metrics, tokenizer_dir):
+    checkpoint_dir = Path(CHECKPOINT_DIR)
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    weights_path = checkpoint_dir / f"{CHECKPOINT_NAME}.safetensors"
+    metadata_path = checkpoint_dir / f"{CHECKPOINT_NAME}.json"
+    model.save_weights(str(weights_path))
+    metadata = {
+        "weights": str(weights_path),
+        "config": config.__dict__,
+        "metrics": metrics,
+        "tokenizer_dir": tokenizer_dir,
+        "hyperparameters": {
+            "total_batch_size": TOTAL_BATCH_SIZE,
+            "device_batch_size": DEVICE_BATCH_SIZE,
+            "embedding_lr": EMBEDDING_LR,
+            "unembedding_lr": UNEMBEDDING_LR,
+            "matrix_lr": MATRIX_LR,
+            "scalar_lr": SCALAR_LR,
+            "weight_decay": WEIGHT_DECAY,
+            "adam_betas": ADAM_BETAS,
+            "warmup_ratio": WARMUP_RATIO,
+            "warmdown_ratio": WARMDOWN_RATIO,
+            "final_lr_frac": FINAL_LR_FRAC,
+        },
+    }
+    metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"checkpoint_weights: {weights_path}")
+    print(f"checkpoint_metadata: {metadata_path}")
 
-print()
-t_train = time.time()
-print(f"Training completed in {t_train - t_compiled:.1f}s")
 
-total_tokens = step * TOTAL_BATCH_SIZE
-print("Starting final eval...")
-print(f"Final eval batch size: {FINAL_EVAL_BATCH_SIZE}")
-val_bpb = evaluate_bpb(model, tokenizer, FINAL_EVAL_BATCH_SIZE)
-t_eval = time.time()
-print(f"Final eval completed in {t_eval - t_train:.1f}s")
+def main():
+    t_start = time.time()
+    mx.random.seed(42)
 
-steady_state_mfu = 0.0
-peak_vram_mb = get_peak_memory_mb()
+    tokenizer = Tokenizer.from_directory()
+    vocab_size = tokenizer.get_vocab_size()
+    train_loader = make_dataloader(tokenizer, DEVICE_BATCH_SIZE, MAX_SEQ_LEN, "train")
+    x, y, epoch = next(train_loader)
+    t_data = time.time()
+    print(f"Data/tokenizer loaded in {t_data - t_start:.1f}s")
 
-print("---")
-print(f"val_bpb:          {val_bpb:.6f}")
-print(f"training_seconds: {total_training_time:.1f}")
-print(f"total_seconds:    {t_eval - t_start:.1f}")
-print(f"peak_vram_mb:     {peak_vram_mb:.1f}")
-print(f"mfu_percent:      {steady_state_mfu:.2f}")
-print(f"total_tokens_M:   {total_tokens / 1e6:.1f}")
-print(f"num_steps:        {step}")
-print(f"num_params_M:     {num_params / 1e6:.1f}")
-print(f"depth:            {DEPTH}")
+    config = make_config(vocab_size)
+
+    model = GPT(config)
+    model.init_weights()
+    mx.eval(model.parameters())
+    num_params = sum(param.size for _, param in tree_flatten(model.parameters()))
+
+    tokens_per_fwdbwd = DEVICE_BATCH_SIZE * MAX_SEQ_LEN
+    assert TOTAL_BATCH_SIZE % tokens_per_fwdbwd == 0
+    grad_accum_steps = TOTAL_BATCH_SIZE // tokens_per_fwdbwd
+
+    optimizer = AdamW(
+        model,
+        unembedding_lr=UNEMBEDDING_LR,
+        embedding_lr=EMBEDDING_LR,
+        matrix_lr=MATRIX_LR,
+        weight_decay=WEIGHT_DECAY,
+        adam_betas=ADAM_BETAS,
+        scalar_lr=SCALAR_LR,
+    )
+
+    loss_grad_fn = nn.value_and_grad(model, lambda model, inputs, targets: model(inputs, targets=targets))
+
+    print(f"Time budget: {TIME_BUDGET}s")
+    print(f"Gradient accumulation steps: {grad_accum_steps}")
+
+    smooth_train_loss = 0.0
+    total_training_time = 0.0
+    step = 0
+    t_compiled = None
+
+    while True:
+        t0 = time.time()
+        accum_grads = None
+        train_loss = None
+
+        for _ in range(grad_accum_steps):
+            loss, grads = loss_grad_fn(model, x, y)
+            mx.eval(loss, grads)
+            if t_compiled is None:
+                t_compiled = time.time()
+                print(f"Model compiled in {t_compiled - t_data:.1f}s")
+            train_loss = loss
+            if accum_grads is None:
+                accum_grads = grads
+            else:
+                accum_grads = tree_map(lambda lhs, rhs: lhs + rhs, accum_grads, grads)
+            x, y, epoch = next(train_loader)
+
+        if grad_accum_steps > 1:
+            accum_grads = tree_map(lambda grad: grad * (1.0 / grad_accum_steps), accum_grads)
+
+        progress = min(total_training_time / TIME_BUDGET, 1.0)
+        lrm = get_lr_multiplier(progress)
+        optimizer.set_lr_multiplier(lrm)
+        optimizer.update(model, accum_grads)
+        mx.eval(model.parameters(), *optimizer.state)
+
+        train_loss_f = float(train_loss.item())
+        if train_loss_f > 100:
+            print("FAIL")
+            raise SystemExit(1)
+
+        dt = time.time() - t0
+        if step >= STARTUP_EXCLUDE_STEPS:
+            total_training_time += dt
+
+        ema_beta = 0.9
+        smooth_train_loss = ema_beta * smooth_train_loss + (1 - ema_beta) * train_loss_f
+        debiased_smooth_loss = smooth_train_loss / (1 - ema_beta ** (step + 1))
+        pct_done = 100 * progress
+        tok_per_sec = int(TOTAL_BATCH_SIZE / dt) if dt > 0 else 0
+        remaining = max(0.0, TIME_BUDGET - total_training_time)
+
+        print(
+            f"\rstep {step:05d} ({pct_done:.1f}%) | loss: {debiased_smooth_loss:.6f} | "
+            f"lrm: {lrm:.2f} | dt: {dt*1000:.0f}ms | tok/sec: {tok_per_sec:,} | "
+            f"epoch: {epoch} | remaining: {remaining:.0f}s    ",
+            end="",
+            flush=True,
+        )
+
+        if step == 0:
+            gc.collect()
+            gc.freeze()
+            gc.disable()
+        elif (step + 1) % 5000 == 0:
+            gc.collect()
+
+        step += 1
+        if step >= STARTUP_EXCLUDE_STEPS and total_training_time >= TIME_BUDGET:
+            break
+
+    print()
+    t_train = time.time()
+    print(f"Training completed in {t_train - t_compiled:.1f}s")
+
+    total_tokens = step * TOTAL_BATCH_SIZE
+    print("Starting final eval...")
+    print(f"Final eval batch size: {FINAL_EVAL_BATCH_SIZE}")
+    val_bpb = evaluate_bpb(model, tokenizer, FINAL_EVAL_BATCH_SIZE)
+    t_eval = time.time()
+    print(f"Final eval completed in {t_eval - t_train:.1f}s")
+
+    steady_state_mfu = 0.0
+    peak_vram_mb = get_peak_memory_mb()
+    metrics = {
+        "val_bpb": val_bpb,
+        "training_seconds": total_training_time,
+        "total_seconds": t_eval - t_start,
+        "peak_vram_mb": peak_vram_mb,
+        "mfu_percent": steady_state_mfu,
+        "total_tokens_m": total_tokens / 1e6,
+        "num_steps": step,
+        "num_params_m": num_params / 1e6,
+        "depth": DEPTH,
+    }
+
+    if SAVE_CHECKPOINT:
+        save_checkpoint(model, config, metrics, TOKENIZER_DIR)
+
+    print("---")
+    print(f"val_bpb:          {val_bpb:.6f}")
+    print(f"training_seconds: {total_training_time:.1f}")
+    print(f"total_seconds:    {t_eval - t_start:.1f}")
+    print(f"peak_vram_mb:     {peak_vram_mb:.1f}")
+    print(f"mfu_percent:      {steady_state_mfu:.2f}")
+    print(f"total_tokens_M:   {total_tokens / 1e6:.1f}")
+    print(f"num_steps:        {step}")
+    print(f"num_params_M:     {num_params / 1e6:.1f}")
+    print(f"depth:            {DEPTH}")
+
+
+if __name__ == "__main__":
+    main()
