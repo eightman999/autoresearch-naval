@@ -97,7 +97,7 @@ def main() -> None:
     if args.jsonl:
         records = [json.loads(line) for line in raw.splitlines() if line.strip()]
     else:
-        records = [json.loads(raw) if raw.lstrip().startswith("{") else extract_json_object(raw)]
+        records = [extract_json_object(raw)]
 
     total_errors = 0
     total_warnings = 0

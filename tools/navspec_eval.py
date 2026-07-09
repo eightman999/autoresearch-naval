@@ -8,7 +8,10 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from navspec_common import read_jsonl, validate_spec
+try:
+    from navspec_common import read_jsonl, validate_spec  # direct run: tools/ on sys.path
+except ImportError:
+    from tools.navspec_common import read_jsonl, validate_spec  # package import from repo root
 
 
 REQUIRED_TOP_LEVEL = [

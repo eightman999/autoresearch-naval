@@ -28,6 +28,29 @@ def compact(obj: Any) -> str:
     return json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
+def load_weights_preserving_dicts(model: GPT, weights_path: Path) -> None:
+    """Load safetensors weights while preserving dict-typed submodules.
+
+    MLX's tree_unflatten coerces numeric string keys (GPT.value_embeds uses
+    {"1": ..., "3": ...}) into a list, which then collides with the model's
+    dict in Module.update and raises KeyError. Traverse the model's own
+    parameter tree so dict keys stay dict keys, and inject by dotted path.
+    """
+    flat = mx.load(str(weights_path))
+
+    def build(node: Any, prefix: str) -> Any:
+        if isinstance(node, dict):
+            return {
+                k: build(v, f"{prefix}.{k}" if prefix else str(k))
+                for k, v in node.items()
+            }
+        if isinstance(node, list):
+            return [build(v, f"{prefix}.{i}") for i, v in enumerate(node)]
+        return flat.get(prefix, node)
+
+    model.update(build(model.parameters(), ""), strict=False)
+
+
 def load_checkpoint(metadata_path: Path) -> tuple[GPT, Tokenizer, dict[str, Any]]:
     metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
     weights_path = Path(metadata["weights"])
@@ -37,7 +60,7 @@ def load_checkpoint(metadata_path: Path) -> tuple[GPT, Tokenizer, dict[str, Any]
 
     config = GPTConfig(**metadata["config"])
     model = GPT(config)
-    model.load_weights(str(weights_path))
+    load_weights_preserving_dicts(model, weights_path)
     mx.eval(model.parameters())
 
     tokenizer = Tokenizer.from_directory(metadata["tokenizer_dir"])
@@ -135,7 +158,7 @@ def main() -> None:
     parser.add_argument("--class-like", default="KONGO")
     parser.add_argument("--profile", type=int, default=0)
     parser.add_argument("--prompt", default="")
-    parser.add_argument("--max-new-tokens", type=int, default=512)
+    parser.add_argument("--max-new-tokens", type=int, default=1024)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--raw-output", type=Path, default=DEFAULT_RAW_OUTPUT)
     parser.add_argument("--json-output", type=Path, default=DEFAULT_JSON_OUTPUT)
