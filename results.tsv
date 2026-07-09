@@ -1,2 +1,3 @@
 commit	val_bpb	memory_gb	status	description
 40b51f2	0.193330	4.2	keep	navspec baseline depth 4 batch 2^16
+3c9788b	0.132106	4.2	keep	halve navspec total batch size to 2^15
