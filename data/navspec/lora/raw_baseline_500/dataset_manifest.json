@@ -1,0 +1,28 @@
+{
+  "category_counts": {
+    "constraint_displacement": 75,
+    "constraint_gun": 75,
+    "constraint_range": 50,
+    "constraint_speed": 75,
+    "constraint_torpedo": 50,
+    "impossible_era_equipment": 25,
+    "impossible_small_ship_combo": 25,
+    "impossible_tier": 12,
+    "impossible_treaty": 13,
+    "low_cost": 75,
+    "normal": 25
+  },
+  "dataset": "raw-baseline",
+  "rows": 500,
+  "schema": "/Users/eightman/dev/apps/autoresearch-naval/schemas/navspec_lora_candidate.schema.json",
+  "schema_version": "navspec.lora_candidate.v1",
+  "split_counts": {
+    "baseline": 500
+  },
+  "status_counts": {
+    "impossible": 131,
+    "ok": 369
+  },
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "teacher": "navspec-classic-v1 rule engine"
+}

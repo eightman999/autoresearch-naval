@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.ship_spec_record.v1",
+  "title": "ShipSpecRecord",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "source_kind",
+    "class_name",
+    "country",
+    "type",
+    "hull_kind",
+    "displacement",
+    "dimensions",
+    "propulsion",
+    "armor",
+    "armament",
+    "complement"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "navspec.ship_spec_record.v1"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "enum": ["historical", "fictional_bounded"]
+    },
+    "class_name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "hull_kind": {
+      "enum": ["battleship", "battlecruiser", "coastal_battleship", "destroyer", "cruiser", "submarine", "carrier", "other"]
+    },
+    "year": {
+      "type": ["integer", "null"],
+      "minimum": 1800,
+      "maximum": 2100
+    },
+    "displacement": {
+      "type": "object",
+      "properties": {
+        "normal_t": {"type": ["number", "null"]},
+        "full_t": {"type": ["number", "null"]},
+        "normal_raw": {"type": "string"},
+        "full_raw": {"type": "string"}
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "length_m": {"type": ["number", "null"]},
+        "breadth_m": {"type": ["number", "null"]},
+        "draught_m": {"type": ["number", "null"]},
+        "length_raw": {"type": "string"},
+        "breadth_raw": {"type": "string"},
+        "draught_raw": {"type": "string"}
+      }
+    },
+    "propulsion": {
+      "type": "object",
+      "properties": {
+        "machinery": {"type": "string"},
+        "shafts": {"type": ["number", "null"]},
+        "power_shp": {"type": ["number", "null"]},
+        "speed_kn": {"type": ["number", "null"]},
+        "fuel_raw": {"type": "string"},
+        "endurance_raw": {"type": "string"},
+        "power_raw": {"type": "string"},
+        "speed_raw": {"type": "string"}
+      }
+    },
+    "armor": {
+      "type": "object",
+      "properties": {
+        "raw": {"type": "string"},
+        "belt_mm": {"type": ["number", "null"]}
+      }
+    },
+    "armament": {
+      "type": "object",
+      "properties": {
+        "raw": {"type": "string"},
+        "main_caliber_mm": {"type": ["number", "null"]},
+        "main_barrels": {"type": ["number", "null"]},
+        "mounts": {"type": "array"}
+      }
+    },
+    "era_profile": {
+      "type": "object",
+      "properties": {
+        "era": {
+          "enum": ["unknown", "pre_dreadnought", "dreadnought", "treaty_interwar", "fast_battleship", "postwar"]
+        },
+        "year_band": {"type": "string"},
+        "technology_level": {"type": "string"},
+        "size_band": {"type": "string"}
+      }
+    },
+    "design_doctrine": {
+      "type": "object",
+      "properties": {
+        "country": {"type": ["string", "null"]},
+        "era": {"type": "string"},
+        "doctrine": {"type": "string"},
+        "priorities": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "equipment": {
+      "type": "object",
+      "properties": {
+        "main_battery": {"type": "object"},
+        "secondary_battery": {"type": "object"},
+        "anti_air": {"type": "object"},
+        "fire_control": {"type": "object"},
+        "torpedoes": {"type": "object"},
+        "aviation": {"type": "object"},
+        "propulsion_fit": {"type": "object"}
+      }
+    },
+    "armor_scheme": {
+      "type": "object",
+      "properties": {
+        "scheme": {"type": "string"},
+        "belt_mm": {"type": ["number", "null"]},
+        "deck_mm": {"type": ["number", "null"]},
+        "turret_face_mm": {"type": ["number", "null"]},
+        "conning_tower_mm": {"type": ["number", "null"]},
+        "source": {"type": "string"}
+      }
+    },
+    "equipment_candidates": {
+      "type": "object"
+    },
+    "complement": {
+      "type": "object",
+      "properties": {
+        "crew": {"type": ["number", "null"]},
+        "raw": {"type": "string"}
+      }
+    },
+    "source_url": {
+      "type": ["string", "null"]
+    },
+    "derived_from": {
+      "type": "object"
+    },
+    "fictional_constraints": {
+      "type": "object"
+    },
+    "validation_issues": {
+      "type": "array"
+    },
+    "wiki_table_markdown": {
+      "type": "string"
+    }
+  }
+}

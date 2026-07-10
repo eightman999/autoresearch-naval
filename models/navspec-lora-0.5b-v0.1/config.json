@@ -1,0 +1,45 @@
+{
+  "adapter_id": "navspec-lora-0.5b-v0.1",
+  "base_model": {
+    "name": null,
+    "source": null,
+    "selection_status": "pending_zero_shot_comparison",
+    "requirements": {
+      "parameter_scale": "0.5B-class",
+      "instruction_tuned": true,
+      "mlx_trainable": true,
+      "json_generation": true,
+      "context_length_min": 2048,
+      "license_must_fit_project_use": true
+    }
+  },
+  "lora": {
+    "rank": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "target_modules": [
+      "attention_projection",
+      "mlp_projection"
+    ],
+    "learning_rate_initial": 0.0001,
+    "sequence_length": 2048,
+    "epochs_initial": 1,
+    "precision": "mlx_default_or_bf16"
+  },
+  "datasets": {
+    "schema_only": "data/navspec/lora/schema_only_v0",
+    "raw_baseline_500": "data/navspec/lora/raw_baseline_500",
+    "raw_baseline_122_plus_500": "data/navspec/lora/raw_baseline_122_plus_500",
+    "output_schema": "schemas/navspec_lora_candidate.schema.json"
+  },
+  "classic_fallback": {
+    "archive": "artifacts/navspec-classic-v1",
+    "tag_recommended": "navspec-classic-v1",
+    "delete_or_overwrite": false
+  },
+  "stage_gate": {
+    "stage_1_raw_json_rate_min": 0.9,
+    "stage_1_schema_rate_min": 0.8,
+    "full_training_requires_stage_1_pass": true
+  }
+}

@@ -20,8 +20,18 @@ uv run python tools/navspec_tasks.py
 uv run python tools/navspec_eval.py \
   data/navspec/battleship_real_specs.jsonl \
   data/navspec/battleship_fictional_specs.jsonl
+uv run python tools/navspec_plausibility.py \
+  data/navspec/battleship_fictional_specs.jsonl \
+  --base-records data/navspec/battleship_real_specs.jsonl
 uv run python prepare_navspec.py --force
 ```
+
+`tools/navspec_plausibility.py` scores fictional records on a 0-100 scale and
+labels them as `accepted`, `review`, or `rejected`. The evaluator combines the
+existing rule validator with geometry, propulsion, protection, armament,
+equipment, and bounded-mutation checks. Use `--fail-on review` for stricter CI
+gates, or `--fail-on none` when generating a diagnostic report over a noisy
+corpus.
 
 ## Smoke Train
 

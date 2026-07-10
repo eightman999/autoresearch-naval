@@ -6,7 +6,14 @@ import argparse
 import copy
 from pathlib import Path
 
-from navspec_common import MUTATION_PROFILES, finite_or_none, read_jsonl, render_wiki_table, validate_spec, write_jsonl
+try:
+    from navspec_common import MUTATION_PROFILES, finite_or_none, read_jsonl, render_wiki_table, validate_spec, write_jsonl
+    from navspec_equipment import equipment_plan, estimate_dimensions
+    from navspec_naming import naming_plan
+except ImportError:
+    from tools.navspec_common import MUTATION_PROFILES, finite_or_none, read_jsonl, render_wiki_table, validate_spec, write_jsonl
+    from tools.navspec_equipment import equipment_plan, estimate_dimensions
+    from tools.navspec_naming import naming_plan
 
 
 DEFAULT_INPUT = Path("data/navspec/battleship_real_specs.jsonl")
@@ -25,11 +32,13 @@ def bounded(value: float | None, lower: float, upper: float) -> float | None:
 
 def mutate_record(record: dict, profile_index: int) -> dict:
     profile = MUTATION_PROFILES[profile_index % len(MUTATION_PROFILES)]
+    name_plan = naming_plan(record, profile_index)
     out = copy.deepcopy(record)
     out["schema_version"] = "navspec.ship_spec_record.v1"
     out["record_id"] = f"fictional:{record['record_id']}:m{profile_index}"
     out["source_kind"] = "fictional_bounded"
-    out["class_name"] = f"{record.get('class_name', 'Unknown')} alternate {profile_index + 1}"
+    out["class_name"] = name_plan["target_class_name"]
+    out["country"] = name_plan["target_country"]
     out["source_url"] = None
     out["derived_from"] = {
         "record_id": record.get("record_id"),
@@ -47,6 +56,12 @@ def mutate_record(record: dict, profile_index: int) -> dict:
 
     dim_scale = profile.displacement_scale ** (1.0 / 3.0)
     dimensions = out.get("dimensions", {})
+    new_disp = displacement.get("full_t") or displacement.get("normal_t")
+    if dimensions.get("length_m") is None and new_disp:
+        est_l, est_b, est_d = estimate_dimensions(new_disp, out.get("hull_kind"), out.get("type"))
+        dimensions["length_m"] = est_l
+        dimensions["breadth_m"] = est_b
+        dimensions["draught_m"] = est_d
     dimensions["length_m"] = scaled(dimensions.get("length_m"), dim_scale)
     dimensions["breadth_m"] = scaled(dimensions.get("breadth_m"), dim_scale)
     dimensions["draught_m"] = scaled(dimensions.get("draught_m"), dim_scale)
@@ -83,6 +98,13 @@ def mutate_record(record: dict, profile_index: int) -> dict:
         if caliber == main_caliber:
             mount["caliber_mm"] = armament.get("main_caliber_mm")
 
+    eq_plan = equipment_plan(out)
+    out["era_profile"] = eq_plan["era_profile"]
+    out["design_doctrine"] = eq_plan["design_doctrine"]
+    out["equipment"] = eq_plan["equipment"]
+    out["armor_scheme"] = eq_plan["armor_scheme"]
+    out["equipment_candidates"] = eq_plan["equipment_candidates"]
+
     out["fictional_constraints"] = {
         "method": "bounded_mutation",
         "profile": profile.note,
@@ -90,6 +112,21 @@ def mutate_record(record: dict, profile_index: int) -> dict:
         "speed_delta_kn": profile.speed_delta,
         "armor_scale": profile.armor_scale,
         "main_caliber_delta_mm": profile.main_caliber_delta,
+        "target_country": name_plan["target_country"],
+        "target_class_name": name_plan["target_class_name"],
+        "naming_category": name_plan["naming_category"],
+        "naming_rule": name_plan["naming_rule"],
+        "naming_description": name_plan["naming_description"],
+        "name_pool": name_plan["name_pool"],
+        "name_pool_size": name_plan["name_pool_size"],
+        "name_pool_source_note": name_plan["name_pool_source_note"],
+        "prefix": name_plan["prefix"],
+        "prefix_note": name_plan["prefix_note"],
+        "prefix_source": name_plan["prefix_source"],
+        "equipment_rule": "navspec.equipment.v1",
+        "equipment_candidates": eq_plan["equipment_candidates"],
+        "expected_era_profile": eq_plan["era_profile"],
+        "expected_design_doctrine": eq_plan["design_doctrine"],
     }
     out["validation_issues"] = validate_spec(out)
     out["wiki_table_markdown"] = render_wiki_table(out)
@@ -108,10 +145,14 @@ def main() -> None:
     if args.limit is not None:
         records = records[: args.limit]
 
-    fictional: list[dict] = []
+    all_fictional: list[dict] = []
     for record in records:
         for idx in range(args.variants_per_record):
-            fictional.append(mutate_record(record, idx))
+            all_fictional.append(mutate_record(record, idx))
+    fictional = [r for r in all_fictional if not any(i["severity"] == "error" for i in r.get("validation_issues", []))]
+    skipped = len(all_fictional) - len(fictional)
+    if skipped:
+        print(f"  excluded {skipped}/{len(all_fictional)} records with validation errors")
     write_jsonl(args.output, fictional)
     print(f"wrote {len(fictional)} records to {args.output}")
 

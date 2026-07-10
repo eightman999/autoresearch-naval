@@ -1,0 +1,300 @@
+{
+  "armament": {
+    "main_barrels": 8,
+    "main_caliber_mm": 203.0,
+    "mounts": [
+      {
+        "barrels": 8,
+        "barrels_per_mount": 2,
+        "caliber_length": 37,
+        "caliber_mm": 203.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 6,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 102.0,
+        "mount_count": 6
+      },
+      {
+        "barrels": 0,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 57.0,
+        "mount_count": 0
+      },
+      {
+        "barrels": 20,
+        "barrels_per_mount": 5,
+        "caliber_length": 20,
+        "caliber_mm": 37.0,
+        "mount_count": 4
+      }
+    ],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": 338.2,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 338.2,
+    "conning_tower_mm": 321.29,
+    "deck_mm": 60.876,
+    "scheme": "distributed_armor",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 355.11
+  },
+  "class_name": "IOWA 1st Class Variant 1 Class",
+  "complement": {
+    "crew": 486.0,
+    "raw": "486"
+  },
+  "country": "United-States-Of-America",
+  "derived_from": {
+    "class_name": "IOWA 1st Class Class",
+    "country": "United-States-Of-America",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:United-States-Of-America:battleship:IOWA 1st Class Class:5894",
+    "source_url": "https://myownonpmirror.com/ships/usa/us_bb_iowa96.html"
+  },
+  "design_doctrine": {
+    "country": "United-States-Of-America",
+    "doctrine": "balanced capital-ship design",
+    "era": "pre_dreadnought",
+    "priorities": [
+      "balanced armament",
+      "reasonable protection",
+      "service speed"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 22.847,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 7.602,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 114.754,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 14164.64,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 12779.2
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 76,
+      "role": "early_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "local_optical_sights"
+    },
+    "main_battery": {
+      "barrels": 8.0,
+      "caliber_mm": 203.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 4
+    },
+    "propulsion_fit": {
+      "speed_kn": 17.5,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 102,
+      "role": "anti_torpedo_boat"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 37,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 47,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "early_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "United-States-Of-America",
+      "displacement_t": 14164.64,
+      "hull_kind": "battleship",
+      "year": 1897
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "local_optical_sights"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 305,
+      "caliber_mm_min": 254
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 76,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 102,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "casemate_secondary"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "pre_dreadnought",
+    "size_band": "early_capital_ship",
+    "technology_level": "pre_dreadnought",
+    "year_band": "1890-1905"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 37,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 47,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "early_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "United-States-Of-America",
+        "displacement_t": 14164.64,
+        "hull_kind": "battleship",
+        "year": 1897
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "local_optical_sights"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 305,
+        "caliber_mm_min": 254
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 76,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 102,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "casemate_secondary"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "United-States-Of-America",
+      "doctrine": "balanced capital-ship design",
+      "era": "pre_dreadnought",
+      "priorities": [
+        "balanced armament",
+        "reasonable protection",
+        "service speed"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "pre_dreadnought",
+      "size_band": "early_capital_ship",
+      "technology_level": "pre_dreadnought",
+      "year_band": "1890-1905"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [],
+    "name_pool_size": 0,
+    "name_pool_source_note": "Country-specific hand-curated naming pool.",
+    "naming_category": "battleship_pool",
+    "naming_description": "No country-specific naming rule available.",
+    "naming_rule": "fallback from base class name",
+    "prefix": null,
+    "prefix_note": "No country-specific official prefix rule available.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "IOWA 1st Class Variant 1 Class",
+    "target_country": "United-States-Of-America"
+  },
+  "hull_kind": "battleship",
+  "propulsion": {
+    "endurance_raw": "5140(10)",
+    "fuel_raw": "coal 1 795",
+    "machinery": "2 VTE + 5 cylindrical boilers",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": 15522.401,
+    "shafts": 2.0,
+    "speed_kn": 17.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:nsdb:United-States-Of-America:battleship:IOWA 1st Class Class:5894:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/apps/autoresearch-naval/nsdb/NSDB_new.db",
+    "fetched_at": "2026-07-10T02:55:04.440264+00:00",
+    "source_url_raw": "https://myownonpmirror.com/ships/usa/us_bb_iowa96.html"
+  },
+  "source_url": null,
+  "type": "battleship",
+  "validation_issues": [
+    {
+      "code": "main_battery_candidate_range",
+      "message": "main caliber 203.0 outside candidate range 254-305",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | IOWA 1st Class Variant 1 Class |\n| Country | United-States-Of-America |\n| Type | battleship |\n| Year | 1897 |\n| Normal displacement | 12779.2 t |\n| Full displacement | 14164.64 t |\n| Length | 114.754 m |\n| Breadth | 22.847 m |\n| Power | 15522.401 shp |\n| Speed | 17.5 kn |\n| Main armament | 203 mm |\n| Main barrels | 8 |\n| Belt armor | 338.2 mm |\n| Era | pre_dreadnought |\n| Doctrine | balanced capital-ship design |\n| Secondary battery | 102 mm |\n| Anti-air battery | 76 mm |\n| Armor scheme | distributed_armor |\n| Complement | 486 |\n| Source | unknown |",
+  "year": 1897
+}

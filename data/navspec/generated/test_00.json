@@ -1,0 +1,403 @@
+{
+  "armament": {
+    "main_barrels": 16,
+    "main_caliber_mm": 203.0,
+    "mounts": [
+      {
+        "barrels": 16,
+        "barrels_per_mount": 1,
+        "caliber_length": 50,
+        "caliber_mm": 203.0,
+        "mount_count": 16
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 76.0,
+        "mount_count": 16
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 1,
+        "caliber_length": 50,
+        "caliber_mm": 203.0,
+        "mount_count": 16
+      },
+      {
+        "barrels": 8,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 76.0,
+        "mount_count": 8
+      }
+    ],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": 192.85,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 192.85,
+    "conning_tower_mm": 183.207,
+    "deck_mm": 42.427,
+    "scheme": "dreadnought_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 212.135
+  },
+  "class_name": "Akaishi Class",
+  "complement": {
+    "crew": 1201.0,
+    "raw": "Kongo: 1201 others : 1221"
+  },
+  "country": "Japan",
+  "derived_from": {
+    "class_name": "KONGO Class",
+    "country": "Japan",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:Japan:battlecruisers:KONGO Class:2666",
+    "source_url": "https://myownonpmirror.com/ships/japan/jap_bb_kongo.html"
+  },
+  "design_doctrine": {
+    "country": "Japan",
+    "doctrine": "high-speed capital ship with heavy battery emphasis",
+    "era": "dreadnought",
+    "priorities": [
+      "speed",
+      "main battery",
+      "heavy main battery",
+      "long-range decisive battle"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 29.078,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 8.723,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 220.266,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 36064.0,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 32849.6
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 76,
+      "role": "early_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "central_optical_director"
+    },
+    "main_battery": {
+      "barrels": 16.0,
+      "caliber_mm": 203.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 32
+    },
+    "propulsion_fit": {
+      "speed_kn": 29.0,
+      "speed_role": "fast"
+    },
+    "secondary_battery": {
+      "caliber_mm": 120,
+      "role": "secondary_battery"
+    },
+    "torpedoes": {
+      "carried": true,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 37,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 47,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "early_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "Japan",
+      "displacement_t": 36064.0,
+      "hull_kind": "battlecruiser",
+      "year": 1913
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "central_optical_director"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 381,
+      "caliber_mm_min": 280
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 102,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 120,
+        "role": "secondary_battery"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "casemate_secondary"
+      }
+    ],
+    "torpedoes": {
+      "allowed": true
+    }
+  },
+  "era_profile": {
+    "era": "dreadnought",
+    "size_band": "modern_capital_ship",
+    "technology_level": "dreadnought",
+    "year_band": "1906-1918"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 37,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 47,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "early_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "Japan",
+        "displacement_t": 36064.0,
+        "hull_kind": "battlecruiser",
+        "year": 1913
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "central_optical_director"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 381,
+        "caliber_mm_min": 280
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 102,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 120,
+          "role": "secondary_battery"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "casemate_secondary"
+        }
+      ],
+      "torpedoes": {
+        "allowed": true
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Japan",
+      "doctrine": "high-speed capital ship with heavy battery emphasis",
+      "era": "dreadnought",
+      "priorities": [
+        "speed",
+        "main battery",
+        "heavy main battery",
+        "long-range decisive battle"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "dreadnought",
+      "size_band": "modern_capital_ship",
+      "technology_level": "dreadnought",
+      "year_band": "1906-1918"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [
+      "Rishiri",
+      "Rausu",
+      "Shari",
+      "Akan",
+      "Daisetsu",
+      "Tomuraushi",
+      "Tokachi",
+      "Poroshiri",
+      "Yotei",
+      "Iwaki",
+      "Hakkoda",
+      "Hachimantai",
+      "Iwate",
+      "Hayachine",
+      "Chokai",
+      "Gassan",
+      "Asahi",
+      "Zao",
+      "Iide",
+      "Azuma",
+      "Adatara",
+      "Bandai",
+      "Aizu-Koma",
+      "Nasu",
+      "Tsukuba",
+      "Oze-Hiuchi",
+      "Shibutsu",
+      "Joshu-Hotaka",
+      "Akagi",
+      "Nantai",
+      "Nikko-Shirane",
+      "Sukai",
+      "Echigo-Koma",
+      "Hiraga",
+      "Makihata",
+      "Tanigawa",
+      "Naeba",
+      "Amakazari",
+      "Myoko",
+      "Kubiki-Hiuchi",
+      "Takatsuma",
+      "Kusatsu-Shirane",
+      "Azumaya",
+      "Asama",
+      "Ryokami",
+      "Kobushi",
+      "Kinpu",
+      "Mizugaki",
+      "Kumotori",
+      "Daibosatsu",
+      "Tanzawa",
+      "Fuji",
+      "Amagi",
+      "Shirouma",
+      "Goryu",
+      "Kashima-Yari",
+      "Etchu-Tsurugi",
+      "Tateyama",
+      "Yakushi",
+      "Kurobe-Goro",
+      "Suisho",
+      "Washiba",
+      "Yari",
+      "Hida-Hotaka",
+      "Jonen",
+      "Kasa",
+      "Yake",
+      "Norikura",
+      "Utsukushigahara",
+      "Kirigamine",
+      "Tateshina",
+      "Yatsugatake",
+      "Ontake",
+      "Kiso-Koma",
+      "Utsugi",
+      "Ena",
+      "Kai-Koma",
+      "Senjo",
+      "Hoo",
+      "Kitadake",
+      "Aino",
+      "Shiomi",
+      "Warusawa",
+      "Akaishi",
+      "Hijiri",
+      "Tekari",
+      "Hakusan",
+      "Arashima",
+      "Ibuki",
+      "Odaigahara",
+      "Omine",
+      "Daisen",
+      "Awa-Tsurugi",
+      "Ishizuchi",
+      "Kuju",
+      "Sobo",
+      "Aso",
+      "Kirishima",
+      "Kaimon",
+      "Miyanoura"
+    ],
+    "name_pool_size": 100,
+    "name_pool_source_note": "User-supplied romanized list based on the 100 Famous Japanese Mountains.",
+    "naming_category": "mountain",
+    "naming_description": "Use historical-style IJN geographic names. Avoid personal names.",
+    "naming_rule": "IJN capital ships: provinces for battleships, mountains for battlecruisers",
+    "prefix": null,
+    "prefix_note": "IJN/HIJMS are writer conveniences; IJN did not use an official ship prefix.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "Akaishi Class",
+    "target_country": "Japan"
+  },
+  "hull_kind": "battlecruiser",
+  "propulsion": {
+    "endurance_raw": "8000(14)",
+    "fuel_raw": "coal 4 2 0 0 + oil 10 00",
+    "machinery": "Kongo+ Hiei+ Kirishima: 4 Parsons steam turbines + 36 Yarrow boilers Haruna: 4 Brown-Curtis steam turbines + 36 Yarrow boilers",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": 80944.604,
+    "shafts": 4.0,
+    "speed_kn": 29.0,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:nsdb:Japan:battlecruisers:KONGO Class:2666:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/apps/autoresearch-naval/nsdb/NSDB_new.db",
+    "fetched_at": "2026-07-10T02:52:01.330012+00:00",
+    "source_url_raw": "https://myownonpmirror.com/ships/japan/jap_bb_kongo.html"
+  },
+  "source_url": null,
+  "type": "battlecruisers",
+  "validation_issues": [
+    {
+      "code": "main_battery_candidate_range",
+      "message": "main caliber 203.0 outside candidate range 280-381",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | Akaishi Class |\n| Country | Japan |\n| Type | battlecruisers |\n| Year | 1913 |\n| Normal displacement | 32849.6 t |\n| Full displacement | 36064 t |\n| Length | 220.266 m |\n| Breadth | 29.078 m |\n| Power | 80944.604 shp |\n| Speed | 29 kn |\n| Main armament | 203 mm |\n| Main barrels | 16 |\n| Belt armor | 192.85 mm |\n| Era | dreadnought |\n| Doctrine | high-speed capital ship with heavy battery emphasis |\n| Secondary battery | 120 mm |\n| Anti-air battery | 76 mm |\n| Armor scheme | dreadnought_citadel |\n| Complement | 1201 |\n| Source | unknown |",
+  "year": 1913
+}

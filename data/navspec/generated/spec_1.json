@@ -1,0 +1,276 @@
+{
+  "armament": {
+    "main_barrels": 2,
+    "main_caliber_mm": 203.0,
+    "mounts": [],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": null,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": null,
+    "conning_tower_mm": null,
+    "deck_mm": null,
+    "scheme": "all_or_nothing_or_compact_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": null
+  },
+  "class_name": "Portugal Other Design Variant 1 Class",
+  "complement": {
+    "crew": null,
+    "raw": "synthetic"
+  },
+  "country": "Portugal",
+  "derived_from": {
+    "class_name": "Portugal Other Design",
+    "country": "Portugal",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "synthetic:Portugal:other:1931",
+    "source_url": null
+  },
+  "design_doctrine": {
+    "country": "Portugal",
+    "doctrine": "balanced capital-ship design",
+    "era": "treaty_interwar",
+    "priorities": [
+      "balanced armament",
+      "reasonable protection",
+      "service speed"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 0.935,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 0.312,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 6.231,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 1232.0,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 1120.0
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 25,
+      "role": "light_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "director_with_mechanical_computer"
+    },
+    "main_battery": {
+      "barrels": 2.0,
+      "caliber_mm": 203.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": null
+    },
+    "propulsion_fit": {
+      "speed_kn": 21.5,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 127,
+      "role": "dual_purpose_candidate"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 13.2,
+        "role": "machine_gun_aa"
+      },
+      {
+        "caliber_mm": 25,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "medium_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "Portugal",
+      "displacement_t": 1232.0,
+      "hull_kind": "other",
+      "year": 1931
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "director_with_mechanical_computer"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 203,
+      "caliber_mm_min": 76
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 120,
+        "role": "secondary_battery"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose_candidate"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "secondary_battery"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "treaty_interwar",
+    "size_band": "coastal_or_small_capital",
+    "technology_level": "interwar",
+    "year_band": "1919-1935"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 13.2,
+          "role": "machine_gun_aa"
+        },
+        {
+          "caliber_mm": 25,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "medium_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "Portugal",
+        "displacement_t": 1232.0,
+        "hull_kind": "other",
+        "year": 1931
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "director_with_mechanical_computer"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 203,
+        "caliber_mm_min": 76
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 120,
+          "role": "secondary_battery"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose_candidate"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "secondary_battery"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Portugal",
+      "doctrine": "balanced capital-ship design",
+      "era": "treaty_interwar",
+      "priorities": [
+        "balanced armament",
+        "reasonable protection",
+        "service speed"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "treaty_interwar",
+      "size_band": "coastal_or_small_capital",
+      "technology_level": "interwar",
+      "year_band": "1919-1935"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [],
+    "name_pool_size": 0,
+    "name_pool_source_note": "No country-specific naming pool for this hull kind; using base class name fallback.",
+    "naming_category": "other_fallback",
+    "naming_description": "No country-specific naming rule available.",
+    "naming_rule": "fallback from base class name",
+    "prefix": null,
+    "prefix_note": "No country-specific official prefix rule available.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "Portugal Other Design Variant 1 Class",
+    "target_country": "Portugal"
+  },
+  "hull_kind": "other",
+  "propulsion": {
+    "endurance_raw": "synthetic",
+    "fuel_raw": "synthetic",
+    "machinery": "synthetic",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": null,
+    "shafts": 2,
+    "speed_kn": 21.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:synthetic:Portugal:other:1931:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "synthetic",
+    "fetched_at": "",
+    "source_url_raw": ""
+  },
+  "source_url": null,
+  "type": "other",
+  "validation_issues": [
+    {
+      "code": "displacement_range",
+      "message": "implausible displacement: 1232.0",
+      "severity": "error"
+    },
+    {
+      "code": "displacement_area_ratio",
+      "message": "W/(L*B) 211.47",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | Portugal Other Design Variant 1 Class |\n| Country | Portugal |\n| Type | other |\n| Year | 1931 |\n| Normal displacement | 1120 t |\n| Full displacement | 1232 t |\n| Length | 6.231 m |\n| Breadth | 0.935 m |\n| Power | unknown |\n| Speed | 21.5 kn |\n| Main armament | 203 mm |\n| Main barrels | 2 |\n| Belt armor | unknown |\n| Era | treaty_interwar |\n| Doctrine | balanced capital-ship design |\n| Secondary battery | 127 mm |\n| Anti-air battery | 25 mm |\n| Armor scheme | all_or_nothing_or_compact_citadel |\n| Complement | unknown |\n| Source | unknown |",
+  "year": 1931
+}

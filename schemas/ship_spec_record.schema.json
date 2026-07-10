@@ -39,7 +39,7 @@
       "type": "string"
     },
     "hull_kind": {
-      "enum": ["battleship", "battlecruiser", "coastal_battleship"]
+      "enum": ["battleship", "battlecruiser", "coastal_battleship", "destroyer", "cruiser", "submarine", "carrier", "other"]
     },
     "year": {
       "type": ["integer", "null"],
@@ -94,6 +94,55 @@
         "main_barrels": {"type": ["number", "null"]},
         "mounts": {"type": "array"}
       }
+    },
+    "era_profile": {
+      "type": "object",
+      "properties": {
+        "era": {
+          "enum": ["unknown", "pre_dreadnought", "dreadnought", "treaty_interwar", "fast_battleship", "postwar"]
+        },
+        "year_band": {"type": "string"},
+        "technology_level": {"type": "string"},
+        "size_band": {"type": "string"}
+      }
+    },
+    "design_doctrine": {
+      "type": "object",
+      "properties": {
+        "country": {"type": ["string", "null"]},
+        "era": {"type": "string"},
+        "doctrine": {"type": "string"},
+        "priorities": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "equipment": {
+      "type": "object",
+      "properties": {
+        "main_battery": {"type": "object"},
+        "secondary_battery": {"type": "object"},
+        "anti_air": {"type": "object"},
+        "fire_control": {"type": "object"},
+        "torpedoes": {"type": "object"},
+        "aviation": {"type": "object"},
+        "propulsion_fit": {"type": "object"}
+      }
+    },
+    "armor_scheme": {
+      "type": "object",
+      "properties": {
+        "scheme": {"type": "string"},
+        "belt_mm": {"type": ["number", "null"]},
+        "deck_mm": {"type": ["number", "null"]},
+        "turret_face_mm": {"type": ["number", "null"]},
+        "conning_tower_mm": {"type": ["number", "null"]},
+        "source": {"type": "string"}
+      }
+    },
+    "equipment_candidates": {
+      "type": "object"
     },
     "complement": {
       "type": "object",

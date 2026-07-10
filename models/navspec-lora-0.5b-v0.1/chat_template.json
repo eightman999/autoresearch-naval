@@ -1,0 +1,14 @@
+{
+  "template_id": "navspec-lora-chat-v1",
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "format": "<system>\\n{system}\\n</system>\\n<user>\\n{user_json}\\n</user>\\n<assistant>\\n{assistant_json}\\n</assistant>",
+  "generation_stop_sequences": [
+    "</assistant>",
+    "</output>",
+    "</task>"
+  ],
+  "assistant_output": {
+    "schema": "schemas/navspec_lora_candidate.schema.json",
+    "json_only": true
+  }
+}

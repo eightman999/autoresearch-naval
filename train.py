@@ -414,11 +414,12 @@ def make_config(vocab_size):
     )
 
 
-def save_checkpoint(model, config, metrics, tokenizer_dir):
+def save_checkpoint(model, config, metrics, tokenizer_dir, name=None):
     checkpoint_dir = Path(CHECKPOINT_DIR)
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
-    weights_path = checkpoint_dir / f"{CHECKPOINT_NAME}.safetensors"
-    metadata_path = checkpoint_dir / f"{CHECKPOINT_NAME}.json"
+    ckpt_name = name or CHECKPOINT_NAME
+    weights_path = checkpoint_dir / f"{ckpt_name}.safetensors"
+    metadata_path = checkpoint_dir / f"{ckpt_name}.json"
     model.save_weights(str(weights_path))
     metadata = {
         "weights": str(weights_path),
@@ -485,6 +486,9 @@ def main():
     total_training_time = 0.0
     step = 0
     t_compiled = None
+    best_val_bpb = float('inf')
+    last_eval_time = 0.0
+    eval_interval_sec = int(os.environ.get("AUTORESEARCH_EVAL_INTERVAL_SEC", "600"))
 
     while True:
         t0 = time.time()
@@ -544,6 +548,24 @@ def main():
         elif (step + 1) % 5000 == 0:
             gc.collect()
 
+        if SAVE_CHECKPOINT and total_training_time - last_eval_time >= eval_interval_sec:
+            last_eval_time = total_training_time
+            print(f"\n--- periodic eval at step {step}, t={total_training_time:.0f}s ---")
+            snap_val_bpb = evaluate_bpb(model, tokenizer, FINAL_EVAL_BATCH_SIZE)
+            snap_metrics = {
+                "val_bpb": snap_val_bpb,
+                "training_seconds": total_training_time,
+                "num_steps": step,
+                "num_params_m": num_params / 1e6,
+                "depth": DEPTH,
+            }
+            save_checkpoint(model, config, snap_metrics, TOKENIZER_DIR, name="latest")
+            if snap_val_bpb < best_val_bpb:
+                best_val_bpb = snap_val_bpb
+                save_checkpoint(model, config, snap_metrics, TOKENIZER_DIR, name="best")
+                print(f"new best val_bpb: {snap_val_bpb:.6f} (best checkpoint saved)")
+            print(f"val_bpb: {snap_val_bpb:.6f} | best: {best_val_bpb:.6f}")
+
         step += 1
         if step >= STARTUP_EXCLUDE_STEPS and total_training_time >= TIME_BUDGET:
             break
@@ -574,7 +596,10 @@ def main():
     }
 
     if SAVE_CHECKPOINT:
-        save_checkpoint(model, config, metrics, TOKENIZER_DIR)
+        save_checkpoint(model, config, metrics, TOKENIZER_DIR, name="latest")
+        if val_bpb < best_val_bpb:
+            save_checkpoint(model, config, metrics, TOKENIZER_DIR, name="best")
+            print(f"final val_bpb is new best: {val_bpb:.6f}")
 
     print("---")
     print(f"val_bpb:          {val_bpb:.6f}")

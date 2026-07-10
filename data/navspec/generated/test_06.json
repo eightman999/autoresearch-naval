@@ -1,0 +1,434 @@
+{
+  "armament": {
+    "main_barrels": 9,
+    "main_caliber_mm": 381.0,
+    "mounts": [
+      {
+        "barrels": 9,
+        "barrels_per_mount": 3,
+        "caliber_length": 50,
+        "caliber_mm": 381.0,
+        "mount_count": 3
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 3,
+        "caliber_length": 55,
+        "caliber_mm": 152.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 120.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 1,
+        "caliber_length": 50,
+        "caliber_mm": 90.0,
+        "mount_count": 12
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 2,
+        "caliber_length": 54,
+        "caliber_mm": 37.0,
+        "mount_count": 8
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 54,
+        "caliber_mm": 37.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 2,
+        "caliber_length": 65,
+        "caliber_mm": 20.0,
+        "mount_count": 8
+      },
+      {
+        "barrels": 9,
+        "barrels_per_mount": 3,
+        "caliber_length": 50,
+        "caliber_mm": 381.0,
+        "mount_count": 3
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 3,
+        "caliber_length": 55,
+        "caliber_mm": 152.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 120.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 1,
+        "caliber_length": 50,
+        "caliber_mm": 90.0,
+        "mount_count": 12
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 2,
+        "caliber_length": 54,
+        "caliber_mm": 37.0,
+        "mount_count": 8
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 54,
+        "caliber_mm": 37.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 2,
+        "caliber_length": 65,
+        "caliber_mm": 20.0,
+        "mount_count": 8
+      },
+      {
+        "barrels": 9,
+        "barrels_per_mount": 3,
+        "caliber_length": 50,
+        "caliber_mm": 381.0,
+        "mount_count": 3
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 3,
+        "caliber_length": 55,
+        "caliber_mm": 152.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 120.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 1,
+        "caliber_length": 50,
+        "caliber_mm": 90.0,
+        "mount_count": 12
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 2,
+        "caliber_length": 54,
+        "caliber_mm": 37.0,
+        "mount_count": 8
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 54,
+        "caliber_mm": 37.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 28,
+        "barrels_per_mount": 2,
+        "caliber_length": 65,
+        "caliber_mm": 20.0,
+        "mount_count": 14
+      }
+    ],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": 266.0,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 266.0,
+    "conning_tower_mm": 252.7,
+    "deck_mm": 79.8,
+    "scheme": "all_or_nothing_or_compact_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 305.9
+  },
+  "class_name": "Conte di Cavour Class",
+  "complement": {
+    "crew": 1830.0,
+    "raw": "1830 - 1950"
+  },
+  "country": "Italy",
+  "derived_from": {
+    "class_name": "VITTORIO VENETO Class",
+    "country": "Italy",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:Italy:battleships:VITTORIO VENETO Class:2397",
+    "source_url": "https://myownonpmirror.com/ships/italy/it_bb_vittorio_veneto.html"
+  },
+  "design_doctrine": {
+    "country": "Italy",
+    "doctrine": "Mediterranean fast capital ship",
+    "era": "fast_battleship",
+    "priorities": [
+      "speed",
+      "main battery",
+      "shorter operational radius"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 34.063,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 9.97,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 246.955,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 50432.48,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 45379.04
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 25,
+      "role": "light_aa"
+    },
+    "aviation": {
+      "catapult": true,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": true,
+      "system": "director_with_radar_assist"
+    },
+    "main_battery": {
+      "barrels": 9.0,
+      "caliber_mm": 381.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 9
+    },
+    "propulsion_fit": {
+      "speed_kn": 31.5,
+      "speed_role": "fast"
+    },
+    "secondary_battery": {
+      "caliber_mm": 127,
+      "role": "dual_purpose"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 20,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 25,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 40,
+        "role": "medium_aa"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": true
+    },
+    "basis": {
+      "country": "Italy",
+      "displacement_t": 50432.48,
+      "hull_kind": "battleship",
+      "year": 1940
+    },
+    "fire_control": [
+      {
+        "radar": true,
+        "system": "director_with_radar_assist"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 460,
+      "caliber_mm_min": 330
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 100,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "secondary_battery"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "fast_battleship",
+    "size_band": "super_capital_ship",
+    "technology_level": "late_war",
+    "year_band": "1936-1945"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 20,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 25,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 40,
+          "role": "medium_aa"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": true
+      },
+      "basis": {
+        "country": "Italy",
+        "displacement_t": 50432.48,
+        "hull_kind": "battleship",
+        "year": 1940
+      },
+      "fire_control": [
+        {
+          "radar": true,
+          "system": "director_with_radar_assist"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 460,
+        "caliber_mm_min": 330
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 100,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "secondary_battery"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Italy",
+      "doctrine": "Mediterranean fast capital ship",
+      "era": "fast_battleship",
+      "priorities": [
+        "speed",
+        "main battery",
+        "shorter operational radius"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "fast_battleship",
+      "size_band": "super_capital_ship",
+      "technology_level": "late_war",
+      "year_band": "1936-1945"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [
+      "Andrea Doria",
+      "Caio Duilio",
+      "Conte di Cavour",
+      "Francesco Caracciolo",
+      "Giulio Cesare",
+      "Impero",
+      "Italia",
+      "Lepanto",
+      "Littorio",
+      "Roma",
+      "Sardegna",
+      "Sicilia"
+    ],
+    "name_pool_size": 12,
+    "name_pool_source_note": "Country-specific hand-curated naming pool.",
+    "naming_category": "battleship_pool",
+    "naming_description": "Use Italian historic figures or places.",
+    "naming_rule": "Italian capital ships: statesmen, admirals, cities, or national names",
+    "prefix": "RN",
+    "prefix_note": "Kingdom of Italy ships use RN (Regia Nave).",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "Conte di Cavour Class",
+    "target_country": "Italy"
+  },
+  "hull_kind": "battleship",
+  "propulsion": {
+    "endurance_raw": "4700(14)",
+    "fuel_raw": "oil 4140",
+    "machinery": "4 sets Parsons geared steam turbines+ 8 Yarrow boilers",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": 160054.518,
+    "shafts": 4.0,
+    "speed_kn": 31.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:nsdb:Italy:battleships:VITTORIO VENETO Class:2397:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/apps/autoresearch-naval/nsdb/NSDB_new.db",
+    "fetched_at": "2026-07-10T02:51:52.100388+00:00",
+    "source_url_raw": "https://myownonpmirror.com/ships/italy/it_bb_vittorio_veneto.html"
+  },
+  "source_url": null,
+  "type": "battleships",
+  "validation_issues": [],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | Conte di Cavour Class |\n| Country | Italy |\n| Type | battleships |\n| Year | 1940 |\n| Normal displacement | 45379.04 t |\n| Full displacement | 50432.48 t |\n| Length | 246.955 m |\n| Breadth | 34.063 m |\n| Power | 160054.518 shp |\n| Speed | 31.5 kn |\n| Main armament | 381 mm |\n| Main barrels | 9 |\n| Belt armor | 266 mm |\n| Era | fast_battleship |\n| Doctrine | Mediterranean fast capital ship |\n| Secondary battery | 127 mm |\n| Anti-air battery | 25 mm |\n| Armor scheme | all_or_nothing_or_compact_citadel |\n| Complement | 1830 |\n| Source | unknown |",
+  "year": 1940
+}

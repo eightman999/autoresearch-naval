@@ -1,0 +1,333 @@
+{
+  "armament": {
+    "main_barrels": 8,
+    "main_caliber_mm": 380.0,
+    "mounts": [
+      {
+        "barrels": 8,
+        "barrels_per_mount": 2,
+        "caliber_length": 48,
+        "caliber_mm": 380.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 2,
+        "caliber_length": 5,
+        "caliber_mm": 149.0,
+        "mount_count": 6
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 2,
+        "caliber_length": 6,
+        "caliber_mm": 105.0,
+        "mount_count": 8
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 2,
+        "caliber_length": 80,
+        "caliber_mm": 37.0,
+        "mount_count": 8
+      },
+      {
+        "barrels": 12,
+        "barrels_per_mount": 1,
+        "caliber_length": 65,
+        "caliber_mm": 20.0,
+        "mount_count": 12
+      }
+    ],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": 304.0,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 304.0,
+    "conning_tower_mm": 288.8,
+    "deck_mm": 91.2,
+    "scheme": "all_or_nothing_or_compact_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 349.6
+  },
+  "class_name": "Bayern Class",
+  "complement": {
+    "crew": 2092.0,
+    "raw": "Bismarck: 2092 Tirpitz: 2608"
+  },
+  "country": "Germany",
+  "derived_from": {
+    "class_name": "BISMARCK Class",
+    "country": "Germany",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:Germany:battleships:BISMARCK Class:1829",
+    "source_url": "https://myownonpmirror.com/ships/germany/ger_bb_bismarck.html"
+  },
+  "design_doctrine": {
+    "country": "Germany",
+    "doctrine": "survivable North Sea capital ship with strong protection",
+    "era": "fast_battleship",
+    "priorities": [
+      "protection",
+      "compartmentation",
+      "medium-range action"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 37.386,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 9.035,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 51.925,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 57008.0,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 46704.0
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 25,
+      "role": "light_aa"
+    },
+    "aviation": {
+      "catapult": true,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": true,
+      "system": "director_with_radar_assist"
+    },
+    "main_battery": {
+      "barrels": 8.0,
+      "caliber_mm": 380.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 4
+    },
+    "propulsion_fit": {
+      "speed_kn": 30.5,
+      "speed_role": "fast"
+    },
+    "secondary_battery": {
+      "caliber_mm": 127,
+      "role": "dual_purpose"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 20,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 25,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 40,
+        "role": "medium_aa"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": true
+    },
+    "basis": {
+      "country": "Germany",
+      "displacement_t": 57008.0,
+      "hull_kind": "battleship",
+      "year": 1940
+    },
+    "fire_control": [
+      {
+        "radar": true,
+        "system": "director_with_radar_assist"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 460,
+      "caliber_mm_min": 330
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 100,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "secondary_battery"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "fast_battleship",
+    "size_band": "super_capital_ship",
+    "technology_level": "late_war",
+    "year_band": "1936-1945"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 20,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 25,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 40,
+          "role": "medium_aa"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": true
+      },
+      "basis": {
+        "country": "Germany",
+        "displacement_t": 57008.0,
+        "hull_kind": "battleship",
+        "year": 1940
+      },
+      "fire_control": [
+        {
+          "radar": true,
+          "system": "director_with_radar_assist"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 460,
+        "caliber_mm_min": 330
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 100,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "secondary_battery"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Germany",
+      "doctrine": "survivable North Sea capital ship with strong protection",
+      "era": "fast_battleship",
+      "priorities": [
+        "protection",
+        "compartmentation",
+        "medium-range action"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "fast_battleship",
+      "size_band": "super_capital_ship",
+      "technology_level": "late_war",
+      "year_band": "1936-1945"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [
+      "Baden",
+      "Bayern",
+      "Brandenburg",
+      "Hannover",
+      "Hessen",
+      "Lothringen",
+      "Oldenburg",
+      "Pommern",
+      "Sachsen",
+      "Schwaben",
+      "Thueringen",
+      "Wuerttemberg"
+    ],
+    "name_pool_size": 12,
+    "name_pool_source_note": "Country-specific hand-curated naming pool.",
+    "naming_category": "battleship_pool",
+    "naming_description": "Use German regional or statesman names.",
+    "naming_rule": "German capital ships: states, regions, rulers, or senior figures",
+    "prefix": null,
+    "prefix_note": "German naval prefixes such as FGS/KMS/DKM are NATO or writer conveniences, not internal official prefixes.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "Bayern Class",
+    "target_country": "Germany"
+  },
+  "hull_kind": "battleship",
+  "propulsion": {
+    "endurance_raw": "Bismarck: 8525(19) Tirpitz: 8870(19)",
+    "fuel_raw": "Bismarck : oil 7 400 Tirpitz: oil 7780",
+    "machinery": "Bismarck : 3 sets Blohm & Voss geared steam turbines + 12 Wagner boilers Tirpitz: 3 sets Brown-Boveri geared steam turbines+ 12 Wagner boilers",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": 173139.686,
+    "shafts": 3.0,
+    "speed_kn": 30.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:nsdb:Germany:battleships:BISMARCK Class:1829:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/apps/autoresearch-naval/nsdb/NSDB_new.db",
+    "fetched_at": "2026-07-10T02:51:23.178013+00:00",
+    "source_url_raw": "https://myownonpmirror.com/ships/germany/ger_bb_bismarck.html"
+  },
+  "source_url": null,
+  "type": "battleships",
+  "validation_issues": [
+    {
+      "code": "length_breadth_ratio",
+      "message": "L/B ratio 1.39",
+      "severity": "warn"
+    },
+    {
+      "code": "displacement_area_ratio",
+      "message": "W/(L*B) 29.37",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | Bayern Class |\n| Country | Germany |\n| Type | battleships |\n| Year | 1940 |\n| Normal displacement | 46704 t |\n| Full displacement | 57008 t |\n| Length | 51.925 m |\n| Breadth | 37.386 m |\n| Power | 173139.686 shp |\n| Speed | 30.5 kn |\n| Main armament | 380 mm |\n| Main barrels | 8 |\n| Belt armor | 304 mm |\n| Era | fast_battleship |\n| Doctrine | survivable North Sea capital ship with strong protection |\n| Secondary battery | 127 mm |\n| Anti-air battery | 25 mm |\n| Armor scheme | all_or_nothing_or_compact_citadel |\n| Complement | 2092 |\n| Source | unknown |",
+  "year": 1940
+}

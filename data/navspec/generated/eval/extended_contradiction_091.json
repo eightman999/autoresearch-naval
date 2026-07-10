@@ -1,0 +1,49 @@
+{
+  "nation_capability_tier": {
+    "description": "major industrial power",
+    "limits": {
+      "battlecruiser_allowed": true,
+      "battleship_allowed": true,
+      "carrier_allowed": true,
+      "max_displacement_t": null,
+      "max_main_caliber_mm": null,
+      "max_power_multiplier": 1.0,
+      "max_speed_multiplier": 1.0,
+      "radar_from_year": 1938
+    },
+    "tier": 1
+  },
+  "reason": [
+    "destroyerに203mm砲は過大（適正上限130mm）",
+    "小型艦に203mm砲6門は重量・復原性面で非現実的",
+    "1500t級小型艦に150mm装甲帯は過大",
+    "重装甲(150mm)と高速(40kt)を1500tで両立するのは困難",
+    "航続距離10000nmには燃料が排水量の168%を占める（限界35%）",
+    "小型艦に大口径砲・重装甲・高速度・長航続を同時要求しており、重量配分が成立しない"
+  ],
+  "request": {
+    "constraints": {
+      "belt_armor_mm_min": 150,
+      "main_gun_barrels_min": 6,
+      "main_gun_caliber_mm_min": 203,
+      "range_nm_min": 10000,
+      "speed_kt_min": 40,
+      "standard_displacement_t_max": 1500
+    },
+    "country": "Japan",
+    "prompt": "小型駆逐艦に大口径砲、重装甲、高速、長航続を同時要求する矛盾検出テスト。",
+    "ship_type": "destroyer",
+    "year": 1937
+  },
+  "status": "impossible",
+  "suggested_revision": {
+    "belt_armor_mm": 18.8,
+    "main_gun_caliber_mm": 130,
+    "range_nm": 3000,
+    "rationale": "tier-1 major industrial powerとして現実的な値に調整",
+    "ship_type": "destroyer",
+    "speed_kt": 36,
+    "standard_displacement_t": 1500,
+    "tier": 1
+  }
+}

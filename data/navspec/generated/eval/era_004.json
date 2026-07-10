@@ -1,0 +1,308 @@
+{
+  "armament": {
+    "main_barrels": 10,
+    "main_caliber_mm": 305.0,
+    "mounts": [],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": 266.0,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 266.0,
+    "conning_tower_mm": 252.7,
+    "deck_mm": 58.52,
+    "scheme": "dreadnought_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 292.6
+  },
+  "class_name": "Formidable Class",
+  "complement": {
+    "crew": null,
+    "raw": "synthetic"
+  },
+  "country": "United-Kingdom",
+  "derived_from": {
+    "class_name": "United Kingdom Dreadnought Battleship Design",
+    "country": "United Kingdom",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "synthetic:United Kingdom:dreadnought_battleship:1907",
+    "source_url": null
+  },
+  "design_doctrine": {
+    "country": "United-Kingdom",
+    "doctrine": "global-service capital ship with balanced armament and protection",
+    "era": "dreadnought",
+    "priorities": [
+      "global range",
+      "balanced protection",
+      "fleet integration"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 30.6,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 10.2,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 203.7,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 27104.0,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 24640.0
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 76,
+      "role": "early_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "central_optical_director"
+    },
+    "main_battery": {
+      "barrels": 10.0,
+      "caliber_mm": 305.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": null
+    },
+    "propulsion_fit": {
+      "power_shp": null,
+      "speed_kn": 22.5,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 120,
+      "role": "secondary_battery"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 37,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 47,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "early_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "United-Kingdom",
+      "displacement_t": 27104.0,
+      "hull_kind": "battleship",
+      "year": 1907
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "central_optical_director"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 356,
+      "caliber_mm_min": 280
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 102,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 120,
+        "role": "secondary_battery"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "casemate_secondary"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "dreadnought",
+    "size_band": "treaty_capital_ship",
+    "technology_level": "dreadnought",
+    "year_band": "1906-1918"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 37,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 47,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "early_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "United-Kingdom",
+        "displacement_t": 27104.0,
+        "hull_kind": "battleship",
+        "year": 1907
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "central_optical_director"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 356,
+        "caliber_mm_min": 280
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 102,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 120,
+          "role": "secondary_battery"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "casemate_secondary"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "United-Kingdom",
+      "doctrine": "global-service capital ship with balanced armament and protection",
+      "era": "dreadnought",
+      "priorities": [
+        "global range",
+        "balanced protection",
+        "fleet integration"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "dreadnought",
+      "size_band": "treaty_capital_ship",
+      "technology_level": "dreadnought",
+      "year_band": "1906-1918"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [
+      "Audacious",
+      "Benbow",
+      "Collingwood",
+      "Conqueror",
+      "Defiance",
+      "Dominion",
+      "Emperor",
+      "Formidable",
+      "Majestic",
+      "Monarch",
+      "Superb",
+      "Thunderer",
+      "Vanguard"
+    ],
+    "name_pool_size": 13,
+    "name_pool_source_note": "Country-specific hand-curated naming pool.",
+    "naming_category": "battleship_pool",
+    "naming_description": "Use traditional RN ship names, not US state names.",
+    "naming_rule": "Royal Navy capital ships: royal, martial, or virtue names",
+    "nation_capability_tier": {
+      "description": "major industrial power",
+      "limits": {
+        "battlecruiser_allowed": true,
+        "battleship_allowed": true,
+        "carrier_allowed": true,
+        "max_displacement_t": null,
+        "max_main_caliber_mm": null,
+        "max_power_multiplier": 1.0,
+        "max_speed_multiplier": 1.0,
+        "radar_from_year": 1938
+      },
+      "tier": 1
+    },
+    "prefix": "HMS",
+    "prefix_note": "Use the country's official naval ship prefix when one is part of the naming convention.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "Formidable Class",
+    "target_country": "United-Kingdom"
+  },
+  "hull_kind": "battleship",
+  "nation_capability_tier": {
+    "description": "major industrial power",
+    "limits": {
+      "battlecruiser_allowed": true,
+      "battleship_allowed": true,
+      "carrier_allowed": true,
+      "max_displacement_t": null,
+      "max_main_caliber_mm": null,
+      "max_power_multiplier": 1.0,
+      "max_speed_multiplier": 1.0,
+      "radar_from_year": 1938
+    },
+    "tier": 1
+  },
+  "propulsion": {
+    "endurance_raw": "synthetic",
+    "fuel_raw": "synthetic",
+    "machinery": "synthetic",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": null,
+    "shafts": 4,
+    "speed_kn": 22.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:synthetic:United Kingdom:dreadnought_battleship:1907:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "synthetic",
+    "fetched_at": "",
+    "source_url_raw": ""
+  },
+  "source_url": null,
+  "type": "dreadnought_battleship",
+  "validation_issues": [],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | Formidable Class |\n| Country | United-Kingdom |\n| Type | dreadnought_battleship |\n| Year | 1907 |\n| Normal displacement | 24640 t |\n| Full displacement | 27104 t |\n| Length | 203.7 m |\n| Breadth | 30.6 m |\n| Power | unknown |\n| Speed | 22.5 kn |\n| Main armament | 305 mm |\n| Main barrels | 10 |\n| Belt armor | 266 mm |\n| Era | dreadnought |\n| Doctrine | global-service capital ship with balanced armament and protection |\n| Secondary battery | 120 mm |\n| Anti-air battery | 76 mm |\n| Armor scheme | dreadnought_citadel |\n| Complement | unknown |\n| Source | unknown |",
+  "year": 1907
+}

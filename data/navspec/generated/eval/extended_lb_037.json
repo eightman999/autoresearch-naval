@@ -1,0 +1,298 @@
+{
+  "armament": {
+    "main_barrels": 6,
+    "main_caliber_mm": 152.0,
+    "mounts": [],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": null,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 100,
+    "conning_tower_mm": 95.0,
+    "deck_mm": 18.0,
+    "scheme": "distributed_armor",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 105.0
+  },
+  "class_name": "Qing China Protected Cruiser Design Variant 1 Class",
+  "complement": {
+    "crew": null,
+    "raw": "synthetic"
+  },
+  "constraint_adjustments": [
+    "gun clamped 164.0→152.0mm (max constraint)",
+    "speed adjusted 21.5→19.8kt (tier 3)"
+  ],
+  "country": "Qing China",
+  "derived_from": {
+    "class_name": "Qing China Protected Cruiser Design",
+    "country": "Qing China",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "synthetic:Qing China:protected_cruiser:1885",
+    "source_url": null
+  },
+  "design_doctrine": {
+    "country": "Qing China",
+    "doctrine": "balanced capital-ship design",
+    "era": "pre_dreadnought",
+    "priorities": [
+      "balanced armament",
+      "reasonable protection",
+      "service speed"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 14.4,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 4.9,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 123.6,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 4928.0,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 4480.0
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 76,
+      "role": "early_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "local_optical_sights"
+    },
+    "main_battery": {
+      "barrels": 6.0,
+      "caliber_mm": 152.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": null
+    },
+    "propulsion_fit": {
+      "power_shp": null,
+      "speed_kn": 19.8,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 102,
+      "role": "anti_torpedo_boat"
+    },
+    "torpedoes": {
+      "carried": true,
+      "fit": "hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 37,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 47,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "early_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "Qing China",
+      "displacement_t": 4928.0,
+      "hull_kind": "cruiser",
+      "year": 1885
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "local_optical_sights"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 203,
+      "caliber_mm_min": 127
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 76,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 102,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "casemate_secondary"
+      }
+    ],
+    "torpedoes": {
+      "allowed": true
+    }
+  },
+  "era_profile": {
+    "era": "pre_dreadnought",
+    "size_band": "coastal_or_small_capital",
+    "technology_level": "pre_dreadnought",
+    "year_band": "1890-1905"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 37,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 47,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "early_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "Qing China",
+        "displacement_t": 4928.0,
+        "hull_kind": "cruiser",
+        "year": 1885
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "local_optical_sights"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 203,
+        "caliber_mm_min": 127
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 76,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 102,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "casemate_secondary"
+        }
+      ],
+      "torpedoes": {
+        "allowed": true
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Qing China",
+      "doctrine": "balanced capital-ship design",
+      "era": "pre_dreadnought",
+      "priorities": [
+        "balanced armament",
+        "reasonable protection",
+        "service speed"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "pre_dreadnought",
+      "size_band": "coastal_or_small_capital",
+      "technology_level": "pre_dreadnought",
+      "year_band": "1890-1905"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [],
+    "name_pool_size": 0,
+    "name_pool_source_note": "No country-specific naming pool for this hull kind; using base class name fallback.",
+    "naming_category": "cruiser_fallback",
+    "naming_description": "No country-specific naming rule available.",
+    "naming_rule": "fallback from base class name",
+    "nation_capability_tier": {
+      "description": "limited industrial capacity",
+      "limits": {
+        "battlecruiser_allowed": false,
+        "battleship_allowed": false,
+        "carrier_allowed": false,
+        "max_displacement_t": 12000,
+        "max_main_caliber_mm": 203,
+        "max_power_multiplier": 0.78,
+        "max_speed_multiplier": 0.92,
+        "radar_from_year": 1941
+      },
+      "tier": 3
+    },
+    "prefix": null,
+    "prefix_note": "No country-specific official prefix rule available.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "Qing China Protected Cruiser Design Variant 1 Class",
+    "target_country": "Qing China"
+  },
+  "hull_kind": "cruiser",
+  "nation_capability_tier": {
+    "description": "limited industrial capacity",
+    "limits": {
+      "battlecruiser_allowed": false,
+      "battleship_allowed": false,
+      "carrier_allowed": false,
+      "max_displacement_t": 12000,
+      "max_main_caliber_mm": 203,
+      "max_power_multiplier": 0.78,
+      "max_speed_multiplier": 0.92,
+      "radar_from_year": 1941
+    },
+    "tier": 3
+  },
+  "propulsion": {
+    "endurance_raw": "synthetic",
+    "fuel_raw": "synthetic",
+    "machinery": "synthetic",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": null,
+    "shafts": 2,
+    "speed_kn": 19.8,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:synthetic:Qing China:protected_cruiser:1885:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "synthetic",
+    "fetched_at": "",
+    "source_url_raw": ""
+  },
+  "source_url": null,
+  "type": "protected_cruiser",
+  "validation_issues": [],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | Qing China Protected Cruiser Design Variant 1 Class |\n| Country | Qing China |\n| Type | protected_cruiser |\n| Year | 1885 |\n| Normal displacement | 4480 t |\n| Full displacement | 4928 t |\n| Length | 123.6 m |\n| Breadth | 14.4 m |\n| Power | unknown |\n| Speed | 19.8 kn |\n| Main armament | 152 mm |\n| Main barrels | 6 |\n| Belt armor | unknown |\n| Era | pre_dreadnought |\n| Doctrine | balanced capital-ship design |\n| Secondary battery | 102 mm |\n| Anti-air battery | 76 mm |\n| Armor scheme | distributed_armor |\n| Complement | unknown |\n| Source | unknown |",
+  "year": 1885
+}

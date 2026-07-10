@@ -1,0 +1,38 @@
+{
+  "nation_capability_tier": {
+    "description": "limited industrial capacity",
+    "limits": {
+      "battlecruiser_allowed": false,
+      "battleship_allowed": false,
+      "carrier_allowed": false,
+      "max_displacement_t": 12000,
+      "max_main_caliber_mm": 203,
+      "max_power_multiplier": 0.78,
+      "max_speed_multiplier": 0.92,
+      "radar_from_year": 1941
+    },
+    "tier": 3
+  },
+  "reason": [
+    "tier-3国（Chile）の1940年自主建造で主力艦は非現実的",
+    "tier-3国（Chile）の工業力で30000t級艦の建造は困難（上限12000t）",
+    "tier-3国（Chile）の主砲上限は203mm程度（要求356mm）"
+  ],
+  "request": {
+    "constraints": {},
+    "country": "Chile",
+    "prompt": "限定工業力国が1940年に新造戦艦を自主建造するティア制限テスト。",
+    "ship_type": "battleship",
+    "year": 1940
+  },
+  "status": "impossible",
+  "suggested_revision": {
+    "belt_armor_mm": 300,
+    "main_gun_caliber_mm": 203,
+    "rationale": "tier-3 limited industrial capacityとして現実的な値に調整",
+    "ship_type": "battleship",
+    "speed_kt": 25,
+    "standard_displacement_t": 12000,
+    "tier": 3
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "armament": {
+    "main_barrels": 4,
+    "main_caliber_mm": 305.0,
+    "mounts": [
+      {
+        "barrels": 4,
+        "barrels_per_mount": 2,
+        "caliber_length": 40,
+        "caliber_mm": 305.0,
+        "mount_count": 2
+      },
+      {
+        "barrels": 14,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 152.0,
+        "mount_count": 14
+      },
+      {
+        "barrels": 20,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 76.0,
+        "mount_count": 20
+      },
+      {
+        "barrels": 8,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 47.0,
+        "mount_count": 8
+      }
+    ],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": 289.75,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 289.75,
+    "conning_tower_mm": 275.262,
+    "deck_mm": 52.155,
+    "scheme": "distributed_armor",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 304.238
+  },
+  "class_name": "Hizen Class",
+  "complement": {
+    "crew": 931.0,
+    "raw": "931"
+  },
+  "country": "Japan",
+  "derived_from": {
+    "class_name": "AKI Class",
+    "country": "Japan",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:Japan:battleship:AKI Class:87",
+    "source_url": "https://myownonpmirror.com/ships/japan/jap_bb_aki.html"
+  },
+  "design_doctrine": {
+    "country": "Japan",
+    "doctrine": "high-speed capital ship with heavy battery emphasis",
+    "era": "pre_dreadnought",
+    "priorities": [
+      "speed",
+      "heavy main battery",
+      "long-range decisive battle"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 26.482,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 8.723,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 152.555,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": null,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 68524.0
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 76,
+      "role": "early_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "local_optical_sights"
+    },
+    "main_battery": {
+      "barrels": 4.0,
+      "caliber_mm": 305.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 2
+    },
+    "propulsion_fit": {
+      "speed_kn": 19.5,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 102,
+      "role": "anti_torpedo_boat"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 37,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 47,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "early_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "Japan",
+      "displacement_t": 68524.0,
+      "hull_kind": "battleship",
+      "year": 1902
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "local_optical_sights"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 305,
+      "caliber_mm_min": 254
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 76,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 102,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "casemate_secondary"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "pre_dreadnought",
+    "size_band": "early_capital_ship",
+    "technology_level": "pre_dreadnought",
+    "year_band": "1890-1905"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 37,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 47,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "early_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "Japan",
+        "displacement_t": 68524.0,
+        "hull_kind": "battleship",
+        "year": 1902
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "local_optical_sights"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 305,
+        "caliber_mm_min": 254
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 76,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 102,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "casemate_secondary"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Japan",
+      "doctrine": "high-speed capital ship with heavy battery emphasis",
+      "era": "pre_dreadnought",
+      "priorities": [
+        "speed",
+        "heavy main battery",
+        "long-range decisive battle"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "pre_dreadnought",
+      "size_band": "early_capital_ship",
+      "technology_level": "pre_dreadnought",
+      "year_band": "1890-1905"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [
+      "Yamashiro",
+      "Yamato",
+      "Kawachi",
+      "Izumi",
+      "Settsu",
+      "Iga",
+      "Ise",
+      "Shima",
+      "Owari",
+      "Mikawa",
+      "Totomi",
+      "Suruga",
+      "Kai",
+      "Izu",
+      "Sagami",
+      "Musashi",
+      "Awa",
+      "Kazusa",
+      "Shimosa",
+      "Hitachi",
+      "Omi",
+      "Mino",
+      "Hida",
+      "Shinano",
+      "Kozuke",
+      "Shimotsuke",
+      "Iwaki",
+      "Iwashiro",
+      "Rikuzen",
+      "Rikuchu",
+      "Mutsu",
+      "Uzen",
+      "Ugo",
+      "Wakasa",
+      "Echizen",
+      "Kaga",
+      "Noto",
+      "Etchu",
+      "Echigo",
+      "Sado",
+      "Tamba",
+      "Tango",
+      "Tajima",
+      "Inaba",
+      "Hoki",
+      "Izumo",
+      "Iwami",
+      "Oki",
+      "Harima",
+      "Mimasaka",
+      "Bizen",
+      "Bitchu",
+      "Bingo",
+      "Aki",
+      "Suo",
+      "Nagato",
+      "Kii",
+      "Awaji",
+      "Awa",
+      "Sanuki",
+      "Iyo",
+      "Tosa",
+      "Chikuzen",
+      "Chikugo",
+      "Buzen",
+      "Bungo",
+      "Hizen",
+      "Higo",
+      "Hyuga",
+      "Osumi",
+      "Satsuma",
+      "Iki",
+      "Tsushima",
+      "Ryukyu",
+      "Ishikari",
+      "Iburi",
+      "Shiribeshi",
+      "Oshima",
+      "Teshio",
+      "Kitami",
+      "Hidaka",
+      "Tokachi",
+      "Kushiro",
+      "Nemuro",
+      "Chishima"
+    ],
+    "name_pool_size": 85,
+    "name_pool_source_note": "User-supplied romanized list based on historical Japanese province names.",
+    "naming_category": "old_province",
+    "naming_description": "Use historical-style IJN geographic names. Avoid personal names.",
+    "naming_rule": "IJN capital ships: provinces for battleships, mountains for battlecruisers",
+    "prefix": null,
+    "prefix_note": "IJN/HIJMS are writer conveniences; IJN did not use an official ship prefix.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "AKirigamine Class",
+    "target_country": "Japan"
+  },
+  "hull_kind": "battleship",
+  "propulsion": {
+    "endurance_raw": "10000(10)",
+    "fuel_raw": "coal 2300 + oil 110",
+    "machinery": "2 VTE+ 12 cylindrical boilers",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": 16011.124,
+    "shafts": 2.0,
+    "speed_kn": 19.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:nsdb:Japan:battleships:AKI Class:95:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/hoi4/SSW_mod/nvpda-db/NSDB.db",
+    "fetched_at": "2026-02-05T13:21:30.036617+00:00",
+    "source_url_raw": "https://www.navypedia.org/ships/japan/jap_bb_aki.htm"
+  },
+  "source_url": null,
+  "type": "battleships",
+  "validation_issues": [],
+  "year": 1902
+}

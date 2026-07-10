@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.lora_candidate.v1",
+  "title": "NavspecLoRACandidate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "spec",
+    "reason",
+    "suggested_revision",
+    "design_concept",
+    "confidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "navspec.lora_candidate.v1"
+    },
+    "status": {
+      "enum": ["ok", "impossible"]
+    },
+    "spec": {
+      "type": ["object", "null"],
+      "required": [
+        "nation",
+        "year",
+        "ship_type",
+        "standard_displacement_t",
+        "full_load_displacement_t",
+        "length_m",
+        "beam_m",
+        "draft_m",
+        "lb_ratio",
+        "power_shp",
+        "speed_kt",
+        "range_nm",
+        "main_gun_caliber_mm",
+        "main_gun_count",
+        "belt_armor_mm",
+        "torpedo_tubes",
+        "radar",
+        "nation_tier"
+      ],
+      "properties": {
+        "nation": {"type": "string", "minLength": 1},
+        "year": {"type": "integer", "minimum": 1800, "maximum": 2100},
+        "ship_type": {"type": "string", "minLength": 1},
+        "standard_displacement_t": {"type": "number", "minimum": 100, "maximum": 150000},
+        "full_load_displacement_t": {"type": "number", "minimum": 100, "maximum": 170000},
+        "length_m": {"type": "number", "minimum": 20, "maximum": 450},
+        "beam_m": {"type": "number", "minimum": 3, "maximum": 70},
+        "draft_m": {"type": "number", "minimum": 1, "maximum": 25},
+        "lb_ratio": {"type": "number", "minimum": 3, "maximum": 14},
+        "power_shp": {"type": ["number", "null"], "minimum": 100, "maximum": 600000},
+        "speed_kt": {"type": "number", "minimum": 5, "maximum": 45},
+        "range_nm": {"type": "number", "minimum": 200, "maximum": 25000},
+        "main_gun_caliber_mm": {"type": "number", "minimum": 37, "maximum": 520},
+        "main_gun_count": {"type": "integer", "minimum": 1, "maximum": 80},
+        "belt_armor_mm": {"type": ["number", "null"], "minimum": 0, "maximum": 600},
+        "torpedo_tubes": {"type": "integer", "minimum": 0, "maximum": 24},
+        "radar": {"type": "boolean"},
+        "nation_tier": {"type": "integer", "minimum": 1, "maximum": 4}
+      }
+    },
+    "reason": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "suggested_revision": {
+      "type": "object",
+      "properties": {
+        "ship_type": {"type": "string"},
+        "standard_displacement_t": {"type": "number"},
+        "speed_kt": {"type": ["number", "null"]},
+        "range_nm": {"type": "number"},
+        "main_gun_caliber_mm": {"type": ["number", "null"]},
+        "belt_armor_mm": {"type": ["number", "null"]},
+        "tier": {"type": "integer"},
+        "rationale": {"type": "string"}
+      }
+    },
+    "design_concept": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}

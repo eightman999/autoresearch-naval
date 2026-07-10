@@ -1,0 +1,40 @@
+{
+  "weights": "checkpoints/navspec/latest.safetensors",
+  "config": {
+    "sequence_len": 2048,
+    "vocab_size": 2048,
+    "n_layer": 4,
+    "n_head": 2,
+    "n_kv_head": 2,
+    "n_embd": 256,
+    "window_pattern": "SSSL"
+  },
+  "metrics": {
+    "val_bpb": 0.0473391504970592,
+    "training_seconds": 18000.484362602234,
+    "total_seconds": 18469.867388010025,
+    "peak_vram_mb": 4294.329689025879,
+    "mfu_percent": 0.0,
+    "total_tokens_m": 1204.55168,
+    "num_steps": 36760,
+    "num_params_m": 5.243016,
+    "depth": 4
+  },
+  "tokenizer_dir": "/Users/eightman/dev/apps/autoresearch-naval/.cache/autoresearch-navspec/tokenizer",
+  "hyperparameters": {
+    "total_batch_size": 32768,
+    "device_batch_size": 16,
+    "embedding_lr": 0.6,
+    "unembedding_lr": 0.004,
+    "matrix_lr": 0.04,
+    "scalar_lr": 0.5,
+    "weight_decay": 0.2,
+    "adam_betas": [
+      0.8,
+      0.95
+    ],
+    "warmup_ratio": 0.0,
+    "warmdown_ratio": 0.5,
+    "final_lr_frac": 0.0
+  }
+}

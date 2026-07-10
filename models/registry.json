@@ -1,0 +1,23 @@
+{
+  "classic": {
+    "navspec-classic-v1": {
+      "archive": "artifacts/navspec-classic-v1",
+      "generator": "generate_navspec.py",
+      "status": "archived_without_git_tag",
+      "role": [
+        "baseline",
+        "fallback",
+        "teacher",
+        "validator"
+      ]
+    }
+  },
+  "lora": {
+    "navspec-lora-0.5b-v0.1": {
+      "config": "models/navspec-lora-0.5b-v0.1/config.json",
+      "chat_template": "models/navspec-lora-0.5b-v0.1/chat_template.json",
+      "adapter": "models/navspec-lora-0.5b-v0.1/adapter",
+      "status": "prepared_not_trained"
+    }
+  }
+}

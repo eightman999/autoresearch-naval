@@ -1,0 +1,310 @@
+{
+  "armament": {
+    "main_barrels": 4,
+    "main_caliber_mm": 203.0,
+    "mounts": [
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 45,
+        "caliber_mm": 203.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 2,
+        "barrels_per_mount": 1,
+        "caliber_length": 39,
+        "caliber_mm": 40.0,
+        "mount_count": 2
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 45,
+        "caliber_mm": 203.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 2,
+        "barrels_per_mount": 1,
+        "caliber_length": 39,
+        "caliber_mm": 40.0,
+        "mount_count": 2
+      }
+    ],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": null,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": null,
+    "conning_tower_mm": null,
+    "deck_mm": null,
+    "scheme": "all_or_nothing_or_compact_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": null
+  },
+  "class_name": "A Variant 1 Class",
+  "complement": {
+    "crew": 138.0,
+    "raw": "138 Keith : 175"
+  },
+  "country": "United-Kingdom",
+  "derived_from": {
+    "class_name": "A Class",
+    "country": "United-Kingdom",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:United-Kingdom:and-b-destroyers:A Class:5181",
+    "source_url": "https://myownonpmirror.com/ships/uk/brit_dd_a-b.html"
+  },
+  "design_doctrine": {
+    "country": "United-Kingdom",
+    "doctrine": "global-service capital ship with balanced armament and protection",
+    "era": "treaty_interwar",
+    "priorities": [
+      "global range",
+      "balanced protection",
+      "fleet integration"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 10.208,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 3.874,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 102.292,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 1956.64,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 1497.44
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 25,
+      "role": "light_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "director_with_mechanical_computer"
+    },
+    "main_battery": {
+      "barrels": 4.0,
+      "caliber_mm": 203.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 8
+    },
+    "propulsion_fit": {
+      "speed_kn": null,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 127,
+      "role": "dual_purpose_candidate"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 13.2,
+        "role": "machine_gun_aa"
+      },
+      {
+        "caliber_mm": 25,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "medium_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "United-Kingdom",
+      "displacement_t": 1956.64,
+      "hull_kind": "destroyer",
+      "year": 1928
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "director_with_mechanical_computer"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 127,
+      "caliber_mm_min": 76
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 120,
+        "role": "secondary_battery"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose_candidate"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "secondary_battery"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "treaty_interwar",
+    "size_band": "coastal_or_small_capital",
+    "technology_level": "interwar",
+    "year_band": "1919-1935"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 13.2,
+          "role": "machine_gun_aa"
+        },
+        {
+          "caliber_mm": 25,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "medium_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "United-Kingdom",
+        "displacement_t": 1956.64,
+        "hull_kind": "destroyer",
+        "year": 1928
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "director_with_mechanical_computer"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 127,
+        "caliber_mm_min": 76
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 120,
+          "role": "secondary_battery"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose_candidate"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "secondary_battery"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "United-Kingdom",
+      "doctrine": "global-service capital ship with balanced armament and protection",
+      "era": "treaty_interwar",
+      "priorities": [
+        "global range",
+        "balanced protection",
+        "fleet integration"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "treaty_interwar",
+      "size_band": "coastal_or_small_capital",
+      "technology_level": "interwar",
+      "year_band": "1919-1935"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [],
+    "name_pool_size": 0,
+    "name_pool_source_note": "No country-specific naming pool for this hull kind; using base class name fallback.",
+    "naming_category": "destroyer_fallback",
+    "naming_description": "Use traditional RN ship names, not US state names.",
+    "naming_rule": "Royal Navy capital ships: royal, martial, or virtue names",
+    "prefix": "HMS",
+    "prefix_note": "Use the country's official naval ship prefix when one is part of the naming convention.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "A Variant 1 Class",
+    "target_country": "United-Kingdom"
+  },
+  "hull_kind": "destroyer",
+  "propulsion": {
+    "endurance_raw": "\"A\"+ \"B\": 4800(15) Saguenay+ Skeena: 5000(15)",
+    "fuel_raw": "oil 380",
+    "machinery": "2 sets Parsons geared steam turbines+ 3 Admiralty 3-drum boilers Acasta+ Achates+ Basilisk+ Beagle: 2 sets Brown-Curtis geared steam turbines+ 3 Admiralty 3-drum boilers Anthony+ Ardent: 2 sets Parsons geared steam turbines+ 3 Yarrow boilers Acheron+ Saguenay+ Skeena: 2 sets Parsons geared steam turbines+ 3 Thornycroft boilers",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": 41480.0,
+    "shafts": 2.0,
+    "speed_kn": null,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:nsdb:United-Kingdom:and-b-destroyers:A Class:5181:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/apps/autoresearch-naval/nsdb/NSDB_new.db",
+    "fetched_at": "2026-07-10T02:54:55.218118+00:00",
+    "source_url_raw": "https://myownonpmirror.com/ships/uk/brit_dd_a-b.html"
+  },
+  "source_url": null,
+  "type": "and-b-destroyers",
+  "validation_issues": [
+    {
+      "code": "length_breadth_ratio",
+      "message": "L/B ratio 10.02",
+      "severity": "warn"
+    },
+    {
+      "code": "displacement_area_ratio",
+      "message": "W/(L*B) 1.87",
+      "severity": "warn"
+    },
+    {
+      "code": "main_battery_candidate_range",
+      "message": "main caliber 203.0 outside candidate range 76-127",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | A Variant 1 Class |\n| Country | United-Kingdom |\n| Type | and-b-destroyers |\n| Year | 1928 |\n| Normal displacement | 1497.44 t |\n| Full displacement | 1956.64 t |\n| Length | 102.292 m |\n| Breadth | 10.208 m |\n| Power | 41480 shp |\n| Speed | unknown |\n| Main armament | 203 mm |\n| Main barrels | 4 |\n| Belt armor | unknown |\n| Era | treaty_interwar |\n| Doctrine | global-service capital ship with balanced armament and protection |\n| Secondary battery | 127 mm |\n| Anti-air battery | 25 mm |\n| Armor scheme | all_or_nothing_or_compact_citadel |\n| Complement | 138 |\n| Source | unknown |",
+  "year": 1928
+}

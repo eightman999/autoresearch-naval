@@ -1,0 +1,46 @@
+{
+  "nation_capability_tier": {
+    "description": "major industrial power",
+    "limits": {
+      "battlecruiser_allowed": true,
+      "battleship_allowed": true,
+      "carrier_allowed": true,
+      "max_displacement_t": null,
+      "max_main_caliber_mm": null,
+      "max_power_multiplier": 1.0,
+      "max_speed_multiplier": 1.0,
+      "radar_from_year": 1938
+    },
+    "tier": 1
+  },
+  "reason": [
+    "protected_cruiserに40ktは過大（適正上限24kt）",
+    "4000t級船体で40ktは機関出力65kWが必要（16.1 shp/t）",
+    "レーダーは1890年には実用化されていない（1938年以降）",
+    "ディーゼル機関は1890年には艦艇用として未成熟（1910年代以降）",
+    "本格的な高角両用砲は1890年には未実用化（1925年以降）",
+    "tier-1国（United Kingdom）のレーダー採用は1938年以降（要求年1890年）"
+  ],
+  "request": {
+    "constraints": {
+      "diesel_required": true,
+      "dual_purpose_gun_required": true,
+      "radar_required": true,
+      "speed_kt_min": 40
+    },
+    "country": "United Kingdom",
+    "prompt": "1890年艦にレーダー、両用砲、ディーゼル機関、40kt速力を要求する年代不可能装備テスト。",
+    "ship_type": "protected_cruiser",
+    "year": 1890
+  },
+  "status": "impossible",
+  "suggested_revision": {
+    "belt_armor_mm": 0,
+    "main_gun_caliber_mm": 152,
+    "rationale": "tier-1 major industrial powerとして現実的な値に調整",
+    "ship_type": "protected_cruiser",
+    "speed_kt": 24,
+    "standard_displacement_t": 4000,
+    "tier": 1
+  }
+}

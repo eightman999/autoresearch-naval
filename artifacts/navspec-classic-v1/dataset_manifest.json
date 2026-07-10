@@ -1,0 +1,187 @@
+{
+  "archive_id": "navspec-classic-v1",
+  "archive_path": "/Users/eightman/dev/apps/autoresearch-naval/artifacts/navspec-classic-v1",
+  "checkpoint": {
+    "latest_json_sha256": "a4871ce20daea6298268fdceb1fc482fe3a1c5f1733af2b2d9e308edb4cee4a2",
+    "latest_safetensors_sha256": "f95ddb46ad79709e3f562e6fa79b7488ed06ea32302368596eb83f11285b5772",
+    "metadata": {
+      "config": {
+        "n_embd": 256,
+        "n_head": 2,
+        "n_kv_head": 2,
+        "n_layer": 4,
+        "sequence_len": 2048,
+        "vocab_size": 2048,
+        "window_pattern": "SSSL"
+      },
+      "hyperparameters": {
+        "adam_betas": [
+          0.8,
+          0.95
+        ],
+        "device_batch_size": 16,
+        "embedding_lr": 0.6,
+        "final_lr_frac": 0.0,
+        "matrix_lr": 0.04,
+        "scalar_lr": 0.5,
+        "total_batch_size": 32768,
+        "unembedding_lr": 0.004,
+        "warmdown_ratio": 0.5,
+        "warmup_ratio": 0.0,
+        "weight_decay": 0.2
+      },
+      "metrics": {
+        "depth": 4,
+        "mfu_percent": 0.0,
+        "num_params_m": 5.243016,
+        "num_steps": 36760,
+        "peak_vram_mb": 4294.329689025879,
+        "total_seconds": 18469.867388010025,
+        "total_tokens_m": 1204.55168,
+        "training_seconds": 18000.484362602234,
+        "val_bpb": 0.0473391504970592
+      },
+      "tokenizer_dir": "/Users/eightman/dev/apps/autoresearch-naval/.cache/autoresearch-navspec/tokenizer",
+      "weights": "checkpoints/navspec/latest.safetensors"
+    }
+  },
+  "created_at_utc": "2026-07-10T08:02:09.730237+00:00",
+  "dataset": {
+    "fictional_specs_rows": 4676,
+    "real_specs_rows": 2338,
+    "tasks_train_rows": 12294,
+    "tasks_val_rows": 1734
+  },
+  "files": [
+    {
+      "bytes": 977,
+      "path": "checkpoint/latest.json",
+      "sha256": "a4871ce20daea6298268fdceb1fc482fe3a1c5f1733af2b2d9e308edb4cee4a2"
+    },
+    {
+      "bytes": 10489083,
+      "path": "checkpoint/latest.safetensors",
+      "sha256": "f95ddb46ad79709e3f562e6fa79b7488ed06ea32302368596eb83f11285b5772"
+    },
+    {
+      "bytes": 975,
+      "path": "checkpoint/best.json",
+      "sha256": "d9d59470e8cf509b171ba4f4c6892a092535267d6ae4c494901ec5b829177317"
+    },
+    {
+      "bytes": 10489083,
+      "path": "checkpoint/best.safetensors",
+      "sha256": "f95ddb46ad79709e3f562e6fa79b7488ed06ea32302368596eb83f11285b5772"
+    },
+    {
+      "bytes": 8320,
+      "path": "tokenizer/token_bytes.npy",
+      "sha256": "7a7316bb1953ea48102d872f2479410c0224b06f4508fcf0c39c4062cb459916"
+    },
+    {
+      "bytes": 20616,
+      "path": "tokenizer/tokenizer.pkl",
+      "sha256": "350aca790945dc6615f54f97238928bb9c28f695afad02718aeae8e08efcd009"
+    },
+    {
+      "bytes": 399,
+      "path": "configs/pyproject.toml",
+      "sha256": "745b5584fbf9b6692f6ff3435df50994b475c20b6ea3ee0d009459690ea786a9"
+    },
+    {
+      "bytes": 128836,
+      "path": "configs/uv.lock",
+      "sha256": "c2d6c5cebaab1c30e64fb91163d350cf927f0d9997610d9c386e891aef0dab26"
+    },
+    {
+      "bytes": 4438,
+      "path": "configs/ship_spec_record.schema.json",
+      "sha256": "6193d509c9077b9159a6b75a575fa7c89e28ef68f8efad47abe8cf4e5f93659e"
+    },
+    {
+      "bytes": 74547644,
+      "path": "dataset/tasks.train.jsonl",
+      "sha256": "399e1c73092265d7b152d07bf15b8d8e05edcd7cdf215fe1ea4fd69f7a22f26d"
+    },
+    {
+      "bytes": 10433947,
+      "path": "dataset/tasks.val.jsonl",
+      "sha256": "4d856011b8f06abd7c15526dadaf27f9a5a2d60f0f4218c5e8288e3219cc0b80"
+    },
+    {
+      "bytes": 5711986,
+      "path": "dataset/battleship_real_specs.jsonl",
+      "sha256": "2c605f8a6a222700e2ed3f3b735cd610ea034f117b00e3663ecbcfacb7614802"
+    },
+    {
+      "bytes": 30615726,
+      "path": "dataset/battleship_fictional_specs.jsonl",
+      "sha256": "9e06831f40165d51bbf874e638818fd20be2587da20a2b4ce9ccf4a708ce4b77"
+    },
+    {
+      "bytes": 298057,
+      "path": "eval/report.json",
+      "sha256": "a794e7808d27468e28bd691d3423e8e15312e8b327f97f393bbf0e3085fcccdc"
+    },
+    {
+      "bytes": 634253,
+      "path": "eval/raw_model_eval.json",
+      "sha256": "9916e91e87531dc42e62cb66b6a69c1ea04d339e784d6d55f735222666e12c4f"
+    },
+    {
+      "bytes": 6236,
+      "path": "eval/eval_suite_report_2026-07-10.md",
+      "sha256": "9278a8ad8ac26a1a8f000728b2168ab1ab55c7b25108bc50d6d7cc2957160492"
+    },
+    {
+      "bytes": 1129,
+      "path": "eval/raw_model_eval_report_2026-07-10.md",
+      "sha256": "4b098b74164d5d7c17f27cf8be0c154b6c874086956368fcd135658c35d4ad42"
+    },
+    {
+      "bytes": 2120,
+      "path": "eval/navspec_current_status_2026-07-10.md",
+      "sha256": "8cfa0f95f7a2b7335a80671bd5b464fbf23b9fa95775668e236434862c443def"
+    },
+    {
+      "bytes": 274,
+      "path": "eval/results.tsv",
+      "sha256": "60adfcabde41061573b9391243390c73eccefe8408ead6402efeba386a9c4e83"
+    }
+  ],
+  "git": {
+    "branch": "autoresearch/jul9-navspec",
+    "commit_hash": "632c8b87b4652900faf131b01bb26606157fd31e",
+    "status_short": "M .gitignore\n M data/navspec/battleship_fictional_specs.jsonl\n M data/navspec/battleship_real_specs.jsonl\n M data/navspec/generated/latest.json\n M data/navspec/generated/latest_raw.txt\n M data/navspec/tasks.train.jsonl\n M data/navspec/tasks.val.jsonl\n M docs/navspec_pipeline.md\n M generate_navspec.py\n M pyproject.toml\n M schemas/ship_spec_record.schema.json\n M tools/navspec_common.py\n M tools/navspec_extract.py\n M tools/navspec_mutate.py\n M tools/navspec_tasks.py\n M train.py\n M uv.lock\n M validate_navspec_output.py\n?? artifacts/\n?? data/navspec/generated/eval/\n?? data/navspec/generated/raw_eval/\n?? data/navspec/generated/runs/\n?? data/navspec/generated/spec_1.json\n?? data/navspec/generated/spec_1_raw.txt\n?? data/navspec/generated/spec_2.json\n?? data/navspec/generated/spec_2_raw.txt\n?? data/navspec/generated/spec_3.json\n?? data/navspec/generated/spec_3_raw.txt\n?? data/navspec/generated/spec_4.json\n?? data/navspec/generated/spec_4_raw.txt\n?? data/navspec/generated/spec_5.json\n?? data/navspec/generated/spec_5_raw.txt\n?? data/navspec/generated/spec_6.json\n?? data/navspec/generated/spec_6_raw.txt\n?? data/navspec/generated/spec_7.json\n?? data/navspec/generated/spec_7_raw.txt\n?? data/navspec/generated/test_00.json\n?? data/navspec/generated/test_00_raw.txt\n?? data/navspec/generated/test_01.json\n?? data/navspec/generated/test_01_raw.txt\n?? data/navspec/generated/test_02.json\n?? data/navspec/generated/test_02_raw.txt\n?? data/navspec/generated/test_03.json\n?? data/navspec/generated/test_03_raw.txt\n?? data/navspec/generated/test_04.json\n?? data/navspec/generated/test_04_raw.txt\n?? data/navspec/generated/test_05.json\n?? data/navspec/generated/test_05_raw.txt\n?? data/navspec/generated/test_06.json\n?? data/navspec/generated/test_06_raw.txt\n?? data/navspec/generated/test_07.json\n?? data/navspec/generated/test_07_raw.txt\n?? data/navspec/generated/test_08.json\n?? data/navspec/generated/test_08_raw.txt\n?? data/navspec/generated/test_09.json\n?? data/navspec/generated/test_09_raw.txt\n?? docs/eval_suite_report_2026-07-10.md\n?? docs/navspec_current_status_2026-07-10.md\n?? docs/raw_model_eval_report_2026-07-10.md\n?? nsdb/\n?? tools/eval_suite.py\n?? tools/eval_test_cases.json\n?? tools/freeze_navspec_classic.py\n?? tools/gen_test_10.py\n?? tools/navspec_constraints.py\n?? tools/navspec_contradiction.py\n?? tools/navspec_equipment.py\n?? tools/navspec_naming.py\n?? tools/navspec_nation_tier.py\n?? tools/navspec_plausibility.py\n?? tools/navspec_shiptypes.py\n?? tools/navspec_train_runs.py\n?? tools/raw_model_eval.py",
+    "tag_created_by_script": false,
+    "tag_recommended": "navspec-classic-v1"
+  },
+  "integrated_eval": {
+    "contradiction_fail": 0,
+    "lb_fail": 0,
+    "patched_json_success": 122,
+    "schema_ok": 122,
+    "tier_fail": 0,
+    "total": 122
+  },
+  "raw_model_eval": {
+    "checkpoint": "/Users/eightman/dev/apps/autoresearch-naval/checkpoints/navspec/latest.json",
+    "checkpoint_val_bpb": 0.0473391504970592,
+    "extended_count": 100,
+    "field_adoption_rate_avg": 0.0,
+    "field_adoption_rate_field_weighted": 0.0,
+    "max_new_tokens": 256,
+    "patch_dependency_rate_avg": 1.0,
+    "patch_dependency_rate_field_weighted": 1.0,
+    "raw_json_rate": 0.38524590163934425,
+    "raw_required_present_rate_avg": 0.0,
+    "raw_schema_complete_rate": 0.0,
+    "raw_valid_field_rate_avg": 0.0,
+    "repetition_collapse_rate": 0.0,
+    "temperature": 0.3,
+    "total": 122,
+    "total_adopted_fields": 0,
+    "total_output_fields": 1034,
+    "total_patched_fields": 1034
+  }
+}

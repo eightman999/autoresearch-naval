@@ -97,7 +97,10 @@ def build_fictional_tasks(record: dict[str, Any]) -> list[dict[str, str]]:
             "kind": "bounded_fictionalize",
             "text": task_text(
                 "bounded_fictionalize",
-                "Create a fictional battleship specification from the base record and constraints. Mark source_kind as fictional_bounded.",
+                "Create a fictional battleship specification from the base record and constraints. "
+                "Use target_country, target_class_name, naming_category, and naming_rule exactly. "
+                "Include era_profile, design_doctrine, equipment, armor_scheme, and equipment_candidates. "
+                "Use equipment_candidates for equipment choices. Mark source_kind as fictional_bounded.",
                 request,
                 core_record(record),
             ),

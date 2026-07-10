@@ -68,6 +68,12 @@ def validate_schema(value: Any, schema: dict[str, Any], path: str = "$") -> list
         if "maximum" in schema and value > schema["maximum"]:
             errors.append(f"{path}: {value} > maximum {schema['maximum']}")
 
+    if isinstance(value, str):
+        if "minLength" in schema and len(value) < schema["minLength"]:
+            errors.append(f"{path}: string length {len(value)} < minLength {schema['minLength']}")
+        if "maxLength" in schema and len(value) > schema["maxLength"]:
+            errors.append(f"{path}: string length {len(value)} > maxLength {schema['maxLength']}")
+
     if isinstance(value, dict):
         for field in schema.get("required", []):
             if field not in value:

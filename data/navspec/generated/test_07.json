@@ -1,0 +1,287 @@
+{
+  "armament": {
+    "main_barrels": 12,
+    "main_caliber_mm": 305.0,
+    "mounts": [
+      {
+        "barrels": 12,
+        "barrels_per_mount": 3,
+        "caliber_length": 50,
+        "caliber_mm": 305.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 1,
+        "caliber_length": 49,
+        "caliber_mm": 120.0,
+        "mount_count": 16
+      },
+      {
+        "barrels": 4,
+        "barrels_per_mount": 1,
+        "caliber_length": 40,
+        "caliber_mm": 47.0,
+        "mount_count": 4
+      }
+    ],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": 213.75,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 213.75,
+    "conning_tower_mm": 203.062,
+    "deck_mm": 47.025,
+    "scheme": "dreadnought_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 235.125
+  },
+  "class_name": "SEVASTOPOL Variant 1 Class",
+  "complement": {
+    "crew": 1140.0,
+    "raw": "1140"
+  },
+  "country": "Russia-Ussr",
+  "derived_from": {
+    "class_name": "SEVASTOPOL Class",
+    "country": "Russia-Ussr",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:Russia-Ussr:battleships:SEVASTOPOL Class:4185",
+    "source_url": "https://myownonpmirror.com/ships/russia/ru_bb_sevastopol.html"
+  },
+  "design_doctrine": {
+    "country": "Russia-Ussr",
+    "doctrine": "balanced capital-ship design",
+    "era": "dreadnought",
+    "priorities": [
+      "balanced armament",
+      "reasonable protection",
+      "service speed"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 27.936,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 8.723,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 188.176,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 30128.0,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 26082.56
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 76,
+      "role": "early_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": false,
+      "system": "central_optical_director"
+    },
+    "main_battery": {
+      "barrels": 12.0,
+      "caliber_mm": 305.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 4
+    },
+    "propulsion_fit": {
+      "speed_kn": 24.5,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 120,
+      "role": "secondary_battery"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 37,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 47,
+        "role": "light_aa_or_qf"
+      },
+      {
+        "caliber_mm": 76,
+        "role": "early_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "Russia-Ussr",
+      "displacement_t": 30128.0,
+      "hull_kind": "battleship",
+      "year": 1914
+    },
+    "fire_control": [
+      {
+        "radar": false,
+        "system": "central_optical_director"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 356,
+      "caliber_mm_min": 280
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 102,
+        "role": "anti_torpedo_boat"
+      },
+      {
+        "caliber_mm": 120,
+        "role": "secondary_battery"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "casemate_secondary"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "dreadnought",
+    "size_band": "treaty_capital_ship",
+    "technology_level": "dreadnought",
+    "year_band": "1906-1918"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 37,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 47,
+          "role": "light_aa_or_qf"
+        },
+        {
+          "caliber_mm": 76,
+          "role": "early_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "Russia-Ussr",
+        "displacement_t": 30128.0,
+        "hull_kind": "battleship",
+        "year": 1914
+      },
+      "fire_control": [
+        {
+          "radar": false,
+          "system": "central_optical_director"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 356,
+        "caliber_mm_min": 280
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 102,
+          "role": "anti_torpedo_boat"
+        },
+        {
+          "caliber_mm": 120,
+          "role": "secondary_battery"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "casemate_secondary"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Russia-Ussr",
+      "doctrine": "balanced capital-ship design",
+      "era": "dreadnought",
+      "priorities": [
+        "balanced armament",
+        "reasonable protection",
+        "service speed"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "dreadnought",
+      "size_band": "treaty_capital_ship",
+      "technology_level": "dreadnought",
+      "year_band": "1906-1918"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [],
+    "name_pool_size": 0,
+    "name_pool_source_note": "Country-specific hand-curated naming pool.",
+    "naming_category": "battleship_pool",
+    "naming_description": "No country-specific naming rule available.",
+    "naming_rule": "fallback from base class name",
+    "prefix": null,
+    "prefix_note": "No country-specific official prefix rule available.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "SEVASTOPOL Variant 1 Class",
+    "target_country": "Russia-Ussr"
+  },
+  "hull_kind": "battleship",
+  "propulsion": {
+    "endurance_raw": "1500(14)",
+    "fuel_raw": "oil 1170 + coal 3000",
+    "machinery": "4 Parsons steam turbines+ 25 Yarrow boilers",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": 54748.982,
+    "shafts": 4.0,
+    "speed_kn": 24.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:nsdb:Russia-Ussr:battleships:SEVASTOPOL Class:4185:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/apps/autoresearch-naval/nsdb/NSDB_new.db",
+    "fetched_at": "2026-07-10T02:52:58.864957+00:00",
+    "source_url_raw": "https://myownonpmirror.com/ships/russia/ru_bb_sevastopol.html"
+  },
+  "source_url": null,
+  "type": "battleships",
+  "validation_issues": [],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | SEVASTOPOL Variant 1 Class |\n| Country | Russia-Ussr |\n| Type | battleships |\n| Year | 1914 |\n| Normal displacement | 26082.56 t |\n| Full displacement | 30128 t |\n| Length | 188.176 m |\n| Breadth | 27.936 m |\n| Power | 54748.982 shp |\n| Speed | 24.5 kn |\n| Main armament | 305 mm |\n| Main barrels | 12 |\n| Belt armor | 213.75 mm |\n| Era | dreadnought |\n| Doctrine | balanced capital-ship design |\n| Secondary battery | 120 mm |\n| Anti-air battery | 76 mm |\n| Armor scheme | dreadnought_citadel |\n| Complement | 1140 |\n| Source | unknown |",
+  "year": 1914
+}

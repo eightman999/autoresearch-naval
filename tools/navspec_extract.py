@@ -36,10 +36,13 @@ def fetch_rows(db_path: Path, limit: int | None) -> list[sqlite3.Row]:
                 Displacement_normal, Displacement_full,
                 Length, Breadth, Draught,
                 No_of_shafts, Machinery, Power, speed, Fuel, Endurance,
-                Armour, Armament, Complement, sections, source_url, fetched_at
+                Armour, Armament, Complement, sections, source_url, fetched_at,
+                (SELECT WHEN_DATE FROM SHIPS s WHERE s.source_url = CLASS.source_url LIMIT 1) as when_date,
+                (SELECT Laid_down FROM SHIPS s WHERE s.source_url = CLASS.source_url LIMIT 1) as laid_down
             FROM CLASS
-            WHERE lower(TYPE) LIKE '%battle%'
+            WHERE lower(TYPE) NOT LIKE '%submarine%'
               AND lower(TYPE) NOT LIKE '%aircraft%'
+              AND TYPE IS NOT NULL AND TYPE != ''
             ORDER BY COUNTRY, TYPE, CLASS_NAME
         """
         if limit is not None:
@@ -55,7 +58,7 @@ def make_record(row: sqlite3.Row, index: int) -> dict[str, Any]:
     ship_type = row["TYPE"] or "unknown"
     country = row["COUNTRY"] or "unknown"
     armament = parse_armament_summary(row["Armament"])
-    year = parse_year(class_name, row["source_url"], row["sections"], row["fetched_at"])
+    year = parse_year(class_name, row["source_url"], row["sections"], row["when_date"], row["laid_down"])
     record = {
         "schema_version": "navspec.ship_spec_record.v1",
         "record_id": f"nsdb:{country}:{ship_type}:{class_name}:{index}",
@@ -118,7 +121,11 @@ def main() -> None:
     args = parser.parse_args()
 
     rows = fetch_rows(args.db, args.limit)
-    records = [make_record(row, index) for index, row in enumerate(rows)]
+    all_records = [make_record(row, index) for index, row in enumerate(rows)]
+    records = [r for r in all_records if not any(i["severity"] == "error" for i in r.get("validation_issues", []))]
+    skipped = len(all_records) - len(records)
+    if skipped:
+        print(f"  excluded {skipped}/{len(all_records)} records with validation errors")
     write_jsonl(args.output, records)
     print(f"wrote {len(records)} records to {args.output}")
 

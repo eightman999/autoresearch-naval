@@ -1,0 +1,13 @@
+{
+  "adapter_id": "navspec-lora-0.5b-v0.1",
+  "status": "prepared_not_trained",
+  "schema": "schemas/navspec_lora_candidate.schema.json",
+  "schema_only_dataset": "data/navspec/lora/schema_only_v0",
+  "raw_baseline_dataset": "data/navspec/lora/raw_baseline_500",
+  "raw_baseline_122_plus_500_dataset": "data/navspec/lora/raw_baseline_122_plus_500",
+  "classic_teacher_archive": "artifacts/navspec-classic-v1",
+  "notes": [
+    "Base model is intentionally unset until zero-shot candidates are compared.",
+    "LoRA adapters must be stored under models/navspec-lora-0.5b-v0.1/adapter/ and must not overwrite navspec-classic-v1."
+  ]
+}

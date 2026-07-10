@@ -1,0 +1,308 @@
+{
+  "armament": {
+    "main_barrels": 6,
+    "main_caliber_mm": 130,
+    "mounts": [],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": null,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 200,
+    "conning_tower_mm": 190.0,
+    "deck_mm": 60.0,
+    "scheme": "all_or_nothing_or_compact_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 230.0
+  },
+  "class_name": "United States Anti Air Destroyer Design Variant 1 Class",
+  "complement": {
+    "crew": null,
+    "raw": "synthetic"
+  },
+  "country": "United-States",
+  "derived_from": {
+    "class_name": "United States Anti Air Destroyer Design",
+    "country": "United States",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "synthetic:United States:anti_air_destroyer:1944",
+    "source_url": null
+  },
+  "design_doctrine": {
+    "country": "United-States",
+    "doctrine": "endurance and protection for fleet action",
+    "era": "fast_battleship",
+    "priorities": [
+      "range",
+      "protection",
+      "fire-control quality"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 13.0,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 3.8,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 129.7,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 2710.4,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 2464.0
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 25,
+      "role": "light_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": true,
+      "system": "director_with_radar_assist"
+    },
+    "main_battery": {
+      "barrels": 6.0,
+      "caliber_mm": 130.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": null
+    },
+    "propulsion_fit": {
+      "power_shp": null,
+      "speed_kn": 35.5,
+      "speed_role": "fast"
+    },
+    "secondary_battery": {
+      "caliber_mm": 127,
+      "role": "dual_purpose"
+    },
+    "torpedoes": {
+      "carried": true,
+      "fit": "hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 20,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 25,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 40,
+        "role": "medium_aa"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "United-States",
+      "displacement_t": 2710.4,
+      "hull_kind": "destroyer",
+      "year": 1944
+    },
+    "fire_control": [
+      {
+        "radar": true,
+        "system": "director_with_radar_assist"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 127,
+      "caliber_mm_min": 76
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 100,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "secondary_battery"
+      }
+    ],
+    "torpedoes": {
+      "allowed": true
+    }
+  },
+  "era_profile": {
+    "era": "fast_battleship",
+    "size_band": "coastal_or_small_capital",
+    "technology_level": "late_war",
+    "year_band": "1936-1945"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 20,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 25,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 40,
+          "role": "medium_aa"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "United-States",
+        "displacement_t": 2710.4,
+        "hull_kind": "destroyer",
+        "year": 1944
+      },
+      "fire_control": [
+        {
+          "radar": true,
+          "system": "director_with_radar_assist"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 127,
+        "caliber_mm_min": 76
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 100,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "secondary_battery"
+        }
+      ],
+      "torpedoes": {
+        "allowed": true
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "United-States",
+      "doctrine": "endurance and protection for fleet action",
+      "era": "fast_battleship",
+      "priorities": [
+        "range",
+        "protection",
+        "fire-control quality"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "fast_battleship",
+      "size_band": "coastal_or_small_capital",
+      "technology_level": "late_war",
+      "year_band": "1936-1945"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [],
+    "name_pool_size": 0,
+    "name_pool_source_note": "No country-specific naming pool for this hull kind; using base class name fallback.",
+    "naming_category": "destroyer_fallback",
+    "naming_description": "Use US state names for battleships.",
+    "naming_rule": "US battleships: states",
+    "nation_capability_tier": {
+      "description": "major industrial power",
+      "limits": {
+        "battlecruiser_allowed": true,
+        "battleship_allowed": true,
+        "carrier_allowed": true,
+        "max_displacement_t": null,
+        "max_main_caliber_mm": null,
+        "max_power_multiplier": 1.0,
+        "max_speed_multiplier": 1.0,
+        "radar_from_year": 1938
+      },
+      "tier": 1
+    },
+    "prefix": "USS",
+    "prefix_note": "Use the country's official naval ship prefix when one is part of the naming convention.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "United States Anti Air Destroyer Design Variant 1 Class",
+    "target_country": "United-States"
+  },
+  "hull_kind": "destroyer",
+  "nation_capability_tier": {
+    "description": "major industrial power",
+    "limits": {
+      "battlecruiser_allowed": true,
+      "battleship_allowed": true,
+      "carrier_allowed": true,
+      "max_displacement_t": null,
+      "max_main_caliber_mm": null,
+      "max_power_multiplier": 1.0,
+      "max_speed_multiplier": 1.0,
+      "radar_from_year": 1938
+    },
+    "tier": 1
+  },
+  "propulsion": {
+    "endurance_raw": "synthetic",
+    "fuel_raw": "synthetic",
+    "machinery": "synthetic",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": null,
+    "shafts": 2,
+    "speed_kn": 35.5,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:synthetic:United States:anti_air_destroyer:1944:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "synthetic",
+    "fetched_at": "",
+    "source_url_raw": ""
+  },
+  "source_url": null,
+  "type": "anti_air_destroyer",
+  "validation_issues": [
+    {
+      "code": "displacement_area_ratio",
+      "message": "W/(L*B) 1.61",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | United States Anti Air Destroyer Design Variant 1 Class |\n| Country | United-States |\n| Type | anti_air_destroyer |\n| Year | 1944 |\n| Normal displacement | 2464 t |\n| Full displacement | 2710.4 t |\n| Length | 129.7 m |\n| Breadth | 13 m |\n| Power | unknown |\n| Speed | 35.5 kn |\n| Main armament | 130 mm |\n| Main barrels | 6 |\n| Belt armor | unknown |\n| Era | fast_battleship |\n| Doctrine | endurance and protection for fleet action |\n| Secondary battery | 127 mm |\n| Anti-air battery | 25 mm |\n| Armor scheme | all_or_nothing_or_compact_citadel |\n| Complement | unknown |\n| Source | unknown |",
+  "year": 1944
+}

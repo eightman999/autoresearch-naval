@@ -1,0 +1,311 @@
+{
+  "armament": {
+    "main_barrels": 2,
+    "main_caliber_mm": 127,
+    "mounts": [],
+    "raw": "fictional bounded estimate"
+  },
+  "armor": {
+    "belt_mm": null,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": 50,
+    "conning_tower_mm": 47.5,
+    "deck_mm": 15.0,
+    "scheme": "all_or_nothing_or_compact_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": 57.5
+  },
+  "class_name": "Brazil Patrol Frigate Design Variant 1 Class",
+  "complement": {
+    "crew": null,
+    "raw": "synthetic"
+  },
+  "constraint_adjustments": [
+    "speed adjusted 21.5→20.9kt (tier 2)"
+  ],
+  "country": "Brazil",
+  "derived_from": {
+    "class_name": "Brazil Patrol Frigate Design",
+    "country": "Brazil",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "synthetic:Brazil:patrol_frigate:1950",
+    "source_url": null
+  },
+  "design_doctrine": {
+    "country": "Brazil",
+    "doctrine": "balanced capital-ship design",
+    "era": "postwar",
+    "priorities": [
+      "balanced armament",
+      "reasonable protection",
+      "service speed"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 10.5,
+    "breadth_raw": "fictional bounded estimate",
+    "draught_m": 3.3,
+    "draught_raw": "fictional bounded estimate",
+    "length_m": 95.1,
+    "length_raw": "fictional bounded estimate"
+  },
+  "displacement": {
+    "full_raw": "fictional bounded estimate",
+    "full_t": 1848.0,
+    "normal_raw": "fictional bounded estimate",
+    "normal_t": 1680.0
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 25,
+      "role": "light_aa"
+    },
+    "aviation": {
+      "catapult": false,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": true,
+      "system": "director_with_radar_assist"
+    },
+    "main_battery": {
+      "barrels": 2.0,
+      "caliber_mm": 127.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": null
+    },
+    "propulsion_fit": {
+      "power_shp": null,
+      "speed_kn": 20.9,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 127,
+      "role": "dual_purpose"
+    },
+    "torpedoes": {
+      "carried": true,
+      "fit": "hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 20,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 25,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 40,
+        "role": "medium_aa"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": false
+    },
+    "basis": {
+      "country": "Brazil",
+      "displacement_t": 1848.0,
+      "hull_kind": "destroyer",
+      "year": 1950
+    },
+    "fire_control": [
+      {
+        "radar": true,
+        "system": "director_with_radar_assist"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 127,
+      "caliber_mm_min": 76
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 100,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "secondary_battery"
+      }
+    ],
+    "torpedoes": {
+      "allowed": true
+    }
+  },
+  "era_profile": {
+    "era": "postwar",
+    "size_band": "coastal_or_small_capital",
+    "technology_level": "postwar",
+    "year_band": "1946+"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 20,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 25,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 40,
+          "role": "medium_aa"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": false
+      },
+      "basis": {
+        "country": "Brazil",
+        "displacement_t": 1848.0,
+        "hull_kind": "destroyer",
+        "year": 1950
+      },
+      "fire_control": [
+        {
+          "radar": true,
+          "system": "director_with_radar_assist"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 127,
+        "caliber_mm_min": 76
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 100,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "secondary_battery"
+        }
+      ],
+      "torpedoes": {
+        "allowed": true
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "Brazil",
+      "doctrine": "balanced capital-ship design",
+      "era": "postwar",
+      "priorities": [
+        "balanced armament",
+        "reasonable protection",
+        "service speed"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "postwar",
+      "size_band": "coastal_or_small_capital",
+      "technology_level": "postwar",
+      "year_band": "1946+"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [],
+    "name_pool_size": 0,
+    "name_pool_source_note": "No country-specific naming pool for this hull kind; using base class name fallback.",
+    "naming_category": "destroyer_fallback",
+    "naming_description": "No country-specific naming rule available.",
+    "naming_rule": "fallback from base class name",
+    "nation_capability_tier": {
+      "description": "regional industrial power",
+      "limits": {
+        "battlecruiser_allowed": false,
+        "battleship_allowed": true,
+        "carrier_allowed": true,
+        "max_displacement_t": 28000,
+        "max_main_caliber_mm": 381,
+        "max_power_multiplier": 0.94,
+        "max_speed_multiplier": 0.97,
+        "radar_from_year": 1939
+      },
+      "tier": 2
+    },
+    "prefix": null,
+    "prefix_note": "No country-specific official prefix rule available.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "Brazil Patrol Frigate Design Variant 1 Class",
+    "target_country": "Brazil"
+  },
+  "hull_kind": "destroyer",
+  "nation_capability_tier": {
+    "description": "regional industrial power",
+    "limits": {
+      "battlecruiser_allowed": false,
+      "battleship_allowed": true,
+      "carrier_allowed": true,
+      "max_displacement_t": 28000,
+      "max_main_caliber_mm": 381,
+      "max_power_multiplier": 0.94,
+      "max_speed_multiplier": 0.97,
+      "radar_from_year": 1939
+    },
+    "tier": 2
+  },
+  "propulsion": {
+    "endurance_raw": "synthetic",
+    "fuel_raw": "synthetic",
+    "machinery": "synthetic",
+    "power_raw": "fictional bounded estimate",
+    "power_shp": null,
+    "shafts": 2,
+    "speed_kn": 20.9,
+    "speed_raw": "fictional bounded estimate"
+  },
+  "record_id": "fictional:synthetic:Brazil:patrol_frigate:1950:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "synthetic",
+    "fetched_at": "",
+    "source_url_raw": ""
+  },
+  "source_url": null,
+  "type": "patrol_frigate",
+  "validation_issues": [
+    {
+      "code": "displacement_area_ratio",
+      "message": "W/(L*B) 1.85",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | Brazil Patrol Frigate Design Variant 1 Class |\n| Country | Brazil |\n| Type | patrol_frigate |\n| Year | 1950 |\n| Normal displacement | 1680 t |\n| Full displacement | 1848 t |\n| Length | 95.1 m |\n| Breadth | 10.5 m |\n| Power | unknown |\n| Speed | 20.9 kn |\n| Main armament | 127 mm |\n| Main barrels | 2 |\n| Belt armor | unknown |\n| Era | postwar |\n| Doctrine | balanced capital-ship design |\n| Secondary battery | 127 mm |\n| Anti-air battery | 25 mm |\n| Armor scheme | all_or_nothing_or_compact_citadel |\n| Complement | unknown |\n| Source | unknown |",
+  "year": 1950
+}

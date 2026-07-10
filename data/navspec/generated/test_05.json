@@ -1,0 +1,326 @@
+{
+  "armament": {
+    "main_barrels": 9,
+    "main_caliber_mm": 305.0,
+    "mounts": [
+      {
+        "barrels": 9,
+        "barrels_per_mount": 3,
+        "caliber_length": 45,
+        "caliber_mm": 305.0,
+        "mount_count": 3
+      },
+      {
+        "barrels": 8,
+        "barrels_per_mount": 2,
+        "caliber_length": 45,
+        "caliber_mm": 102.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 4,
+        "caliber_length": 39,
+        "caliber_mm": 40.0,
+        "mount_count": 4
+      },
+      {
+        "barrels": 16,
+        "barrels_per_mount": 4,
+        "caliber_length": 62,
+        "caliber_mm": 12.7,
+        "mount_count": 4
+      }
+    ],
+    "raw": "Richelieu: 3 x 3 - 305/45 Mk V1914+ 4 x 2 - 102/45 Mk XIX+ 4 x 2 - 37/50 Mk V1914+ 4 x 4 - 39/39 Mk VIII+ 4 x 2 - 533 TT+ 2 DCT + 2 DCR ( 6 0 DC ) RIselieu: 3 x 3 - 305/45 Mk V1914+ 4 x 2 - 102/45 Mk XIX+ 4 x 2 - 533 TT+ 2 DCT + 2 DCR ( 6 0 DC ) RIselieu: 3 x 3 - 305/45 Mk V1914+ 4 x 2 - 102/45 Mk XIX+ 4 x 2 - 533 TT+ 2 DCT + 2 DCR ( 6 0)"
+  },
+  "armor": {
+    "belt_mm": null,
+    "raw": "fictional bounded estimate"
+  },
+  "armor_scheme": {
+    "belt_mm": null,
+    "conning_tower_mm": null,
+    "deck_mm": null,
+    "scheme": "all_or_nothing_or_compact_citadel",
+    "source": "rule_estimate_from_belt_and_era",
+    "turret_face_mm": null
+  },
+  "class_name": "France Class",
+  "complement": {
+    "crew": 1000.0,
+    "raw": "1000"
+  },
+  "country": "France",
+  "derived_from": {
+    "class_name": "RICHELIEU Class",
+    "country": "France",
+    "mutation_profile": "fast slightly enlarged variant",
+    "record_id": "nsdb:France:battleships:RICHELIEU Class:1371",
+    "source_url": "https://myownonpmirror.com/ships/france/fr_bb_richelieu.html"
+  },
+  "design_doctrine": {
+    "country": "France",
+    "doctrine": "fast counter-capital ship with compact protection",
+    "era": "fast_battleship",
+    "priorities": [
+      "speed",
+      "concentrated firepower",
+      "modern machinery"
+    ]
+  },
+  "dimensions": {
+    "breadth_m": 10.0,
+    "breadth_raw": "10 . 2",
+    "draught_m": 3.0,
+    "draught_raw": "3 . 2 0",
+    "length_m": 103.0,
+    "length_raw": "103 . 6"
+  },
+  "displacement": {
+    "full_raw": "Richelieu: 40000",
+    "full_t": 53253.76,
+    "normal_raw": "Richelieu: 53000",
+    "normal_t": 53253.76
+  },
+  "equipment": {
+    "anti_air": {
+      "caliber_mm": 25,
+      "role": "light_aa"
+    },
+    "aviation": {
+      "catapult": true,
+      "fit": "era_displacement_rule"
+    },
+    "fire_control": {
+      "radar": true,
+      "system": "director_with_radar_assist"
+    },
+    "main_battery": {
+      "barrels": 9.0,
+      "caliber_mm": 305.0,
+      "fit": "selected_from_record_with_rule_bounds",
+      "mount_count": 3
+    },
+    "propulsion_fit": {
+      "speed_kn": 9.0,
+      "speed_role": "standard"
+    },
+    "secondary_battery": {
+      "caliber_mm": 127,
+      "role": "dual_purpose"
+    },
+    "torpedoes": {
+      "carried": false,
+      "fit": "country_hull_era_rule"
+    }
+  },
+  "equipment_candidates": {
+    "anti_air": [
+      {
+        "caliber_mm": 20,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 25,
+        "role": "light_aa"
+      },
+      {
+        "caliber_mm": 40,
+        "role": "medium_aa"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose_aa"
+      }
+    ],
+    "aviation": {
+      "catapult_allowed": true
+    },
+    "basis": {
+      "country": "France",
+      "displacement_t": 53253.76,
+      "hull_kind": "battleship",
+      "year": 1940
+    },
+    "fire_control": [
+      {
+        "radar": true,
+        "system": "director_with_radar_assist"
+      }
+    ],
+    "main_battery": {
+      "barrels_max": 12,
+      "barrels_min": 4,
+      "caliber_mm_max": 460,
+      "caliber_mm_min": 330
+    },
+    "rules_version": "navspec.equipment.v1",
+    "secondary_battery": [
+      {
+        "caliber_mm": 100,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 127,
+        "role": "dual_purpose"
+      },
+      {
+        "caliber_mm": 152,
+        "role": "secondary_battery"
+      }
+    ],
+    "torpedoes": {
+      "allowed": false
+    }
+  },
+  "era_profile": {
+    "era": "fast_battleship",
+    "size_band": "super_capital_ship",
+    "technology_level": "late_war",
+    "year_band": "1936-1945"
+  },
+  "fictional_constraints": {
+    "armor_scale": 0.95,
+    "displacement_scale": 1.12,
+    "equipment_candidates": {
+      "anti_air": [
+        {
+          "caliber_mm": 20,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 25,
+          "role": "light_aa"
+        },
+        {
+          "caliber_mm": 40,
+          "role": "medium_aa"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose_aa"
+        }
+      ],
+      "aviation": {
+        "catapult_allowed": true
+      },
+      "basis": {
+        "country": "France",
+        "displacement_t": 53253.76,
+        "hull_kind": "battleship",
+        "year": 1940
+      },
+      "fire_control": [
+        {
+          "radar": true,
+          "system": "director_with_radar_assist"
+        }
+      ],
+      "main_battery": {
+        "barrels_max": 12,
+        "barrels_min": 4,
+        "caliber_mm_max": 460,
+        "caliber_mm_min": 330
+      },
+      "rules_version": "navspec.equipment.v1",
+      "secondary_battery": [
+        {
+          "caliber_mm": 100,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 127,
+          "role": "dual_purpose"
+        },
+        {
+          "caliber_mm": 152,
+          "role": "secondary_battery"
+        }
+      ],
+      "torpedoes": {
+        "allowed": false
+      }
+    },
+    "equipment_rule": "navspec.equipment.v1",
+    "expected_design_doctrine": {
+      "country": "France",
+      "doctrine": "fast counter-capital ship with compact protection",
+      "era": "fast_battleship",
+      "priorities": [
+        "speed",
+        "concentrated firepower",
+        "modern machinery"
+      ]
+    },
+    "expected_era_profile": {
+      "era": "fast_battleship",
+      "size_band": "super_capital_ship",
+      "technology_level": "late_war",
+      "year_band": "1936-1945"
+    },
+    "main_caliber_delta_mm": 0.0,
+    "method": "bounded_mutation",
+    "name_pool": [
+      "Bretagne",
+      "Democratie",
+      "France",
+      "Gascogne",
+      "Justice",
+      "Liberte",
+      "Lorraine",
+      "Normandie",
+      "Patrie",
+      "Provence",
+      "Republique",
+      "Verite"
+    ],
+    "name_pool_size": 12,
+    "name_pool_source_note": "Country-specific hand-curated naming pool.",
+    "naming_category": "battleship_pool",
+    "naming_description": "Use French political, provincial, or historic names.",
+    "naming_rule": "French capital ships: republican ideals, provinces, or historic names",
+    "prefix": null,
+    "prefix_note": "FS is a NATO designation; French naval usage is treated here as no internal official prefix.",
+    "prefix_source": "https://ja.wikipedia.org/wiki/%E8%89%A6%E8%88%B9%E6%8E%A5%E9%A0%AD%E8%BE%9E",
+    "profile": "fast slightly enlarged variant",
+    "speed_delta_kn": 1.5,
+    "target_class_name": "France Class",
+    "target_country": "France"
+  },
+  "hull_kind": "battleship",
+  "propulsion": {
+    "endurance_raw": "Richelieu: 40000(12) Jean Bart: 5820(20)",
+    "fuel_raw": "Richelieu: coal 1000",
+    "machinery": "Richelieu: 2 VTE+ 12 Babcock & Wilcox boilers Rochw: 2 VTE+ 24 Belleville boilers Jean Bart: 2 VTE+ 4 Normandieu: 2 VTE+ 12 Babcock & Wilcox boilers",
+    "power_raw": "Richelieu: 55000 Jean Bart: 5820",
+    "power_shp": 5820.0,
+    "shafts": 2.0,
+    "speed_kn": 9.0,
+    "speed_raw": "Richelieu: 9 . 5"
+  },
+  "record_id": "fictional:nsdb:France:battleships:RICHELIEU Class:1371:m0",
+  "schema_version": "navspec.ship_spec_record.v1",
+  "source_kind": "fictional_bounded",
+  "source_trace": {
+    "database": "/Users/eightman/dev/apps/autoresearch-naval/nsdb/NSDB_new.db",
+    "fetched_at": "2026-07-09T18:20:19.658949+00:00",
+    "source_url_raw": "https://myownonpmirror.com/ships/france/fr_bb_richelieu.html"
+  },
+  "source_url": null,
+  "type": "battleships",
+  "validation_issues": [
+    {
+      "code": "length_breadth_ratio",
+      "message": "L/B ratio 10.30",
+      "severity": "warn"
+    },
+    {
+      "code": "displacement_area_ratio",
+      "message": "W/(L*B) 51.70",
+      "severity": "warn"
+    }
+  ],
+  "wiki_table_markdown": "| Item | Value |\n|---|---|\n| Class | France Class |\n| Country | France |\n| Type | battleships |\n| Year | 1940 |\n| Normal displacement | 53253.76 t |\n| Full displacement | 53253.76 t |\n| Length | 103 m |\n| Breadth | 10 m |\n| Power | 5820 shp |\n| Speed | 9 kn |\n| Main armament | 305 mm |\n| Main barrels | 9 |\n| Belt armor | unknown |\n| Era | fast_battleship |\n| Doctrine | fast counter-capital ship with compact protection |\n| Secondary battery | 127 mm |\n| Anti-air battery | 25 mm |\n| Armor scheme | all_or_nothing_or_compact_citadel |\n| Complement | 1000 |\n| Source | unknown |",
+  "year": 1940
+}
