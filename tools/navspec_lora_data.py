@@ -40,8 +40,39 @@ DEFAULT_BASELINE_DIR = ROOT / "data" / "navspec" / "lora" / "raw_baseline_500"
 SYSTEM_PROMPT = (
     "You are navspec, a naval vessel specification generator. "
     "Return only JSON matching navspec.lora_candidate.v1. "
+    "Do not repeat the user request. "
+    "The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. "
     "Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied."
 )
+TOP_LEVEL_OUTPUT_FIELDS = [
+    "schema_version",
+    "status",
+    "spec",
+    "reason",
+    "suggested_revision",
+    "design_concept",
+    "confidence",
+]
+SPEC_OUTPUT_FIELDS = [
+    "nation",
+    "year",
+    "ship_type",
+    "standard_displacement_t",
+    "full_load_displacement_t",
+    "length_m",
+    "beam_m",
+    "draft_m",
+    "lb_ratio",
+    "power_shp",
+    "speed_kt",
+    "range_nm",
+    "main_gun_caliber_mm",
+    "main_gun_count",
+    "belt_armor_mm",
+    "torpedo_tubes",
+    "radar",
+    "nation_tier",
+]
 
 NATIONS = [
     "United States",
@@ -317,6 +348,14 @@ def split_for(case: dict[str, Any], index: int) -> str:
 
 def make_request(case: dict[str, Any]) -> dict[str, Any]:
     return {
+        "task": "generate_navspec_lora_candidate",
+        "output_schema": "navspec.lora_candidate.v1",
+        "response_format": {
+            "json_only": True,
+            "top_level_required": TOP_LEVEL_OUTPUT_FIELDS,
+            "spec_required_when_status_ok": SPEC_OUTPUT_FIELDS,
+            "spec_must_be_null_when_status_impossible": True,
+        },
         "nation": case["nation"],
         "year": case["year"],
         "ship_type": case["ship_type"],
@@ -611,6 +650,7 @@ def main() -> None:
             by_split[row["split"]].append(row)
         for split, split_rows in by_split.items():
             write_jsonl(args.output_dir / f"{split}.jsonl", split_rows)
+        write_jsonl(args.output_dir / "valid.jsonl", by_split["validation"])
         write_jsonl(args.output_dir / "all.jsonl", rows)
     else:
         write_jsonl(args.output_dir / "cases.jsonl", rows)

@@ -16,8 +16,9 @@
     "navspec-lora-0.5b-v0.1": {
       "config": "models/navspec-lora-0.5b-v0.1/config.json",
       "chat_template": "models/navspec-lora-0.5b-v0.1/chat_template.json",
+      "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
       "adapter": "models/navspec-lora-0.5b-v0.1/adapter",
-      "status": "prepared_not_trained"
+      "status": "qwen_selected_not_trained"
     }
   }
 }

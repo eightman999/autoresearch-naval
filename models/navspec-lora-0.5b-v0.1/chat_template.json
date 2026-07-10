@@ -1,6 +1,6 @@
 {
   "template_id": "navspec-lora-chat-v1",
-  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Do not repeat the user request. The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
   "format": "<system>\\n{system}\\n</system>\\n<user>\\n{user_json}\\n</user>\\n<assistant>\\n{assistant_json}\\n</assistant>",
   "generation_stop_sequences": [
     "</assistant>",

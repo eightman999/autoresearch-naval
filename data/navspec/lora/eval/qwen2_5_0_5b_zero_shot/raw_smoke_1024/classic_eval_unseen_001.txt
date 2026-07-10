@@ -1,0 +1,26 @@
+```json
+{
+  "schema_version": "1",
+  "status": "impossible",
+  "spec": {
+    "nation": "Portugal",
+    "year": 1931,
+    "ship_type": "patrol_boat",
+    "standard_displacement_t": 100000,
+    "full_load_displacement_t": 150000,
+    "length_m": 100,
+    "beam_m": 10,
+    "draft_m": 10,
+    "lb_ratio": 0.0001,
+    "power_shp": 0.000001,
+    "speed_kt": 0.000001,
+    "range_nm": 100,
+    "main_gun_caliber_mm": 0.000001,
+    "main_gun_count": 1,
+    "belt_armor_mm": 0.000001,
+    "torpedo_tubes": 0,
+    "radar": 0,
+    "nation_tier": "colonial_patrol"
+  },
+  "reason": [],
+  "suggested_revision":

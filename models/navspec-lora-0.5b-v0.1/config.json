@@ -1,9 +1,10 @@
 {
   "adapter_id": "navspec-lora-0.5b-v0.1",
   "base_model": {
-    "name": null,
-    "source": null,
-    "selection_status": "pending_zero_shot_comparison",
+    "name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "source": "huggingface",
+    "selection_status": "selected_by_user_2026-07-10",
+    "local_path": null,
     "requirements": {
       "parameter_scale": "0.5B-class",
       "instruction_tuned": true,
@@ -28,9 +29,24 @@
   },
   "datasets": {
     "schema_only": "data/navspec/lora/schema_only_v0",
+    "schema_only_mlx_lm_valid": "data/navspec/lora/schema_only_v0/valid.jsonl",
     "raw_baseline_500": "data/navspec/lora/raw_baseline_500",
     "raw_baseline_122_plus_500": "data/navspec/lora/raw_baseline_122_plus_500",
     "output_schema": "schemas/navspec_lora_candidate.schema.json"
+  },
+  "evaluation": {
+    "framework": "mlx_lm",
+    "reports_split_by_mode": "json-prefill none=free_raw / object=object_prefill / schema=schema_assisted. 未指定時は eval/{run_slug}/{eval_mode}/report.json と docs/{run_slug}_{eval_mode}_{date}.md に自動分離される。",
+    "zero_shot_command_schema_assisted": "uv run python tools/qwen_lora_eval.py --model Qwen/Qwen2.5-0.5B-Instruct --cases data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl --json-prefill schema",
+    "zero_shot_command_free_raw": "uv run python tools/qwen_lora_eval.py --model Qwen/Qwen2.5-0.5B-Instruct --cases data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl --json-prefill none",
+    "stage1_adapter_eval_command": "uv run python tools/qwen_lora_eval.py --model Qwen/Qwen2.5-0.5B-Instruct --adapter-path models/navspec-lora-0.5b-v0.1/adapter/stage1-r8 --cases data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl --json-prefill schema"
+  },
+  "training": {
+    "framework": "mlx_lm",
+    "mask_prompt": "schema_only SFT では応答のみで loss を取るため --mask-prompt を必ず有効化する。qwen_lora_train.py が schema_only データ学習時に未指定なら自動で --mask-prompt を補強する(NAVSPEC_NO_MASK_PROMPT=1 で opt-out)。",
+    "stage1_schema_only_command": "uv run python tools/qwen_lora_train.py --model Qwen/Qwen2.5-0.5B-Instruct --train --data data/navspec/lora/schema_only_v0 --adapter-path models/navspec-lora-0.5b-v0.1/adapter/stage1-r8 --iters 1000 --batch-size 1 --num-layers 16 --learning-rate 0.0001 --mask-prompt",
+    "tokenizer_contract_test": "uv run python tools/test_navspec_lora_tokenizer.py",
+    "note": "Run only after mlx-lm and the Qwen base model are available locally or download access is approved."
   },
   "classic_fallback": {
     "archive": "artifacts/navspec-classic-v1",

@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "actual_status": null,
+      "category": "classic_eval_unseen",
+      "elapsed_s": 2.774,
+      "expected_status": "ok",
+      "id": "classic_eval_unseen_001",
+      "impossible_fn": false,
+      "impossible_fp": false,
+      "impossible_tp": false,
+      "raw_extract_error": null,
+      "raw_json_valid": true,
+      "raw_text_len": 598,
+      "raw_text_preview": "```json\n{\n  \"schema_version\": \"1\",\n  \"status\": \"impossible\",\n  \"spec\": {\n    \"nation\": \"Portugal\",\n    \"year\": 1931,\n    \"ship_type\": \"patrol_boat\",\n    \"standard_displacement_t\": 100000,\n    \"full_load_displacement_t\": 150000,\n    \"length_",
+      "reason_revision_ok": false,
+      "repetition_collapse": false,
+      "schema_complete": false,
+      "schema_errors": [
+        "$: missing required field 'schema_version'",
+        "$: missing required field 'status'",
+        "$: missing required field 'spec'",
+        "$: missing required field 'reason'",
+        "$: missing required field 'suggested_revision'",
+        "$: missing required field 'design_concept'",
+        "$: missing required field 'confidence'"
+      ],
+      "spec_field_adoption_rate": 0.0,
+      "spec_fields_adopted": 0,
+      "spec_fields_present": 0,
+      "spec_fields_total": 18,
+      "spec_required_present_rate": 0.0,
+      "status_exact": false,
+      "top_required_present_rate": 0.0
+    }
+  ],
+  "summary": {
+    "adapter_path": null,
+    "cases": "data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl",
+    "impossible_f1": 0.0,
+    "impossible_precision": 0.0,
+    "impossible_recall": 0.0,
+    "max_tokens": 512,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "raw_json_rate": 1.0,
+    "reason_revision_ok_rate": 0.0,
+    "repetition_collapse_rate": 0.0,
+    "schema_complete_rate": 0.0,
+    "spec_field_adoption_rate_avg": 0.0,
+    "spec_required_present_rate_avg": 0.0,
+    "status_exact_rate": 0.0,
+    "temperature": 0.0,
+    "top_required_present_rate_avg": 0.0,
+    "total": 1
+  }
+}
