@@ -22,6 +22,11 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "tools"))
 
 from mlx_lm_compat import patch_transformers_5_tokenizer_register  # noqa: E402
+from navspec_lora_stage2_schema import (  # noqa: E402
+    extract_reason_codes,
+    reason_code_metrics,
+    validate_stage2,
+)
 from validate_navspec_output import validate_schema  # noqa: E402
 
 
@@ -257,6 +262,7 @@ def evaluate_row(
     row: dict[str, Any],
     raw_text: str,
     schema: dict[str, Any],
+    stage2: bool = False,
 ) -> dict[str, Any]:
     expected = row.get("expected_output") or row.get("output") or {}
     raw_obj: Any = {}
@@ -268,14 +274,27 @@ def evaluate_row(
     except Exception as exc:
         extract_error = str(exc)
 
-    schema_errors = validate_schema(raw_obj, schema) if raw_json_valid else ["raw output is not a JSON object"]
+    if stage2:
+        schema_errors = validate_stage2(raw_obj) if raw_json_valid else ["raw output is not a JSON object"]
+    else:
+        schema_errors = validate_schema(raw_obj, schema) if raw_json_valid else ["raw output is not a JSON object"]
     actual_status = raw_obj.get("status") if isinstance(raw_obj, dict) else None
     expected_status = expected.get("status")
     expected_impossible = expected_status == "impossible"
     actual_impossible = actual_status == "impossible"
     reason = raw_obj.get("reason") if isinstance(raw_obj, dict) else None
     suggested = raw_obj.get("suggested_revision") if isinstance(raw_obj, dict) else None
-    reason_revision_ok = bool(actual_impossible and isinstance(reason, list) and reason and isinstance(suggested, dict) and suggested)
+    if stage2:
+        reason_revision_ok = bool(
+            actual_impossible
+            and isinstance(reason, list)
+            and reason
+            and all(isinstance(item, dict) and item.get("code") for item in reason)
+            and isinstance(suggested, dict)
+            and suggested
+        )
+    else:
+        reason_revision_ok = bool(actual_impossible and isinstance(reason, list) and reason and isinstance(suggested, dict) and suggested)
 
     top_required = schema["required"]
     top_present = sum(1 for field in top_required if isinstance(raw_obj, dict) and field in raw_obj)
@@ -285,7 +304,7 @@ def evaluate_row(
         schema,
     )
 
-    return {
+    result = {
         "id": row.get("id"),
         "category": row.get("category"),
         "raw_text_len": len(raw_text),
@@ -305,6 +324,19 @@ def evaluate_row(
         "repetition_collapse": repetition_collapse(raw_text),
         **spec_info,
     }
+
+    if stage2:
+        expected_codes = extract_reason_codes(expected)
+        actual_codes = extract_reason_codes(raw_obj if isinstance(raw_obj, dict) else {})
+        metrics = reason_code_metrics(expected_codes, actual_codes)
+        result["reason_code_expected"] = sorted(expected_codes)
+        result["reason_code_actual"] = sorted(actual_codes)
+        result["reason_code_exact"] = metrics["reason_code_exact"]
+        result["reason_code_precision"] = metrics["reason_code_precision"]
+        result["reason_code_recall"] = metrics["reason_code_recall"]
+        result["reason_code_f1"] = metrics["reason_code_f1"]
+
+    return result
 
 
 def pct(value: float) -> str:
@@ -330,12 +362,13 @@ def summarize(results: list[dict[str, Any]], args: argparse.Namespace) -> dict[s
     recall = tp / (tp + fn) if tp + fn else 0.0
     f1 = (2 * precision * recall / (precision + recall)) if precision + recall else 0.0
 
-    return {
+    summary = {
         "model": args.model,
         "adapter_path": str(args.adapter_path) if args.adapter_path else None,
         "run_slug": getattr(args, "run_slug", None),
         "eval_mode": getattr(args, "eval_mode", None),
         "json_prefill": args.json_prefill,
+        "stage2": getattr(args, "stage2", False),
         "date": getattr(args, "date", DATE_STAMP),
         "cases": str(args.cases),
         "total": total,
@@ -353,6 +386,15 @@ def summarize(results: list[dict[str, Any]], args: argparse.Namespace) -> dict[s
         "max_tokens": args.max_tokens,
         "temperature": args.temperature,
     }
+
+    if getattr(args, "stage2", False):
+        rc_exact = sum(1 for row in results if row.get("reason_code_exact"))
+        summary["reason_code_exact_rate"] = rc_exact / total
+        summary["reason_code_precision_avg"] = avg("reason_code_precision")
+        summary["reason_code_recall_avg"] = avg("reason_code_recall")
+        summary["reason_code_f1_avg"] = avg("reason_code_f1")
+
+    return summary
 
 
 def write_markdown(path: Path, summary: dict[str, Any], results: list[dict[str, Any]]) -> None:
@@ -375,6 +417,7 @@ def write_markdown(path: Path, summary: dict[str, Any], results: list[dict[str, 
         f"- adapter_path: `{summary['adapter_path']}`" if summary.get("adapter_path") else f"- adapter_path: _(none, zero-shot)_",
         f"- run_slug: `{summary.get('run_slug')}`",
         f"- eval_mode: `{summary.get('eval_mode')}` (json_prefill={summary.get('json_prefill')})",
+        f"- stage2: `{summary.get('stage2')}`",
         f"- total: {summary['total']}",
         f"- raw JSON成功率: {pct(summary['raw_json_rate'])}",
         f"- schema完全一致率: {pct(summary['schema_complete_rate'])}",
@@ -430,6 +473,7 @@ def main() -> None:
         help="未指定時は docs/{run_slug}_{eval_mode}_{date}.md になる",
     )
     parser.add_argument("--raw-dir", type=Path, default=None)
+    parser.add_argument("--stage2", action="store_true", help="Stage 2 schema/reason-code 評価 (v1 とは非互換)")
     parser.add_argument("--dry-run", action="store_true", help="load cases/schema only; do not load model")
     args = parser.parse_args()
 
@@ -453,6 +497,7 @@ def main() -> None:
         print(f"adapter_path: {args.adapter_path}")
         print(f"run_slug: {run_slug}")
         print(f"eval_mode: {eval_mode} (json_prefill={args.json_prefill})")
+        print(f"stage2: {args.stage2}")
         print(f"cases: {len(rows)}")
         print(f"schema: {args.schema}")
         print(f"json_report: {args.json_report}")
@@ -469,7 +514,7 @@ def main() -> None:
         started = time.time()
         raw_text = prefill + generate_text(generate_fn, model, tokenizer, prompt, args.max_tokens, args.temperature)
         elapsed = time.time() - started
-        result = evaluate_row(row, raw_text, schema)
+        result = evaluate_row(row, raw_text, schema, stage2=args.stage2)
         result["elapsed_s"] = round(elapsed, 3)
         results.append(result)
         raw_records.append({"id": row.get("id"), "prompt": prompt, "raw_text": raw_text})

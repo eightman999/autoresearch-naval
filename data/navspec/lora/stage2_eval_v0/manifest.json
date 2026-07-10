@@ -1,0 +1,38 @@
+{
+  "category_counts": {
+    "eval_armor": 60,
+    "eval_era": 60,
+    "eval_hard_negative_ok": 60,
+    "eval_nation": 60,
+    "eval_normal_ok": 60,
+    "eval_small_gun": 60,
+    "eval_speed_armor_range": 60,
+    "eval_treaty": 60
+  },
+  "classic_classifier_disagreements": 0,
+  "dataset": "stage2_status_v0",
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True, assistant ends with <|im_end|>",
+  "reason_code_counts": {
+    "armor_too_heavy_for_hull": 120,
+    "era_equipment_unavailable": 60,
+    "main_gun_too_large_for_hull": 120,
+    "nation_capability_exceeded": 91,
+    "range_volume_conflict": 60,
+    "speed_armor_range_conflict": 60,
+    "speed_power_conflict": 35,
+    "treaty_limit_exceeded": 66
+  },
+  "requested": 480,
+  "rows": 480,
+  "schema": "schemas/navspec_lora_candidate_stage2.schema.json",
+  "schema_version": "navspec.lora_candidate.v1",
+  "split_counts": {
+    "eval": 480
+  },
+  "status_counts": {
+    "impossible": 370,
+    "ok": 110
+  },
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Do not repeat the user request. The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "teacher": "navspec-classic-v1 rule engine + reason-code classifier"
+}

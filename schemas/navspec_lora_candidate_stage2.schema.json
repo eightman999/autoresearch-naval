@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.lora_candidate.stage2",
+  "title": "NavspecLoRACandidateStage2",
+  "description": "Stage 2 検証は tools/navspec_lora_stage2_schema.validate_stage2 で行う。本ファイルは参照用。reason は {code,message} 構造化、status=impossible の spec は空を許容。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "spec",
+    "reason",
+    "suggested_revision",
+    "design_concept",
+    "confidence"
+  ],
+  "properties": {
+    "schema_version": {"const": "navspec.lora_candidate.v1"},
+    "status": {"enum": ["ok", "impossible"]},
+    "spec": {"type": ["object", "null"]},
+    "reason": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "message"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "main_gun_too_large_for_hull",
+              "armor_too_heavy_for_hull",
+              "speed_power_conflict",
+              "speed_armor_range_conflict",
+              "range_volume_conflict",
+              "era_equipment_unavailable",
+              "treaty_limit_exceeded",
+              "nation_capability_exceeded",
+              "ship_type_role_conflict",
+              "displacement_limit_exceeded"
+            ]
+          },
+          "message": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "suggested_revision": {"type": "object"},
+    "design_concept": {"type": "string", "minLength": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "ok"}}},
+      "then": {
+        "properties": {
+          "spec": {
+            "type": "object",
+            "required": [
+              "nation", "year", "ship_type", "standard_displacement_t",
+              "full_load_displacement_t", "length_m", "beam_m", "draft_m",
+              "lb_ratio", "power_shp", "speed_kt", "range_nm",
+              "main_gun_caliber_mm", "main_gun_count", "belt_armor_mm",
+              "torpedo_tubes", "radar", "nation_tier"
+            ]
+          },
+          "reason": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "impossible"}}},
+      "then": {
+        "properties": {
+          "spec": {"not": {"required": ["nation"]}}
+        },
+        "required": ["reason"]
+      }
+    }
+  ]
+}
