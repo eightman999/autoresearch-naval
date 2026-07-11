@@ -18870,7 +18870,7 @@
   ],
   "summary": {
     "adapter_path": "models/navspec-lora-0.5b-v0.1/adapter/stage1-r8",
-    "cases": "/Users/eightman/dev/apps/autoresearch-naval/data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl",
+    "cases": "data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl",
     "date": "2026-07-10",
     "eval_mode": "schema_assisted",
     "impossible_f1": 0.16149068322981366,

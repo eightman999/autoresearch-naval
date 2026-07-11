@@ -20808,7 +20808,7 @@
   ],
   "summary": {
     "adapter_path": null,
-    "cases": "/Users/eightman/dev/apps/autoresearch-naval/data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl",
+    "cases": "data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl",
     "date": "2026-07-10",
     "eval_mode": "free_raw",
     "impossible_f1": 0.40942028985507245,
