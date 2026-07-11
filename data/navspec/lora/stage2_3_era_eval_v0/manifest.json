@@ -1,0 +1,71 @@
+{
+  "assistant_length_stats": {
+    "assistant_chars_avg": 357.21,
+    "assistant_chars_max": 557,
+    "assistant_chars_p95": 548,
+    "assistant_len_pass": true,
+    "assistant_max_chars_limit": 620,
+    "assistant_p95_target": 560,
+    "assistant_p95_target_pass": true,
+    "assistant_utf8_bytes_max": 573
+  },
+  "canonical_order": [
+    "displacement_limit_exceeded",
+    "main_gun_too_large_for_hull",
+    "armor_too_heavy_for_hull",
+    "speed_power_conflict",
+    "range_volume_conflict",
+    "speed_armor_range_conflict",
+    "era_equipment_unavailable",
+    "treaty_limit_exceeded",
+    "nation_capability_exceeded",
+    "ship_type_role_conflict"
+  ],
+  "category_counts": {
+    "eval_era_equipment_impossible": 80,
+    "eval_era_equipment_ok": 60,
+    "eval_era_nation_impossible": 50,
+    "eval_era_speed_composite": 50,
+    "eval_era_speed_impossible": 80,
+    "eval_era_speed_ok": 60,
+    "eval_old_ship_type_ok": 20
+  },
+  "composition_targets": {
+    "era_replay": 1000,
+    "era_speed_composite": 250,
+    "hard_negative": 250,
+    "nation_treaty": 250,
+    "replay_stage2": 1500,
+    "schema_status_replay": 750,
+    "speed_armor_range": 500,
+    "speed_power": 500
+  },
+  "dataset": "stage2_3_era_eval_v0",
+  "design_concept_max_len": 80,
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True, response-only mask expected",
+  "message_max_len": 60,
+  "reason_code_counts": {
+    "era_equipment_unavailable": 130,
+    "main_gun_too_large_for_hull": 13,
+    "nation_capability_exceeded": 24,
+    "speed_power_conflict": 143
+  },
+  "reason_max": 3,
+  "requested": 400,
+  "rows": 400,
+  "schema": "schemas/navspec_lora_candidate_stage2.schema.json",
+  "schema_version": "navspec.lora_candidate.v1",
+  "split_counts": {
+    "eval": 400
+  },
+  "status_counts": {
+    "impossible": 260,
+    "ok": 140
+  },
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Do not repeat the user request. The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "teacher": "Stage 2.2 strict classifier + Stage 2.3 era-balanced generators",
+  "token_checks": {
+    "enabled": false,
+    "reason": "eval set only"
+  }
+}

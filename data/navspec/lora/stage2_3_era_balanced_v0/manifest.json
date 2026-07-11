@@ -1,0 +1,211 @@
+{
+  "assistant_length_stats": {
+    "assistant_chars_avg": 421.77,
+    "assistant_chars_max": 557,
+    "assistant_chars_p95": 541,
+    "assistant_len_pass": true,
+    "assistant_max_chars_limit": 620,
+    "assistant_p95_target": 560,
+    "assistant_p95_target_pass": true,
+    "assistant_utf8_bytes_max": 573
+  },
+  "canonical_order": [
+    "displacement_limit_exceeded",
+    "main_gun_too_large_for_hull",
+    "armor_too_heavy_for_hull",
+    "speed_power_conflict",
+    "range_volume_conflict",
+    "speed_armor_range_conflict",
+    "era_equipment_unavailable",
+    "treaty_limit_exceeded",
+    "nation_capability_exceeded",
+    "ship_type_role_conflict"
+  ],
+  "category_counts": {
+    "era_replay_era_equipment_impossible": 167,
+    "era_replay_era_equipment_ok": 167,
+    "era_replay_era_nation_impossible": 166,
+    "era_replay_era_speed_composite_impossible": 166,
+    "era_replay_era_speed_impossible": 167,
+    "era_replay_era_speed_ok": 167,
+    "era_speed_composite_impossible": 250,
+    "era_speed_ok": 84,
+    "hard_negative_ok": 166,
+    "nation_treaty_impossible": 250,
+    "replay_classic_classic_eval_constraint": 30,
+    "replay_classic_classic_eval_contradiction": 9,
+    "replay_classic_classic_eval_era": 35,
+    "replay_classic_classic_eval_extended_contradiction": 40,
+    "replay_classic_classic_eval_extended_era": 41,
+    "replay_classic_classic_eval_extended_lb": 242,
+    "replay_classic_classic_eval_extended_tier": 40,
+    "replay_classic_classic_eval_extended_treaty": 41,
+    "replay_classic_classic_eval_unseen": 22,
+    "replay_constraint_displacement": 150,
+    "replay_constraint_gun": 150,
+    "replay_constraint_range": 100,
+    "replay_constraint_speed": 150,
+    "replay_constraint_torpedo": 100,
+    "replay_impossible_era_equipment": 50,
+    "replay_impossible_small_ship_combo": 50,
+    "replay_impossible_tier": 25,
+    "replay_impossible_treaty": 25,
+    "replay_low_cost": 150,
+    "replay_normal": 50,
+    "schema_status_replay_constraint_displacement": 113,
+    "schema_status_replay_constraint_gun": 112,
+    "schema_status_replay_constraint_range": 75,
+    "schema_status_replay_constraint_speed": 112,
+    "schema_status_replay_constraint_torpedo": 75,
+    "schema_status_replay_impossible_era_equipment": 38,
+    "schema_status_replay_impossible_small_ship_combo": 38,
+    "schema_status_replay_impossible_tier": 19,
+    "schema_status_replay_impossible_treaty": 19,
+    "schema_status_replay_low_cost": 112,
+    "schema_status_replay_normal": 37,
+    "speed_armor_range_impossible": 250,
+    "speed_armor_range_ok": 250,
+    "speed_power_impossible": 250,
+    "speed_power_ok": 250
+  },
+  "composition_targets": {
+    "era_replay": 1000,
+    "era_speed_composite": 250,
+    "hard_negative": 250,
+    "nation_treaty": 250,
+    "replay_stage2": 1500,
+    "schema_status_replay": 750,
+    "speed_armor_range": 500,
+    "speed_power": 500
+  },
+  "dataset": "stage2_3_era_balanced_v0",
+  "design_concept_max_len": 80,
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True, response-only mask expected",
+  "message_max_len": 60,
+  "reason_code_counts": {
+    "armor_too_heavy_for_hull": 378,
+    "displacement_limit_exceeded": 9,
+    "era_equipment_unavailable": 712,
+    "main_gun_too_large_for_hull": 296,
+    "nation_capability_exceeded": 596,
+    "range_volume_conflict": 383,
+    "ship_type_role_conflict": 32,
+    "speed_armor_range_conflict": 250,
+    "speed_power_conflict": 962,
+    "treaty_limit_exceeded": 249
+  },
+  "reason_max": 3,
+  "requested": 5000,
+  "rows": 5000,
+  "schema": "schemas/navspec_lora_candidate_stage2.schema.json",
+  "schema_version": "navspec.lora_candidate.v1",
+  "split_counts": {
+    "test": 391,
+    "train": 3757,
+    "validation": 852
+  },
+  "status_counts": {
+    "impossible": 2340,
+    "ok": 2660
+  },
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Do not repeat the user request. The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "teacher": "Stage 2.2 strict classifier + Stage 2.3 era-balanced generators",
+  "token_checks": {
+    "checked": [
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_classic_00000",
+        "offset": 311,
+        "ok": true,
+        "tokens": 511,
+        "unmasked_head": "{\"confidence\":0.88,\"design_concept\":\"193"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_00001",
+        "offset": 322,
+        "ok": true,
+        "tokens": 425,
+        "unmasked_head": "{\"confidence\":0.93,\"design_concept\":\"成立し"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_00002",
+        "offset": 318,
+        "ok": true,
+        "tokens": 427,
+        "unmasked_head": "{\"confidence\":0.93,\"design_concept\":\"成立し"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_classic_00003",
+        "offset": 307,
+        "ok": true,
+        "tokens": 520,
+        "unmasked_head": "{\"confidence\":0.88,\"design_concept\":\"188"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_00004",
+        "offset": 289,
+        "ok": true,
+        "tokens": 490,
+        "unmasked_head": "{\"confidence\":0.88,\"design_concept\":\"194"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_00005",
+        "offset": 300,
+        "ok": true,
+        "tokens": 510,
+        "unmasked_head": "{\"confidence\":0.88,\"design_concept\":\"185"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_classic_00006",
+        "offset": 314,
+        "ok": true,
+        "tokens": 518,
+        "unmasked_head": "{\"confidence\":0.88,\"design_concept\":\"188"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_00007",
+        "offset": 288,
+        "ok": true,
+        "tokens": 493,
+        "unmasked_head": "{\"confidence\":0.88,\"design_concept\":\"192"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_00008",
+        "offset": 301,
+        "ok": true,
+        "tokens": 392,
+        "unmasked_head": "{\"confidence\":0.93,\"design_concept\":\"成立し"
+      },
+      {
+        "eos": 151645,
+        "eos_in_unmasked": true,
+        "id": "s23_replay_classic_00009",
+        "offset": 310,
+        "ok": true,
+        "tokens": 524,
+        "unmasked_head": "{\"confidence\":0.88,\"design_concept\":\"192"
+      }
+    ],
+    "enabled": true,
+    "failed": [],
+    "passed": true,
+    "sample_count": 10
+  }
+}
