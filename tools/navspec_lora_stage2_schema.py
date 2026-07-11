@@ -16,16 +16,16 @@ from typing import Any
 SCHEMA_VERSION = "navspec.lora_candidate.v1"
 
 REASON_CODES = [
+    "displacement_limit_exceeded",
     "main_gun_too_large_for_hull",
     "armor_too_heavy_for_hull",
     "speed_power_conflict",
-    "speed_armor_range_conflict",
     "range_volume_conflict",
+    "speed_armor_range_conflict",
     "era_equipment_unavailable",
     "treaty_limit_exceeded",
     "nation_capability_exceeded",
     "ship_type_role_conflict",
-    "displacement_limit_exceeded",
 ]
 REASON_CODE_SET = set(REASON_CODES)
 
@@ -150,6 +150,16 @@ def extract_reason_codes(obj: Any) -> set[str]:
 
 def reason_code_metrics(expected_codes: set[str], actual_codes: set[str]) -> dict[str, Any]:
     exact = expected_codes == actual_codes
+    if not expected_codes and not actual_codes:
+        return {
+            "reason_code_exact": True,
+            "reason_code_precision": 1.0,
+            "reason_code_recall": 1.0,
+            "reason_code_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+        }
     tp = len(expected_codes & actual_codes)
     fp = len(actual_codes - expected_codes)
     fn = len(expected_codes - actual_codes)

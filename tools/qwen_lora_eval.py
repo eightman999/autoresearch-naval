@@ -180,6 +180,33 @@ def strip_fenced_json(text: str) -> str:
     return stripped
 
 
+def root_json_valid(raw_text: str) -> bool:
+    """生成テキスト全体が単一の完結した JSON オブジェクトか(切捨て検出用)。"""
+    candidate = strip_fenced_json(raw_text)
+    try:
+        obj = json.loads(candidate)
+        return isinstance(obj, dict)
+    except json.JSONDecodeError:
+        return False
+
+
+def truncation_kind(raw_text: str) -> str:
+    """root JSON が壊れている場合、どこで切れたかを分類する。"""
+    text = strip_fenced_json(raw_text).rstrip()
+    if not text:
+        return "empty"
+    if text.startswith("{") and not (text.endswith("}") or text.endswith("}}")):
+        tail = text[-40:]
+        if '"suggested_revision"' in tail or "rationale" in tail:
+            return "suggested_revision_truncation"
+        if '"reason"' in text and text.rfind('"reason"') > text.rfind('"spec"'):
+            return "reason_array_truncation"
+        return "missing_closing_brace"
+    if "{" in text:
+        return "parse_error_nested_only"
+    return "parse_error"
+
+
 def extract_candidate_json(text: str, schema: dict[str, Any]) -> Any:
     """Extract the most schema-like JSON object from model output."""
     decoder = json.JSONDecoder()
@@ -335,6 +362,9 @@ def evaluate_row(
         result["reason_code_precision"] = metrics["reason_code_precision"]
         result["reason_code_recall"] = metrics["reason_code_recall"]
         result["reason_code_f1"] = metrics["reason_code_f1"]
+        result["root_json_valid"] = root_json_valid(raw_text)
+        result["truncated_json"] = raw_json_valid and not root_json_valid(raw_text)
+        result["truncation_kind"] = truncation_kind(raw_text) if result["truncated_json"] else ""
 
     return result
 
@@ -393,6 +423,28 @@ def summarize(results: list[dict[str, Any]], args: argparse.Namespace) -> dict[s
         summary["reason_code_precision_avg"] = avg("reason_code_precision")
         summary["reason_code_recall_avg"] = avg("reason_code_recall")
         summary["reason_code_f1_avg"] = avg("reason_code_f1")
+        # micro P/R/F1: 全 impossible 案例のコードをプールして集計
+        tp = fp = fn = 0
+        for row in results:
+            exp = set(row.get("reason_code_expected") or [])
+            act = set(row.get("reason_code_actual") or [])
+            tp += len(exp & act)
+            fp += len(act - exp)
+            fn += len(exp - act)
+        micro_p = tp / (tp + fp) if (tp + fp) else 0.0
+        micro_r = tp / (tp + fn) if (tp + fn) else 0.0
+        micro_f1 = (2 * micro_p * micro_r / (micro_p + micro_r)) if (micro_p + micro_r) else 0.0
+        summary["reason_code_micro_precision"] = micro_p
+        summary["reason_code_micro_recall"] = micro_r
+        summary["reason_code_micro_f1"] = micro_f1
+        # JSON 安定性
+        truncated = sum(1 for row in results if row.get("truncated_json"))
+        root_valid = sum(1 for row in results if row.get("root_json_valid"))
+        summary["root_json_valid_rate"] = root_valid / total
+        summary["truncated_json_rate"] = truncated / total
+        from collections import Counter as _C
+        tk = _C(row.get("truncation_kind") for row in results if row.get("truncated_json"))
+        summary["truncation_breakdown"] = dict(tk)
 
     return summary
 
