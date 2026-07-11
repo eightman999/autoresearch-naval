@@ -66,6 +66,7 @@ from navspec_shiptypes import (  # noqa: E402
 from validate_navspec_output import validate_schema  # noqa: E402
 
 DEFAULT_OUTPUT_DIR = ROOT / "data" / "navspec" / "lora" / "stage2_status_v0"
+DEFAULT_OUTPUT_DIR_21 = ROOT / "data" / "navspec" / "lora" / "stage2_1_status_v0"
 DEFAULT_EVAL_DIR = ROOT / "data" / "navspec" / "lora" / "stage2_eval_v0"
 
 SMALL_SHIP_TYPES = {
@@ -201,6 +202,7 @@ def classify_reason_codes(case: dict[str, Any]) -> list[dict[str, str]]:
     for code in codes:
         if code not in deduped:
             deduped.append(code)
+    deduped.sort(key=lambda code: REASON_CODES.index(code))
     return [{"code": code, "message": _message_for(code, case, specs, limits, tier)} for code in deduped]
 
 
@@ -445,6 +447,73 @@ def gen_combined(index: int) -> dict[str, Any]:
     return _base_case(index, "impossible_combined", nation, year, st, "impossible_super_destroyer", constraints, request)
 
 
+# ---- Stage 2.1: composite reason boost ----
+# nation_capability / speed_power は他 code と共存時に脱落しやすいため、
+# これらが必ず他の違反と共存する composite 例を明示的に生成する。
+_TIER3_NATIONS = ["Chile", "Thailand", "Portugal", "Norway", "Argentina"]
+_TIER4_NATIONS = ["Egypt", "Algeria"]
+_TIER1_NATIONS = ["United States", "United Kingdom", "Germany", "Japan", "France", "Italy"]
+
+
+def gen_composite_nation(index: int) -> dict[str, Any]:
+    kind = index % 4
+    if kind == 0:
+        nation = _TIER3_NATIONS[index % len(_TIER3_NATIONS)]
+        st = "treaty_cruiser"; year = 1930
+        constraints = {"standard_displacement_t_min": 14000, "main_gun_caliber_mm_min": 254}
+        request = f"{year}年の条約期に{nation}向け{st}を14000t以上・254mm砲で要求する。JSONのみ。"
+    elif kind == 1:
+        nation = _TIER4_NATIONS[index % len(_TIER4_NATIONS)]
+        st = "light_cruiser"; year = 1938
+        constraints = {"main_gun_caliber_mm_min": 180}
+        request = f"{year}年の{nation}向け{st}に180mm砲を要求する。JSONのみ。"
+    elif kind == 2:
+        nation = _TIER3_NATIONS[(index + 1) % len(_TIER3_NATIONS)]
+        st = "commerce_raider_cruiser"; year = 1928
+        constraints = {}
+        request = f"{year}年の条約期に{nation}向け{st}(28cm砲搭載)を要求する。JSONのみ。"
+    else:
+        nation = _TIER3_NATIONS[(index + 2) % len(_TIER3_NATIONS)]
+        st = "battleship"; year = 1935
+        constraints = {"main_gun_caliber_mm_min": 381}
+        request = f"{year}年の{nation}が自主建造で381mm砲搭載の{st}を要求する。JSONのみ。"
+    return _base_case(index, "impossible_composite_nation", nation, year, st, "regional_flagship", constraints, request)
+
+
+def gen_composite_speed_power(index: int) -> dict[str, Any]:
+    kind = index % 4
+    nation = _TIER1_NATIONS[index % len(_TIER1_NATIONS)]
+    if kind == 0:
+        st = "heavy_cruiser"; year = 1938
+        constraints = {"standard_displacement_t_max": 4500, "speed_kt_min": 39, "belt_armor_mm_min": 120}
+    elif kind == 1:
+        st = "light_cruiser"; year = 1941
+        constraints = {"standard_displacement_t_max": 4000, "speed_kt_min": 39, "belt_armor_mm_min": 110}
+    elif kind == 2:
+        st = "large_cruiser"; year = 1944
+        constraints = {"standard_displacement_t_min": 28000, "speed_kt_min": 38}
+    else:
+        st = "destroyer"; year = 1936
+        constraints = {"standard_displacement_t_max": 2500, "speed_kt_min": 40, "belt_armor_mm_min": 120, "range_nm_min": 10000}
+    speed = constraints.get("speed_kt_min", 38)
+    request = f"{year}年の{nation}向け{st}を{speed}kt中心で要求する。JSONのみ。"
+    return _base_case(index, "impossible_composite_speed_power", nation, year, st, "commerce_raiding", constraints, request)
+
+
+def gen_treaty_boundary_ok(index: int) -> dict[str, Any]:
+    kind = index % 2
+    nation = _TIER1_NATIONS[index % len(_TIER1_NATIONS)]
+    if kind == 0:
+        st = "heavy_cruiser"; year = 1939
+        constraints = {"standard_displacement_t_max": 10000, "speed_kt_min": 32, "main_gun_caliber_mm_min": 203}
+        request = f"{year}年(条約期後)の{nation}向け{st}を10000t・203mm砲で設計せよ。JSONのみ。"
+    else:
+        st = "armored_cruiser"; year = 1910
+        constraints = {"standard_displacement_t_max": 10000, "main_gun_caliber_mm_min": 203}
+        request = f"{year}年(条約期前)の{nation}向け{st}を203mm砲で設計せよ。JSONのみ。"
+    return _base_case(index, "treaty_boundary_ok", nation, year, st, "fleet_battle", constraints, request)
+
+
 IMPOSSIBLE_GENS = [
     ("impossible_small_gun", gen_small_gun),
     ("impossible_armor", gen_armor_heavy),
@@ -509,8 +578,18 @@ def _classic_replay_case(index: int) -> dict[str, Any]:
     return case
 
 
-def build_cases(count: int) -> list[dict[str, Any]]:
-    ratios = {"schema_replay": 0.30, "normal_ok": 0.25, "impossible": 0.25, "reason_revision": 0.15, "hard_negative": 0.05}
+def build_cases(count: int, profile: str = "stage2.1") -> list[dict[str, Any]]:
+    if profile == "stage2":
+        ratios = {"schema_replay": 0.30, "normal_ok": 0.25, "impossible": 0.25, "reason_revision": 0.15, "hard_negative": 0.05}
+    else:
+        ratios = {
+            "schema_replay": 0.25,
+            "normal_ok": 0.20,
+            "impossible": 0.15,
+            "composite": 0.30,
+            "hard_negative": 0.05,
+            "treaty_boundary_ok": 0.05,
+        }
     targets = {k: max(1, int(count * v)) for k, v in ratios.items()}
 
     cases: list[dict[str, Any]] = []
@@ -519,11 +598,20 @@ def build_cases(count: int) -> list[dict[str, Any]]:
     for i in range(targets["normal_ok"]):
         cases.append(gen_normal_ok(i))
     per_cat = max(1, targets["impossible"] // len(IMPOSSIBLE_GENS))
-    for cat_name, gen in IMPOSSIBLE_GENS:
+    for _cat_name, gen in IMPOSSIBLE_GENS:
         for i in range(per_cat):
             cases.append(gen(i))
-    for i in range(targets["reason_revision"]):
-        cases.append(gen_combined(i))
+    if profile == "stage2":
+        for i in range(targets["reason_revision"]):
+            cases.append(gen_combined(i))
+    else:
+        composite_gens = [gen_combined, gen_composite_nation, gen_composite_speed_power]
+        per_comp = max(1, targets["composite"] // len(composite_gens))
+        for gen in composite_gens:
+            for i in range(per_comp):
+                cases.append(gen(i))
+        for i in range(targets["treaty_boundary_ok"]):
+            cases.append(gen_treaty_boundary_ok(i))
     for i in range(targets["hard_negative"]):
         cases.append(gen_hard_negative(i))
     return cases
@@ -539,9 +627,9 @@ def assign_splits(cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return cases
 
 
-def build_dataset(count: int, output_dir: Path, schema_path: Path) -> list[dict[str, Any]]:
+def build_dataset(count: int, output_dir: Path, schema_path: Path, profile: str = "stage2.1") -> list[dict[str, Any]]:
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
-    cases = build_cases(count)
+    cases = build_cases(count, profile=profile)
     assign_splits(cases)
     rows: list[dict[str, Any]] = []
     status_counts: Counter = Counter()
@@ -638,8 +726,9 @@ def build_eval_cases(count: int, output_dir: Path) -> list[dict[str, Any]]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build navspec Stage 2 status/reason-code datasets")
     parser.add_argument("--count", type=int, default=20000)
-    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA)
+    parser.add_argument("--profile", choices=["stage2", "stage2.1"], default="stage2.1")
     parser.add_argument("--eval", action="store_true", help="Stage 2 専用評価ケースセットを生成する")
     parser.add_argument("--eval-count", type=int, default=480)
     parser.add_argument("--eval-dir", type=Path, default=DEFAULT_EVAL_DIR)
@@ -651,15 +740,18 @@ def main() -> None:
         print(f"output_dir: {args.eval_dir}")
         return
 
-    rows = build_dataset(args.count, args.output_dir, args.schema)
+    if args.output_dir is None:
+        args.output_dir = DEFAULT_OUTPUT_DIR_21 if args.profile == "stage2.1" else DEFAULT_OUTPUT_DIR
+
+    rows = build_dataset(args.count, args.output_dir, args.schema, profile=args.profile)
     manifest = json.loads((args.output_dir / "manifest.json").read_text(encoding="utf-8"))
-    print(f"dataset: stage2_status_v0")
+    print(f"dataset: {args.profile}")
     print(f"rows: {len(rows)}")
     print(f"output_dir: {args.output_dir}")
     print("splits:", manifest["split_counts"])
     print("status:", manifest["status_counts"])
     print("reason_codes:", manifest["reason_code_counts"])
-    print("top categories:", dict(sorted(manifest["category_counts"].items(), key=lambda kv: kv[1], reverse=True)[:10]))
+    print("top categories:", dict(sorted(manifest["category_counts"].items(), key=lambda kv: kv[1], reverse=True)[:12]))
     print("classic disagreements:", manifest["classic_classifier_disagreements"])
 
 

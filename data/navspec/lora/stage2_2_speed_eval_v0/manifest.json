@@ -1,0 +1,45 @@
+{
+  "canonical_order": [
+    "displacement_limit_exceeded",
+    "main_gun_too_large_for_hull",
+    "armor_too_heavy_for_hull",
+    "speed_power_conflict",
+    "range_volume_conflict",
+    "speed_armor_range_conflict",
+    "era_equipment_unavailable",
+    "treaty_limit_exceeded",
+    "nation_capability_exceeded",
+    "ship_type_role_conflict"
+  ],
+  "category_counts": {
+    "eval_range_volume_impossible": 60,
+    "eval_speed_armor_range_impossible": 80,
+    "eval_speed_armor_range_ok": 60,
+    "eval_speed_power_impossible": 80,
+    "eval_speed_power_ok": 60,
+    "eval_three_code_composite": 60
+  },
+  "classic_disagreements": 0,
+  "dataset": "stage2_2_balanced_reason_v0",
+  "message_max_len": 60,
+  "reason_code_counts": {
+    "armor_too_heavy_for_hull": 140,
+    "range_volume_conflict": 200,
+    "speed_armor_range_conflict": 140,
+    "speed_power_conflict": 80
+  },
+  "reason_max": 3,
+  "requested": 400,
+  "rows": 400,
+  "schema": "schemas/navspec_lora_candidate_stage2.schema.json",
+  "schema_version": "navspec.lora_candidate.v1",
+  "split_counts": {
+    "eval": 400
+  },
+  "status_counts": {
+    "impossible": 280,
+    "ok": 120
+  },
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Do not repeat the user request. The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "teacher": "classic rule engine + section5 strict classifier"
+}
