@@ -23,7 +23,10 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 from mlx_lm_compat import patch_transformers_5_tokenizer_register  # noqa: E402
 from navspec_lora_stage2_schema import (  # noqa: E402
+    MAX_REASON_CODES,
+    REASON_CODES,
     extract_reason_codes,
+    normalize_reason_code_sequence,
     reason_code_metrics,
     validate_stage2,
 )
@@ -160,6 +163,31 @@ def generate_text(
     return str(generate_fn(model, tokenizer, **kwargs))
 
 
+def generate_batch_texts(
+    model: Any,
+    tokenizer: Any,
+    prompts: list[str],
+    max_tokens: int,
+    batch_size: int,
+) -> list[str]:
+    """temperature=0評価用のMLX連続バッチ生成。"""
+    try:
+        from mlx_lm import batch_generate
+    except ImportError as exc:
+        raise SystemExit("mlx_lm batch_generate is unavailable") from exc
+    encoded = [tokenizer.encode(prompt) for prompt in prompts]
+    response = batch_generate(
+        model,
+        tokenizer,
+        encoded,
+        max_tokens=max_tokens,
+        completion_batch_size=batch_size,
+        prefill_batch_size=min(batch_size, 8),
+        verbose=False,
+    )
+    return [str(text) for text in response.texts]
+
+
 def repetition_collapse(text: str) -> bool:
     words = text.split()
     if len(words) >= 12 and len(set(words[-12:])) <= 3:
@@ -205,6 +233,62 @@ def truncation_kind(raw_text: str) -> str:
     if "{" in text:
         return "parse_error_nested_only"
     return "parse_error"
+
+
+def raw_reason_codes(obj: Any) -> tuple[list[str], int]:
+    """reasonから有効codeとenum外/空code件数を取り出す。"""
+    if not isinstance(obj, dict) or not isinstance(obj.get("reason"), list):
+        return [], 0
+    codes: list[str] = []
+    invalid = 0
+    for item in obj["reason"]:
+        code = item.get("code") if isinstance(item, dict) else None
+        if not isinstance(code, str) or not code or code not in REASON_CODES:
+            invalid += 1
+        else:
+            codes.append(code)
+    return codes, invalid
+
+
+def primary_reason_for(category: Any, expected_codes: list[str]) -> str | None:
+    """評価カテゴリごとの主原因。未知カテゴリはcanonical先頭を採用する。"""
+    name = str(category or "")
+    category_map = (
+        ("speed_armor_range", "speed_armor_range_conflict"),
+        ("three_code", "speed_armor_range_conflict"),
+        ("speed_power", "speed_power_conflict"),
+        ("range_volume", "range_volume_conflict"),
+        ("small_gun", "main_gun_too_large_for_hull"),
+        ("armor", "armor_too_heavy_for_hull"),
+        ("era", "era_equipment_unavailable"),
+        ("treaty", "treaty_limit_exceeded"),
+        ("nation", "nation_capability_exceeded"),
+        ("displacement", "displacement_limit_exceeded"),
+        ("role", "ship_type_role_conflict"),
+    )
+    for token, code in category_map:
+        if token in name and code in expected_codes:
+            return code
+    return expected_codes[0] if expected_codes else None
+
+
+def json_damage_flags(raw_text: str, generation_token_count: int | None, max_tokens: int) -> dict[str, Any]:
+    """root JSON破損を、終了上限と構造的な破損箇所に分けて記録する。"""
+    root_valid = root_json_valid(raw_text)
+    kind = "" if root_valid else truncation_kind(raw_text)
+    length = bool(not root_valid and generation_token_count is not None and generation_token_count >= max_tokens)
+    early_eos = bool(not root_valid and not length)
+    return {
+        "root_json_valid": root_valid,
+        "generation_finish_reason": "length" if length else "stop",
+        "length_truncation": length,
+        "early_eos_invalid_json": early_eos,
+        "root_parse_error": not root_valid,
+        "missing_closing_brace": kind == "missing_closing_brace",
+        "reason_array_truncation": kind == "reason_array_truncation",
+        "suggested_revision_truncation": kind == "suggested_revision_truncation",
+        "truncation_kind": kind,
+    }
 
 
 def extract_candidate_json(text: str, schema: dict[str, Any]) -> Any:
@@ -290,6 +374,8 @@ def evaluate_row(
     raw_text: str,
     schema: dict[str, Any],
     stage2: bool = False,
+    generation_token_count: int | None = None,
+    max_tokens: int = 512,
 ) -> dict[str, Any]:
     expected = row.get("expected_output") or row.get("output") or {}
     raw_obj: Any = {}
@@ -353,18 +439,44 @@ def evaluate_row(
     }
 
     if stage2:
-        expected_codes = extract_reason_codes(expected)
-        actual_codes = extract_reason_codes(raw_obj if isinstance(raw_obj, dict) else {})
-        metrics = reason_code_metrics(expected_codes, actual_codes)
-        result["reason_code_expected"] = sorted(expected_codes)
-        result["reason_code_actual"] = sorted(actual_codes)
-        result["reason_code_exact"] = metrics["reason_code_exact"]
-        result["reason_code_precision"] = metrics["reason_code_precision"]
-        result["reason_code_recall"] = metrics["reason_code_recall"]
-        result["reason_code_f1"] = metrics["reason_code_f1"]
-        result["root_json_valid"] = root_json_valid(raw_text)
-        result["truncated_json"] = raw_json_valid and not root_json_valid(raw_text)
-        result["truncation_kind"] = truncation_kind(raw_text) if result["truncated_json"] else ""
+        expected_legacy = extract_reason_codes(expected)
+        expected_strict = normalize_reason_code_sequence(expected_legacy)
+        actual_raw, invalid_count = raw_reason_codes(raw_obj)
+        actual_codes = set(actual_raw)
+        duplicate_count = len(actual_raw) - len(actual_codes)
+        actual_canonical = actual_raw == sorted(actual_raw, key=REASON_CODES.index) if not invalid_count else False
+        strict_contract_ok = (
+            invalid_count == 0
+            and duplicate_count == 0
+            and len(actual_raw) <= MAX_REASON_CODES
+            and actual_canonical
+        )
+        legacy_metrics = reason_code_metrics(expected_legacy, actual_codes)
+        semantic_metrics = reason_code_metrics(set(expected_strict), actual_codes)
+        primary = primary_reason_for(row.get("category"), expected_strict)
+        extra = actual_codes - set(expected_strict)
+        missing = set(expected_strict) - actual_codes
+        result["reason_code_expected_legacy"] = sorted(expected_legacy, key=REASON_CODES.index)
+        result["reason_code_expected_strict"] = expected_strict
+        result["reason_code_actual"] = sorted(actual_codes, key=REASON_CODES.index)
+        result["legacy_reason_exact"] = legacy_metrics["reason_code_exact"]
+        result["strict_reason_exact"] = strict_contract_ok and actual_raw == expected_strict
+        result["semantic_reason_precision"] = semantic_metrics["reason_code_precision"]
+        result["semantic_reason_recall"] = semantic_metrics["reason_code_recall"]
+        result["semantic_reason_f1"] = semantic_metrics["reason_code_f1"]
+        result["primary_reason_expected"] = primary
+        result["primary_reason_correct"] = primary is not None and primary in actual_codes
+        result["extra_reason_count"] = len(extra)
+        result["missing_reason_count"] = len(missing)
+        result["invalid_reason_count"] = invalid_count + duplicate_count
+        # 旧report利用側との互換キー。新規比較にはstrict/semanticを使う。
+        result["reason_code_expected"] = result["reason_code_expected_strict"]
+        result["reason_code_exact"] = result["strict_reason_exact"]
+        result["reason_code_precision"] = semantic_metrics["reason_code_precision"]
+        result["reason_code_recall"] = semantic_metrics["reason_code_recall"]
+        result["reason_code_f1"] = semantic_metrics["reason_code_f1"]
+        result.update(json_damage_flags(raw_text, generation_token_count, max_tokens))
+        result["truncated_json"] = not result["root_json_valid"]
 
     return result
 
@@ -418,8 +530,11 @@ def summarize(results: list[dict[str, Any]], args: argparse.Namespace) -> dict[s
     }
 
     if getattr(args, "stage2", False):
-        rc_exact = sum(1 for row in results if row.get("reason_code_exact"))
-        summary["reason_code_exact_rate"] = rc_exact / total
+        legacy_exact = sum(1 for row in results if row.get("legacy_reason_exact"))
+        strict_exact = sum(1 for row in results if row.get("strict_reason_exact"))
+        summary["legacy_reason_exact_rate"] = legacy_exact / total
+        summary["strict_reason_exact_rate"] = strict_exact / total
+        summary["reason_code_exact_rate"] = summary["strict_reason_exact_rate"]
         summary["reason_code_precision_avg"] = avg("reason_code_precision")
         summary["reason_code_recall_avg"] = avg("reason_code_recall")
         summary["reason_code_f1_avg"] = avg("reason_code_f1")
@@ -437,14 +552,35 @@ def summarize(results: list[dict[str, Any]], args: argparse.Namespace) -> dict[s
         summary["reason_code_micro_precision"] = micro_p
         summary["reason_code_micro_recall"] = micro_r
         summary["reason_code_micro_f1"] = micro_f1
+        summary["semantic_reason_micro_precision"] = micro_p
+        summary["semantic_reason_micro_recall"] = micro_r
+        summary["semantic_reason_micro_f1"] = micro_f1
+        primary_rows = [row for row in results if row.get("primary_reason_expected")]
+        summary["primary_reason_accuracy"] = (
+            sum(1 for row in primary_rows if row.get("primary_reason_correct")) / len(primary_rows)
+            if primary_rows else 0.0
+        )
+        reason_rows = [row for row in results if row.get("reason_code_expected_strict")]
+        denominator = len(reason_rows) or 1
+        summary["extra_reason_rate"] = sum(1 for row in reason_rows if row.get("extra_reason_count", 0) > 0) / denominator
+        summary["missing_reason_rate"] = sum(1 for row in reason_rows if row.get("missing_reason_count", 0) > 0) / denominator
+        summary["invalid_reason_rate"] = sum(1 for row in reason_rows if row.get("invalid_reason_count", 0) > 0) / denominator
         # JSON 安定性
         truncated = sum(1 for row in results if row.get("truncated_json"))
         root_valid = sum(1 for row in results if row.get("root_json_valid"))
         summary["root_json_valid_rate"] = root_valid / total
         summary["truncated_json_rate"] = truncated / total
-        from collections import Counter as _C
-        tk = _C(row.get("truncation_kind") for row in results if row.get("truncated_json"))
-        summary["truncation_breakdown"] = dict(tk)
+        summary["json_damage_counts"] = {
+            key: sum(1 for row in results if row.get(key))
+            for key in (
+                "length_truncation",
+                "early_eos_invalid_json",
+                "root_parse_error",
+                "missing_closing_brace",
+                "reason_array_truncation",
+                "suggested_revision_truncation",
+            )
+        }
 
     return summary
 
@@ -480,12 +616,23 @@ def write_markdown(path: Path, summary: dict[str, Any], results: list[dict[str, 
         f"- impossible precision/recall/F1: {pct(summary['impossible_precision'])} / {pct(summary['impossible_recall'])} / {pct(summary['impossible_f1'])}",
         f"- reason+revision成立率(avg): {pct(summary['reason_revision_ok_rate'])}",
         f"- 反復崩壊率: {pct(summary['repetition_collapse_rate'])}",
+    ]
+    if summary.get("stage2"):
+        lines.extend([
+            f"- legacy reason exact: {pct(summary['legacy_reason_exact_rate'])}",
+            f"- strict reason exact: {pct(summary['strict_reason_exact_rate'])}",
+            f"- semantic reason micro P/R/F1: {pct(summary['semantic_reason_micro_precision'])} / {pct(summary['semantic_reason_micro_recall'])} / {pct(summary['semantic_reason_micro_f1'])}",
+            f"- primary reason accuracy: {pct(summary['primary_reason_accuracy'])}",
+            f"- extra/missing/invalid reason rate: {pct(summary['extra_reason_rate'])} / {pct(summary['missing_reason_rate'])} / {pct(summary['invalid_reason_rate'])}",
+            f"- JSON damage: {summary['json_damage_counts']}",
+        ])
+    lines.extend([
         "",
         "## Worst Cases",
         "",
         "| id | category | raw_json | schema | status | spec_adoption | raw_len |",
         "|---|---|---:|---:|---:|---:|---:|",
-    ]
+    ])
     for row in worst:
         lines.append(
             "| {id} | {category} | {raw_json} | {schema} | {status} | {adoption} | {raw_len} |".format(
@@ -511,6 +658,7 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--max-tokens", type=int, default=512)
     parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--batch-size", type=int, default=1, help="MLX batch_generate件数。temperature=0のみ")
     parser.add_argument("--json-prefill", choices=["none", "object", "schema"], default="schema")
     parser.add_argument(
         "--json-report",
@@ -560,28 +708,48 @@ def main() -> None:
     model, tokenizer, generate_fn = load_mlx_lm(args.model, args.adapter_path)
     results: list[dict[str, Any]] = []
     raw_records: list[dict[str, Any]] = []
-    for index, row in enumerate(rows, start=1):
+    if args.batch_size < 1:
+        raise SystemExit("--batch-size must be at least 1")
+    if args.batch_size > 1 and args.temperature != 0.0:
+        raise SystemExit("--batch-size supports deterministic temperature=0 evaluation only")
+
+    for chunk_start in range(0, len(rows), args.batch_size):
+        chunk = rows[chunk_start:chunk_start + args.batch_size]
         prefill = json_prefill(args.json_prefill)
-        prompt = prompt_from_row(tokenizer, row) + prefill
+        prompts = [prompt_from_row(tokenizer, row) + prefill for row in chunk]
         started = time.time()
-        raw_text = prefill + generate_text(generate_fn, model, tokenizer, prompt, args.max_tokens, args.temperature)
-        elapsed = time.time() - started
-        result = evaluate_row(row, raw_text, schema, stage2=args.stage2)
-        result["elapsed_s"] = round(elapsed, 3)
-        results.append(result)
-        raw_records.append({"id": row.get("id"), "prompt": prompt, "raw_text": raw_text})
-        print(
-            "[{}/{}] {} raw_json={} schema={} status={} adoption={:.1%}".format(
-                index,
-                len(rows),
-                row.get("id"),
-                result["raw_json_valid"],
-                result["schema_complete"],
-                result["status_exact"],
-                result["spec_field_adoption_rate"],
-            ),
-            flush=True,
-        )
+        if args.batch_size > 1:
+            generated = generate_batch_texts(model, tokenizer, prompts, args.max_tokens, args.batch_size)
+        else:
+            generated = [generate_text(generate_fn, model, tokenizer, prompt, args.max_tokens, args.temperature) for prompt in prompts]
+        elapsed_per_row = (time.time() - started) / len(chunk)
+        for offset, (row, prompt, generated_text) in enumerate(zip(chunk, prompts, generated), start=1):
+            raw_text = prefill + generated_text
+            generation_token_count = len(tokenizer.encode(raw_text[len(prefill):]))
+            result = evaluate_row(
+                row,
+                raw_text,
+                schema,
+                stage2=args.stage2,
+                generation_token_count=generation_token_count,
+                max_tokens=args.max_tokens,
+            )
+            result["elapsed_s"] = round(elapsed_per_row, 3)
+            results.append(result)
+            raw_records.append({"id": row.get("id"), "prompt": prompt, "raw_text": raw_text})
+            index = chunk_start + offset
+            print(
+                "[{}/{}] {} raw_json={} schema={} status={} adoption={:.1%}".format(
+                    index,
+                    len(rows),
+                    row.get("id"),
+                    result["raw_json_valid"],
+                    result["schema_complete"],
+                    result["status_exact"],
+                    result["spec_field_adoption_rate"],
+                ),
+                flush=True,
+            )
 
     summary = summarize(results, args)
     report = {"summary": summary, "results": results}

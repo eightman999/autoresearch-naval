@@ -11,7 +11,7 @@ Stage 2 は reason を [{"code": str, "message": str}] の構造化オブジェ�
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Iterable
 
 SCHEMA_VERSION = "navspec.lora_candidate.v1"
 
@@ -28,6 +28,7 @@ REASON_CODES = [
     "ship_type_role_conflict",
 ]
 REASON_CODE_SET = set(REASON_CODES)
+MAX_REASON_CODES = 3
 
 TOP_REQUIRED = [
     "schema_version",
@@ -69,6 +70,48 @@ def _num(value: Any) -> float | None:
     return None
 
 
+def normalize_reason_code_sequence(codes: Iterable[str]) -> list[str]:
+    """契約用に reason code をcanonical順・最大3件へ正規化する。
+
+    speed_armor_range_conflict は速力・装甲・航続の複合主原因であり、
+    旧Stage 2 goldにだけ残る4件セットでは speed_power_conflict を重複原因
+    として除外する。これはStage 2.2以降の厳格定義と同じ扱いである。
+    """
+    unique = {code for code in codes if code in REASON_CODE_SET}
+    if "speed_armor_range_conflict" in unique and len(unique) > MAX_REASON_CODES:
+        unique.discard("speed_power_conflict")
+    return sorted(unique, key=REASON_CODES.index)[:MAX_REASON_CODES]
+
+
+def reason_code_contract_errors(reason: Any) -> list[str]:
+    """reason配列に固有の件数・enum・重複・canonical順序を検証する。"""
+    if not isinstance(reason, list):
+        return ["$: reason must be an array"]
+
+    errors: list[str] = []
+    codes: list[str] = []
+    for index, item in enumerate(reason):
+        if not isinstance(item, dict):
+            errors.append(f"$.reason[{index}]: must be an object {{code,message}}")
+            continue
+        code = item.get("code")
+        if not isinstance(code, str) or code not in REASON_CODE_SET:
+            errors.append(f"$.reason[{index}]: invalid code {code!r}")
+        else:
+            codes.append(code)
+        message = item.get("message")
+        if not isinstance(message, str) or not message.strip():
+            errors.append(f"$.reason[{index}]: message must be a non-empty string")
+
+    if len(reason) > MAX_REASON_CODES:
+        errors.append(f"$.reason: at most {MAX_REASON_CODES} reason codes are allowed")
+    if len(codes) != len(set(codes)):
+        errors.append("$.reason: duplicate reason codes are not allowed")
+    if codes != sorted(codes, key=REASON_CODES.index):
+        errors.append("$.reason: reason codes must use canonical order")
+    return errors
+
+
 def validate_stage2(obj: Any) -> list[str]:
     errors: list[str] = []
     if not isinstance(obj, dict):
@@ -86,20 +129,9 @@ def validate_stage2(obj: Any) -> list[str]:
         errors.append(f"$: status must be ok|impossible, got {status!r}")
 
     reason = obj.get("reason")
+    errors.extend(reason_code_contract_errors(reason))
     if not isinstance(reason, list):
-        errors.append("$: reason must be an array")
         reason = []
-    else:
-        for index, item in enumerate(reason):
-            if not isinstance(item, dict):
-                errors.append(f"$.reason[{index}]: must be an object {{code,message}}")
-                continue
-            code = item.get("code")
-            if not isinstance(code, str) or code not in REASON_CODE_SET:
-                errors.append(f"$.reason[{index}]: invalid code {code!r}")
-            message = item.get("message")
-            if not isinstance(message, str) or not message.strip():
-                errors.append(f"$.reason[{index}]: message must be a non-empty string")
 
     if status == "ok" and len(reason) > 0:
         errors.append("$: status=ok requires reason==[]")

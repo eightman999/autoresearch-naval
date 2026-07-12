@@ -51,7 +51,11 @@ from navspec_lora_data import (  # noqa: E402
     split_for,
     write_jsonl,
 )
-from navspec_lora_stage2_schema import REASON_CODES, validate_stage2  # noqa: E402
+from navspec_lora_stage2_schema import (  # noqa: E402
+    REASON_CODES,
+    normalize_reason_code_sequence,
+    validate_stage2,
+)
 from navspec_nation_tier import (  # noqa: E402
     get_nation_tier,
     get_tier_limits,
@@ -198,12 +202,8 @@ def classify_reason_codes(case: dict[str, Any]) -> list[dict[str, str]]:
     if req_disp_min is not None and req_disp_max is not None and req_disp_min > req_disp_max:
         codes.append("displacement_limit_exceeded")
 
-    deduped: list[str] = []
-    for code in codes:
-        if code not in deduped:
-            deduped.append(code)
-    deduped.sort(key=lambda code: REASON_CODES.index(code))
-    return [{"code": code, "message": _message_for(code, case, specs, limits, tier)} for code in deduped]
+    normalized = normalize_reason_code_sequence(codes)
+    return [{"code": code, "message": _message_for(code, case, specs, limits, tier)} for code in normalized]
 
 
 _MESSAGE_TEMPLATE = {
