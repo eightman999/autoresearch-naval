@@ -1,0 +1,76 @@
+{
+  "canonical_order": [
+    "displacement_limit_exceeded",
+    "main_gun_too_large_for_hull",
+    "armor_too_heavy_for_hull",
+    "speed_power_conflict",
+    "range_volume_conflict",
+    "speed_armor_range_conflict",
+    "era_equipment_unavailable",
+    "treaty_limit_exceeded",
+    "nation_capability_exceeded",
+    "ship_type_role_conflict"
+  ],
+  "canonical_reordered_rows": 60,
+  "contract_version": "navspec-stage2x-eval-contract-v1",
+  "four_code_normalization": {
+    "legacy": [
+      "armor_too_heavy_for_hull",
+      "speed_power_conflict",
+      "range_volume_conflict",
+      "speed_armor_range_conflict"
+    ],
+    "rationale": "speed_armor_range_conflict is the composite primary cause; speed_power_conflict is redundant under the strict definition.",
+    "strict": [
+      "armor_too_heavy_for_hull",
+      "range_volume_conflict",
+      "speed_armor_range_conflict"
+    ]
+  },
+  "normalized_reason_rows": 20,
+  "reason_max": 3,
+  "reproduction": "uv run --offline python tools/navspec_stage2x_contract.py --output-root data/navspec/lora/stage2x_eval_contract_v1",
+  "sources": {
+    "era_eval": {
+      "canonical_reordered_rows": 0,
+      "cases": "data/navspec/lora/stage2x_eval_contract_v1/era_eval/cases.jsonl",
+      "cases_sha256": "a5f93e2f55e3c9eb96532301c2adfe19e75b3214bc24153f72fd728fe7b565b4",
+      "mode": "normalize_existing_stage2_gold",
+      "normalized_reason_rows": 0,
+      "rows": 400,
+      "source": "data/navspec/lora/stage2_3_era_eval_v0/cases.jsonl",
+      "source_sha256": "a5f93e2f55e3c9eb96532301c2adfe19e75b3214bc24153f72fd728fe7b565b4"
+    },
+    "set622_common_semantic": {
+      "canonical_reordered_rows": 0,
+      "cases": "data/navspec/lora/stage2x_eval_contract_v1/set622_common_semantic/cases.jsonl",
+      "cases_sha256": "c6b6b81d5dfeea4c18a4f4c5cee22e00a764184c16b63b64ef8ef1ac47a3bc26",
+      "mode": "rebuild_stage2_gold_from_classic_input",
+      "normalized_reason_rows": 0,
+      "rows": 622,
+      "source": "data/navspec/lora/raw_baseline_122_plus_500/cases.jsonl",
+      "source_sha256": "b7aab32d98eb37401c5aea5174bb4cedd6d62496c763f7fdf3b4590e126cdb35"
+    },
+    "speed_eval": {
+      "canonical_reordered_rows": 0,
+      "cases": "data/navspec/lora/stage2x_eval_contract_v1/speed_eval/cases.jsonl",
+      "cases_sha256": "93b17f23bd73007aae8b84f8b6936e6d914646dd0a34274e7725ccb69ef00054",
+      "mode": "normalize_existing_stage2_gold",
+      "normalized_reason_rows": 0,
+      "rows": 400,
+      "source": "data/navspec/lora/stage2_2_speed_eval_v0/cases.jsonl",
+      "source_sha256": "93b17f23bd73007aae8b84f8b6936e6d914646dd0a34274e7725ccb69ef00054"
+    },
+    "stage2_eval": {
+      "canonical_reordered_rows": 60,
+      "cases": "data/navspec/lora/stage2x_eval_contract_v1/stage2_eval/cases.jsonl",
+      "cases_sha256": "4fc55ef1cbf75b7abf9331af695f030b54c53832c25f7096670f324497e89bd2",
+      "mode": "normalize_existing_stage2_gold",
+      "normalized_reason_rows": 20,
+      "rows": 480,
+      "source": "data/navspec/lora/stage2_eval_v0/cases.jsonl",
+      "source_sha256": "23ef9481bf1e29720f2e9b3a69f334f55bcacf7c73d3e3495c5ba95862c70ae8"
+    }
+  },
+  "total_rows": 1902
+}

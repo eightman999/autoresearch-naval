@@ -3,22 +3,123 @@
     "navspec-classic-v1": {
       "archive": "artifacts/navspec-classic-v1",
       "generator": "generate_navspec.py",
-      "status": "archived_without_git_tag",
       "role": [
         "baseline",
         "fallback",
         "teacher",
         "validator"
-      ]
+      ],
+      "status": "archived_without_git_tag"
     }
   },
   "lora": {
     "navspec-lora-0.5b-v0.1": {
-      "config": "models/navspec-lora-0.5b-v0.1/config.json",
-      "chat_template": "models/navspec-lora-0.5b-v0.1/chat_template.json",
-      "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
       "adapter": "models/navspec-lora-0.5b-v0.1/adapter",
+      "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "chat_template": "models/navspec-lora-0.5b-v0.1/chat_template.json",
+      "config": "models/navspec-lora-0.5b-v0.1/config.json",
       "status": "qwen_selected_not_trained"
+    },
+    "stage2x": {
+      "navspec-qwen2.5-0.5b-stage2-r8": {
+        "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage2-status-r8",
+        "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "dataset_manifest": "data/navspec/lora/stage2_status_v0/manifest.json",
+        "default": true,
+        "id": "navspec-qwen2.5-0.5b-stage2-r8",
+        "parent": "navspec-qwen2.5-0.5b-stage1-r8",
+        "primary_eval_summary": "artifacts/navspec-lora/stage2x_eval_summaries/stage2-iter1000_stage2_eval.json",
+        "promotion_decision": "accepted_default",
+        "regressions": [],
+        "schema_version": "navspec.lora_candidate.v1",
+        "sha256": "1b9f5eb892e70a321ff04236af5e753bf19d035d639a0039c0bece75752f4098",
+        "status": "accepted",
+        "strengths": [
+          "Stage 2.x正式default",
+          "statusとimpossible判定の安定性"
+        ],
+        "training_config": "models/navspec-lora-0.5b-v0.1/adapter/stage2-status-r8/adapter_config.json"
+      },
+      "navspec-qwen2.5-0.5b-stage2.1-r8-iter500": {
+        "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage2.1-iter500",
+        "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "dataset_manifest": "data/navspec/lora/stage2_1_status_v0/manifest.json",
+        "default": false,
+        "id": "navspec-qwen2.5-0.5b-stage2.1-r8-iter500",
+        "parent": "navspec-qwen2.5-0.5b-stage1-r8",
+        "primary_eval_summary": "artifacts/navspec-lora/stage2x_eval_summaries/stage2.1-iter500_stage2_eval.json",
+        "promotion_decision": "experimental_only",
+        "regressions": [
+          "正式defaultには昇格しない"
+        ],
+        "schema_version": "navspec.lora_candidate.v1",
+        "sha256": "c827cd4b9b1af3dfe69b8b44c6da467cd277c1f33e6c54c0dcc42102c9ddcd86",
+        "status": "experimental",
+        "strengths": [
+          "nation_capability/treatyの実験"
+        ],
+        "training_config": "models/navspec-lora-0.5b-v0.1/adapter/stage2.1-iter500/adapter_config.json"
+      },
+      "navspec-qwen2.5-0.5b-stage2.2-r8-iter500": {
+        "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage2.2-balanced-reason-r8",
+        "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "dataset_manifest": "data/navspec/lora/stage2_2_balanced_reason_v0/manifest.json",
+        "default": false,
+        "id": "navspec-qwen2.5-0.5b-stage2.2-r8-iter500",
+        "parent": "navspec-qwen2.5-0.5b-stage1-r8",
+        "primary_eval_summary": "artifacts/navspec-lora/stage2x_eval_summaries/stage2.2-iter500_stage2_eval.json",
+        "promotion_decision": "experimental_rejected",
+        "regressions": [
+          "era JSON安定性と総合ゲート"
+        ],
+        "schema_version": "navspec.lora_candidate.v1",
+        "sha256": "fbc0c838ebf45cbd6cab708716808881e787a44f914549bb5f22799119ddb50f",
+        "status": "experimental_rejected",
+        "strengths": [
+          "speed reason厳格定義の概念実証"
+        ],
+        "training_config": "models/navspec-lora-0.5b-v0.1/adapter/stage2.2-balanced-reason-r8/adapter_config.json"
+      },
+      "navspec-qwen2.5-0.5b-stage2.3-r8-iter250": {
+        "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage2.3-iter250",
+        "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "dataset_manifest": "data/navspec/lora/stage2_3_era_balanced_v0/manifest.json",
+        "default": false,
+        "id": "navspec-qwen2.5-0.5b-stage2.3-r8-iter250",
+        "parent": "navspec-qwen2.5-0.5b-stage1-r8",
+        "primary_eval_summary": "artifacts/navspec-lora/stage2x_eval_summaries/stage2.3-iter250_stage2_eval.json",
+        "promotion_decision": "experimental_rejected_representative",
+        "regressions": [
+          "Stage 2正式採用ゲート未達"
+        ],
+        "schema_version": "navspec.lora_candidate.v1",
+        "sha256": "560d27cb57e4358f84bd3bafe3534bc29bc70063130388a06181ec48c1d93757",
+        "status": "experimental_rejected",
+        "strengths": [
+          "era truncation解消の実験代表checkpoint"
+        ],
+        "training_config": "models/navspec-lora-0.5b-v0.1/adapter/stage2.3-iter250/adapter_config.json"
+      },
+      "navspec-qwen2.5-0.5b-stage2.3-r8-iter500": {
+        "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage2.3-iter500",
+        "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "dataset_manifest": "data/navspec/lora/stage2_3_era_balanced_v0/manifest.json",
+        "default": false,
+        "id": "navspec-qwen2.5-0.5b-stage2.3-r8-iter500",
+        "parent": "navspec-qwen2.5-0.5b-stage1-r8",
+        "primary_eval_summary": "artifacts/navspec-lora/stage2x_eval_summaries/stage2.3-iter500_stage2_eval.json",
+        "promotion_decision": "experimental_rejected_comparison",
+        "regressions": [
+          "正式採用ゲート未達"
+        ],
+        "schema_version": "navspec.lora_candidate.v1",
+        "sha256": "9ede54bcee20eb61d762a4e94928958c9bf8121f4648e14eb93fc34085b10be7",
+        "status": "experimental_rejected",
+        "strengths": [
+          "Stage 2.3比較checkpoint"
+        ],
+        "training_config": "models/navspec-lora-0.5b-v0.1/adapter/stage2.3-iter500/adapter_config.json"
+      }
     }
   }
 }
