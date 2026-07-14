@@ -1,100 +1,141 @@
-# autoresearch-mlx
+# autoresearch-naval
 
-Apple Silicon (MLX) port of [Karpathy's autoresearch](https://github.com/karpathy/autoresearch).
+歴史上の艦艇データを基に、架空艦の仕様を構造化 JSON として生成・検証する
+NavSpec 実験環境です。Apple Silicon 上の MLX を使う小規模な学習器と、Qwen2.5-0.5B
+向け LoRA 学習・評価パイプラインを含みます。
 
-Full credit to [@karpathy](https://github.com/karpathy) for the core idea: fixed-time autonomous research loops controlled through `program.md`. This port keeps the same basic rules: one mutable `train.py`, one metric (`val_bpb`), a fixed 5-minute training budget, and keep-or-revert via git. It runs natively on Apple Silicon through [MLX](https://github.com/ml-explore/mlx), so there is no PyTorch or CUDA dependency.
+本リポジトリは [autoresearch](https://github.com/karpathy/autoresearch) の実験ループを
+出発点にしていますが、現在の主目的は汎用言語モデルの探索ではなく、艦艇仕様の生成品質・
+制約遵守・回帰評価です。
 
-## Quick start
+## できること
 
-Requirements: Apple Silicon Mac, Python 3.10+, [uv](https://docs.astral.sh/uv/).
+- `ShipSpecRecord` スキーマに沿った架空艦仕様の生成
+- 船型、年代、国家能力、条約、兵装、速力・航続距離などの整合性検査
+- 矛盾する要求を `impossible` として理由コード付きで返す判定
+- NSDB からの史実レコード抽出と、範囲を限定した架空バリエーションの作成
+- MLX による classic モデルの学習、および Qwen2.5-0.5B-Instruct の LoRA 学習・評価
+
+生成結果は設計案の補助であり、史実・工学的な正確さを保証するものではありません。ゲームへ
+反映する前に、出力された数値と制約判定を必ずレビューしてください。
+
+## 必要環境
+
+- Apple Silicon 搭載 Mac
+- Python 3.10 以上 3.14 未満
+- [uv](https://docs.astral.sh/uv/)
 
 ```bash
-# install uv if needed
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# install dependencies
+git clone https://github.com/eightman999/autoresearch-mlx.git autoresearch-naval
+cd autoresearch-naval
 uv sync
-
-# one-time data + tokenizer prep
-uv run prepare.py
-
-# run one 5-minute training experiment
-uv run train.py
 ```
 
-Then point Claude Code or another coding agent at `program.md` and let it run the loop.
+LoRA の推論・学習では、初回に Qwen のベースモデル取得が必要になる場合があります。モデルと
+データセットには、それぞれの配布元のライセンス・利用条件が適用されます。
 
-## What matters
+## まず生成する
 
-- `prepare.py` - data prep, tokenizer, dataloader, and evaluation. Treat as fixed.
-- `train.py` - model, optimizer, and training loop. This is the file the agent edits.
-- `program.md` - the autonomous experiment protocol.
-- `results.tsv` - logged experiment history.
+classic モデルのチェックポイントとサンプルデータは同梱されています。次の例では、1938 年の
+日本戦艦案を生成して `data/navspec/generated/example.json` に保存します。
 
-The loop is the same as upstream: edit `train.py`, run a fixed-budget experiment, read `val_bpb`, keep the change if it wins, revert if it loses, and repeat.
+```bash
+uv run python generate_navspec.py \
+  --country Japan \
+  --year 1938 \
+  --ship-type battleship \
+  --constraints-json '{"speed_kt": 30, "main_gun_caliber_mm": 410}' \
+  --raw-output data/navspec/generated/example_raw.txt \
+  --json-output data/navspec/generated/example.json
 
-## Public baseline results
-
-The public `results.tsv` captures the initial hardware-local walk from the default baseline down to `1.807902`:
-
-| Commit | val_bpb | Status | Description |
-|---|---:|---|---|
-| `383abb4` | 2.667000 | keep | baseline (AdamW, default config) |
-| `909dd59` | 2.588904 | keep | halve total batch size to `2^16` |
-| `4161af3` | 2.533728 | keep | increase matrix LR to `0.04` |
-| `5efc7aa` | 1.807902 | keep | reduce depth from `8` to `4` |
-
-That result already shows the core Apple Silicon pattern: with a fixed 5-minute wall clock, smaller faster-training models can beat larger ones simply by fitting more optimizer steps into the budget.
-
-## Longer Apple Silicon runs
-
-Longer overnight runs on the working MLX port pushed much further. The long Mac Mini test is included here because it found a meaningfully different winner stack from the Max-class machines.
-
-| Machine | Current best | Starting point | Repeated wins |
-|---|---:|---:|---|
-| M4 Max #1 | 1.294526 | 1.596971 | AdamW-only, low matrix LR, 3x MLP, no logit cap, moderate weight decay |
-| M4 Max #2 | 1.330509 | 1.807902 | leaner batch, long anneal, SiLU, lower regularization, no logit cap |
-| Mac Mini (long run) | 1.353329 | 1.922472 | Muon, sharper attention, smaller MLP, lower scalar LR |
-
-The Mac Mini result matters because it did not just rediscover the same exact recipe. On smaller Apple Silicon hardware, the strongest changes leaned toward more aggressive step-efficiency wins. Later transfer tests showed some of those Mac Mini findings did not carry cleanly onto the Max baseline, which is exactly the kind of hardware-specific behavior this loop is useful for uncovering.
-
-## Rigorous keep/discard (optional)
-
-A single 5-minute run is noisy — re-running the *same* `train.py` moves `val_bpb`
-by ~0.03. Deciding keep/discard on one run below that threshold just chases
-noise, and since the loop only keeps a run that dips below the running best, the
-recorded curve is an optimistic running-minimum that regresses on honest re-eval.
-
-`rigor.py` gates the decision instead of eyeballing a single delta: it runs a few
-seeds and keeps a change only if it beats the current best with high confidence
-(bootstrap), fails a clear loser fast after one run, and never re-scores an
-identical `train.py`.
-
-```
-uv run rigor.py run "halve the batch size"   # score train.py vs best (3 seeds)
-uv run rigor.py run "..." --seeds 5 --confidence 0.9
-uv run rigor.py best                          # current best
-uv run rigor.py log                           # every scored config
+uv run python validate_navspec_output.py data/navspec/generated/example.json
 ```
 
-It never edits `train.py`, touches git, or changes `evaluate_bpb` — it only
-decides, and writes samples to `rigor_ledger.jsonl`.
+`generate_navspec.py` は、生のモデル出力を保存した後にルールベースの補正とスキーマ検証を
+行います。`status: impossible` が返る場合は、出力 JSON の `reason` と
+`suggested_revision` を確認してください。
 
-## Differences from upstream
+### GUI で設計する
 
-- **MLX instead of PyTorch/CUDA.** Native Apple Silicon training with unified memory.
-- **AdamW-only public path.** This public `train.py` keeps the default path simple. The long Mac Mini run above explored a Muon variant in the working port, but that branch is not exposed as a public default here.
-- **Smaller eval token budget.** Reduced for faster iteration on Apple Silicon while keeping the same `evaluate_bpb` interface in `prepare.py`.
-- **Roughly 6-7 minutes per experiment.** Expect 5 minutes of training plus compile and eval overhead.
-- **MFU reporting is placeholder.** There is no Apple Silicon equivalent to the H100 FLOPs reference used upstream.
+二段 pipeline (Stage 2 + classic + numeric specialist) を GUI から操作できます。
+年代・国家・艦種・制約を入力して「設計生成」ボタンを押すと、3〜5 秒で仕様が生成されます。
 
-## Acknowledgments
+```bash
+uv run python tools/navspec_gui.py
+```
 
-- [Andrej Karpathy](https://github.com/karpathy) - autoresearch and nanochat
-- [scasella/nanochat-mlx](https://github.com/scasella/nanochat-mlx) - MLX GPT and optimizer reference
-- [awni/picochat](https://github.com/awni/picochat) - MLX training patterns
-- [Apple MLX team](https://github.com/ml-explore/mlx)
+タブ構成: 仕様表 / 設計コンセプト / パッチ詳細 / 不可理由 / 生JSON。
+依存関係追加なし（Python 標準の Tkinter を使用）。
+
+## データセットを再構築する
+
+史実レコードの抽出元である NSDB SQLite データベースはリポジトリに含めていません。用意した
+データベースを指定してから、以下の順に実行します。
+
+```bash
+uv run python tools/navspec_extract.py --db /path/to/NSDB.db
+uv run python tools/navspec_mutate.py
+uv run python tools/navspec_tasks.py
+uv run python tools/navspec_eval.py \
+  data/navspec/battleship_real_specs.jsonl \
+  data/navspec/battleship_fictional_specs.jsonl
+uv run python tools/navspec_plausibility.py \
+  data/navspec/battleship_fictional_specs.jsonl \
+  --base-records data/navspec/battleship_real_specs.jsonl
+uv run python prepare_navspec.py --force
+```
+
+NSDB の取得・更新方法は [nsdb/README.md](nsdb/README.md) を参照してください。抽出対象は初期設定で
+戦艦・巡洋戦艦・海防戦艦です。詳しいデータフローとスモーク学習の環境変数は
+[docs/navspec_pipeline.md](docs/navspec_pipeline.md) にまとめています。
+
+## 学習・評価
+
+classic モデルの短いスモーク学習:
+
+```bash
+env AUTORESEARCH_CACHE_DIR="$PWD/.cache/autoresearch-navspec" \
+  AUTORESEARCH_TIME_BUDGET=60 \
+  AUTORESEARCH_EVAL_TOKENS=131072 \
+  AUTORESEARCH_MAX_SEQ_LEN=512 \
+  uv run python train.py
+```
+
+既存の評価ケースを使った生成評価:
+
+```bash
+uv run python -m tools.eval_suite \
+  --extended-count 100 \
+  --json-report data/navspec/generated/eval/report.json
+```
+
+LoRA のデータ生成・訓練・評価スクリプトは `tools/navspec_lora_data*.py`、
+`tools/qwen_lora_train.py`、`tools/qwen_lora_eval.py` にあります。データセット・評価レポート・
+アダプターの対応は `models/registry.json` と `docs/` を正とします。
+
+2026-07-13 時点の既定アダプターは Stage 2（`stage2-status-r8`）です。Stage 3 は数値品質を
+改善した一方で `impossible` 判定と理由コードに回帰があり、実験扱いに留めています。詳細は
+[Stage 3 候補検証レポート](docs/navspec_stage3_candidate_validation_2026-07-13.md) を参照してください。
+
+## リポジトリ構成
+
+| パス | 内容 |
+| --- | --- |
+| `schemas/` | ShipSpecRecord と LoRA 候補出力の JSON Schema |
+| `tools/` | 抽出、変異、制約、学習データ作成、学習、評価ツール |
+| `data/navspec/` | 学習・評価データ、生成結果、実験 manifest |
+| `models/` | LoRA アダプターと採用状況のレジストリ |
+| `artifacts/` | classic モデルの固定アーカイブと整合性 manifest |
+| `docs/` | パイプライン、実験結果、昇格判定の記録 |
+| `nsdb/` | Navypedia ミラー由来のデータ取得・参照ツール |
+
+## 謝辞
+
+- [Andrej Karpathy / autoresearch](https://github.com/karpathy/autoresearch) — 自律実験ループの原案
+- [MLX](https://github.com/ml-explore/mlx) — Apple Silicon 向け機械学習フレームワーク
+- [Qwen](https://github.com/QwenLM/Qwen) — LoRA 実験のベースモデル
+- Navypedia および NSDB のデータ整備に関わる各プロジェクト
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT License。詳細は [LICENSE](LICENSE) を参照してください。

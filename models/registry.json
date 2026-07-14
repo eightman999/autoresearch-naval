@@ -120,6 +120,30 @@
         ],
         "training_config": "models/navspec-lora-0.5b-v0.1/adapter/stage2.3-iter500/adapter_config.json"
       }
+    },
+    "stage3": {
+      "navspec-qwen2.5-0.5b-stage3-numeric-r8-v1-iter500": {
+        "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8-v1",
+        "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "classic_owned_fields": ["power_shp", "range_nm"],
+        "dataset_manifest": "data/navspec/lora/stage3_numeric_quality_v1/manifest.json",
+        "default": false,
+        "id": "navspec-qwen2.5-0.5b-stage3-numeric-r8-v1-iter500",
+        "parent": "navspec-qwen2.5-0.5b-stage2-r8",
+        "phase": "n0",
+        "role": "numeric_specialist",
+        "primary_eval_summary": "docs/navspec_numeric_specialist_comparison_2026-07-13.md",
+        "promotion_decision": "candidate",
+        "regressions": ["phase_n1_stability_probe_unstable"],
+        "schema_version": "navspec.lora_candidate.v1",
+        "sha256": "303fadf04c9e10d0f0046dd23fc8127c43c629e3f164be71f857b745d6d08d71",
+        "status": "candidate",
+        "strengths": [
+          "power_shp/range_nm 数値品質 (tolerant 90.1%)",
+          "two-stage pipeline end-to-end ALL GATES PASS"
+        ],
+        "training_config": "models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8-v1/adapter_config.json"
+      }
     }
   }
 }

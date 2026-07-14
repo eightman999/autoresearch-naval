@@ -25,6 +25,7 @@ from mlx_lm_compat import patch_transformers_5_tokenizer_register  # noqa: E402
 from navspec_lora_stage2_schema import (  # noqa: E402
     MAX_REASON_CODES,
     REASON_CODES,
+    SPEC_REQUIRED,
     extract_reason_codes,
     normalize_reason_code_sequence,
     reason_code_metrics,
@@ -341,7 +342,13 @@ def adopted(actual: Any, expected: Any) -> bool:
 
 
 def spec_field_report(actual: Any, expected: Any, schema: dict[str, Any]) -> dict[str, Any]:
-    required = schema["properties"]["spec"]["required"]
+    spec_schema = schema.get("properties", {}).get("spec", {}) if isinstance(schema, dict) else {}
+    required = spec_schema.get("required")
+    if not required:
+        # Stage 2 schema declares spec as object|null without a `required`
+        # list (impossible rows have empty spec). Fall back to the canonical
+        # Stage 2 SPEC_REQUIRED list so the metric still covers all 18 fields.
+        required = SPEC_REQUIRED
     if not isinstance(expected, dict):
         return {
             "spec_required_present_rate": 1.0 if actual is None else 0.0,

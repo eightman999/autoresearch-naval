@@ -1,115 +1,100 @@
-# autoresearch-mlx
+# autoresearch-naval 作業ガイド
 
-This is an Apple Silicon (MLX) port of Karpathy's autoresearch — an experiment to have the LLM do its own research. All training runs natively on MLX with unified memory. No PyTorch or CUDA required.
+このリポジトリは、史実艦データを基に架空艦の `ShipSpecRecord` を生成・検証する NavSpec の
+研究環境である。MLX の classic モデルと Qwen2.5-0.5B-Instruct の LoRA 実験を扱う。
 
-**Monorepo note:** This project may live inside a larger repo. Always stage only `autoresearch-mlx/` paths. Never use blind `git add -A`.
+`autoresearch` は実験反復の着想元であるが、このリポジトリは「`train.py` だけを自律変更して
+`val_bpb` を最小化する」汎用ループではない。仕様の妥当性、矛盾判定、理由コード、数値品質、
+既存評価への非回帰を同等に扱う。
 
-## Setup
+## 作業開始時
 
-To set up a new experiment, work with the user to:
+1. `git status --short` で既存の変更・生成物を確認し、依頼範囲以外には触れない。
+2. [README.md](README.md)、[docs/navspec_pipeline.md](docs/navspec_pipeline.md)、対象機能に対応する
+   `docs/` の評価レポートを読む。
+3. 目的が classic 生成器、データセット、LoRA、評価契約のどれかを明確にする。複数を同時に
+   変更する必要がある場合は、接続方法と保護対象を先に示す。
 
-1. **Agree on a run tag**: propose a tag based on today's date (e.g. `mar5`). The branch `autoresearch/<tag>` must not already exist — this is a fresh run.
-2. **Create the branch**: `git checkout -b autoresearch/<tag>` from current master.
-3. **Read the in-scope files**: The repo is small. Read these files for full context:
-   - `README.md` — repository context.
-   - `prepare.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
-   - `train.py` — the file you modify. Model architecture, optimizer, training loop.
-4. **Verify data exists**: Check that `~/.cache/autoresearch/` contains data shards and a tokenizer. If not, tell the human to run `uv run prepare.py`.
-5. **Initialize results.tsv**: Create `results.tsv` with header row and baseline entry. Run `uv run train.py` once to establish YOUR baseline on this hardware. Do NOT use baseline numbers from other platforms.
-6. **Confirm and go**: Confirm setup looks good.
+## 主要な構成
 
-Once you get confirmation, kick off the experimentation.
+| 対象 | 役割 |
+| --- | --- |
+| `schemas/` | `ShipSpecRecord` と LoRA 候補出力の正規スキーマ |
+| `tools/navspec_*.py` | 抽出、変異、制約、矛盾判定、データセット、評価 |
+| `generate_navspec.py` | classic モデルによる生成とルールベース補正 |
+| `validate_navspec_output.py` | JSON / JSONL のスキーマ・ルール検証 |
+| `tools/qwen_lora_*.py` | Qwen LoRA の訓練・生出力評価 |
+| `models/registry.json` | アダプターの採用状態・対応データセットの正本 |
+| `artifacts/` | classic の固定アーカイブと LoRA の整合性 manifest |
 
-## Experimentation
+## モデルと評価の扱い
 
-Each experiment runs on Apple Silicon via MLX. The training script runs for a **fixed time budget of 5 minutes** (wall clock training time, excluding startup/compilation). You launch it simply as: `uv run train.py`.
+- 既定 LoRA は `stage2-status-r8`。`models/registry.json` の `default: true` と評価レポートを
+  根拠にする。
+- Stage 3 数値品質アダプターは実験扱いである。数値品質の改善だけを根拠に既定へ昇格させない。
+  `impossible` 判定・理由コードの Stage 2 回帰ゲートも満たす必要がある。
+- `schemas/`、`data/navspec/lora/contracts/`、既存アダプター、固定 artifact、既存の評価 manifest は
+  保護対象である。明示依頼なしに書き換え・削除・再生成しない。
+- NSDB はローカルデータベースであり、リポジトリには含めない。抽出元を変更する場合はデータの
+  来歴と再現手順を併せて記録する。
 
-**What you CAN do:**
-- Modify `train.py` — this is the only file you edit. Everything is fair game: model architecture, optimizer, hyperparameters, training loop, batch size, model size, etc.
+## 標準ワークフロー
 
-**What you CANNOT do:**
-- Modify `prepare.py`. It is read-only. It contains the fixed evaluation, data loading, tokenizer, and training constants (time budget, sequence length, etc).
-- Install new packages or add dependencies. You can only use what's already in `pyproject.toml`.
-- Modify the evaluation harness. The `evaluate_bpb` function in `prepare.py` is the ground truth metric.
+### classic 生成器
 
-**The goal is simple: get the lowest val_bpb.** Since the time budget is fixed, you don't need to worry about training time — it's always 5 minutes. Everything is fair game: change the architecture, the optimizer, the hyperparameters, the batch size, the model size. The only constraint is that the code runs without crashing and finishes within the time budget.
+1. 変更対象を `generate_navspec.py`、`tools/navspec_*.py`、スキーマのいずれかに限定する。
+2. 生成結果をスキーマとルールで検証する。
+3. 対象ケースを含む評価スイートを実行し、既存ケースの回帰有無を確認する。
 
-**Memory** is a soft constraint. MLX uses unified memory shared between CPU and GPU. Some increase is acceptable for meaningful val_bpb gains, but it should not blow up dramatically.
-
-**Simplicity criterion**: All else being equal, simpler is better. A small improvement that adds ugly complexity is not worth it. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.001 val_bpb improvement that adds 20 lines of hacky code? Probably not worth it. A 0.001 val_bpb improvement from deleting code? Definitely keep. An improvement of ~0 but much simpler code? Keep.
-
-**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is.
-
-## Output format
-
-Once the script finishes it prints a summary like this:
-
-```
----
-val_bpb:          2.534000
-training_seconds: 312.4
-total_seconds:    405.7
-peak_vram_mb:     27528.9
-mfu_percent:      0.00
-total_tokens_M:   39.8
-num_steps:        46
-num_params_M:     50.3
-depth:            8
+```bash
+uv run python generate_navspec.py \
+  --country Japan --year 1938 --ship-type battleship \
+  --raw-output /tmp/navspec_raw.txt --json-output /tmp/navspec.json
+uv run python validate_navspec_output.py /tmp/navspec.json
+uv run python -m tools.eval_suite --extended-count 100 \
+  --json-report /tmp/navspec_eval_report.json
 ```
 
-Note that the script runs for a fixed 5-minute training budget. On Apple Silicon the throughput, step count, and absolute val_bpb will differ from NVIDIA results — that's expected. Compare only against your own baseline on the same hardware.
+### データセット
 
-```
-grep "^val_bpb:" run.log
-```
+1. NSDB からの抽出、架空バリエーション、タスク化、妥当性評価の順を保つ。
+2. 既存 JSONL を置換する前に件数・スキーマ・差分を確認する。
+3. 生成データセットには seed、入力件数、分割、制約バージョンを manifest に残す。
 
-## Logging results
-
-When an experiment is done, log it to `results.tsv` (tab-separated, NOT comma-separated — commas break in descriptions).
-
-The TSV has a header row and 5 columns:
-
-```
-commit	val_bpb	memory_gb	status	description
-```
-
-1. git commit hash (short, 7 chars)
-2. val_bpb achieved (e.g. 1.234567) — use 0.000000 for crashes
-3. peak memory in GB, round to .1f (e.g. 12.3 — divide peak_vram_mb by 1024) — use 0.0 for crashes
-4. status: `keep`, `discard`, or `crash`
-5. short text description of what this experiment tried
-
-Example:
-
-```
-commit	val_bpb	memory_gb	status	description
-383abb4	2.667000	26.9	keep	baseline
-909dd59	2.588904	26.9	keep	halve total batch size to 2^16
-4161af3	2.533728	26.9	keep	increase matrix LR to 0.04
+```bash
+uv run python tools/navspec_extract.py --db /path/to/NSDB.db
+uv run python tools/navspec_mutate.py
+uv run python tools/navspec_tasks.py
+uv run python tools/navspec_plausibility.py \
+  data/navspec/battleship_fictional_specs.jsonl \
+  --base-records data/navspec/battleship_real_specs.jsonl
 ```
 
-## The experiment loop
+### LoRA
 
-The experiment runs on a dedicated branch (e.g. `autoresearch/mar5` or `autoresearch/mar5-gpu0`).
+1. Stage に対応するデータセット作成スクリプトで manifest を作る。
+2. 学習後は raw 出力評価を行い、schema 完全性、`status`、`impossible` F1、理由コード、数値品質を
+   既定アダプターと比較する。
+3. 同一の評価ケース・生成モード・乱数条件で比較できない結果は昇格根拠にしない。
+4. 採否、ハッシュ、回帰の有無を `models/registry.json` と `docs/` に記録する。
 
-LOOP FOREVER:
+## classic MLX 学習
 
-1. Look at the git state: the current branch/commit we're on
-2. Tune `train.py` with an experimental idea by directly hacking the code.
-3. `git add autoresearch-mlx/train.py && git commit -m "experiment: <description>"` (never `git add -A` — this may be inside a larger repo)
-4. Run the experiment: `uv run train.py > run.log 2>&1` (redirect everything — do NOT use tee or let output flood your context)
-5. Read out the results: `grep "^val_bpb:\|^peak_vram_mb:" run.log`
-6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
-7. Record the results in the tsv
-8. If val_bpb improved (lower), `git add autoresearch-mlx/results.tsv && git commit --amend --no-edit` to include the log, advancing the branch
-9. If val_bpb is equal or worse, record the discard commit hash, then `git reset --hard <previous kept commit>` to discard it cleanly
+`train.py` と `prepare.py` は classic モデルのために残している。短時間学習は評価や生成器の変更を
+正当化しないため、`val_bpb` だけで採否を決めない。チェックポイントの保存先、データキャッシュ、
+時間予算は `AUTORESEARCH_*` 環境変数で分離する。
 
-The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
+```bash
+env AUTORESEARCH_CACHE_DIR="$PWD/.cache/autoresearch-navspec" \
+  AUTORESEARCH_TIME_BUDGET=60 \
+  AUTORESEARCH_EVAL_TOKENS=131072 \
+  AUTORESEARCH_MAX_SEQ_LEN=512 \
+  uv run python train.py
+```
 
-**Timeout**: Each experiment should take ~7 minutes total (5 min training + ~1 min compile/eval overhead on Apple Silicon). If a run exceeds 15 minutes, kill it and treat it as a failure (discard and revert).
+## 完了前の確認
 
-**Crashes**: If a run crashes (OOM, or a bug, or etc.), use your judgment: If it's something dumb and easy to fix (e.g. a typo, a missing import), fix it and re-run. If the idea itself is fundamentally broken, just skip it, log "crash" as the status in the tsv, and move on.
-
-**NEVER STOP**: Once the experiment loop has begun (after the initial setup), do NOT pause to ask the human if you should continue. Do NOT ask "should I keep going?" or "is this a good stopping point?". The human might be asleep, or gone from a computer and expects you to continue working *indefinitely* until you are manually stopped. You are autonomous. If you run out of ideas, think harder — read papers referenced in the code, re-read the in-scope files for new angles, try combining previous near-misses, try more radical architectural changes. The loop runs until the human interrupts you, period.
-
-As an example use case, a user might leave you running while they sleep. If each experiment takes you ~7 minutes then you can run approx 8-9/hour, for a total of about 70 over the duration of the average human sleep. The user then wakes up to experimental results, all completed by you while they slept!
+1. `git diff --check` と `git diff` で、変更が依頼範囲だけであることを確認する。
+2. 変更内容に対応する検証を実行し、実出力を確認する。
+3. 実機推論・LoRA 学習・全件評価を行っていない場合は、その未検証範囲を明記する。
+4. コミット・プッシュ・既定アダプターの変更は、明示指示がある場合のみ行う。
