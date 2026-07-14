@@ -1,0 +1,56 @@
+# navspec Numeric Specialist SHA-256 hashes
+# 作成日: 2026-07-13
+# 判定: candidate (best available, strict gate partial FAIL, pipeline end-to-end PASS)
+
+## Protected adapters (unchanged, confirmed)
+1b9f5eb892e70a321ff04236af5e753bf19d035d639a0039c0bece75752f4098  models/navspec-lora-0.5b-v0.1/adapter/stage2-status-r8/adapters.safetensors
+303fadf04c9e10d0f0046dd23fc8127c43c629e3f164be71f857b745d6d08d71  models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8-v1/adapters.safetensors
+e96b4835dc66c0af7e5665f1488b54071bf6629cb5a62df04eb4bbca999ade2a  models/navspec-lora-0.5b-v0.1/adapter/stage3.1-balanced-numeric-r8/0000250_adapters.safetensors
+c8e47ff17f787ed76c826d5f68d21623e391adb1528e4155a6fbb39c89fbdd81  models/navspec-lora-0.5b-v0.1/adapter/stage3.1-balanced-numeric-r8/adapters.safetensors
+
+## Stage 2 baseline (default, unchanged)
+1b9f5eb892e70a321ff04236af5e753bf19d035d639a0039c0bece75752f4098  Stage 2 iter1000 default (registry.json default=true)
+
+## Selected numeric specialist candidate
+303fadf04c9e10d0f0046dd23fc8127c43c629e3f164be71f857b745d6d08d71  Stage 3 v1 iter500 (best available, tolerant 90.1% / major 9.6%)
+
+## New schema
+03dde8fb64a5ed1b33608104e11f12e8bb9e57b99e23d5cfee4fb615b7cc4f46  schemas/navspec_numeric_candidate.schema.json
+
+## New eval contract
+fb6d3e0602baa4bf54fe6242b8f59b87506a431298157d78c832059dbcd9f691  data/navspec/lora/contracts/navspec_numeric_specialist_eval_contract_v1.json
+
+## New ok subset
+90f50e1ff145c95e05f680eed488c2318c60e71f5254e3e459fd79abfc8ae3d8  data/navspec/lora/stage3_numeric_eval_ok_v1/manifest.json
+c92ed494d3606801be80617ddff58720c456c1d1a0cdc16f6e8c65b6e7530386  data/navspec/lora/stage3_numeric_eval_ok_v1/eval.jsonl
+e677ccb6ba760a0353f7924cc1c1d145f5b6e8d51ba32ab9f71739f68f8797c7  data/navspec/lora/stage3_numeric_eval_ok_v1/impossible_holdout.jsonl
+
+## Source dataset (protected, unchanged)
+7fe694deaf0b18f79514c77385c83d10ff0f858ab3aa31e4faa21f4f3628510d  data/navspec/lora/stage3_numeric_eval_v0/cases.jsonl
+f0393445da326dbfb95c86674a07db7c73a915a84559d0a3ab5f8ec5e8168f8e  data/navspec/lora/stage3_numeric_eval_v0/manifest.json
+
+## New tools
+9e22970c91bfe71cfd665d2811514962179d0b9a0da1dd4e9af67bd964bb1b38  tools/navspec_build_ok_subset.py
+914089803a46995aef95d39ba8ed55f2f2da41c0bfe1dcf7e0e3f95dca829d45  tools/navspec_numeric_specialist_eval.py
+6a87b95079b565031ef192b949829eb2f67c0e33406bbaa71eb01bbcfe8e90b1  tools/navspec_phase_n1_probe.py
+f13be8cbb448d80ec7e296777298118333da587ceabafd945efde1ba0f8ac051  tools/navspec_two_stage_pipeline.py
+8e41761ccf339f4744ee7c73af73c1a3b2b94cefb305cec7453aed082477a7cc  tools/navspec_pipeline_reason_reeval.py
+
+## Reports
+691bcf4fa207ffb1e7a5b72b2162b3c0b3643060125050359edd61aad717e742  docs/navspec_numeric_specialist_comparison_2026-07-13.md
+f32f3c58867dbb7f401649f30a3d38c8d68e6c0e7787f6158608967c4b132a61  docs/navspec_two_stage_pipeline_validation_2026-07-13.md
+
+## Phase N0 eval results (numeric specialist comparison)
+(numeric_specialist_n0_stage2-status-r8_iter1000)        baseline
+(numeric_specialist_n0_stage3-numeric-quality-r8-v1_iter500)  selected
+(numeric_specialist_n0_ns_stage31_iter250_iter250)       comparison
+(numeric_specialist_n0_stage3.1-balanced-numeric-r8_iter500_final)  reference
+
+## Phase N1 stability probe
+(numeric_specialist_n1_stability_probe)  verdict: UNSTABLE
+
+## Two-stage pipeline end-to-end eval
+(two_stage_pipeline_2026-07-13)  ALL GATES PASS
+
+## Classic validator (protected, unchanged)
+artifacts/navspec-classic-v1/  (不変・最終保証)
