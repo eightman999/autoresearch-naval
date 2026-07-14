@@ -1,0 +1,24 @@
+{
+  "category_counts": {
+    "boundary": 50,
+    "diversity": 50,
+    "era_contrast": 150,
+    "multi_constraint": 100,
+    "nation_tier1": 25,
+    "nation_tier2": 25,
+    "nation_tier3": 25,
+    "nation_tier4": 25,
+    "normal_numeric": 300,
+    "rare_ship_type": 50,
+    "role_contrast": 100,
+    "single_constraint": 100
+  },
+  "dataset": "stage3_numeric_eval_v0",
+  "rows": 1000,
+  "seed": 99,
+  "status_counts": {
+    "impossible": 65,
+    "ok": 935
+  },
+  "teacher": "navspec-classic-v1 canonical (no jitter — baseline for patch measurement)"
+}

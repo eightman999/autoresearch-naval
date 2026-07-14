@@ -1,0 +1,60 @@
+{
+  "category_counts": {
+    "boundary": 1000,
+    "diversity": 500,
+    "era_contrast": 4000,
+    "multi_constraint": 2000,
+    "nation_tier1": 750,
+    "nation_tier2": 750,
+    "nation_tier3": 750,
+    "nation_tier4": 750,
+    "normal_numeric": 10000,
+    "rare_ship_type": 500,
+    "replay_constraint_displacement": 1200,
+    "replay_constraint_gun": 1200,
+    "replay_constraint_range": 800,
+    "replay_constraint_speed": 1200,
+    "replay_constraint_torpedo": 800,
+    "replay_impossible_era_equipment": 400,
+    "replay_impossible_small_ship_combo": 400,
+    "replay_impossible_tier": 200,
+    "replay_impossible_treaty": 200,
+    "replay_low_cost": 1200,
+    "replay_normal": 400,
+    "role_contrast": 3000,
+    "ship_type_contrast": 5000,
+    "single_constraint": 3000
+  },
+  "classic_classifier_disagreements": 0,
+  "dataset": "stage3_numeric_quality_v0",
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True, assistant ends with <|im_end|>",
+  "jitter": {
+    "fields": [
+      "standard_displacement_t ±5%",
+      "speed_kt: canonical (no jitter)",
+      "main_gun_caliber_mm ±2mm",
+      "belt_armor_mm ±5mm/5%",
+      "range_nm ±5%",
+      "main_gun_count ±1",
+      "power_shp: recalculated from canonical speed + jittered displacement"
+    ],
+    "normal_strength": 1.0,
+    "replay_strength": 0.5
+  },
+  "requested": 40000,
+  "rows": 40000,
+  "schema": "schemas/navspec_lora_candidate_stage2.schema.json",
+  "schema_version": "navspec.lora_candidate.v1",
+  "seed": 42,
+  "split_counts": {
+    "test": 4177,
+    "train": 28708,
+    "validation": 7115
+  },
+  "status_counts": {
+    "impossible": 4298,
+    "ok": 35702
+  },
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Do not repeat the user request. The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "teacher": "navspec-classic-v1 + controlled numeric jitter within valid bounds"
+}
