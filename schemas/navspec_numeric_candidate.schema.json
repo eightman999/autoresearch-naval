@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.numeric_candidate.v1",
+  "title": "NavspecNumericCandidate",
+  "description": "Numeric specialist 出力 schema。status / reason / suggested_revision を含まず、spec 数値候補・design_concept・confidence のみを扱う。呼出条件は classic validator で status=ok が確定した場合のみ。既存 Stage 2 schema (navspec.lora_candidate.v1) の spec 数値フィールドに加え、将来拡張として secondary/aa/deck/crew/aircraft を optional で定義する。追加学習なしで本 schema へ完全移行することは必須条件としない（Section 7 互換方針）。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "spec",
+    "design_concept",
+    "confidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "navspec.numeric_candidate.v1"
+    },
+    "spec": {
+      "type": "object",
+      "required": [
+        "standard_displacement_t",
+        "full_load_displacement_t",
+        "length_m",
+        "beam_m",
+        "draft_m",
+        "power_shp",
+        "speed_kt",
+        "range_nm",
+        "main_gun_caliber_mm",
+        "main_gun_count",
+        "belt_armor_mm",
+        "torpedo_tube_count"
+      ],
+      "properties": {
+        "standard_displacement_t": {"type": "number", "minimum": 100, "maximum": 150000},
+        "full_load_displacement_t": {"type": "number", "minimum": 100, "maximum": 170000},
+        "length_m": {"type": "number", "minimum": 20, "maximum": 450},
+        "beam_m": {"type": "number", "minimum": 3, "maximum": 70},
+        "draft_m": {"type": "number", "minimum": 1, "maximum": 25},
+        "power_shp": {"type": ["number", "null"], "minimum": 100, "maximum": 600000},
+        "speed_kt": {"type": "number", "minimum": 5, "maximum": 45},
+        "range_nm": {"type": "number", "minimum": 200, "maximum": 25000},
+        "main_gun_caliber_mm": {"type": "number", "minimum": 37, "maximum": 520},
+        "main_gun_count": {"type": "integer", "minimum": 1, "maximum": 80},
+        "belt_armor_mm": {"type": ["number", "null"], "minimum": 0, "maximum": 600},
+        "torpedo_tube_count": {"type": "integer", "minimum": 0, "maximum": 24},
+        "secondary_gun_caliber_mm": {"type": ["number", "null"], "minimum": 37, "maximum": 203},
+        "secondary_gun_count": {"type": ["integer", "null"], "minimum": 0, "maximum": 80},
+        "aa_gun_count": {"type": ["integer", "null"], "minimum": 0, "maximum": 200},
+        "deck_armor_mm": {"type": ["number", "null"], "minimum": 0, "maximum": 300},
+        "crew": {"type": ["integer", "null"], "minimum": 10, "maximum": 5000},
+        "aircraft_count": {"type": ["integer", "null"], "minimum": 0, "maximum": 100}
+      },
+      "additionalProperties": false
+    },
+    "design_concept": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "additionalProperties": false
+}

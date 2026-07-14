@@ -1,0 +1,197 @@
+{
+  "contract_version": "navspec-stage3-numeric-eval-contract-v1",
+  "created": "2026-07-12",
+  "schema_version": "navspec.lora_candidate.v1",
+  "base_adapter": "stage2-status-r8",
+  "classic_validator": "navspec-classic-v1",
+  "description": "Stage 3 numeric quality evaluation contract. Measures field adoption, patch dependency, and constraint follow for status=ok cases. Reason code final authority remains with classic rule engine.",
+
+  "numeric_fields": {
+    "standard_displacement_t": {
+      "unit": "metric_tons",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10
+    },
+    "full_load_displacement_t": {
+      "unit": "metric_tons",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10
+    },
+    "length_m": {
+      "unit": "meters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.01,
+      "major_rel_threshold": 0.08
+    },
+    "beam_m": {
+      "unit": "meters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.01,
+      "major_rel_threshold": 0.08
+    },
+    "draft_m": {
+      "unit": "meters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10
+    },
+    "power_shp": {
+      "unit": "shaft_horsepower",
+      "round": 0,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.05,
+      "major_rel_threshold": 0.15
+    },
+    "speed_kt": {
+      "unit": "knots",
+      "round": 1,
+      "minor_abs_tolerance": 0.5,
+      "minor_rel_tolerance": null,
+      "major_abs_threshold": 2.0
+    },
+    "range_nm": {
+      "unit": "nautical_miles",
+      "round": 0,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.03,
+      "major_rel_threshold": 0.15
+    },
+    "main_gun_caliber_mm": {
+      "unit": "millimeters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10,
+      "discrete_check": "ship_type_standard_candidate"
+    },
+    "main_gun_count": {
+      "unit": "barrels",
+      "round": 0,
+      "minor_abs_tolerance": 1,
+      "minor_rel_tolerance": null,
+      "major_abs_threshold": 2
+    },
+    "belt_armor_mm": {
+      "unit": "millimeters",
+      "round": 1,
+      "minor_abs_tolerance": 5.0,
+      "minor_rel_tolerance": 0.05,
+      "major_rel_threshold": 0.20
+    },
+    "torpedo_tubes": {
+      "unit": "count",
+      "round": 0,
+      "minor_abs_tolerance": 1,
+      "minor_rel_tolerance": null,
+      "major_abs_threshold": 4
+    }
+  },
+
+  "non_numeric_spec_fields": [
+    "nation",
+    "year",
+    "ship_type",
+    "lb_ratio",
+    "radar",
+    "nation_tier"
+  ],
+
+  "constraint_fields": {
+    "standard_displacement_t_max": {"target": "standard_displacement_t", "direction": "max"},
+    "standard_displacement_t_min": {"target": "standard_displacement_t", "direction": "min"},
+    "speed_kt_min": {"target": "speed_kt", "direction": "min"},
+    "speed_kt_max": {"target": "speed_kt", "direction": "max"},
+    "main_gun_caliber_mm_max": {"target": "main_gun_caliber_mm", "direction": "max"},
+    "main_gun_caliber_mm_min": {"target": "main_gun_caliber_mm", "direction": "min"},
+    "belt_armor_mm_min": {"target": "belt_armor_mm", "direction": "min"},
+    "range_nm_min": {"target": "range_nm", "direction": "min"},
+    "range_nm_max": {"target": "range_nm", "direction": "max"}
+  },
+
+  "diversity": {
+    "repeated_prompts": 5,
+    "seed_range": [0, 1, 2, 3, 4],
+    "near_duplicate_threshold": 0.02,
+    "unique_spec_rate_min": 0.80,
+    "near_duplicate_rate_max": 0.20
+  },
+
+  "adoption_gates": {
+    "exact_field_adoption_min": 0.35,
+    "tolerant_field_adoption_min": 0.70,
+    "patch_dependency_max": 0.30,
+    "major_patch_rate_max": 0.10,
+    "constraint_follow_min": 0.90,
+    "multi_constraint_follow_min": 0.80,
+    "median_relative_patch_delta_max": 0.05,
+    "p90_relative_patch_delta_max": 0.15
+  },
+
+  "field_gates": {
+    "tolerant_adoption_min": 0.60,
+    "major_patch_max": 0.15
+  },
+
+  "regression_gates": {
+    "schema_drop_max_pt": 2.0,
+    "status_drop_max_pt": 1.5,
+    "impossible_f1_drop_max_pt": 1.5,
+    "truncated_json_max": 0.01,
+    "repetition_max": 0.01
+  },
+
+  "categories": {
+    "ship_types": [
+      "battleship", "fast_battleship", "battlecruiser", "dreadnought_battleship",
+      "pre_dreadnought_battleship", "large_cruiser",
+      "heavy_cruiser", "light_cruiser", "anti_air_light_cruiser",
+      "treaty_cruiser", "protected_cruiser", "armored_cruiser",
+      "commerce_raider_cruiser", "coastal_defense_ship",
+      "destroyer", "large_destroyer", "anti_air_destroyer",
+      "destroyer_escort", "patrol_frigate",
+      "patrol_boat", "gunboat", "torpedo_boat",
+      "minesweeper", "minelayer",
+      "submarine_tender", "seaplane_tender", "oiler", "repair_ship",
+      "training_ship", "ship_of_the_line"
+    ],
+    "eras": [
+      {"label": "pre_1860", "range": [-9999, 1859]},
+      {"label": "1860_1889", "range": [1860, 1889]},
+      {"label": "1890_1905", "range": [1890, 1905]},
+      {"label": "1906_1918", "range": [1906, 1918]},
+      {"label": "1919_1936", "range": [1919, 1936]},
+      {"label": "1937_1945", "range": [1937, 1945]},
+      {"label": "post_1945", "range": [1946, 9999]}
+    ],
+    "nation_tiers": [
+      {"label": "major", "tier": 1},
+      {"label": "regional", "tier": 2},
+      {"label": "minor", "tier": 3},
+      {"label": "limited", "tier": 4}
+    ]
+  },
+
+  "eval_set": {
+    "target_count": 1000,
+    "composition": {
+      "normal_by_ship_type": 300,
+      "era_contrast": 150,
+      "nation_tier_contrast": 100,
+      "role_contrast": 100,
+      "single_constraint": 100,
+      "multi_constraint": 100,
+      "boundary": 50,
+      "rare_ship_type": 50,
+      "diversity_repeated": 50
+    }
+  },
+
+  "reproduction": "uv run python tools/navspec_numeric_eval.py --contract data/navspec/lora/contracts/navspec_stage3_numeric_eval_contract_v1.json"
+}

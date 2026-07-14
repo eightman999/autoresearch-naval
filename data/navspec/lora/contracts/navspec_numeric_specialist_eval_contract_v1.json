@@ -1,0 +1,301 @@
+{
+  "contract_version": "navspec-numeric-specialist-eval-contract-v1",
+  "created": "2026-07-13",
+  "schema_version": "navspec.numeric_candidate.v1",
+  "stage2_schema_version": "navspec.lora_candidate.v1",
+  "classic_validator": "navspec-classic-v1",
+  "status_model_default": "stage2-status-r8 (iter1000)",
+  "description": "Numeric specialist 評価 contract。status=ok 確定後の spec 数値候補だけを評価する。status / reason / impossible 指標は採用ゲートに含めない（Section 12）。既存 Stage 2 schema 出力からの抽出と numeric_candidate.v1 直接出力の両方を許可（Section 7 互換方針）。",
+
+  "field_aliases": {
+    "torpedo_tubes": "torpedo_tube_count"
+  },
+
+  "numeric_fields": {
+    "standard_displacement_t": {
+      "unit": "metric_tons",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10
+    },
+    "full_load_displacement_t": {
+      "unit": "metric_tons",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10
+    },
+    "length_m": {
+      "unit": "meters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.01,
+      "major_rel_threshold": 0.08
+    },
+    "beam_m": {
+      "unit": "meters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.01,
+      "major_rel_threshold": 0.08
+    },
+    "draft_m": {
+      "unit": "meters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10
+    },
+    "power_shp": {
+      "unit": "shaft_horsepower",
+      "round": 0,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.05,
+      "major_rel_threshold": 0.15
+    },
+    "speed_kt": {
+      "unit": "knots",
+      "round": 1,
+      "minor_abs_tolerance": 0.5,
+      "minor_rel_tolerance": null,
+      "major_abs_threshold": 2.0
+    },
+    "range_nm": {
+      "unit": "nautical_miles",
+      "round": 0,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.03,
+      "major_rel_threshold": 0.15
+    },
+    "main_gun_caliber_mm": {
+      "unit": "millimeters",
+      "round": 1,
+      "minor_abs_tolerance": null,
+      "minor_rel_tolerance": 0.02,
+      "major_rel_threshold": 0.10,
+      "discrete_check": "ship_type_standard_candidate"
+    },
+    "main_gun_count": {
+      "unit": "barrels",
+      "round": 0,
+      "minor_abs_tolerance": 1,
+      "minor_rel_tolerance": null,
+      "major_abs_threshold": 2
+    },
+    "belt_armor_mm": {
+      "unit": "millimeters",
+      "round": 1,
+      "minor_abs_tolerance": 5.0,
+      "minor_rel_tolerance": 0.05,
+      "major_rel_threshold": 0.20
+    },
+    "torpedo_tube_count": {
+      "unit": "count",
+      "round": 0,
+      "minor_abs_tolerance": 1,
+      "minor_rel_tolerance": null,
+      "major_abs_threshold": 4,
+      "alias_in_stage2_schema": "torpedo_tubes"
+    }
+  },
+
+  "non_numeric_spec_fields": [
+    "nation",
+    "year",
+    "ship_type",
+    "lb_ratio",
+    "radar",
+    "nation_tier"
+  ],
+
+  "constraint_fields": {
+    "standard_displacement_t_max": {"target": "standard_displacement_t", "direction": "max"},
+    "standard_displacement_t_min": {"target": "standard_displacement_t", "direction": "min"},
+    "speed_kt_min": {"target": "speed_kt", "direction": "min"},
+    "speed_kt_max": {"target": "speed_kt", "direction": "max"},
+    "main_gun_caliber_mm_max": {"target": "main_gun_caliber_mm", "direction": "max"},
+    "main_gun_caliber_mm_min": {"target": "main_gun_caliber_mm", "direction": "min"},
+    "belt_armor_mm_min": {"target": "belt_armor_mm", "direction": "min"},
+    "range_nm_min": {"target": "range_nm", "direction": "min"},
+    "range_nm_max": {"target": "range_nm", "direction": "max"}
+  },
+
+  "constraint_categories": {
+    "single_min": {"min_constraints": 1, "max_constraints": 1, "directions": ["min"]},
+    "single_max": {"min_constraints": 1, "max_constraints": 1, "directions": ["max"]},
+    "multiple_compatible": {"min_constraints": 2, "max_constraints": 99, "conflicting": false},
+    "multiple_conflicting": {"min_constraints": 2, "max_constraints": 99, "conflicting": true},
+    "boundary": {"is_boundary": true},
+    "priority_trade_off": {"has_priority": true}
+  },
+
+  "power_speed": {
+    "admiralty_constant": 300,
+    "power_per_ton_report": true,
+    "consistency_tolerance": 0.02,
+    "failure_classes": [
+      "speed_ok_power_low",
+      "speed_ok_power_high",
+      "speed_high_power_ok",
+      "both_high",
+      "both_low",
+      "era_machinery_mismatch",
+      "nation_capability_exceeded"
+    ],
+    "gates": {
+      "power_shp_tolerant_adoption_min": 0.75,
+      "speed_power_consistency_min": 0.95,
+      "power_major_patch_max": 0.12
+    }
+  },
+
+  "range_profiles": {
+    "profiles": [
+      "coastal",
+      "short_range",
+      "fleet_standard",
+      "long_range",
+      "oceanic",
+      "commerce_raider"
+    ],
+    "gates": {
+      "range_nm_tolerant_adoption_min": 0.75,
+      "range_profile_consistency_min": 0.90,
+      "range_major_patch_max": 0.12
+    }
+  },
+
+  "cross_field_consistency": {
+    "checks": [
+      "full_load_ge_standard_displacement",
+      "lb_ratio_within_band",
+      "power_speed_admiralty",
+      "range_profile_ship_type_role_era",
+      "main_gun_caliber_ship_type",
+      "draft_beam_length_consistency"
+    ],
+    "gate_min": 0.95
+  },
+
+  "diversity": {
+    "repeated_prompts_min": 50,
+    "repeated_prompts_recommended": 100,
+    "seed_range": [0, 1, 2, 3, 4],
+    "near_duplicate_threshold": 0.02,
+    "unique_spec_rate_min": 0.80,
+    "near_duplicate_rate_max": 0.20,
+    "template_collision_rate_max": 0.15
+  },
+
+  "adoption_gates_numeric_specialist": {
+    "raw_json_rate_min": 0.99,
+    "spec_required_field_rate_min": 0.98,
+    "tolerant_field_adoption_min": 0.88,
+    "major_patch_rate_max": 0.10,
+    "patch_dependency_max": 0.30,
+    "constraint_follow_min": 0.90,
+    "multi_constraint_follow_min": 0.80,
+    "boundary_constraint_follow_min": 0.80,
+    "median_relative_patch_delta_max": 0.05,
+    "p90_relative_patch_delta_max": 0.15,
+    "p95_relative_patch_delta_max": 0.20,
+    "cross_field_consistency_min": 0.95,
+    "repetition_collapse_max": 0.01
+  },
+
+  "field_gates": {
+    "tolerant_adoption_min": 0.60,
+    "major_patch_max": 0.15
+  },
+
+  "field_gate_main_fields": [
+    "standard_displacement_t",
+    "full_load_displacement_t",
+    "length_m",
+    "beam_m",
+    "draft_m",
+    "power_shp",
+    "speed_kt",
+    "range_nm",
+    "main_gun_caliber_mm",
+    "main_gun_count",
+    "belt_armor_mm",
+    "torpedo_tube_count"
+  ],
+
+  "eval_phases": {
+    "phase_n0": {
+      "description": "既存 Stage 2 schema + 既存 prompt のまま出力させ、spec/design_concept/confidence だけ抽出して評価。status/reason/suggested_revision は無視。",
+      "schema": "navspec.lora_candidate.v1",
+      "prompt": "existing free_raw",
+      "extraction": ["spec", "design_concept", "confidence"]
+    },
+    "phase_n1": {
+      "description": "同一 adapter へ numeric-only prompt を与え、navspec.numeric_candidate.v1 を直接生成できるか確認。N1 が不安定な場合は無理に schema を変更しない（Section 7）。",
+      "schema": "navspec.numeric_candidate.v1",
+      "prompt": "numeric_specialist_v1",
+      "required_for_full_migration": false
+    }
+  },
+
+  "categories": {
+    "ship_types": [
+      "battleship", "fast_battleship", "battlecruiser", "dreadnought_battleship",
+      "pre_dreadnought_battleship", "large_cruiser",
+      "heavy_cruiser", "light_cruiser", "anti_air_light_cruiser",
+      "treaty_cruiser", "protected_cruiser", "armored_cruiser",
+      "commerce_raider_cruiser", "coastal_defense_ship",
+      "destroyer", "large_destroyer", "anti_air_destroyer",
+      "destroyer_escort", "patrol_frigate",
+      "patrol_boat", "gunboat", "torpedo_boat",
+      "minesweeper", "minelayer",
+      "submarine_tender", "seaplane_tender", "oiler", "repair_ship",
+      "training_ship", "ship_of_the_line"
+    ],
+    "eras": [
+      {"label": "pre_1860", "range": [-9999, 1859]},
+      {"label": "1860_1889", "range": [1860, 1889]},
+      {"label": "1890_1905", "range": [1890, 1905]},
+      {"label": "1906_1918", "range": [1906, 1918]},
+      {"label": "1919_1936", "range": [1919, 1936]},
+      {"label": "1937_1945", "range": [1937, 1945]},
+      {"label": "post_1945", "range": [1946, 9999]}
+    ],
+    "nation_tiers": [
+      {"label": "major", "tier": 1},
+      {"label": "regional", "tier": 2},
+      {"label": "minor", "tier": 3},
+      {"label": "limited", "tier": 4}
+    ]
+  },
+
+  "inference_conditions": {
+    "json_prefill": "none",
+    "temperature": 0.0,
+    "max_tokens": 512,
+    "seed": "fixed",
+    "batch": "same_across_candidates",
+    "prompt": "same_across_candidates"
+  },
+
+  "selection_priority": [
+    "numeric_specialist_gate_all_pass",
+    "tolerant_adoption",
+    "major_patch",
+    "constraint_follow",
+    "power_range",
+    "cross_field_consistency",
+    "category_minimum",
+    "diversity",
+    "latency"
+  ],
+
+  "selection_tiebreak": {
+    "lighter_patch": true,
+    "lower_p90_delta": true,
+    "higher_category_min": true
+  },
+
+  "reproduction": "uv run python tools/navspec_numeric_specialist_eval.py --contract data/navspec/lora/contracts/navspec_numeric_specialist_eval_contract_v1.json"
+}
