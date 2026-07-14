@@ -1,0 +1,13 @@
+# navspec Stage 3.1 SHA-256 hashes
+# 作成日: 2026-07-13
+# 判定: experimental_rejected (semantic_reason_micro_f1 回帰ゲート FAIL)
+
+Stage 2 baseline adapter:        1b9f5eb892e70a321ff04236af5e753bf19d035d639a0039c0bece75752f4098
+Stage 3.1 iter125:               0709780c617d0a3891aff5aec708f9483e154411f2ab2b3d66ff721f47b401b7
+Stage 3.1 iter250:               e96b4835dc66c0af7e5665f1488b54071bf6629cb5a62df04eb4bbca999ade2a
+Stage 3.1 iter375:               8586c8019a5f5de9ea4338238ade8299863232ccd39972e39ac2e9725d86806f
+Stage 3.1 iter500:               c8e47ff17f787ed76c826d5f68d21623e391adb1528e4155a6fbb39c89fbdd81
+Stage 3.1 final (=iter500):      c8e47ff17f787ed76c826d5f68d21623e391adb1528e4155a6fbb39c89fbdd81
+Stage 3.1 dataset manifest:      d787f5b10b82c4e6cbc83ac0d4b7ce1046e670cecd79042f861d7f59ef717f9f
+Stage 3.1 generator:             0c9f160555083b1de677294396cef2356c1fa9e0a583ebb0086674562e810a5d
+Stage 3.1 train log:             2e23eb7947fbac769852a756eabcb835b06ffdd6c9e9c969eb71b83822b5afef

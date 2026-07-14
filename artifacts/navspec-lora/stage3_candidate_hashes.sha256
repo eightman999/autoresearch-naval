@@ -1,0 +1,21 @@
+# navspec Stage 3 candidate hashes
+# Generated: 2026-07-13
+
+## Stage 2 baseline (default)
+1b9f5eb892e70a321ff04236af5e753bf19d035d639a0039c0bece75752f4098  models/navspec-lora-0.5b-v0.1/adapter/stage2-status-r8/adapters.safetensors
+
+## Stage 3 v1 iter250
+d6da4c481e6360ee51b376e891b6979fa38219bc6eebe105672f9661cd9a0f34  models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8-v1/0000250_adapters.safetensors
+
+## Stage 3 v1 iter500 (final)
+303fadf04c9e10d0f0046dd23fc8127c43c629e3f164be71f857b745d6d08d71  models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8-v1/adapters.safetensors
+
+## Stage 3 v1 iter500 (checkpoint copy)
+303fadf04c9e10d0f0046dd23fc8127c43c629e3f164be71f857b745d6d08d71  models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8-v1/0000500_adapters.safetensors
+
+## Contract
+17f6c0ca7e64f4a5b0baeb4db615bf51ea1cedc9a25363fd76f98b9a9cb85f9e  data/navspec/lora/contracts/navspec_stage3_numeric_eval_contract_v1.json
+
+## Dataset manifests
+658e4095f3909f116faaa4dd669c238a48ae41ac38336d6161b88f2d25266d7e  data/navspec/lora/stage3_numeric_quality_v1/manifest.json
+f0393445da326dbfb95c86674a07db7c73a915a84559d0a3ab5f8ec5e8168f8e  data/navspec/lora/stage3_numeric_eval_v0/manifest.json

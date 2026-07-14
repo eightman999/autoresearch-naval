@@ -1,0 +1,252 @@
+{
+  "category_counts": {
+    "boundary": 1394,
+    "diversity": 413,
+    "era_contrast": 2213,
+    "multi_constraint": 1423,
+    "nation_contrast": 1409,
+    "normal_numeric": 5868,
+    "rare_ship_type": 412,
+    "replay_impossible_impossible_armor": 625,
+    "replay_impossible_impossible_combined": 3000,
+    "replay_impossible_impossible_displacement": 625,
+    "replay_impossible_impossible_era": 625,
+    "replay_impossible_impossible_nation": 625,
+    "replay_impossible_impossible_small_gun": 625,
+    "replay_impossible_impossible_speed_armor_range": 625,
+    "replay_impossible_impossible_speed_power": 625,
+    "replay_impossible_impossible_treaty": 625,
+    "replay_impossible_normal_ok": 896,
+    "replay_impossible_replay_classic_classic_eval_contradiction": 33,
+    "replay_impossible_replay_classic_classic_eval_extended_contradiction": 163,
+    "replay_impossible_replay_classic_classic_eval_extended_era": 163,
+    "replay_impossible_replay_classic_classic_eval_extended_tier": 163,
+    "replay_impossible_replay_classic_classic_eval_extended_treaty": 164,
+    "replay_impossible_replay_constraint_displacement": 135,
+    "replay_impossible_replay_constraint_gun": 98,
+    "replay_impossible_replay_constraint_range": 85,
+    "replay_impossible_replay_constraint_speed": 88,
+    "replay_impossible_replay_constraint_torpedo": 67,
+    "replay_impossible_replay_impossible_era_equipment": 200,
+    "replay_impossible_replay_impossible_small_ship_combo": 200,
+    "replay_impossible_replay_impossible_tier": 100,
+    "replay_impossible_replay_impossible_treaty": 100,
+    "replay_impossible_replay_low_cost": 99,
+    "replay_impossible_replay_normal": 30,
+    "replay_ok_hard_negative_ok": 332,
+    "replay_ok_normal_ok": 1402,
+    "replay_ok_replay_classic_classic_eval_constraint": 48,
+    "replay_ok_replay_classic_classic_eval_era": 51,
+    "replay_ok_replay_classic_classic_eval_extended_lb": 343,
+    "replay_ok_replay_classic_classic_eval_unseen": 26,
+    "replay_ok_replay_constraint_displacement": 172,
+    "replay_ok_replay_constraint_gun": 172,
+    "replay_ok_replay_constraint_range": 117,
+    "replay_ok_replay_constraint_speed": 179,
+    "replay_ok_replay_constraint_torpedo": 114,
+    "replay_ok_replay_low_cost": 162,
+    "replay_ok_replay_normal": 58,
+    "role_contrast": 1428,
+    "ship_type_contrast": 3546,
+    "single_constraint": 2187,
+    "supplement_impossible_armor": 525,
+    "supplement_impossible_combined": 525,
+    "supplement_impossible_composite_nation": 498,
+    "supplement_impossible_composite_speed_power": 524,
+    "supplement_impossible_displacement": 525,
+    "supplement_impossible_era": 525,
+    "supplement_impossible_nation": 525,
+    "supplement_impossible_small_gun": 525,
+    "supplement_impossible_speed_armor_range": 525,
+    "supplement_impossible_speed_power": 525,
+    "supplement_impossible_treaty": 525
+  },
+  "dataset": "stage3_1_balanced_numeric_v0",
+  "distribution_audit": {
+    "era_counts": {
+      "1860_1889": 1800,
+      "1890_1905": 2544,
+      "1906_1918": 5354,
+      "1919_1936": 7154,
+      "1937_1945": 17244,
+      "post_1945": 1070,
+      "pre_1860": 4834
+    },
+    "nation_tier_counts": {
+      "limited": 3546,
+      "major": 23636,
+      "minor": 7403,
+      "regional": 5415
+    },
+    "power_shp_summary": {
+      "max": 127252.0,
+      "median": 19814.0,
+      "min": 380.0,
+      "n": 22000,
+      "p25": 6109.0,
+      "p75": 42241.0,
+      "p90": 58454.0
+    },
+    "range_nm_summary": {
+      "max": 10000.0,
+      "median": 4420.0,
+      "min": 500.0,
+      "n": 22000,
+      "p25": 3000.0,
+      "p75": 8000.0,
+      "p90": 8000.0
+    },
+    "ship_type_counts": {
+      "anti_air_destroyer": 1742,
+      "anti_air_light_cruiser": 185,
+      "armored_cruiser": 1232,
+      "battlecruiser": 1373,
+      "battleship": 2462,
+      "coastal_defense_ship": 1460,
+      "commerce_raider_cruiser": 174,
+      "corvette": 517,
+      "destroyer": 5749,
+      "destroyer_escort": 1566,
+      "dreadnought_battleship": 1399,
+      "fast_battleship": 1777,
+      "frigate": 288,
+      "gunboat": 1458,
+      "heavy_cruiser": 2549,
+      "large_cruiser": 545,
+      "large_destroyer": 3121,
+      "light_cruiser": 2587,
+      "minelayer": 27,
+      "minesweeper": 261,
+      "oiler": 31,
+      "patrol_boat": 1482,
+      "patrol_frigate": 1641,
+      "pre_dreadnought_battleship": 1686,
+      "protected_cruiser": 2033,
+      "repair_ship": 30,
+      "seaplane_tender": 28,
+      "ship_of_the_line": 231,
+      "sloop": 17,
+      "submarine_tender": 35,
+      "torpedo_boat": 32,
+      "torpedo_boat_tender": 5,
+      "training_ship": 31,
+      "treaty_cruiser": 2246
+    }
+  },
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True, assistant ends with <|im_end|>",
+  "generated_status_counts_pre_adjust": {
+    "impossible": 12253,
+    "ok": 27747
+  },
+  "impossible_surplus_swapped_to_ok": 0,
+  "numeric_generation": {
+    "correlated_mutation": {
+      "dependent_recomputed": [
+        "full_load_displacement_t (ratio preserved)",
+        "length_m / beam_m / draft_m (estimate_dimensions)",
+        "lb_ratio (clamped to ship_type band)",
+        "power_shp (estimate_power_shp from mutated displacement + canonical speed)",
+        "range_nm (base_range_nm + profile clamp)"
+      ],
+      "displacement_jitter_rel": "±5% scaled by mutation_strength",
+      "primary_variable": "standard_displacement_t"
+    },
+    "independent_jitter_removed": [
+      "power_shp",
+      "range_nm",
+      "speed_kt",
+      "length_m",
+      "beam_m",
+      "draft_m"
+    ],
+    "power_shp": "canonical estimate_power_shp only; no random error",
+    "range_nm": "canonical base_range_nm clamped into 6 profile bands; no independent jitter",
+    "range_profiles": {
+      "coastal": [
+        500,
+        2500
+      ],
+      "commerce_raider": [
+        8000,
+        20000
+      ],
+      "fleet_standard": [
+        3000,
+        8000
+      ],
+      "long_range": [
+        6000,
+        12000
+      ],
+      "oceanic": [
+        8000,
+        18000
+      ],
+      "short_range": [
+        1500,
+        4000
+      ]
+    }
+  },
+  "reason_code_counts": {
+    "armor_too_heavy_for_hull": 6319,
+    "displacement_limit_exceeded": 1183,
+    "era_equipment_unavailable": 1513,
+    "main_gun_too_large_for_hull": 6714,
+    "nation_capability_exceeded": 4891,
+    "range_volume_conflict": 5186,
+    "ship_type_role_conflict": 177,
+    "speed_armor_range_conflict": 1543,
+    "speed_power_conflict": 2194,
+    "treaty_limit_exceeded": 2258
+  },
+  "requested": 40000,
+  "rows": 40000,
+  "schema": "schemas/navspec_lora_candidate_stage2.schema.json",
+  "schema_version": "navspec.lora_candidate.v1",
+  "seed": 42,
+  "split_counts": {
+    "test": 4390,
+    "train": 28851,
+    "validation": 6759
+  },
+  "stage2_replay": {
+    "impossible_replayed": 10784,
+    "ok_replayed": 4000,
+    "source_dir": "data/navspec/lora/stage2_status_v0"
+  },
+  "status_counts": {
+    "impossible": 18000,
+    "ok": 22000
+  },
+  "status_ratio": {
+    "impossible": 0.45,
+    "impossible_band": [
+      0.4,
+      0.5
+    ],
+    "impossible_target": 0.45,
+    "ok": 0.55
+  },
+  "stratified_ordering": {
+    "longest_impossible_streak_train": 1,
+    "longest_ok_streak_train": 2,
+    "max_allowed_streak": 100,
+    "shuffle_seed_test": 20260714,
+    "shuffle_seed_validation": 20260713,
+    "strategy": "train.jsonl interleaves impossible/ok; validation/test shuffled"
+  },
+  "supplement_impossible_appended": 5747,
+  "system_prompt": "You are navspec, a naval vessel specification generator. Return only JSON matching navspec.lora_candidate.v1. Do not repeat the user request. The top-level keys must be schema_version,status,spec,reason,suggested_revision,design_concept,confidence. Use status=impossible with reason[] and suggested_revision when the request cannot be satisfied.",
+  "teacher": "navspec-classic-v1 + correlated canonical numeric mutation (Stage 2 direct replay for impossible)",
+  "teacher_metadata_fields": [
+    "source_rule",
+    "status_category",
+    "seed",
+    "range_profile",
+    "displacement_delta_frac",
+    "power_source",
+    "range_source",
+    "mutation_strength"
+  ]
+}
