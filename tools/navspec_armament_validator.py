@@ -62,7 +62,7 @@ DEFAULT_RULES = {
     "min_displacement_t_for_heaviest_turret": 25000,
     "max_full_armament_weight_fraction": 0.35,
     "min_m3_per_round_default": 0.05,
-    "min_beam_over_barbette_diameter": 1.5,
+    "min_beam_over_barbette_diameter": 1.4,
 }
 
 
@@ -153,15 +153,19 @@ def _issue(severity: str, code: str, message: str, battery_id: str | None = None
 
 
 def _get_rule(rules: dict[str, Any], key: str, default: float) -> float:
-    """compatibility_rules の各セクションから閾値を取得するヘルパ。"""
+    """compatibility_rules から閾値を取得するヘルパ。
+
+    トップレベルの数値、またはネストした dict (例: barbette_to_beam.min_beam_over_barbette_diameter)
+    のいずれかから値を探す。
+    """
     val = rules.get(key)
-    if isinstance(val, dict):
-        # {"min_m3_per_round_default": 0.05} のような dict 内のキーと一致するもの
-        inner = val.get(key, val.get("default"))
-        if isinstance(inner, (int, float)):
-            return float(inner)
-    if isinstance(val, (int, float)):
+    if isinstance(val, (int, float)) and not isinstance(val, bool):
         return float(val)
+    for section in rules.values():
+        if isinstance(section, dict):
+            inner = section.get(key)
+            if isinstance(inner, (int, float)) and not isinstance(inner, bool):
+                return float(inner)
     return default
 
 

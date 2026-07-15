@@ -1,7 +1,7 @@
 # navspec Stage 4 Armament — 進捗・次やることリスト
 
-最終更新: 2026-07-15 (Commit A/B 完了・origin push 済み)
-現在のbranch: `navspec-armament-stage4`（origin 同期済み、`02c9c5b`）
+最終更新: 2026-07-15 (Commit A/B/C 完了・origin push 済み)
+現在のbranch: `navspec-armament-stage4`（origin 同期済み、最新は Commit C で更新予定）
 
 ---
 
@@ -66,10 +66,15 @@
 ### push
 - `git push -u origin navspec-armament-stage4`
 
-### ※ Phase 2-3（別セッション）
-- Commit C: retriever（`tools/navspec_armament_retriever.py`）
-- Commit D: teacher生成（`tools/navspec_lora_data_armament_stage4a.py`）
-- Commit E: pipeline統合 + 学習（`stage4a-armament-r8`）
+### ※ Phase 2-3
+- [x] **Commit C: retriever** `tools/navspec_armament_retriever.py`
+  - `retrieve_armament(context, db, strategy)`: ship context から代表 candidate を生成
+  - `retrieve_armament_variations(context, db, n)`: teacher データ用の多様性バリエーション
+  - 戦略: representative (最大口径) / mid_caliber / random
+  - 17 tests pass (tests/test_navspec_armament_retriever.py)
+  - 副作用修正: validator `_get_rule` のネスト dict 対応、barbette 閾値 1.5→1.4 (大和型38m/460mm砲塔12.88m で警告解消)
+- [ ] **Commit D: teacher生成** `tools/navspec_lora_data_armament_stage4a.py`
+- [ ] **Commit E: pipeline統合 + 学習** `stage4a-armament-r8`
 
 ---
 

@@ -366,8 +366,8 @@ def build_compatibility(
             "coastal_defense": {"min": 76, "max": 283},
         },
         "barbette_to_beam": {
-            "min_beam_over_barbette_diameter": 1.5,
-            "notes": "船体ビームはバーべット直径の1.5倍以上が必要 (validator で厳格には適用しない)。"
+            "min_beam_over_barbette_diameter": 1.4,
+            "notes": "船体ビームはバーべット直径の1.4倍以上が必要 (大和型38m/460mm砲塔12.88m で警告を出さないよう 1.5→1.4 に調整)。"
         },
         "turret_weight_to_displacement": {
             "max_turret_weight_fraction_of_displacement": 0.06,
