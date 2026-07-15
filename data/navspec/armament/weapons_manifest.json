@@ -1,0 +1,294 @@
+{
+  "schema": "navspec.armament.weapons.v1",
+  "source_type": "navweaps",
+  "generated_by": "tools/navspec_armament_scraper.py",
+  "target_count": 35,
+  "record_count": 35,
+  "mount_count": 35,
+  "ammo_count": 35,
+  "ok_count": 35,
+  "partial_count": 0,
+  "failed_count": 0,
+  "entries": [
+    {
+      "weapon_id": "JP_460MM_94SHIKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNJAP_18-45_t94.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "JP_410MM_3SHIKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNJAP_161-45_3ns.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "JP_203MM_3SHIKI2GO",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNJAP_8-50_3ns.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "JP_155MM_3SHIKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNJAP_61-60_3ns.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "JP_127MM_3SHIKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNJAP_5-50_3ns.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "JP_100MM_98SHIKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNJAP_39-65_t98.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "JP_140MM_3SHIKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNJAP_55-50_3ns.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "US_16INCH_MK7",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNUS_16-50_mk7.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "US_16INCH_MK6",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNUS_16-45_mk6.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "US_14INCH_MK11",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNUS_14-50_mk11.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "US_12INCH_MK8",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNUS_12-50_mk8.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "US_8INCH_MK12",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNUS_8-55_mk12-15.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "US_6INCH_MK16",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNUS_6-47_mk16.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "US_5INCH_MK12",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNUS_5-38_mk12.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "UK_15INCH_MKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNBR_15-42_mk1.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "UK_16INCH_MKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNBR_16-45_mk1.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "UK_14INCH_MKVII",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNBR_14-45_mk7.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "UK_135INCH_MKV",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNBR_135-45_mk5.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "UK_6INCH_MKXXIII",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNBR_6-50_mk23.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "UK_525INCH_MKI",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNBR_525-50_mk1.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "DE_38CM_SKC34",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNGER_15-52_skc34.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "DE_28CM_SKC34",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNGER_11-545_skc34.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "DE_28CM_SKC28",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNGER_11-52_skc28.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "DE_15CM_SKC28",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNGER_59-55_skc28.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "DE_105CM_SKC33",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNGER_41-65_skc33.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "FR_381MM_M1935",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNFR_15-45_m1935.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "FR_330MM_M1931",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNFR_13-50_m1931.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "FR_340MM_M1912",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNFR_134-45_m1912.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "FR_152MM_M1930",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNFR_6-55_m1930.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "FR_130MM_M1932",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNFR_51-45_m1932.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "IT_381MM_M1934",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNIT_15-50_m1934.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "IT_320MM_M1934",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNIT_126-44_m1934.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "IT_152MM_M1926",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNIT_6-53_m1926.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "IT_135MM_M1938",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNIT_53-45_m1938.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "IT_90MM_M1939",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNIT_35-50_m1939.php",
+      "mount": "ok",
+      "ammo": "ok"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "rules_version": "navspec.compatibility.v1",
+  "description": "Stage 4 classic armament validator が参照する互換性ルール。weapon_to_mount は navspec_armament_scraper.py と本スクリプトの出力から自動生成。caliber_min_max_by_ship_type 等は progress §15 の validator ルールに基づく保守的な初期値。",
+  "weapon_to_mount": {
+    "UK_6INCH_MKXXIII": [
+      "UK_6INCH_TRIPLE_MKXXIII"
+    ],
+    "JP_127MM_3SHIKI": [
+      "JP_127MM_TWIN_3SHIKI"
+    ],
+    "JP_203MM_3SHIKI2GO": [
+      "JP_203MM_TWIN_3SHIKI2GO"
+    ],
+    "UK_16INCH_MKI": [
+      "UK_16INCH_TRIPLE_MKI"
+    ],
+    "IT_381MM_M1934": [
+      "IT_381MM_TRIPLE_M1934"
+    ],
+    "DE_38CM_SKC34": [
+      "DE_38CM_TWIN_SKC34"
+    ],
+    "FR_152MM_M1930": [
+      "FR_152MM_TRIPLE_M1930"
+    ],
+    "FR_330MM_M1931": [
+      "FR_330MM_QUADRUPLE_M1931"
+    ],
+    "US_5INCH_MK12": [
+      "US_5INCH_TWIN_MK12"
+    ],
+    "US_12INCH_MK8": [
+      "US_12INCH_TRIPLE_MK8"
+    ],
+    "DE_15CM_SKC28": [
+      "DE_15CM_TWIN_SKC28"
+    ],
+    "JP_100MM_98SHIKI": [
+      "JP_100MM_TWIN_98SHIKI"
+    ],
+    "UK_135INCH_MKV": [
+      "UK_135INCH_TWIN_MKV"
+    ],
+    "US_6INCH_MK16": [
+      "US_6INCH_TRIPLE_MK16"
+    ],
+    "DE_105CM_SKC33": [
+      "DE_105CM_TWIN_SKC33"
+    ],
+    "IT_90MM_M1939": [
+      "IT_90MM_SINGLE_M1939"
+    ],
+    "DE_28CM_SKC34": [
+      "DE_28CM_TRIPLE_SKC34"
+    ],
+    "JP_410MM_3SHIKI": [
+      "JP_410MM_TWIN_3SHIKI"
+    ],
+    "UK_14INCH_MKVII": [
+      "UK_14INCH_QUADRUPLE_MKVII"
+    ],
+    "JP_155MM_3SHIKI": [
+      "JP_155MM_TRIPLE_3SHIKI"
+    ],
+    "US_16INCH_MK7": [
+      "US_16INCH_TRIPLE_MK7"
+    ],
+    "JP_140MM_3SHIKI": [
+      "JP_140MM_TWIN_3SHIKI"
+    ],
+    "US_8INCH_MK12": [
+      "US_8INCH_TRIPLE_MK12"
+    ],
+    "IT_320MM_M1934": [
+      "IT_320MM_TRIPLE_M1934"
+    ],
+    "DE_28CM_SKC28": [
+      "DE_28CM_TRIPLE_SKC28"
+    ],
+    "IT_152MM_M1926": [
+      "IT_152MM_TWIN_M1926"
+    ],
+    "US_14INCH_MK11": [
+      "US_14INCH_TRIPLE_MK11"
+    ],
+    "FR_130MM_M1932": [
+      "FR_130MM_QUADRUPLE_M1932"
+    ],
+    "FR_340MM_M1912": [
+      "FR_340MM_QUADRUPLE_M1912"
+    ],
+    "UK_15INCH_MKI": [
+      "UK_15INCH_TWIN_MKI"
+    ],
+    "JP_460MM_94SHIKI": [
+      "JP_460MM_TRIPLE_94SHIKI"
+    ],
+    "FR_381MM_M1935": [
+      "FR_381MM_TRIPLE_M1935"
+    ],
+    "IT_135MM_M1938": [
+      "IT_135MM_TRIPLE_M1938"
+    ],
+    "US_16INCH_MK6": [
+      "US_16INCH_TRIPLE_MK6"
+    ],
+    "UK_525INCH_MKI": [
+      "UK_525INCH_TWIN_MKI"
+    ]
+  },
+  "caliber_min_max_by_ship_type": {
+    "battleship": {
+      "min": 305,
+      "max": 460
+    },
+    "battlecruiser": {
+      "min": 280,
+      "max": 381
+    },
+    "heavy_cruiser": {
+      "min": 203,
+      "max": 203
+    },
+    "light_cruiser": {
+      "min": 127,
+      "max": 155
+    },
+    "destroyer": {
+      "min": 100,
+      "max": 140
+    },
+    "coastal_defense": {
+      "min": 76,
+      "max": 283
+    }
+  },
+  "barbette_to_beam": {
+    "min_beam_over_barbette_diameter": 1.5,
+    "notes": "船体ビームはバーべット直径の1.5倍以上が必要 (validator で厳格には適用しない)。"
+  },
+  "turret_weight_to_displacement": {
+    "max_turret_weight_fraction_of_displacement": 0.06,
+    "min_displacement_t_for_heaviest_turret": 25000,
+    "notes": "単一砲塔重量が排水量の6%を超える、または25000t未満の船体に最重砲塔を載せる場合は警告。"
+  },
+  "topweight": {
+    "max_full_armament_weight_fraction": 0.35,
+    "notes": "全武装重量が排水量の35%を超える場合は topweight 警告。"
+  },
+  "magazine_volume": {
+    "min_m3_per_round_default": 0.05,
+    "notes": "弾薬庫容積が 1 発あたり 0.05 m3 未満の場合は magazine 警告。"
+  },
+  "era_availability": {
+    "notes": "weapon/mount の year_introduced が艦の year より未来の場合は unavailable エラー。"
+  },
+  "fire_control_compatibility": {
+    "notes": "fire_control_id の radar が true で、艦の year < 1938 の場合は radar_too_early 警告。"
+  }
+}

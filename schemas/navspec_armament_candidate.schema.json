@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.armament_candidate.v1",
+  "title": "ArmamentCandidate",
+  "description": "Stage 4A Armament Specialist の出力スキーマ。詳細な主砲/砲塔/配置/弾薬/射撃指揮の選択結果を表現する。ship_spec_record.v1 の集約 armament/equipment ブロックとは別レイヤーであり、集約値 (main_gun_caliber_mm / main_gun_count 等) はこの詳細 armament からコードで導出する (main_gun_caliber_mm = weapon.caliber_mm, main_gun_count = mount_count x barrels_per_mount)。",
+  "type": "object",
+  "required": ["schema_version", "main_batteries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "navspec.armament_candidate.v1"
+    },
+    "main_batteries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "battery_id",
+          "weapon_id",
+          "mount_id",
+          "mount_count",
+          "barrels_per_mount",
+          "total_barrels",
+          "positions"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "battery_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "電池群識別子 (例: main_1)"
+          },
+          "weapon_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "weapons.jsonl の weapon_id への参照 (例: JP_460MM_94SHIKI)"
+          },
+          "mount_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "mounts.jsonl の mount_id への参照 (例: JP_460MM_TRIPLE_A)"
+          },
+          "mount_count": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12,
+            "description": "砲塔数"
+          },
+          "barrels_per_mount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4,
+            "description": "1砲塔あたりの砲数 (単装/連装/三連装/四連装)"
+          },
+          "total_barrels": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 24,
+            "description": "総砲数 = mount_count x barrels_per_mount (validator で整合性を検証)"
+          },
+          "positions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["A", "B", "C", "P", "Q", "X", "Y", "Z"]
+            },
+            "minItems": 1,
+            "description": "配置位置。A/B=前部, P/Q=中部, X/Y=後部, C/Z=中線。superfiring は A,B のように複数指定。"
+          },
+          "ammo_per_gun": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "1砲あたり搭載弾数"
+          },
+          "fire_control_id": {
+            "type": "string",
+            "description": "fire_control.jsonl の fire_control_id への参照"
+          }
+        }
+      }
+    },
+    "design_rationale": {
+      "type": "string",
+      "description": "設計根拠 (例: 夜戦火力と前後射界の均衡を重視)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Stage 4A モデルの自信度"
+    }
+  }
+}

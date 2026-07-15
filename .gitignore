@@ -36,3 +36,6 @@ runs/
 
 # navspec raw generation logs
 docs/*_free_raw_*.md
+
+# navspec Stage 4 armament scraper HTML cache (regenerable from navweaps.com)
+data/navspec/armament/_cache_html/
