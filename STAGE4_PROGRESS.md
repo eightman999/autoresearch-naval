@@ -1,7 +1,7 @@
 # navspec Stage 4 Armament — 進捗・次やることリスト
 
-最終更新: 2026-07-15 (Commit A/B 完了、push 待ち)
-現在のbranch: `navspec-armament-stage4`（未push）
+最終更新: 2026-07-15 (Commit A/B 完了・origin push 済み)
+現在のbranch: `navspec-armament-stage4`（origin 同期済み、`02c9c5b`）
 
 ---
 
@@ -41,7 +41,8 @@
 - [x] **classic armament validator**: `tools/navspec_armament_validator.py` (progress §15 ルール + §16 reason code 14件)
 - [x] **tests**: `tests/test_navspec_armament_validator.py` (17件、progress §23 の10テスト網羅、all pass)
 - [x] **validator docs**: `docs/navspec_armament_validator_rules.md`
-- [ ] commit B + push
+- [x] **commit B**: `02c9c5b feat(navspec): add classic armament validator` (4 files, +1032)
+- [x] **push**: `git push -u origin navspec-armament-stage4` 完了 (PR URL: https://github.com/eightman999/autoresearch-mlx/pull/new/navspec-armament-stage4)
 
 ---
 
