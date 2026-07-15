@@ -1,6 +1,6 @@
 # navspec Stage 4 Armament — 進捗・次やることリスト
 
-最終更新: 2026-07-15 (Commit A 実装完了、commit 待ち)
+最終更新: 2026-07-15 (Commit A/B 完了、push 待ち)
 現在のbranch: `navspec-armament-stage4`（未push）
 
 ---
@@ -37,8 +37,11 @@
   - `tools/navspec_armament_validate_seed.py` (簡易検証: 必須フィールド + 参照整合性)
 - [x] **docs**: `docs/navspec_armament_data_schema.md` (5ファイルのスキーマ定義)
 - [x] **簡易検証**: `uv run python tools/navspec_armament_validate_seed.py` → 0 errors / 0 warnings
-- [ ] commit: `feat(navspec): add armament and turret data model`
-- [ ] classic armament validator / tests / docs (Commit B)
+- [x] **commit A**: `fa03d83 feat(navspec): add armament and turret data model` (13 files, +2542)
+- [x] **classic armament validator**: `tools/navspec_armament_validator.py` (progress §15 ルール + §16 reason code 14件)
+- [x] **tests**: `tests/test_navspec_armament_validator.py` (17件、progress §23 の10テスト網羅、all pass)
+- [x] **validator docs**: `docs/navspec_armament_validator_rules.md`
+- [ ] commit B + push
 
 ---
 
