@@ -229,14 +229,10 @@ def generate_positions(
         return rng.choice([["A", "B", "X"], ["A", "X", "Y"]])
     if mount_count == 4:
         return ["A", "B", "X", "Y"]
-    # 5 以上は前後に分散
-    fore = ["A", "B"]
-    aft = ["X", "Y"]
-    mid = ["P", "Q"]
-    pos = fore[: max(0, mount_count // 2 - 1)] + aft[: max(0, mount_count // 2 - 1)]
-    while len(pos) < mount_count:
-        pos.append(rng.choice(mid))
-    return pos[:mount_count]
+    # 5 以上は前後・中央に一意な位置を割り当てる。
+    # 同じ P/Q を反復すると validator の firing_arc_conflict になる。
+    position_order = ["A", "B", "X", "Y", "P", "Q", "C", "Z"]
+    return position_order[:mount_count]
 
 
 def select_fire_control(

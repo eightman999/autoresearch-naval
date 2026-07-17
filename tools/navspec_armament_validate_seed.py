@@ -53,7 +53,7 @@ def _check_required(records: list[dict], required: list[str], kind: str) -> list
     for r in records:
         rid = r.get(f"{kind}_id", "<no_id>")
         for f in required:
-            if r.get(f) is None and f not in r:
+            if r.get(f) is None:
                 errs.append(f"{kind} {rid}: missing required field '{f}'")
     return errs
 

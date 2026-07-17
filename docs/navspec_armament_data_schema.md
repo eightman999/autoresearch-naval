@@ -18,13 +18,13 @@ ShipSpecRecord v1 の集約 `armament{main_caliber_mm, main_barrels, mounts[]}` 
 
 | ファイル | 件数 | 主ソース | 生成方法 |
 | --- | --- | --- | --- |
-| `weapons.jsonl` | 35 | navweaps.com 個別武器ページ | `tools/navspec_armament_scraper.py` 機械抽出 |
-| `mounts.jsonl` | 35 | navweaps.com Mount/Turret Data 表 | 同上 (1 weapon = 1 代表 mount) |
-| `ammunition.jsonl` | 35 | navweaps.com Ammunition 表 | 同上 (1 weapon = 1 代表弾) |
+| `weapons.jsonl` | 59 | navweaps.com 個別武器ページ | `tools/navspec_armament_scraper.py` 機械抽出 |
+| `mounts.jsonl` | 59 | navweaps.com Mount/Turret Data 表 | 同上 (1 weapon = 1 代表 mount) |
+| `ammunition.jsonl` | 59 | navweaps.com Ammunition 表 | 同上 (1 weapon = 1 代表弾) |
 | `fire_control.jsonl` | 17 | 公式文献 / Wikipedia | `tools/navspec_armament_static_data.py` 手動定義 |
-| `compatibility_rules.json` | 35 entries | weapons.jsonl + mounts.jsonl + 本ファイル定義 | 同上 (自動 + 手動) |
+| `compatibility_rules.json` | 59 entries | weapons.jsonl + mounts.jsonl + 本ファイル定義 | 同上 (自動 + 手動) |
 
-収集範囲: 6カ国 (JP/US/UK/DE/FR/IT) / 1890-1945 / 76-460mm / 代表的主力艦・巡洋艦・駆逐艦主砲。
+収集範囲: 6カ国 (JP/US/UK/DE/FR/IT) / 1911-1944 / 90-460mm / 代表的主力艦・巡洋艦・駆逐艦主砲・両用砲。初期35件に、各国4件ずつ計24件の巡洋艦砲・駆逐艦砲・両用砲を追加した。
 
 ---
 

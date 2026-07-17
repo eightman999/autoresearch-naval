@@ -5,74 +5,41 @@
     "JP_460MM_94SHIKI": [
       "JP_460MM_TRIPLE_94SHIKI"
     ],
-    "DE_105CM_SKC33": [
-      "DE_105CM_TWIN_SKC33"
-    ],
-    "JP_127MM_3SHIKI": [
-      "JP_127MM_TWIN_3SHIKI"
-    ],
-    "FR_152MM_M1930": [
-      "FR_152MM_TRIPLE_M1930"
-    ],
-    "FR_130MM_M1932": [
-      "FR_130MM_QUADRUPLE_M1932"
-    ],
-    "UK_16INCH_MKI": [
-      "UK_16INCH_TRIPLE_MKI"
-    ],
-    "IT_381MM_M1934": [
-      "IT_381MM_TRIPLE_M1934"
-    ],
-    "JP_140MM_3SHIKI": [
-      "JP_140MM_TWIN_3SHIKI"
-    ],
-    "UK_135INCH_MKV": [
-      "UK_135INCH_TWIN_MKV"
+    "JP_410MM_3SHIKI": [
+      "JP_410MM_TWIN_3SHIKI"
     ],
     "JP_203MM_3SHIKI2GO": [
       "JP_203MM_TWIN_3SHIKI2GO"
     ],
-    "UK_15INCH_MKI": [
-      "UK_15INCH_TWIN_MKI"
+    "JP_155MM_3SHIKI": [
+      "JP_155MM_TRIPLE_3SHIKI"
     ],
-    "DE_38CM_SKC34": [
-      "DE_38CM_TWIN_SKC34"
-    ],
-    "DE_15CM_SKC28": [
-      "DE_15CM_TWIN_SKC28"
+    "JP_127MM_3SHIKI": [
+      "JP_127MM_TWIN_3SHIKI"
     ],
     "JP_100MM_98SHIKI": [
       "JP_100MM_TWIN_98SHIKI"
     ],
-    "IT_135MM_M1938": [
-      "IT_135MM_TRIPLE_M1938"
+    "JP_140MM_3SHIKI": [
+      "JP_140MM_TWIN_3SHIKI"
     ],
-    "IT_152MM_M1926": [
-      "IT_152MM_TWIN_M1926"
+    "JP_356MM_41SHIKI": [
+      "JP_356MM_TWIN_41SHIKI"
     ],
-    "FR_340MM_M1912": [
-      "FR_340MM_QUADRUPLE_M1912"
+    "JP_152MM_41SHIKI": [
+      "JP_152MM_TWIN_41SHIKI"
     ],
-    "UK_525INCH_MKI": [
-      "UK_525INCH_TWIN_MKI"
+    "JP_127MM_89SHIKI": [
+      "JP_127MM_TWIN_89SHIKI"
     ],
-    "UK_6INCH_MKXXIII": [
-      "UK_6INCH_TRIPLE_MKXXIII"
+    "JP_120MM_3SHIKI": [
+      "JP_120MM_SINGLE_3SHIKI"
     ],
-    "FR_381MM_M1935": [
-      "FR_381MM_TRIPLE_M1935"
+    "US_16INCH_MK7": [
+      "US_16INCH_TRIPLE_MK7"
     ],
-    "IT_90MM_M1939": [
-      "IT_90MM_SINGLE_M1939"
-    ],
-    "FR_330MM_M1931": [
-      "FR_330MM_QUADRUPLE_M1931"
-    ],
-    "US_8INCH_MK12": [
-      "US_8INCH_TRIPLE_MK12"
-    ],
-    "UK_14INCH_MKVII": [
-      "UK_14INCH_QUADRUPLE_MKVII"
+    "US_16INCH_MK6": [
+      "US_16INCH_TRIPLE_MK6"
     ],
     "US_14INCH_MK11": [
       "US_14INCH_TRIPLE_MK11"
@@ -80,20 +47,59 @@
     "US_12INCH_MK8": [
       "US_12INCH_TRIPLE_MK8"
     ],
-    "US_5INCH_MK12": [
-      "US_5INCH_TWIN_MK12"
-    ],
-    "JP_410MM_3SHIKI": [
-      "JP_410MM_TWIN_3SHIKI"
-    ],
-    "IT_320MM_M1934": [
-      "IT_320MM_TRIPLE_M1934"
+    "US_8INCH_MK12": [
+      "US_8INCH_TRIPLE_MK12"
     ],
     "US_6INCH_MK16": [
       "US_6INCH_TRIPLE_MK16"
     ],
-    "US_16INCH_MK7": [
-      "US_16INCH_TRIPLE_MK7"
+    "US_5INCH_MK12": [
+      "US_5INCH_TWIN_MK12"
+    ],
+    "US_16INCH_MK5": [
+      "US_16INCH_TWIN_MK5"
+    ],
+    "US_14INCH_MK10": [
+      "US_14INCH_TRIPLE_MK10"
+    ],
+    "US_8INCH_MK9": [
+      "US_8INCH_TRIPLE_MK9"
+    ],
+    "US_5INCH_MK10": [
+      "US_5INCH_SINGLE_MK10"
+    ],
+    "UK_15INCH_MKI": [
+      "UK_15INCH_TWIN_MKI"
+    ],
+    "UK_16INCH_MKI": [
+      "UK_16INCH_TRIPLE_MKI"
+    ],
+    "UK_14INCH_MKVII": [
+      "UK_14INCH_QUADRUPLE_MKVII"
+    ],
+    "UK_135INCH_MKV": [
+      "UK_135INCH_TWIN_MKV"
+    ],
+    "UK_6INCH_MKXXIII": [
+      "UK_6INCH_TRIPLE_MKXXIII"
+    ],
+    "UK_525INCH_MKI": [
+      "UK_525INCH_TWIN_MKI"
+    ],
+    "UK_8INCH_MKVIII": [
+      "UK_8INCH_TWIN_MKVIII"
+    ],
+    "UK_47INCH_MKIX": [
+      "UK_47INCH_TWIN_MKIX"
+    ],
+    "UK_45INCH_MKI": [
+      "UK_45INCH_TWIN_MKI"
+    ],
+    "UK_4INCH_MKIX": [
+      "UK_4INCH_TRIPLE_MKIX"
+    ],
+    "DE_38CM_SKC34": [
+      "DE_38CM_TWIN_SKC34"
     ],
     "DE_28CM_SKC34": [
       "DE_28CM_TRIPLE_SKC34"
@@ -101,11 +107,77 @@
     "DE_28CM_SKC28": [
       "DE_28CM_TRIPLE_SKC28"
     ],
-    "US_16INCH_MK6": [
-      "US_16INCH_TRIPLE_MK6"
+    "DE_15CM_SKC28": [
+      "DE_15CM_TWIN_SKC28"
     ],
-    "JP_155MM_3SHIKI": [
-      "JP_155MM_TRIPLE_3SHIKI"
+    "DE_105CM_SKC33": [
+      "DE_105CM_TWIN_SKC33"
+    ],
+    "DE_305CM_SKL50": [
+      "DE_305CM_TWIN_SKL50"
+    ],
+    "DE_203CM_SKC34": [
+      "DE_203CM_TWIN_SKC34"
+    ],
+    "DE_15CM_SKC25": [
+      "DE_15CM_TRIPLE_SKC25"
+    ],
+    "DE_127CM_SKC34": [
+      "DE_127CM_SINGLE_SKC34"
+    ],
+    "FR_381MM_M1935": [
+      "FR_381MM_TRIPLE_M1935"
+    ],
+    "FR_330MM_M1931": [
+      "FR_330MM_QUADRUPLE_M1931"
+    ],
+    "FR_340MM_M1912": [
+      "FR_340MM_QUADRUPLE_M1912"
+    ],
+    "FR_152MM_M1930": [
+      "FR_152MM_TRIPLE_M1930"
+    ],
+    "FR_130MM_M1932": [
+      "FR_130MM_QUADRUPLE_M1932"
+    ],
+    "FR_203MM_M1924": [
+      "FR_203MM_TWIN_M1924"
+    ],
+    "FR_139MM_M1923": [
+      "FR_139MM_SINGLE_M1923"
+    ],
+    "FR_139MM_M1929": [
+      "FR_139MM_TWIN_M1929"
+    ],
+    "FR_100MM_M1930": [
+      "FR_100MM_TWIN_M1930"
+    ],
+    "IT_381MM_M1934": [
+      "IT_381MM_TRIPLE_M1934"
+    ],
+    "IT_320MM_M1934": [
+      "IT_320MM_TRIPLE_M1934"
+    ],
+    "IT_152MM_M1926": [
+      "IT_152MM_TWIN_M1926"
+    ],
+    "IT_135MM_M1938": [
+      "IT_135MM_TRIPLE_M1938"
+    ],
+    "IT_90MM_M1939": [
+      "IT_90MM_SINGLE_M1939"
+    ],
+    "IT_203MM_M1927": [
+      "IT_203MM_TWIN_M1927"
+    ],
+    "IT_152MM_M1936": [
+      "IT_152MM_TRIPLE_M1936"
+    ],
+    "IT_120MM_M1926": [
+      "IT_120MM_TWIN_M1926"
+    ],
+    "IT_102MM_M1917": [
+      "IT_102MM_TWIN_M1917"
     ]
   },
   "caliber_min_max_by_ship_type": {

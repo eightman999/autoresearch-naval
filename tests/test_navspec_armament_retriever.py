@@ -143,6 +143,8 @@ def test_generate_positions_patterns():
     p3 = generate_positions(3, random.Random(0))
     assert p3 in (["A", "B", "X"], ["A", "X", "Y"])
     assert generate_positions(0) == []
+    assert generate_positions(5) == ["A", "B", "X", "Y", "P"]
+    assert len(set(generate_positions(6))) == 6
 
 
 # ----------------------------------------------------------------------------

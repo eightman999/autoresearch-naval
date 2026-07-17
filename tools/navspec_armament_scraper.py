@@ -1,7 +1,7 @@
 """Stage 4 Commit A: navweaps.com からの主砲データ機械的スクレイピング.
 
 STAGE4_PROGRESS.md §2 Commit A の DB seed 収集フェーズ。
-progress §4 の代表的主砲候補リスト (6カ国 / 76-460mm / 35件) を
+progress §4 の代表的主砲候補リストを起点に、6カ国 / 76-460mm / 59件を
 navweaps.com の個別武器ページから機械的に抽出し、
 ``data/navspec/armament/weapons.jsonl`` を生成する。
 
@@ -57,13 +57,15 @@ class WeaponTarget:
     # 抽出値の補正 ( navweaps 表記ゆれや本文中のみの数値に対する上書き )
     caliber_override: int | None = None
     max_range_override: int | None = None
+    mount_type_override: str | None = None
 
 
 # progress §3 の id 体系例に従う:
 #   - JP/FR/IT: {NATION}_{CALIBER_MM}_{FORM}
 #   - UK/US  : {NATION}_{CALIBER_INCH}_{FORM}
 #   - DE     : {NATION}_{CALIBER_CM}_{FORM}
-# progress §4 の候補リスト35件を navweaps URL パターンへマップ。
+# progress §4 の候補リスト35件と、巡洋艦砲・駆逐艦砲・両用砲の
+# 追加候補24件を navweaps URL パターンへマップ。
 TARGETS: list[WeaponTarget] = [
     # --- Japan (mm 表記) ---
     WeaponTarget(
@@ -98,6 +100,25 @@ TARGETS: list[WeaponTarget] = [
         "JP_140MM_3SHIKI", "JP", "14 cm/50 3rd Year Type (Kongo secondary)",
         BASE_URL + "WNJAP_55-50_3ns.php",
     ),
+    WeaponTarget(
+        "JP_356MM_41SHIKI", "JP", "36 cm/45 41st Year Type (Kongo/Fuso/Ise)",
+        BASE_URL + "WNJAP_14-45_t41.php",
+        caliber_override=356,
+    ),
+    WeaponTarget(
+        "JP_152MM_41SHIKI", "JP", "15 cm/50 41st Year Type (Kongo/Fuso/Agano)",
+        BASE_URL + "WNJAP_6-50_t41.php",
+        caliber_override=152,
+    ),
+    WeaponTarget(
+        "JP_127MM_89SHIKI", "JP", "12.7 cm/40 Type 89 (heavy AA/dual-purpose)",
+        BASE_URL + "WNJAP_5-40_t89.php",
+        dual_purpose=True,
+    ),
+    WeaponTarget(
+        "JP_120MM_3SHIKI", "JP", "12 cm/45 3rd Year Type (Japanese destroyers)",
+        BASE_URL + "WNJAP_47-45_11ns.php",
+    ),
     # --- United States (inch 表記) ---
     WeaponTarget(
         "US_16INCH_MK7", "US", "16\"/50 Mark 7 (Iowa/Montana)",
@@ -128,6 +149,23 @@ TARGETS: list[WeaponTarget] = [
         BASE_URL + "WNUS_5-38_mk12.php",
         dual_purpose=True,
     ),
+    WeaponTarget(
+        "US_16INCH_MK5", "US", "16\"/45 Mark 5 (Colorado class)",
+        BASE_URL + "WNUS_16-45_mk5.php",
+    ),
+    WeaponTarget(
+        "US_14INCH_MK10", "US", "14\"/45 Marks 8/9/10/12 (standard battleships)",
+        BASE_URL + "WNUS_14-45_mk10.php",
+    ),
+    WeaponTarget(
+        "US_8INCH_MK9", "US", "8\"/55 Marks 9/10/11/13/14 (treaty cruisers)",
+        BASE_URL + "WNUS_8-55_mk9.php",
+    ),
+    WeaponTarget(
+        "US_5INCH_MK10", "US", "5\"/25 Marks 10/11/13/17 (heavy AA)",
+        BASE_URL + "WNUS_5-25_mk10.php",
+        dual_purpose=True,
+    ),
     # --- United Kingdom (inch 表記; navweaps 国コードは WNBR_) ---
     WeaponTarget(
         "UK_15INCH_MKI", "UK", "15\"/42 Mark I (QE/Revenge/Hood/Vanguard)",
@@ -154,6 +192,26 @@ TARGETS: list[WeaponTarget] = [
         BASE_URL + "WNBR_525-50_mk1.php",
         dual_purpose=True,
     ),
+    WeaponTarget(
+        "UK_8INCH_MKVIII", "UK", "8\"/50 Mark VIII (County/York classes)",
+        BASE_URL + "WNBR_8-50_mk8.php",
+    ),
+    WeaponTarget(
+        "UK_47INCH_MKIX", "UK", "4.7\"/45 QF Mark IX (British destroyers)",
+        BASE_URL + "WNBR_47-45_mk9.php",
+        caliber_override=120,
+    ),
+    WeaponTarget(
+        "UK_45INCH_MKI", "UK", "4.5\"/45 QF Marks I/III/IV (dual-purpose)",
+        BASE_URL + "WNBR_45-45_mk1.php",
+        dual_purpose=True,
+        caliber_override=113,
+    ),
+    WeaponTarget(
+        "UK_4INCH_MKIX", "UK", "4\"/45 BL Marks IX/X (escort main gun)",
+        BASE_URL + "WNBR_4-45_mk9.php",
+        caliber_override=102,
+    ),
     # --- Germany (cm 表記) ---
     WeaponTarget(
         "DE_38CM_SKC34", "DE", "38 cm/52 SK C/34 (Bismarck)",
@@ -175,6 +233,27 @@ TARGETS: list[WeaponTarget] = [
         "DE_105CM_SKC33", "DE", "10.5 cm/65 SK C/33 (heavy AA, dual-purpose)",
         BASE_URL + "WNGER_41-65_skc33.php",
         dual_purpose=True,
+    ),
+    WeaponTarget(
+        "DE_305CM_SKL50", "DE", "30.5 cm/50 SK L/50 (German dreadnoughts)",
+        BASE_URL + "WNGER_12-50_skc12.php",
+        caliber_override=305,
+        technology_tier="legacy",
+    ),
+    WeaponTarget(
+        "DE_203CM_SKC34", "DE", "20.3 cm/60 SK C/34 (Admiral Hipper)",
+        BASE_URL + "WNGER_8-60_skc34.php",
+        caliber_override=203,
+    ),
+    WeaponTarget(
+        "DE_15CM_SKC25", "DE", "15 cm/60 SK C/25 (K-class/Leipzig/Nurnberg)",
+        BASE_URL + "WNGER_59-60_skc25.php",
+    ),
+    WeaponTarget(
+        "DE_127CM_SKC34", "DE", "12.7 cm/45 SK C/34 (German destroyers)",
+        BASE_URL + "WNGER_5-45_skc34.php",
+        caliber_override=128,
+        mount_type_override="single",
     ),
     # --- France (mm 表記) ---
     WeaponTarget(
@@ -203,6 +282,25 @@ TARGETS: list[WeaponTarget] = [
         max_range_override=20870,
         notes_hint="max_range_m from navweaps inline table (not in <table> tag).",
     ),
+    WeaponTarget(
+        "FR_203MM_M1924", "FR", "203 mm/50 Mle 1924 (French treaty cruisers)",
+        BASE_URL + "WNFR_8-50_m1924.php",
+    ),
+    WeaponTarget(
+        "FR_139MM_M1923", "FR", "138.6 mm/40 Mle 1923 (Bison/Pluton)",
+        BASE_URL + "WNFR_55-40_m1923.php",
+        caliber_override=139,
+    ),
+    WeaponTarget(
+        "FR_139MM_M1929", "FR", "138.6 mm/50 Mle 1929 (Le Fantasque)",
+        BASE_URL + "WNFR_55-50_m1929.php",
+        caliber_override=139,
+    ),
+    WeaponTarget(
+        "FR_100MM_M1930", "FR", "100 mm/45 Mle 1930 (heavy AA/dual-purpose)",
+        BASE_URL + "WNFR_39-45_m1930.php",
+        dual_purpose=True,
+    ),
     # --- Italy (mm 表記) ---
     WeaponTarget(
         "IT_381MM_M1934", "IT", "381 mm/50 Mle 1934 (Littorio/Vittorio Veneto)",
@@ -227,6 +325,23 @@ TARGETS: list[WeaponTarget] = [
         "IT_90MM_M1939", "IT", "90 mm/50 Mle 1939 (heavy AA, dual-purpose)",
         BASE_URL + "WNIT_35-50_m1939.php",
         dual_purpose=True,
+    ),
+    WeaponTarget(
+        "IT_203MM_M1927", "IT", "203 mm/53 Mle 1927 (Zara/Bolzano)",
+        BASE_URL + "WNIT_8-53_m1927.php",
+    ),
+    WeaponTarget(
+        "IT_152MM_M1936", "IT", "152 mm/55 Mle 1936 (Littorio/Garibaldi)",
+        BASE_URL + "WNIT_6-55_m1936.php",
+    ),
+    WeaponTarget(
+        "IT_120MM_M1926", "IT", "120 mm/50 Mle 1926 (Italian destroyers)",
+        BASE_URL + "WNIT_47-50_m1926.php",
+    ),
+    WeaponTarget(
+        "IT_102MM_M1917", "IT", "102 mm/45 Mle 1917/1919 (torpedo boats/submarines)",
+        BASE_URL + "WNIT_4-45_m1917.php",
+        technology_tier="legacy",
     ),
 ]
 
@@ -363,6 +478,42 @@ def _first_float(text: str | None) -> float | None:
     if not m:
         return None
     return float(m.group(0).replace(",", ""))
+
+
+def _first_rate_of_fire(text: str | None) -> float | None:
+    """発射速度の最初の値を抽出する。
+
+    NavWeaps の発射速度行には ``Model 1929`` や ``Type 88`` のような
+    形式年・型式番号が先に現れることがある。単純な先頭数値抽出ではそれらを
+    rpm と誤認するため、``rounds per minute`` / ``rounds / minute`` に直結する
+    数値だけを優先する。範囲表記は従来どおり下限値を採用する。
+    """
+    if not text:
+        return None
+    m = re.search(
+        r"(?<![\d.])(\d+(?:\.\d+)?)\s*"
+        r"(?:(?:-|–|to)\s*\d+(?:\.\d+)?\s*)?"
+        r"rounds?\s*(?:per|/)\s*minute",
+        text,
+        re.I,
+    )
+    if m:
+        return float(m.group(1))
+    return _first_float(text)
+
+
+def _first_angular_rate(text: str | None) -> float | None:
+    """旋回・俯仰速度から型式年を除外して deg/s の値を抽出する。"""
+    if not text:
+        return None
+    m = re.search(
+        r"(?<![\d.])(\d+(?:\.\d+)?)\s*"
+        r"(?:(?:-|–|to)\s*\d+(?:\.\d+)?\s*)?"
+        r"degrees?\s*per\s*second",
+        text,
+        re.I,
+    )
+    return float(m.group(1)) if m else None
 
 
 def _first_year(text: str | None) -> int | None:
@@ -516,7 +667,7 @@ def extract_record(target: WeaponTarget, html: str) -> dict[str, Any]:
             if m:
                 mv_mps = round(float(m.group(1).replace(",", "")) * 0.3048, 1)
     max_range_m = find_max_range_m(tables)
-    rate_of_fire_rpm = _first_float(rate_of_fire)
+    rate_of_fire_rpm = _first_rate_of_fire(rate_of_fire)
     if rate_of_fire_rpm is not None:
         rate_of_fire_rpm = round(rate_of_fire_rpm, 2)
     year_introduced = _first_year(date_in_service) or _first_year(date_of_design)
@@ -631,6 +782,16 @@ def extract_mount_record(target: WeaponTarget, html: str) -> dict[str, Any] | No
     mount_type, barrels = _mount_type_from_header(header)
     if not mount_type:
         return None
+    if target.mount_type_override:
+        mount_type = target.mount_type_override
+        barrels = {
+            "single": 1,
+            "twin": 2,
+            "triple": 3,
+            "quadruple": 4,
+        }.get(mount_type)
+        if barrels is None:
+            raise ValueError(f"unsupported mount_type_override: {mount_type}")
 
     weight = find_row([mt], r"^Weight\b|Gun Weight")
     elevation = find_row([mt], r"^Elevation\b")
@@ -640,7 +801,7 @@ def extract_mount_record(target: WeaponTarget, html: str) -> dict[str, Any] | No
 
     turret_weight_t = _first_tons(weight)
     elevation_rng = _elevation_range(elevation)
-    elev_rate_val = _first_float(elev_rate) or _first_float(train_rate)
+    train_rate_val = _first_angular_rate(train_rate) or _first_angular_rate(elev_rate)
 
     # mount_id 構築: {NATION}_{CALIBER_PART}_{TYPE_UPPER}_{FORM}
     # weapon_id が "JP_460MM_94SHIKI" の場合、caliber_part=460MM, form=94SHIKI
@@ -666,7 +827,7 @@ def extract_mount_record(target: WeaponTarget, html: str) -> dict[str, Any] | No
         "minimum_beam_m": None,
         "minimum_displacement_t": None,
         "turret_armor": None,
-        "training_speed_deg_s": elev_rate_val,
+        "training_speed_deg_s": train_rate_val,
         "elevation_range": elevation_rng,
         "crew": None,
         "power_requirement_kw": None,
@@ -800,10 +961,10 @@ def run(
             time.sleep(sleep)
             continue
 
-        missing = [k for k in ("caliber_mm", "barrel_length_calibers", "gun_weight_t",
-                               "shell_weight_kg", "muzzle_velocity_mps", "max_range_m",
-                               "rate_of_fire_rpm") if rec.get(k) is None]
-        status = "ok" if not missing else "partial"
+        missing = [f"weapon.{k}" for k in (
+            "caliber_mm", "barrel_length_calibers", "gun_weight_t", "shell_weight_kg",
+            "muzzle_velocity_mps", "max_range_m", "rate_of_fire_rpm",
+        ) if rec.get(k) is None]
 
         # mounts / ammunition 抽出 (失敗しても武器レコードは出力)
         mount_note = ""
@@ -813,19 +974,35 @@ def run(
                 m_rec = extract_mount_record(t, html)
                 if m_rec:
                     mount_records.append(m_rec)
+                    missing.extend(
+                        f"mount.{k}" for k in (
+                            "mount_id", "barrels_per_mount", "mount_type", "turret_weight_t",
+                        ) if m_rec.get(k) is None
+                    )
                 else:
                     mount_note = "no_mount_table"
+                    missing.append("mount.record")
             except Exception as e:  # noqa: BLE001
                 mount_note = f"mount_parse_error:{type(e).__name__}"
+                missing.append("mount.record")
         if ammo_path is not None:
             try:
                 a_rec = extract_ammo_record(t, html)
                 if a_rec:
                     ammo_records.append(a_rec)
+                    missing.extend(
+                        f"ammo.{k}" for k in (
+                            "ammo_id", "type", "shell_weight_kg", "muzzle_velocity_mps",
+                        ) if a_rec.get(k) is None
+                    )
                 else:
                     ammo_note = "no_ammo_row"
+                    missing.append("ammo.record")
             except Exception as e:  # noqa: BLE001
                 ammo_note = f"ammo_parse_error:{type(e).__name__}"
+                missing.append("ammo.record")
+
+        status = "ok" if not missing else "partial"
 
         manifest_entries.append({
             "weapon_id": t.weapon_id,

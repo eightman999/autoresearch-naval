@@ -342,7 +342,7 @@ def build_compatibility(
     静的ルール (口径/艦種, 物理制約) と結合する。"""
     weapon_to_mount: dict[str, list[str]] = {}
     if weapons_path.exists() and mounts_path.exists():
-        weapons = {json.loads(l)["weapon_id"] for l in weapons_path.open(encoding="utf-8")}
+        weapons = [json.loads(l)["weapon_id"] for l in weapons_path.open(encoding="utf-8")]
         mounts = [json.loads(l) for l in mounts_path.open(encoding="utf-8")]
         for w in weapons:
             weapon_to_mount[w] = [
