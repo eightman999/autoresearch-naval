@@ -1,5 +1,5 @@
 {
-  "armament_db": "data/navspec/armament/ (35 weapons / 6 nations / 1911-1944)",
+  "armament_db": "data/navspec/armament/ (59 weapons / 59 mounts / 6 nations / 1911-1944)",
   "category_counts": {
     "era_unavailable": 120,
     "hull_too_small": 144,

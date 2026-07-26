@@ -180,7 +180,7 @@ def _hull_for(ship_type: str, rng: random.Random, scale: float = 1.0) -> tuple[f
 def feasible_combos(db: dict[str, Any]) -> list[tuple[str, str, int]]:
     """DB 上で実際に主砲が引ける (nation, ship_type, year) を列挙する。
 
-    「normal」を名前どおり成立ケースにするために必要。DB は35門・6カ国しか
+    「normal」を名前どおり成立ケースにするために必要。DB は59門・6カ国しか
     無く、たとえば US の最古の主砲は1926年なので、素朴に年を振ると normal の
     2〜3割が impossible になってしまう（判定自体は正しいが、カテゴリの意味が壊れる）。
     """
@@ -778,7 +778,7 @@ def write_manifest(
             "navspec_armament_retriever.retrieve_armament + "
             "navspec_armament_validator.validate_armament (no LLM in the loop)"
         ),
-        "armament_db": "data/navspec/armament/ (35 weapons / 6 nations / 1911-1944)",
+        "armament_db": "data/navspec/armament/ (59 weapons / 59 mounts / 6 nations / 1911-1944)",
         "rows": len(rows),
         "requested": requested,
         "seed": seed,
