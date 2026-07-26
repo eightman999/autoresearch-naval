@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.armament_teacher.v1",
+  "title": "NavSpec Stage 4a armament teacher output",
+  "description": "Stage 4a (Commit D) の teacher/生徒出力。内側の armament は navspec.armament_candidate.v1 と同一構造。トップレベルは stage2 の navspec.lora_candidate.v1（schema_version/status/spec/reason/suggested_revision/design_concept/confidence）に揃え、spec を armament に、design_concept を design_rationale に置き換えたもの。status=impossible のとき armament は null。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "armament",
+    "reason",
+    "warnings",
+    "suggested_revision",
+    "design_rationale",
+    "confidence"
+  ],
+  "properties": {
+    "schema_version": { "const": "navspec.armament_teacher.v1" },
+    "status": { "enum": ["ok", "impossible"] },
+    "armament": {
+      "description": "status=ok のとき必須。status=impossible のとき null。",
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["main_batteries"],
+          "properties": {
+            "main_batteries": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "battery_id",
+                  "weapon_id",
+                  "mount_id",
+                  "mount_count",
+                  "barrels_per_mount",
+                  "total_barrels",
+                  "positions"
+                ],
+                "properties": {
+                  "battery_id": { "type": "string" },
+                  "weapon_id": { "type": "string" },
+                  "mount_id": { "type": "string" },
+                  "mount_count": { "type": "integer", "minimum": 1 },
+                  "barrels_per_mount": { "type": "integer", "minimum": 1 },
+                  "total_barrels": { "type": "integer", "minimum": 1 },
+                  "positions": { "type": "array", "items": { "type": "string" } },
+                  "ammo_per_gun": { "type": "integer", "minimum": 0 },
+                  "fire_control_id": { "type": "string" }
+                }
+              }
+            },
+            "aggregate": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "main_gun_caliber_mm": { "type": ["integer", "null"] },
+                "main_gun_count": { "type": "integer", "minimum": 0 },
+                "main_gun_mount_count": { "type": "integer", "minimum": 0 }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "reason": {
+      "description": "status=impossible のとき1件以上。status=ok のときは空配列。",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "message"],
+        "properties": {
+          "code": {
+            "enum": [
+              "armament.weapon_unavailable_for_era",
+              "armament.weapon_unavailable_for_nation",
+              "armament.mount_unavailable_for_era",
+              "armament.mount_unavailable_for_nation",
+              "armament.weapon_mount_incompatible",
+              "armament.barbette_too_large_for_beam",
+              "armament.turret_weight_exceeds_hull_limit",
+              "armament.magazine_volume_insufficient",
+              "armament.topweight_limit_exceeded",
+              "armament.firing_arc_conflict",
+              "armament.blast_interference",
+              "armament.battery_layout_conflict",
+              "armament.armament_displacement_conflict",
+              "armament.fire_control_unavailable"
+            ]
+          },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "warnings": {
+      "description": "validator の severity=warn。設計は成立するが余裕が乏しい点。status=ok でも空とは限らない。捨てずに必ず載せる（例: 砲塔重量が排水量の35%超は warn、50%超で初めて error）。",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "message"],
+        "properties": {
+          "code": {
+            "enum": [
+              "armament.weapon_unavailable_for_era",
+              "armament.weapon_unavailable_for_nation",
+              "armament.mount_unavailable_for_era",
+              "armament.mount_unavailable_for_nation",
+              "armament.weapon_mount_incompatible",
+              "armament.barbette_too_large_for_beam",
+              "armament.turret_weight_exceeds_hull_limit",
+              "armament.magazine_volume_insufficient",
+              "armament.topweight_limit_exceeded",
+              "armament.firing_arc_conflict",
+              "armament.blast_interference",
+              "armament.battery_layout_conflict",
+              "armament.armament_displacement_conflict",
+              "armament.fire_control_unavailable"
+            ]
+          },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "suggested_revision": {
+      "description": "status=impossible のとき、要求のどこを緩めれば成立するかの提案。status=ok のとき null。",
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "year": { "type": ["integer", "null"] },
+            "nation": { "type": ["string", "null"] },
+            "ship_type": { "type": ["string", "null"] },
+            "displacement_t": { "type": ["number", "null"] },
+            "beam_m": { "type": ["number", "null"] },
+            "note": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "design_rationale": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+  }
+}

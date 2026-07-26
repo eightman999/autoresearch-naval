@@ -73,8 +73,34 @@
   - 戦略: representative (最大口径) / mid_caliber / random
   - 17 tests pass (tests/test_navspec_armament_retriever.py)
   - 副作用修正: validator `_get_rule` のネスト dict 対応、barbette 閾値 1.5→1.4 (大和型38m/460mm砲塔12.88m で警告解消)
-- [ ] **Commit D: teacher生成** `tools/navspec_lora_data_armament_stage4a.py`
+- [x] **Commit D: teacher生成** `tools/navspec_lora_data_armament_stage4a.py`（2026-07-26 実装・未commit）
+  - 出力契約: `schemas/navspec_armament_teacher_stage4a.schema.json`（`navspec.armament_teacher.v1`）
+    - トップレベルは Stage 2 の `navspec.lora_candidate.v1` に揃え、
+      `spec`→`armament` / `design_concept`→`design_rationale`、`warnings` を追加
+  - teacher は LLM 不使用。retriever が candidate を作り validator が判定、
+    error→`impossible` / warn→`warnings[]` + confidence 減点
+  - 生成実測（count=1200, seed=42）: rows=1200 / ok=855 / impossible=345 /
+    train=860 validation=178 test=162 → `data/navspec/lora/stage4a_armament_v0/`
+  - tests: `tests/test_navspec_lora_data_armament_stage4a.py` 17件 all pass。
+    リポジトリ全体は51 passed（`tests/test_navspec_armament_scraper.py` は
+    `ModuleNotFoundError: No module named 'tools'` で収集エラーだが、これは
+    `a2e1528` 時点からの**既存問題**であり Commit D とは無関係）
+  - docs: `docs/navspec_armament_stage4a_teacher.md`
+  - 副作用修正なし（Commit B/C のコードは未変更。retriever の
+    「代表砲1門しか試さない」制約は stage4a 側の `retrieve_with_fallback()` で回避）
+  - **未commit**。commit message 案: `feat(navspec): add stage4a armament teacher dataset builder`
 - [ ] **Commit E: pipeline統合 + 学習** `stage4a-armament-r8`
+  - **着手前に決める必要がある論点**: 14個の reason code のうち **7個が
+    Commit D のデータに1件も出ない**（`mount_unavailable_for_era` /
+    `mount_unavailable_for_nation` / `weapon_mount_incompatible` /
+    `magazine_volume_insufficient` / `firing_arc_conflict` /
+    `blast_interference` / `fire_control_unavailable`）。
+    retriever が常に整合した candidate しか作らないため、生成タスクでは
+    原理的に到達できない（DB実測でも「砲より後年の砲塔ペア」は0件）。
+    選択肢は (1) 未カバーのまま進め評価対象からも外す /
+    (2) 破損candidateを与える「批評タスク」を別データセットとして足す /
+    (3) reason code 一覧を到達可能な7個に絞る。
+    詳細は `docs/navspec_armament_stage4a_teacher.md` §7。
 
 ---
 
