@@ -45,7 +45,8 @@ armament DB 側の語彙をそのまま使う。Stage 2 の `SHIP_TYPES` への�
 
 - 国 (6): `JP` `UK` `US` `DE` `FR` `IT`
 - 艦種 (6): `battleship` `battlecruiser` `heavy_cruiser` `light_cruiser` `destroyer` `coastal_defense`
-- 砲: 35門 / 1911–1944年
+- 砲: 59門 / 1911–1944年（`weapons.jsonl` の実測。`STAGE4_PROGRESS.md` の
+  「35件」は初回収集時の値で、`a2e1528` の増分が反映されていなかった）
 
 DB に無い国・艦種・年代は、そのまま不成立ケースの材料として使う。
 
