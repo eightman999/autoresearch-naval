@@ -205,3 +205,58 @@ skipped_no_material=0
 が、就役年が入った時点で落ちて気づけるようにしてある。
 
 砲塔の就役年は史実データなので、推測で埋めずに navweaps 等から採取すること。
+
+## 9. `mounts.jsonl` の `year_introduced` を埋める試み (2026-07-26・未達)
+
+§8 の残り1 code (`armament.mount_unavailable_for_era`) を埋めるため、
+砲塔の就役年を機械的に導出できないか3経路試したが、**いずれも失敗した**。
+同じ調査を繰り返さないために結果を残す。
+
+### 経路1: キャッシュ済み navweaps HTML の Mount/Turret Data 表
+
+**日付行が存在しない。** `_cache_html/` の69ページすべてを確認。
+表の行ラベルは Designation / Elevation / Train / Weight / Elevation Rate /
+Train Rate / Gun recoil / Loading Angle のみ。
+
+（注: 最初に `date|service|design` で拾ったとき69/69がヒットしたように見えたのは、
+"Designation" の "design" への誤ヒットだった。）
+
+### 経路2: ページ全体の `Date In Service`
+
+**69ページすべてで出現は1回だけ**＝砲の分のみ。砲塔固有の日付は無い。
+`Date In Service` が2回以上出るページは 0/69。
+
+### 経路3: `_ship_hint` の艦級名 → NSDB (`nsdb/NSDB.db`, 艦船108,778件) で就役年
+
+抽出と正規化を直せば一致率自体は上がる（1/59 → 46〜48/59）。
+NSDB の `CLASS` は `YAMATO1942) Class` のような形式なので、
+末尾の " Class" と年・カッコを落としてから突合する必要がある。
+
+**しかし値が信用できない。** 6カ国すべてで艦名が世代をまたいで再利用されており、
+NSDB 側に「どちらの艦級がこの砲塔を積んだか」を判別する材料が無い。
+同名異艦を落とすフィルタを2種類試したが、どちらも別の誤りを生んだ:
+
+| フィルタ | 誤りの例 |
+|---|---|
+| 砲の年-2 以降のみ採用 | `US_14INCH_TRIPLE_MK11` → 1940 North Carolina（16インチ砲艦。Mk11 は New Mexico/Tennessee で1917〜20年）<br>`US_8INCH_TRIPLE_MK12` → 1942 Baltimore（実際は New Orleans で1934年） |
+| 年代窓 1895–1950 のみ採用 | `US_14INCH_TRIPLE_MK11` → 1904 Tennessee（**装甲巡洋艦**。砲塔を積んだのは1919年の戦艦）<br>`US_6INCH_TRIPLE_MK16` → 1895 Brooklyn（**装甲巡洋艦**。実際は1936年の軽巡） |
+
+再利用されている艦名の実例: 扶桑 1877/1915、天城 1877/1921、
+Tennessee 1904/1919、Brooklyn 1895/1936。
+
+### 副次的に判明した問題
+
+**`weapons.jsonl` の `year_introduced` 自体も疑わしい。**
+`US_14INCH_TRIPLE_MK11` の砲が1935年と記録されているが、
+Mk11 14"/50 の実際の就役は1917年前後。
+スクレイパー (`navspec_armament_scraper.py:673`) が
+`_first_year(date_in_service) or _first_year(date_of_design)` と、
+先に当たった方を採る実装になっているため。
+砲塔の年を入れる作業をするなら、**砲の年の再検証も同時に必要**。
+
+### 結論
+
+自動導出は断念する。59件を史実ソースに当たって手で入れるのが確実。
+その際は DB の既存慣行どおり `verified: false` から始め、照合完了で `true` にする。
+`armament.mount_unavailable_for_era` は、それまで未カバーのまま
+（カバレッジ 13/14）とする。
