@@ -134,9 +134,74 @@ warn 付きの行は 125/1200。assistant 側の平均文字数は 551。
 - DB 実測で、砲より後年の砲塔ペアは **0件** → `mount_unavailable_for_era` は構造的に到達不能
 
 つまりこれらは「生成タスク」では原理的に出ない code であり、
-**候補を与えて批評させる検証タスク**に属する。データを水増しして
-無理に出すより、Commit E で次のどれを採るかを決めるべき:
+**候補を与えて批評させる検証タスク**に属する。
 
-1. 生成タスクは7 code 未カバーのまま進め、評価対象も外す
-2. 破損した candidate を混ぜる「批評タスク」を別データセットとして足す
-3. reason code 一覧を生成タスクで到達可能な7個に絞る
+→ **方針決定 (2026-07-26): 批評タスクを別データセットとして足す。**
+詳細は次章。
+
+## 8. 批評タスクデータ (`stage4a_armament_critique_v0`)
+
+生成器: `tools/navspec_lora_data_armament_critique_stage4a.py`
+テスト: `tests/test_navspec_lora_data_armament_critique_stage4a.py` (16件)
+出力先: `data/navspec/lora/stage4a_armament_critique_v0/`
+
+タスクを裏返す。**候補を与えて validator の判定を当てさせる**ことで、
+候補側を壊せば全 code に到達できる。
+
+- 入力: context + armament candidate（健全なものと、意図的に壊したものが混在）
+- 出力: validator の判定。契約は生成タスクと**同じ** `navspec.armament_teacher.v1`
+  （request の `task` が `critique_navspec_armament` になり `candidate` が入るだけ）
+- teacher は生成タスクと同じく LLM 不使用。`validate_armament()` の出力をそのまま写す
+
+### 摂動の種類
+
+| category | 比率 | 壊し方 | 狙う code |
+|---|---|---|---|
+| `clean` | 0.36 | 壊さない | （`ok` になること） |
+| `incompatible_mount` | 0.12 | `weapon_to_mount` に無い砲塔へ差し替え | `weapon_mount_incompatible` |
+| `foreign_mount` | 0.12 | 他国の砲塔へ差し替え | `mount_unavailable_for_nation` |
+| `bad_positions` | 0.12 | 存在しない位置記号・重複位置 | `firing_arc_conflict` |
+| `stacked_mounts` | 0.10 | 同一位置に複数砲塔 | `blast_interference` |
+| `unknown_fire_control` | 0.10 | DB に無い `fire_control_id` | `fire_control_unavailable` (error) |
+| `early_radar_fire_control` | 0.08 | 1938年より前にレーダー射撃指揮装置 | `fire_control_unavailable` (warn) |
+| `oversized_magazine` | 0.08 | `ammo_per_gun` を過大に | `magazine_volume_insufficient` |
+
+摂動が validator のどの分岐を踏むかは実装で確認済みだが、
+teacher は必ず `validate_armament()` の実際の出力から作る（推測で code を書かない）。
+1つの摂動が複数 code を同時に踏むことはある（例: 同一位置への複数砲塔は
+重複位置でもあるので `firing_arc_conflict` も同時に出る）。
+
+### 生成結果 (count=900, seed=42)
+
+```
+rows=972  ok=463  impossible=509
+split: train=675 validation=150 test=147
+skipped_no_material=0
+```
+
+| reason code | 件数 | | warning code | 件数 |
+|---|---|---|---|---|
+| `firing_arc_conflict` | 241 | | `blast_interference` | 152 |
+| `weapon_mount_incompatible` | 216 | | `barbette_too_large_for_beam` | 80 |
+| `mount_unavailable_for_nation` | 108 | | `fire_control_unavailable` | 69 |
+| `fire_control_unavailable` | 90 | | `magazine_volume_insufficient` | 68 |
+| `turret_weight_exceeds_hull_limit` | 43 | | `topweight_limit_exceeded` | 54 |
+| `armament_displacement_conflict` | 42 | | | |
+
+### カバレッジ: 13/14
+
+生成タスク + 批評タスクで **14個中13個**の reason code が出る。
+
+残る1つ `armament.mount_unavailable_for_era` は **DB の欠落が原因で到達不能**。
+
+- `mounts.jsonl` は `year_introduced` キーを持つが、**全59件が null**（実測）
+- validator は `mi = mount.year_introduced or weapon.year_introduced` と
+  フォールバックするので、砲が年代的に妥当な限りこの分岐は踏まれない
+
+摂動関数 `perturb_anachronistic_mount()` は実装済みで `PERTURBATIONS` に残してあるが、
+`RATIOS` からは外してある。**`mounts.jsonl` に就役年を入れれば
+`RATIOS` に1行戻すだけでカバーできる。**
+`tests/test_navspec_lora_data_armament_critique_stage4a.py::test_mount_year_is_missing_in_the_db`
+が、就役年が入った時点で落ちて気づけるようにしてある。
+
+砲塔の就役年は史実データなので、推測で埋めずに navweaps 等から採取すること。

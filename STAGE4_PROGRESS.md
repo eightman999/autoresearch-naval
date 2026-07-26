@@ -24,12 +24,18 @@
 - branch: `navspec-armament-stage4`（`ed1a16a` から作成）
 - [x] **schema 完成**: `schemas/navspec_armament_candidate.schema.json`（`navspec.armament_candidate.v1`）
   - 指示書§13例パス確認済み、total_barrels不整合検出確認済み
-- [x] **DB seed 収集完了**（navweaps.com 機械スクレイピング + 手動定義、35件/6カ国/90-460mm）
-  - `data/navspec/armament/weapons.jsonl` (35件, 0 errors)
-  - `data/navspec/armament/mounts.jsonl` (35件)
-  - `data/navspec/armament/ammunition.jsonl` (35件)
+- [x] **DB seed 収集完了**（navweaps.com 機械スクレイピング + 手動定義、6カ国/90-460mm）
+  - 件数は下記「35件」が初回収集時の値。`a2e1528 Expand navspec armament coverage` で
+    増えた分が反映されていなかったため、**2026-07-26 に実測値へ修正**した。
+  - `data/navspec/armament/weapons.jsonl` (**59件**, 0 errors)
+  - `data/navspec/armament/mounts.jsonl` (**59件**)
+    - **既知の欠落**: `year_introduced` が全59件 null。砲塔の就役年に依存する
+      `armament.mount_unavailable_for_era` が踏めない原因になっている（Commit E の項参照）
+  - `data/navspec/armament/ammunition.jsonl` (**59件**)
   - `data/navspec/armament/fire_control.jsonl` (17件, 手動定義)
-  - `data/navspec/armament/compatibility_rules.json` (35 weapon_to_mount entries + 物理制約)
+  - `data/navspec/armament/compatibility_rules.json` (**59** weapon_to_mount entries + 物理制約)
+    - 艦種の口径範囲 `caliber_min_max_by_ship_type` は6艦種のみ
+      (battleship / battlecruiser / heavy_cruiser / light_cruiser / destroyer / coastal_defense)
   - `data/navspec/armament/weapons_manifest.json` (スクレイピング結果 manifest)
 - [x] **ツール類**:
   - `tools/navspec_armament_scraper.py` (weapons/mounts/ammunition 機械抽出、HTMLキャッシュ付き)
@@ -88,19 +94,29 @@
   - docs: `docs/navspec_armament_stage4a_teacher.md`
   - 副作用修正なし（Commit B/C のコードは未変更。retriever の
     「代表砲1門しか試さない」制約は stage4a 側の `retrieve_with_fallback()` で回避）
-  - **未commit**。commit message 案: `feat(navspec): add stage4a armament teacher dataset builder`
+  - commit: `25db1a2 feat(navspec): add stage4a armament teacher dataset builder`（未push）
+- [x] **Commit D-2: 批評タスクデータ** `tools/navspec_lora_data_armament_critique_stage4a.py`
+      （2026-07-26 実装）
+  - Commit D の生成タスクでは14 reason code 中7個が1件も出なかったため、
+    **候補を与えて validator の判定を当てさせる批評タスク**を別データセットとして追加。
+    出力契約は生成タスクと同じ `navspec.armament_teacher.v1` を使い回す
+    （request の `task` が `critique_navspec_armament` になり `candidate` が入るだけ）
+  - 摂動8種（incompatible_mount / foreign_mount / bad_positions / stacked_mounts /
+    unknown_fire_control / early_radar_fire_control / oversized_magazine / clean）
+  - 生成実測（count=900, seed=42）: rows=972 / ok=463 / impossible=509 /
+    train=675 validation=150 test=147 / skipped_no_material=0
+    → `data/navspec/lora/stage4a_armament_critique_v0/`
+  - tests: 16件 all pass。リポジトリ全体 67 passed
+  - **reason code カバレッジ: 生成+批評で 13/14**
 - [ ] **Commit E: pipeline統合 + 学習** `stage4a-armament-r8`
-  - **着手前に決める必要がある論点**: 14個の reason code のうち **7個が
-    Commit D のデータに1件も出ない**（`mount_unavailable_for_era` /
-    `mount_unavailable_for_nation` / `weapon_mount_incompatible` /
-    `magazine_volume_insufficient` / `firing_arc_conflict` /
-    `blast_interference` / `fire_control_unavailable`）。
-    retriever が常に整合した candidate しか作らないため、生成タスクでは
-    原理的に到達できない（DB実測でも「砲より後年の砲塔ペア」は0件）。
-    選択肢は (1) 未カバーのまま進め評価対象からも外す /
-    (2) 破損candidateを与える「批評タスク」を別データセットとして足す /
-    (3) reason code 一覧を到達可能な7個に絞る。
-    詳細は `docs/navspec_armament_stage4a_teacher.md` §7。
+  - 学習データは生成 `stage4a_armament_v0` (1200行) + 批評
+    `stage4a_armament_critique_v0` (972行)。契約が同一なので混ぜて学習できる
+  - **未解決**: `armament.mount_unavailable_for_era` だけは到達不能。
+    `mounts.jsonl` の `year_introduced` が**全59件 null**（実測）で、validator が
+    `mount.year_introduced or weapon.year_introduced` にフォールバックするため。
+    摂動関数は実装済みで `PERTURBATIONS` に残してあるので、DB に就役年を入れれば
+    `RATIOS` に1行戻すだけでカバーできる。就役年は史実データなので推測で埋めないこと。
+    詳細は `docs/navspec_armament_stage4a_teacher.md` §8。
 
 ---
 
