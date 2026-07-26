@@ -29,8 +29,9 @@
     増えた分が反映されていなかったため、**2026-07-26 に実測値へ修正**した。
   - `data/navspec/armament/weapons.jsonl` (**59件**, 0 errors)
   - `data/navspec/armament/mounts.jsonl` (**59件**)
-    - **既知の欠落**: `year_introduced` が全59件 null。砲塔の就役年に依存する
-      `armament.mount_unavailable_for_era` が踏めない原因になっている（Commit E の項参照）
+    - `year_introduced` は当初全59件 null だったが、2026-07-26 に
+      `tools/navspec_armament_mount_years.py` で NSDB から導出して**56件を充填**した
+      （未決定3件は null のまま）。出典は各レコードの `year_source`、`verified` は false
   - `data/navspec/armament/ammunition.jsonl` (**59件**)
   - `data/navspec/armament/fire_control.jsonl` (17件, 手動定義)
   - `data/navspec/armament/compatibility_rules.json` (**59** weapon_to_mount entries + 物理制約)
@@ -107,16 +108,28 @@
     train=675 validation=150 test=147 / skipped_no_material=0
     → `data/navspec/lora/stage4a_armament_critique_v0/`
   - tests: 16件 all pass。リポジトリ全体 67 passed
-  - **reason code カバレッジ: 生成+批評で 13/14**
+  - **reason code カバレッジ: 生成+批評で 14/14**（砲塔就役年の充填後）
+- [x] **Commit D-3: 砲塔の就役年を充填** `tools/navspec_armament_mount_years.py`
+      （2026-07-26 実装）
+  - NSDB の `CLASS.Armament`（`3 x 3 - 406/45 Mk 6+ ...`）と armament DB を
+    **口径・連装数・砲身長・形式記号**で突合。艦級名は一切使わないので
+    同名異艦（扶桑 1877/1915、Tennessee 1904/1919）の罠を踏まない
+  - 59件中**56件**を充填、うち**43件は形式記号まで一致**。未決定3件は null のまま
+  - NSDB の艦級年と navweaps の砲の年は ±2年のノイズがある（実測56件の66%）。
+    +3年以上だけを実信号として採用する `settle_year` を入れた
+  - 結果 **15件が砲より後年**になり `armament.mount_unavailable_for_era` が踏めるように
+  - 出典は全件 `year_source` に記録。`verified` は false のまま（人手照合待ち）
+  - レビュー用一覧: `docs/navspec_armament_mount_years_review.tsv`
+  - **副作用修正**: `retrieve_available_mounts()` が砲塔の就役年・国籍で
+    フィルタしていない欠陥が露見（年が入っていなかったため今まで見えなかった）。
+    Commit C 自身のテスト2件が落ちたので era/nation フィルタを追加した
 - [ ] **Commit E: pipeline統合 + 学習** `stage4a-armament-r8`
   - 学習データは生成 `stage4a_armament_v0` (1200行) + 批評
-    `stage4a_armament_critique_v0` (972行)。契約が同一なので混ぜて学習できる
-  - **未解決**: `armament.mount_unavailable_for_era` だけは到達不能。
-    `mounts.jsonl` の `year_introduced` が**全59件 null**（実測）で、validator が
-    `mount.year_introduced or weapon.year_introduced` にフォールバックするため。
-    摂動関数は実装済みで `PERTURBATIONS` に残してあるので、DB に就役年を入れれば
-    `RATIOS` に1行戻すだけでカバーできる。就役年は史実データなので推測で埋めないこと。
-    詳細は `docs/navspec_armament_stage4a_teacher.md` §8。
+    `stage4a_armament_critique_v0` (990行)。契約が同一なので混ぜて学習できる
+  - reason code は **14/14 カバー済み**。未カバーによる制約は無い
+  - 注意: `weapons.jsonl` の `year_introduced` に疑わしいものがある
+    （`US_14INCH_MK11` が実際の1917年前後ではなく1935年）。砲の年を直したら
+    `navspec_armament_mount_years.py --apply` を再実行して砲塔の年も更新すること
 
 ---
 

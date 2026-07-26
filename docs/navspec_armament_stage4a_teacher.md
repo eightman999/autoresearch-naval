@@ -100,8 +100,8 @@ DB に無い国・艦種・年代は、そのまま不成立ケースの材料�
 ## 6. 生成結果 (count=1200, seed=42)
 
 ```
-rows=1200  ok=855  impossible=345
-split: train=860 validation=178 test=162
+rows=1200  ok=856  impossible=344
+split: train=865 validation=176 test=159
 ```
 
 | reason code | 件数 |
@@ -109,19 +109,12 @@ split: train=860 validation=178 test=162
 | `armament.weapon_unavailable_for_era` | 136 |
 | `armament.weapon_unavailable_for_nation` | 96 |
 | `armament.battery_layout_conflict` | 79 |
-| `armament.turret_weight_exceeds_hull_limit` | 34 |
+| `armament.turret_weight_exceeds_hull_limit` | 33 |
 | `armament.armament_displacement_conflict` | 15 |
 
-| warning code | 件数 |
-|---|---|
-| `armament.barbette_too_large_for_beam` | 125 |
-| `armament.topweight_limit_exceeded` | 25 |
+## 7. 生成タスク単独では7 code が出なかった（→ §8 で解決）
 
-warn 付きの行は 125/1200。assistant 側の平均文字数は 551。
-
-## 7. 既知の限界（Commit E の設計判断が要る）
-
-**14個の reason code のうち7個がこのデータセットに1件も出ない。**
+**生成タスクだけでは、14個の reason code のうち7個が1件も出なかった。**
 
 未出現: `mount_unavailable_for_era` / `mount_unavailable_for_nation` /
 `weapon_mount_incompatible` / `magazine_volume_insufficient` /
@@ -132,7 +125,8 @@ warn 付きの行は 125/1200。assistant 側の平均文字数は 551。
 - 互換 mount しか選ばない → `weapon_mount_incompatible` が出ない
 - `generate_positions()` が妥当な配置しか作らない → `firing_arc_conflict` / `blast_interference` が出ない
 - 利用可能な fire control しか選ばない → `fire_control_unavailable` が出ない
-- DB 実測で、砲より後年の砲塔ペアは **0件** → `mount_unavailable_for_era` は構造的に到達不能
+- 当時は `mounts.jsonl` の `year_introduced` が全件 null だった
+  → `mount_unavailable_for_era` は構造的に到達不能（§9-10 で解消）
 
 つまりこれらは「生成タスク」では原理的に出ない code であり、
 **候補を与えて批評させる検証タスク**に属する。
@@ -158,14 +152,15 @@ warn 付きの行は 125/1200。assistant 側の平均文字数は 551。
 
 | category | 比率 | 壊し方 | 狙う code |
 |---|---|---|---|
-| `clean` | 0.36 | 壊さない | （`ok` になること） |
-| `incompatible_mount` | 0.12 | `weapon_to_mount` に無い砲塔へ差し替え | `weapon_mount_incompatible` |
-| `foreign_mount` | 0.12 | 他国の砲塔へ差し替え | `mount_unavailable_for_nation` |
-| `bad_positions` | 0.12 | 存在しない位置記号・重複位置 | `firing_arc_conflict` |
-| `stacked_mounts` | 0.10 | 同一位置に複数砲塔 | `blast_interference` |
-| `unknown_fire_control` | 0.10 | DB に無い `fire_control_id` | `fire_control_unavailable` (error) |
+| `clean` | 0.32 | 壊さない | （`ok` になること） |
+| `incompatible_mount` | 0.11 | `weapon_to_mount` に無い砲塔へ差し替え | `weapon_mount_incompatible` |
+| `foreign_mount` | 0.11 | 他国の砲塔へ差し替え | `mount_unavailable_for_nation` |
+| `anachronistic_mount` | 0.10 | その年より後に就役した砲塔へ差し替え | `mount_unavailable_for_era` |
+| `bad_positions` | 0.11 | 存在しない位置記号・重複位置 | `firing_arc_conflict` |
+| `stacked_mounts` | 0.09 | 同一位置に複数砲塔 | `blast_interference` |
+| `unknown_fire_control` | 0.09 | DB に無い `fire_control_id` | `fire_control_unavailable` (error) |
 | `early_radar_fire_control` | 0.08 | 1938年より前にレーダー射撃指揮装置 | `fire_control_unavailable` (warn) |
-| `oversized_magazine` | 0.08 | `ammo_per_gun` を過大に | `magazine_volume_insufficient` |
+| `oversized_magazine` | 0.09 | `ammo_per_gun` を過大に | `magazine_volume_insufficient` |
 
 摂動が validator のどの分岐を踏むかは実装で確認済みだが、
 teacher は必ず `validate_armament()` の実際の出力から作る（推測で code を書かない）。
@@ -175,39 +170,36 @@ teacher は必ず `validate_armament()` の実際の出力から作る（推測�
 ### 生成結果 (count=900, seed=42)
 
 ```
-rows=972  ok=463  impossible=509
-split: train=675 validation=150 test=147
+rows=990  ok=437  impossible=553
+split: train=693 validation=133 test=164
 skipped_no_material=0
 ```
 
-| reason code | 件数 | | warning code | 件数 |
-|---|---|---|---|---|
-| `firing_arc_conflict` | 241 | | `blast_interference` | 152 |
-| `weapon_mount_incompatible` | 216 | | `barbette_too_large_for_beam` | 80 |
-| `mount_unavailable_for_nation` | 108 | | `fire_control_unavailable` | 69 |
-| `fire_control_unavailable` | 90 | | `magazine_volume_insufficient` | 68 |
-| `turret_weight_exceeds_hull_limit` | 43 | | `topweight_limit_exceeded` | 54 |
-| `armament_displacement_conflict` | 42 | | | |
+### カバレッジ: 14/14 (2026-07-26 更新)
 
-### カバレッジ: 13/14
+生成タスク + 批評タスクで **14個の reason code すべて**が出る。
 
-生成タスク + 批評タスクで **14個中13個**の reason code が出る。
+| | 生成 | 批評 (reason) | 批評 (warning) |
+|---|---|---|---|
+| `weapon_unavailable_for_era` | 136 | | |
+| `weapon_unavailable_for_nation` | 96 | | |
+| `battery_layout_conflict` | 79 | | |
+| `turret_weight_exceeds_hull_limit` | 33 | 36 | |
+| `armament_displacement_conflict` | 15 | 34 | |
+| `weapon_mount_incompatible` | | 288 | |
+| `firing_arc_conflict` | | 215 | |
+| `mount_unavailable_for_nation` | | 170 | |
+| `mount_unavailable_for_era` | | 150 | |
+| `fire_control_unavailable` | | 81 | 66 |
+| `blast_interference` | | | 137 |
+| `barbette_too_large_for_beam` | | | 87 |
+| `magazine_volume_insufficient` | | | 75 |
+| `topweight_limit_exceeded` | | | 43 |
 
-残る1つ `armament.mount_unavailable_for_era` は **DB の欠落が原因で到達不能**。
+最後まで残っていた `armament.mount_unavailable_for_era` は、
+`mounts.jsonl` の `year_introduced` を埋めたことで踏めるようになった（§9-10）。
 
-- `mounts.jsonl` は `year_introduced` キーを持つが、**全59件が null**（実測）
-- validator は `mi = mount.year_introduced or weapon.year_introduced` と
-  フォールバックするので、砲が年代的に妥当な限りこの分岐は踏まれない
-
-摂動関数 `perturb_anachronistic_mount()` は実装済みで `PERTURBATIONS` に残してあるが、
-`RATIOS` からは外してある。**`mounts.jsonl` に就役年を入れれば
-`RATIOS` に1行戻すだけでカバーできる。**
-`tests/test_navspec_lora_data_armament_critique_stage4a.py::test_mount_year_is_missing_in_the_db`
-が、就役年が入った時点で落ちて気づけるようにしてある。
-
-砲塔の就役年は史実データなので、推測で埋めずに navweaps 等から採取すること。
-
-## 9. `mounts.jsonl` の `year_introduced` を埋める試み (2026-07-26・未達)
+## 9. `mounts.jsonl` の `year_introduced`: 失敗した3経路 (2026-07-26)
 
 §8 の残り1 code (`armament.mount_unavailable_for_era`) を埋めるため、
 砲塔の就役年を機械的に導出できないか3経路試したが、**いずれも失敗した**。
@@ -255,9 +247,70 @@ Mk11 14"/50 の実際の就役は1917年前後。
 先に当たった方を採る実装になっているため。
 砲塔の年を入れる作業をするなら、**砲の年の再検証も同時に必要**。
 
-### 結論
+### この時点での結論
 
-自動導出は断念する。59件を史実ソースに当たって手で入れるのが確実。
-その際は DB の既存慣行どおり `verified: false` から始め、照合完了で `true` にする。
-`armament.mount_unavailable_for_era` は、それまで未カバーのまま
-（カバレッジ 13/14）とする。
+艦級**名**での突合は断念。→ §10 で別の手がかりが見つかった。
+
+
+## 10. `mounts.jsonl` の `year_introduced` を埋めた方法 (2026-07-26・達成)
+
+ツール: `tools/navspec_armament_mount_years.py`
+レビュー用一覧: `docs/navspec_armament_mount_years_review.tsv`
+
+§9 で失敗したのは**艦級名で突合しようとした**からだった。
+NSDB の `CLASS.Armament` 列を使えば、名前を経由せずに突合できる:
+
+```
+3 x 3 - 406/45 Mk 6+ 10 x 2 - 127/38 Mk 12+ 4 x 4 - 28/75 Mk 1+ ...
+```
+
+砲塔数・**連装数**・**口径**・**砲身長**・**形式記号**がすべて入っている。
+armament DB 側も同じ情報を持っているので、直接突合できる。
+
+### 突合の手順
+
+1. **絞り込み**: 同一国 / 連装数一致 / 口径 ±4mm
+   （出典により 380/381、283/280 と揺れるため）
+2. **順位付け**: 形式記号が一致 → 砲身長が近い → 砲の就役年に近い → 古い順
+3. **年の確定** (`settle_year`): NSDB の艦級年と navweaps の砲の就役年は系統的にずれる。
+   実測56件で差の**66%が ±2年以内**に集中し、+3年以上に別の山がある。
+   よって ±2年以内はノイズとして砲の年に寄せ、**+3年以上だけを実信号として採用**する。
+   砲より前に砲塔が就役することは有り得ないので、負側も砲の年に寄せる。
+
+艦級名を一切使わないので、扶桑 1877/1915 や Tennessee 1904/1919 のような
+同名異艦の罠を踏まない。
+
+### 結果
+
+- **59件中56件**で就役年を決定（未決定3件: `FR_381MM_TRIPLE_M1935` /
+  `IT_320MM_TRIPLE_M1934` / `IT_135MM_TRIPLE_M1938`。null のまま残す）
+- うち **43件は砲の形式記号まで一致**（`Mk 6` `SK C/34` `94-shiki` 等）
+- **15件が砲より後年**になり、`mount_unavailable_for_era` が踏めるようになった
+- 出典は全件 `year_source` に記録（NSDB の艦級名・該当装備エントリ・
+  年の出所・形式記号一致の有無・候補数）
+- `verified` は DB の慣行どおり **false のまま**。人手照合で true に上げる
+
+抜き取り検査で史実と一致することを確認したアンカー:
+Mk6→South Dakota 1941 / Mk7→Iowa 1944 / Mk8→Alaska 1943 /
+Mk11→New Mexico 1919 / Mk16→Brooklyn 1939 / 94式46cm→Yamato /
+SK C/34 38cm→Bismarck 1941 / SK C/34 28cm→Scharnhorst 1939 /
+BL Mk I 16in→Nelson 1927 / M1931→Dunkerque 1939
+
+### 副作用: retriever の欠陥が1つ露見した
+
+`retrieve_available_mounts()` が**砲塔の就役年でも国籍でもフィルタしていなかった**。
+砲塔に年が入っていなかったため今まで露見しなかったが、
+年を入れた途端に Commit C 自身のテスト2件が落ちた
+（1941年の大和型 context に1942年就役の砲塔を載せていた）。
+砲側と同じ era/nation フィルタを追加して修正済み。
+
+### 残る注意点
+
+- `weapons.jsonl` の `year_introduced` にも疑わしいものがある。
+  scraper が `date_in_service or date_of_design` と先に当たった方を採るため、
+  `US_14INCH_MK11` の砲が実際の1917年前後ではなく1935年になっている。
+  砲塔の年はこの値を基準に確定させているので、砲の年を直すときは
+  `navspec_armament_mount_years.py --apply` を再実行すること。
+- 形式記号が一致しなかった13件は表記揺れによるもので、抜き取りでは正しかった
+  （`Ansaldo 1934`＝M1934、`Mk 1`＝Colorado の16インチ、`QF Mk XII`＝Tribal級）。
+  ただし未照合なので、レビューTSVの `designation_matched=False` を優先的に確認すること。

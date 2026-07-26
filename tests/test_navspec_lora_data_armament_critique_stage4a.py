@@ -40,6 +40,7 @@ DATA_DIR = ROOT / "data" / "navspec" / "armament"
 EXPECTED_CODES = {
     "incompatible_mount": "armament.weapon_mount_incompatible",
     "foreign_mount": "armament.mount_unavailable_for_nation",
+    "anachronistic_mount": "armament.mount_unavailable_for_era",
     "bad_positions": "armament.firing_arc_conflict",
     "stacked_mounts": "armament.blast_interference",
     "unknown_fire_control": "armament.fire_control_unavailable",
@@ -110,20 +111,30 @@ def test_impossible_records_have_null_armament(rows):
             assert row["output"]["reason"]
 
 
-def test_mount_year_is_missing_in_the_db(db):
-    """`mount_unavailable_for_era` が踏めない理由をテストとして固定しておく。
+def test_mount_years_are_present_and_sourced(db):
+    """砲塔の就役年が入っており、出典が記録されていること。
 
-    mounts.jsonl に year_introduced が入ったらこのテストが落ちる。そのときは
-    perturb_anachronistic_mount を RATIOS に戻すこと。
+    ここが空に戻ると armament.mount_unavailable_for_era が踏めなくなるので、
+    データの後退を検知するための番人として置いてある。
     """
     with_year = [m for m in db["mounts"].values() if m.get("year_introduced")]
-    assert not with_year, (
-        "mounts.jsonl に year_introduced が入った。"
-        "perturb_anachronistic_mount を RATIOS に戻して "
-        "armament.mount_unavailable_for_era をカバーできる"
-    )
-    assert "anachronistic_mount" not in RATIOS
-    assert "anachronistic_mount" in PERTURBATIONS  # 復活できる状態で残してある
+    assert len(with_year) >= 50, f"就役年のある砲塔が少なすぎる: {len(with_year)}"
+    for m in with_year:
+        assert m.get("year_source"), f"{m['mount_id']} に year_source が無い"
+        assert "NSDB" in m["year_source"]
+    # 砲より前に就役した砲塔があってはならない
+    assert "anachronistic_mount" in RATIOS
+    assert "anachronistic_mount" in PERTURBATIONS
+
+
+def test_no_mount_predates_its_weapon(db):
+    for m in db["mounts"].values():
+        my = m.get("year_introduced")
+        w = db["weapons"].get(m.get("weapon_id"))
+        if my and w and w.get("year_introduced"):
+            assert my >= w["year_introduced"], (
+                f"{m['mount_id']} の砲塔年 {my} が砲の年 {w['year_introduced']} より前"
+            )
 
 
 def test_perturbation_does_not_mutate_the_clean_candidate(db):

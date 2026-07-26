@@ -75,20 +75,19 @@ SYSTEM_PROMPT = (
     "an armament rule. Report non-fatal concerns in warnings[]."
 )
 
-# anachronistic_mount は入れていない。mounts.jsonl の year_introduced が
-# **全59件 null** で、validator が `mount.year_introduced or weapon.year_introduced`
-# にフォールバックするため、armament.mount_unavailable_for_era は構造的に踏めない。
-# 摂動関数 perturb_anachronistic_mount は、DB に mount の就役年が入った時点で
-# ここに追加すれば使える状態で残してある。
+# anachronistic_mount は 2026-07-26 に復活させた。
+# tools/navspec_armament_mount_years.py が mounts.jsonl の year_introduced を
+# NSDB から埋めたので、armament.mount_unavailable_for_era が踏めるようになった。
 RATIOS = {
-    "clean": 0.36,
-    "incompatible_mount": 0.12,
-    "foreign_mount": 0.12,
-    "bad_positions": 0.12,
-    "stacked_mounts": 0.10,
-    "unknown_fire_control": 0.10,
+    "clean": 0.32,
+    "incompatible_mount": 0.11,
+    "foreign_mount": 0.11,
+    "anachronistic_mount": 0.10,
+    "bad_positions": 0.11,
+    "stacked_mounts": 0.09,
+    "unknown_fire_control": 0.09,
     "early_radar_fire_control": 0.08,
-    "oversized_magazine": 0.08,
+    "oversized_magazine": 0.09,
 }
 
 
@@ -135,8 +134,8 @@ def perturb_foreign_mount(candidate, context, db, rng):
 def perturb_anachronistic_mount(candidate, context, db, rng):
     """context の年より後に就役した mount に差し替える → mount_unavailable_for_era
 
-    **現時点では使えない。** mounts.jsonl の year_introduced が全59件 null なので、
-    「その年より後に就役した砲塔」を選べない。DB に就役年が入ったら RATIOS に戻す。
+    砲塔の就役年は tools/navspec_armament_mount_years.py が NSDB から入れたもの
+    （出典は各レコードの year_source）。年の入っていない砲塔3件は候補にならない。
     """
     battery = _battery(candidate)
     year = context.get("year")
@@ -229,7 +228,14 @@ def build_cases(count: int, db: dict[str, Any], seed: int = 42) -> list[dict[str
         n = max(1, int(count * ratio))
         for i in range(n):
             nation, ship_type, year = combos[(i * 7 + len(cases)) % len(combos)]
-            if category == "early_radar_fire_control":
+            if category == "anachronistic_mount":
+                # 「その年より後に就役した砲塔」が無いと摂動が作れないので、
+                # 最も遅い砲塔より前の年に寄せる
+                cutoff = _max_mount_year(db)
+                early = [c for c in combos if cutoff and c[2] < cutoff]
+                if early:
+                    nation, ship_type, year = early[(i * 3) % len(early)]
+            elif category == "early_radar_fire_control":
                 # 1938年以降だと warn を踏まないので、成立する早い年に寄せる
                 early = [c for c in combos
                          if c[0] == nation and c[1] == ship_type

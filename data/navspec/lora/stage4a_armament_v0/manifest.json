@@ -14,7 +14,7 @@
   "reason_code_counts": {
     "armament.armament_displacement_conflict": 15,
     "armament.battery_layout_conflict": 79,
-    "armament.turret_weight_exceeds_hull_limit": 34,
+    "armament.turret_weight_exceeds_hull_limit": 33,
     "armament.weapon_unavailable_for_era": 136,
     "armament.weapon_unavailable_for_nation": 96
   },
@@ -24,13 +24,13 @@
   "schema_version": "navspec.armament_teacher.v1",
   "seed": 42,
   "split_counts": {
-    "test": 162,
-    "train": 860,
-    "validation": 178
+    "test": 159,
+    "train": 865,
+    "validation": 176
   },
   "status_counts": {
-    "impossible": 345,
-    "ok": 855
+    "impossible": 344,
+    "ok": 856
   },
   "system_prompt": "You are navspec-armament, a naval main battery designer. Return only JSON matching navspec.armament_teacher.v1. Do not repeat the user request. The top-level keys must be schema_version,status,armament,reason,warnings,suggested_revision,design_rationale,confidence. Use status=impossible with armament=null and reason[] when no main battery can be fitted from the historical armament database for the requested nation, year, ship type and hull constraints.",
   "teacher": "navspec_armament_retriever.retrieve_armament + navspec_armament_validator.validate_armament (no LLM in the loop)",

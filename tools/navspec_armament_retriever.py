@@ -94,14 +94,29 @@ def retrieve_available_mounts(
     context: dict[str, Any],
     db: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    """指定 weapon_id の互換 mount 一覧を返す (compatibility_rules.weapon_to_mount 参照)。"""
+    """指定 weapon_id の互換 mount 一覧を返す (compatibility_rules.weapon_to_mount 参照)。
+
+    フィルタ:
+      - weapon_to_mount に載っていること
+      - year_introduced <= context.year (era availability)
+      - nation == context.nation
+      - turret_weight <= displacement * 0.20
+    """
     compat = db.get("compatibility_rules", {})
     w2m = compat.get("weapon_to_mount", {})
     mount_ids = w2m.get(weapon_id, [])
+    year = context.get("year")
+    nation = context.get("nation")
     out = []
     for mid in mount_ids:
         m = db["mounts"].get(mid)
         if not m:
+            continue
+        # 砲塔の就役年。DB に入っていないものは年で落とさない（判断材料が無いため）
+        mi = m.get("year_introduced")
+        if year is not None and mi and mi > year:
+            continue
+        if nation is not None and m.get("nation") and m.get("nation") != nation:
             continue
         # turret_weight が大きすぎる場合は除外 (displacement * 0.20 を上限)
         disp = context.get("displacement_t")

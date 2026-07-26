@@ -1,0 +1,60 @@
+mount_id	weapon_year	mount_year	raw_class_year	designation_matched	class_name	class_type	nsdb_entry	year_from	candidates
+JP_460MM_TRIPLE_94SHIKI	1941	1941	1942	True	YAMATO1942) Class	battleships	3 x 3 - 460/45 94-shiki	class_name	1
+JP_410MM_TWIN_3SHIKI	1921	1921	1921	True	KAGA Class	battleships	5 x 2 - 410/45 3-shiki	ship_launch	4
+JP_203MM_TWIN_3SHIKI2GO	1932	1932	1929	False	NACHI1929) Class	heavy-cruisers	5 x 2 - 200/50 3-shiki	class_name	12
+JP_155MM_TRIPLE_3SHIKI	1935	1935	1937	True	MOGAMI1937) Class	light-heavy-cruisers	5 x 3 - 155/60 3-shiki	class_name	3
+JP_127MM_TWIN_3SHIKI	1928	1932	1932	True	FUBUKI1932) Class	destroyers	3 x 2 - 127/50 3-shiki	class_name	33
+JP_100MM_TWIN_98SHIKI	1942	1942	1942	True	OYODO Class	light-cruiser	4 x 2 - 100/65 98-shiki	ship_launch	3
+JP_140MM_TWIN_3SHIKI	1916	1923	1923	True	YUBARI Class	light-cruiser	2 x 2 - 140/50 3-shiki	ship_launch	4
+JP_356MM_TWIN_41SHIKI	1913	1917	1917	True	FUSO1917) Class	battleships	6 x 2 - 356/45 41-shiki	class_name	3
+JP_152MM_TWIN_41SHIKI	1913	1944	1944	True	AGANO1944) Class	light-cruisers	3 x 2 - 152/50 41-shiki	class_name	2
+JP_127MM_TWIN_89SHIKI	1932	1932	1931	True	RYUJO Class	light-aircraft-carrier	6 x 2 - 127/40 89-shiki	ship_launch	33
+JP_120MM_SINGLE_3SHIKI	1920	1920	1920	True	NOTORO19201924) Class	seaplane-tenders	2 x 1 - 120/45 3-shiki	class_name	83
+US_16INCH_TRIPLE_MK7	1943	1943	1944	True	IOWA1944) Class	battleships	3 x 3 - 406/50 Mk 7	class_name	4
+US_16INCH_TRIPLE_MK6	1941	1941	1941	True	SOUTHDAKOTA Class	battleships	3 x 3 - 406/45 Mk 6	ship_launch	4
+US_14INCH_TRIPLE_MK11	1935	1935	1921	False	TENNESSEE1921) Class	battleships	4 x 3 - 356/50 Mk IV	class_name	4
+US_12INCH_TRIPLE_MK8	1944	1944	1943	True	ALASKA Class	battlecruisers	3 x 3 - 305/50 Mk 8	ship_launch	1
+US_8INCH_TRIPLE_MK12	1939	1939	1937	True	WICHITA Class	heavy-cruiser	3 x 3 - 203/55 Mk 12.15	ship_launch	7
+US_6INCH_TRIPLE_MK16	1937	1937	1939	True	BROOKLYN1939) Class	light-cruisers	5 x 3 - 152/47 Mk 16	class_name	2
+US_5INCH_TWIN_MK12	1934	1937	1937	True	PORTER1937) Class	destroyer-leaders	4 x 2 - 127/38 Mk 12	class_name	17
+US_16INCH_TWIN_MK5	1938	1938	1923	False	COLORADO1923) Class	battleships	4 x 2 - 406/45 Mk 1	class_name	2
+US_14INCH_TRIPLE_MK10	1933	1933	1915	False	PENNSYLVANIA Class	battleships	4 x 3 - 356/45 Mk I/III	ship_launch	4
+US_8INCH_TRIPLE_MK9	1927	1930	1930	True	PENSACOLA1930) Class	heavy-cruisers	2 x 3 - 203/55 Mk 9.10.11/13/14	class_name	7
+US_5INCH_SINGLE_MK10	1926	1926	1925	True	LEXINGTON Class	aircraft-carriers	12 x 1 - 127/25 Mk 10.11.13	ship_launch	109
+UK_15INCH_TWIN_MKI	1915	1915	1915	True	QUEENELIZABETH19151916) Class	battleships	4 x 2 - 381/42 BL Mk I	class_name	9
+UK_16INCH_TRIPLE_MKI	1927	1927	1927	True	NELSON1927) Class	battleships	3 x 3 - 406/45 BL Mk I	class_name	2
+UK_14INCH_QUADRUPLE_MKVII	1940	1940	1940	True	KINGGEORGEV19401942) Class	battleships	2 x 4 - 356/45 BL Mk VII	class_name	1
+UK_135INCH_TWIN_MKV	1912	1912	1912	True	ORION1912) Class	battleships	5 x 2 - 343/45 BL Mk V	class_name	11
+UK_6INCH_TRIPLE_MKXXIII	1933	1937	1937	True	SOUTHAMPTON1937) Class	light-cruisers	4 x 3 - 152/50 BL Mk XXIII	class_name	6
+UK_525INCH_TWIN_MKI	1940	1940	1940	True	KINGGEORGEV19401942) Class	battleships	8 x 2 - 133/50 QF Mk I	class_name	5
+UK_8INCH_TWIN_MKVIII	1927	1927	1928	True	KENT1928) Class	heavy-cruisers	4 x 2 - 203/50 Mk VIII	class_name	5
+UK_47INCH_TWIN_MKIX	1930	1938	1938	False	Tribal19381948) Class	type-destroyers	4 x 2 - 120/45 QF Mk XII	class_name	12
+UK_45INCH_TWIN_MKI	1938	1938	1938	True	ARKROYAL1938) Class	fleet-aircraft-carrier	8 x 2 - 114/45 QF Mk I	class_name	11
+UK_4INCH_TRIPLE_MKIX	1916	1916	1917	True	COURAGEOUS191719281930) Class	fleet-aircraft-carriers	6 x 3 - 102/44 BL Mk IX	class_name	2
+DE_38CM_TWIN_SKC34	1940	1940	1941	True	BISMARCK1941) Class	battleships	4 x 2 - 380/48 SK C/34	class_name	5
+DE_28CM_TRIPLE_SKC34	1938	1938	1939	True	SCHARNHORST1939) Class	battlecruisers	3 x 3 - 283/51 SK C/34	class_name	2
+DE_28CM_TRIPLE_SKC28	1930	1936	1936	True	DEUTSCHLAND1936) Class	heavy-cruisers	2 x 3 - 283/49 SK C/28	class_name	2
+DE_15CM_TWIN_SKC28	1934	1938	1938	True	GRAFZEPPPELIN Class	aircraft-carriers	8 x 2 - 149/52 SK C/28	ship_launch	7
+DE_105CM_TWIN_SKC33	1935	1935	1937	True	ADMIRALHIPPER Class	heavy-cruisers	6 x 2 - 105/60 SK C/33	ship_launch	16
+DE_305CM_TWIN_SKL50	1911	1911	1912	True	HELGOLAND1912) Class	battleships	6 x 2 - 305/47 SK L/50 C/08	class_name	5
+DE_203CM_TWIN_SKC34	1939	1939	1938	True	PRINZEUGEN Class	heavy-cruisers	4 x 2 - 203/57 SK C/34	ship_launch	2
+DE_15CM_TRIPLE_SKC25	1929	1929	1929	True	LEIPZIG Class	light-cruiser	3 x 3 - 149/57 SK C/25	ship_launch	3
+DE_127CM_SINGLE_SKC34	1934	1934	1935	True	LEBERECHTMAAS) Class	type-destroyers	5 x 1 - 128/42 SK C/34	ship_launch	18
+FR_381MM_TRIPLE_M1935	1941								0
+FR_330MM_QUADRUPLE_M1931	1939	1939	1939	True	DUNKERQUE1939) Class	battlecruisers	2 x 4 - 330/52 M1931	class_name	1
+FR_340MM_QUADRUPLE_M1912	1915	1915	1914	True	NORMANDIE Class	battleships	3 x 4 - 340/45 M1912	ship_launch	1
+FR_152MM_TRIPLE_M1930	1935	1935	1933	True	BERTIN Class	light-cruiser	3 x 3 - 152/55 M1930	ship_launch	4
+FR_130MM_QUADRUPLE_M1932	1937	1937	1939	True	DUNKERQUE1939) Class	battlecruisers	3 x 4 - 130/45 M1932	class_name	1
+FR_203MM_TWIN_M1924	1928	1932	1932	True	SUFFREN1932) Class	heavy-cruisers	4 x 2 - 203/50 M1924	class_name	4
+FR_139MM_SINGLE_M1923	1929	1929	1931	True	GUÉPARD1931) Class	destroyers	5 x 1 - 139/40 M1923	class_name	102
+FR_139MM_TWIN_M1929	1935	1939	1939	False	MOGADOR1939) Class	destroyers	4 x 2 - 139/50 M1934	class_name	3
+FR_100MM_TWIN_M1930	1939	1949	1949	True	RICHELIEU1949) Class	battleships	6 x 2 - 100/45 M1930	class_name	8
+IT_381MM_TRIPLE_M1934	1940	1940	1942	False	VITTORIOVENETO1942) Class	battleships	3 x 3 - 381/50 Ansaldo 1934	class_name	1
+IT_320MM_TRIPLE_M1934	1940								0
+IT_152MM_TWIN_M1926	1928	1931	1931	False	"Condottieri2ndgroup"CADORNA) Class	type-light-cruisers	4 x 2 - 152/53 OTO 1929	ship_launch	5
+IT_135MM_TRIPLE_M1938	1940								0
+IT_90MM_SINGLE_M1939	1940	1940	1942	False	VITTORIOVENETO1942) Class	battleships	12 x 1 - 90/50 OTO 1939	class_name	6
+IT_203MM_TWIN_M1927	1931	1931	1932	False	ZARA1932) Class	heavy-cruisers	4 x 2 - 203/53 Ansaldo 1927	class_name	5
+IT_152MM_TRIPLE_M1936	1940	1940	1942	False	VITTORIOVENETO1942) Class	battleships	4 x 3 - 152/55 OTO 1936	class_name	3
+IT_120MM_TWIN_M1926	1936	1936	1936	False	ALFREDOORIANI Class	destroyers	2 x 2 - 120/50 OTO 1936	ship_launch	13
+IT_102MM_TWIN_M1917	1917	1924	1924	False	CURTATONE1924) Class	destroyers	2 x 2 - 102/45 Schneider-Armstrong 1919	class_name	10

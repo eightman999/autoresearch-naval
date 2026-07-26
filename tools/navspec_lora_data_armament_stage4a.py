@@ -202,7 +202,14 @@ def feasible_combos(db: dict[str, Any]) -> list[tuple[str, str, int]]:
                     and lo <= w["caliber_mm"] <= hi
                     and retrieve_available_mounts(
                         w["weapon_id"],
-                        {"displacement_t": HULL_DEFAULTS.get(ship_type, (10000.0, 18.0))[0]},
+                        {
+                            "displacement_t": HULL_DEFAULTS.get(
+                                ship_type, (10000.0, 18.0))[0],
+                            # 砲塔にも就役年があるので year を渡さないと
+                            # 「砲は在るが砲塔がまだ無い」年を成立扱いしてしまう
+                            "year": year,
+                            "nation": nation,
+                        },
                         db,
                     )
                     for w in db["weapons"].values()
