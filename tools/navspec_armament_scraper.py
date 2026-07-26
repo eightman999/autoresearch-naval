@@ -523,6 +523,44 @@ def _first_year(text: str | None) -> int | None:
     return int(m.group(1)) if m else None
 
 
+# "Mark 7: About 1935 Mark 11: About 1940 Mark B: N/A" のように、
+# 1つのページで複数の形式の就役年が並ぶことがある。
+_RE_LABELLED_YEAR = re.compile(
+    r"([A-Za-z][A-Za-z0-9 /\-]{0,24}?)\s*:\s*(?:About\s+|about\s+|circa\s+)?(1[89]\d{2}|20\d{2})"
+)
+
+
+def _label_key(s: str) -> str:
+    k = re.sub(r"[^a-z0-9]", "", s.lower())
+    return k.replace("mark", "mk")
+
+
+def year_introduced_for(
+    date_in_service: str | None,
+    date_of_design: str | None,
+    weapon_id: str | None = None,
+) -> int | None:
+    """砲の就役年を決める。
+
+    `Date In Service` に形式ごとの年が並ぶ場合、**その weapon_id の形式の年**を採る。
+    素朴に先頭の年を採ると、たとえば 14"/50 のページで
+    `Mark 7: About 1935 Mark 11: About 1940` から Mark 7 の1935が
+    `US_14INCH_MK11` に入ってしまう。
+
+    形式名が一致しない、あるいは形式で分かれていない場合は、
+    従来どおり最初に現れた年を採る。
+    """
+    if date_in_service and weapon_id:
+        parts = weapon_id.split("_", 2)
+        form = _label_key(parts[2]) if len(parts) >= 3 else ""
+        if form:
+            for label, year in _RE_LABELLED_YEAR.findall(date_in_service):
+                lk = _label_key(label)
+                if lk and (lk == form or lk.endswith(form) or form.endswith(lk)):
+                    return int(year)
+    return _first_year(date_in_service) or _first_year(date_of_design)
+
+
 def _first_kg(text: str | None) -> float | None:
     """旧名 (後方互換; _first_mass_kg へ alias)."""
     return _first_mass_kg(text)
@@ -670,7 +708,7 @@ def extract_record(target: WeaponTarget, html: str) -> dict[str, Any]:
     rate_of_fire_rpm = _first_rate_of_fire(rate_of_fire)
     if rate_of_fire_rpm is not None:
         rate_of_fire_rpm = round(rate_of_fire_rpm, 2)
-    year_introduced = _first_year(date_in_service) or _first_year(date_of_design)
+    year_introduced = year_introduced_for(date_in_service, date_of_design, target.weapon_id)
 
     record: dict[str, Any] = {
         "weapon_id": target.weapon_id,

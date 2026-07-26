@@ -1,0 +1,48 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage4a-armament-r8",
+  "data": "/Users/eightman/dev/apps/autoresearch-naval/data/navspec/lora/stage4a_armament_combined_v0",
+  "split": "test",
+  "n": 120,
+  "json_valid_rate": 0.9667,
+  "contract_ok_rate": 0.9667,
+  "status_accuracy": 0.5667,
+  "reason_set_exact_rate": 0.3,
+  "reason_code_precision": 0.2206,
+  "reason_code_recall": 0.1471,
+  "reason_code_f1": 0.1765,
+  "counts": {
+    "total": 120,
+    "json_valid": 116,
+    "contract_ok": 116,
+    "status_match": 68,
+    "reason_set_exact": 36,
+    "json_invalid": 4
+  },
+  "failure_samples": [
+    {
+      "index": 42,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":6,\"main_gun_mount_count\":3},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":2,\"battery_id\":\"main_1\",\"fire_control_id\":\"US_MK34_GFCS\",\"mount_count\":3,\"mount_id\":\"US_13INCH_TRIPLE_MK11\",\"positions\":[\"A\",\"X\",\"Y\"],\"total_bar"
+    },
+    {
+      "index": 51,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":6,\"main_gun_mount_count\":3},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":2,\"battery_id\":\"main_1\",\"fire_control_id\":\"US_MK34_GFCS\",\"mount_count\":3,\"mount_id\":\"US_13INCH_TRIPLE_MK11\",\"positions\":[\"A\",\"X\",\"Y\"],\"total_bar"
+    },
+    {
+      "index": 56,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":6,\"main_gun_mount_count\":3},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":2,\"battery_id\":\"main_1\",\"fire_control_id\":\"US_MK34_GFCS\",\"mount_count\":3,\"mount_id\":\"US_13INCH_TRIPLE_MK11\",\"positions\":[\"A\",\"B\",\"X\"],\"total_bar"
+    },
+    {
+      "index": 117,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":6,\"main_gun_mount_count\":3},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":2,\"battery_id\":\"main_1\",\"fire_control_id\":\"DE_C38_DIRECTOR\",\"mount_count\":3,\"mount_id\":\"DE_15CM_TRIPLE_MKIX\",\"positions\":[\"A\",\"B\",\"X\"],\"total_ba"
+    }
+  ]
+}

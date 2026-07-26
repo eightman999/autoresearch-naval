@@ -123,13 +123,36 @@
   - **副作用修正**: `retrieve_available_mounts()` が砲塔の就役年・国籍で
     フィルタしていない欠陥が露見（年が入っていなかったため今まで見えなかった）。
     Commit C 自身のテスト2件が落ちたので era/nation フィルタを追加した
-- [ ] **Commit E: pipeline統合 + 学習** `stage4a-armament-r8`
-  - 学習データは生成 `stage4a_armament_v0` (1200行) + 批評
-    `stage4a_armament_critique_v0` (990行)。契約が同一なので混ぜて学習できる
-  - reason code は **14/14 カバー済み**。未カバーによる制約は無い
-  - 注意: `weapons.jsonl` の `year_introduced` に疑わしいものがある
-    （`US_14INCH_MK11` が実際の1917年前後ではなく1935年）。砲の年を直したら
-    `navspec_armament_mount_years.py --apply` を再実行して砲塔の年も更新すること
+- [x] **砲の就役年のバグ修正** `tools/navspec_armament_scraper.py`（2026-07-26）
+  - `Date In Service` に形式ごとの年が並ぶページで、先頭の年を無条件に採っていた。
+    14"/50 のページは `Mark 7: About 1935 Mark 11: About 1940 Mark B: N/A` で、
+    `US_14INCH_MK11` に Mark 7 の1935が入っていた（正しくは1940）
+  - `year_introduced_for()` を追加し、weapon_id の形式に一致するラベルの年を採る。
+    形式で分かれていないページは従来どおり最初の年
+  - キャッシュ全59件で再計算し、**変わったのは `US_14INCH_MK11` の1件のみ**（1935→1940）。
+    砲塔の年も `navspec_armament_mount_years.py --apply` で再導出済み
+- [~] **Commit E: 学習は実施したが判定は学習できていない** `stage4a-armament-r8`（2026-07-26）
+  - 学習データ: 生成 + 批評を結合した
+    `data/navspec/lora/stage4a_armament_combined_v0/`（train 1558 / valid 309 / test 323）。
+    契約が同一なので混ぜられる。Stage 4a は契約が別なので stage2-status-r8 からは resume せず
+    ベースモデルから学習した
+  - 設定: rank 8 / 16層 / iters 500 / lr 5e-6 / mask-prompt。
+    Val loss 2.047 → 0.093 (iter 400) → 0.127 (iter 500)
+  - **評価結果（test 120件を実際に生成させた実測）**:
+    | 指標 | 値 |
+    |---|---|
+    | JSON として読める | 0.967 |
+    | 出力契約を満たす | 0.967 |
+    | **status 正解率** | **0.567**（多数派ベースライン 0.517） |
+    | reason code F1 | **0.177** |
+  - **JSON の形は学べたが、ルールエンジンの判定は学べていない。**
+    status 正解率が多数派ベースラインをほぼ上回らない。**採用可否の判断はまだ出せない**
+  - 原因の仮説: assistant 出力の大部分が定型 JSON で、判定に効くトークン
+    （status の1語・reason code）が全体のごく一部しかないため損失が薄まる
+  - 次に試すこと: status/reason だけを予測させる補助タスクの追加 / rank・層数を上げる /
+    より大きいベースモデル。詳細は `docs/navspec_armament_stage4a_teacher.md` §11
+  - 評価ツール: `tools/navspec_armament_stage4a_eval.py`、
+    結果: `docs/navspec_armament_stage4a_eval.json`
 
 ---
 

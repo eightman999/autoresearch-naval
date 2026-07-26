@@ -12,7 +12,7 @@ JP_127MM_TWIN_89SHIKI	1932	1932	1931	True	RYUJO Class	light-aircraft-carrier	6 x
 JP_120MM_SINGLE_3SHIKI	1920	1920	1920	True	NOTORO19201924) Class	seaplane-tenders	2 x 1 - 120/45 3-shiki	class_name	83
 US_16INCH_TRIPLE_MK7	1943	1943	1944	True	IOWA1944) Class	battleships	3 x 3 - 406/50 Mk 7	class_name	4
 US_16INCH_TRIPLE_MK6	1941	1941	1941	True	SOUTHDAKOTA Class	battleships	3 x 3 - 406/45 Mk 6	ship_launch	4
-US_14INCH_TRIPLE_MK11	1935	1935	1921	False	TENNESSEE1921) Class	battleships	4 x 3 - 356/50 Mk IV	class_name	4
+US_14INCH_TRIPLE_MK11	1940	1940	1921	False	TENNESSEE1921) Class	battleships	4 x 3 - 356/50 Mk IV	class_name	4
 US_12INCH_TRIPLE_MK8	1944	1944	1943	True	ALASKA Class	battlecruisers	3 x 3 - 305/50 Mk 8	ship_launch	1
 US_8INCH_TRIPLE_MK12	1939	1939	1937	True	WICHITA Class	heavy-cruiser	3 x 3 - 203/55 Mk 12.15	ship_launch	7
 US_6INCH_TRIPLE_MK16	1937	1937	1939	True	BROOKLYN1939) Class	light-cruisers	5 x 3 - 152/47 Mk 16	class_name	2

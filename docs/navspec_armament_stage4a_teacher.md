@@ -314,3 +314,71 @@ BL Mk I 16in→Nelson 1927 / M1931→Dunkerque 1939
 - 形式記号が一致しなかった13件は表記揺れによるもので、抜き取りでは正しかった
   （`Ansaldo 1934`＝M1934、`Mk 1`＝Colorado の16インチ、`QF Mk XII`＝Tribal級）。
   ただし未照合なので、レビューTSVの `designation_matched=False` を優先的に確認すること。
+
+## 11. Stage 4a LoRA の学習と評価 (2026-07-26)
+
+### 学習データ
+
+生成 (`stage4a_armament_v0`) と批評 (`stage4a_armament_critique_v0`) は
+出力契約が同一なので混ぜて学習できる。
+`data/navspec/lora/stage4a_armament_combined_v0/` に結合した
+（train 1558 / valid 309 / test 323、seed 42、`messages` のみを残した
+mlx_lm ChatDataset 形式）。
+
+### 学習コマンド
+
+```bash
+uv run python tools/qwen_lora_train.py \
+  --model Qwen/Qwen2.5-0.5B-Instruct \
+  --train \
+  --data data/navspec/lora/stage4a_armament_combined_v0 \
+  --adapter-path models/navspec-lora-0.5b-v0.1/adapter/stage4a-armament-r8 \
+  --iters 500 --batch-size 1 --grad-accumulation-steps 4 \
+  --num-layers 16 --learning-rate 0.000005 --mask-prompt --save-every 125
+```
+
+Stage 3 と違い、**stage2-status-r8 からは resume していない**。
+Stage 4a は出力契約が別 (`navspec.armament_teacher.v1`) なので、
+ベースモデルから学習した。
+
+Val loss: 2.047 (iter 1) → 0.263 (200) → **0.093 (400)** → 0.127 (500)
+
+### 評価結果 — **判定は学習できていない**
+
+`tools/navspec_armament_stage4a_eval.py` で test 先頭120件を生成させた
+（temp=0.0、max_tokens=1200）。結果は
+`docs/navspec_armament_stage4a_eval.json`。
+
+| 指標 | 値 | 備考 |
+|---|---|---|
+| JSON として読める | 0.967 (116/120) | |
+| 出力契約を満たす | 0.967 | 読めたものは全部契約を満たす |
+| **status 正解率** | **0.567** | 多数派ベースライン **0.517**（62/120が impossible） |
+| reason code 集合が完全一致 | 0.300 | |
+| reason code precision / recall / F1 | 0.221 / 0.147 / **0.177** | |
+
+**結論: JSON の形は学べたが、ルールエンジンの判定は学べていない。**
+status 正解率 0.567 は多数派ベースライン 0.517 をほとんど上回っておらず、
+reason code F1 0.177 も実用水準ではない。
+
+Val loss が 0.093 まで下がっているのに判定が当たらないのは、
+損失の大部分が「JSON の定型部分」で占められているためと考えられる。
+armament の assistant 出力は `schema_version` / キー名 / `main_batteries` の
+構造が毎回ほぼ同じで、判定に効くトークン（status の1語、reason code）は
+全体のごく一部しかない。
+
+### 次に試すべきこと（未実施）
+
+- iter を増やす（500 では足りていない可能性。ただし val loss は 400 で底を打ち
+  500 で上がっているので、単純な延長では効かないかもしれない）
+- rank / num-layers を上げる（現状 rank 8 / 16層）
+- **status と reason code だけを予測させる補助タスク**を足す。
+  定型 JSON に損失が薄まる問題への直接の対処になる
+- 0.5B より大きいベースモデルを試す
+
+### 4件の JSON 不正について
+
+`max_tokens` を 768 → 1200 に上げても件数・内容とも**変わらなかった**ので、
+打ち切りではなく生成が閉じないケース。いずれも `main_batteries` の途中で
+崩れており、`US_13INCH_TRIPLE_MK11` のような**存在しない mount_id** を
+出しているものが含まれる。

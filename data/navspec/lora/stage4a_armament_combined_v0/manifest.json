@@ -1,0 +1,15 @@
+{
+  "dataset": "stage4a_armament_combined_v0",
+  "note": "生成タスクと批評タスクは出力契約が同一なので混ぜて学習できる。messages のみを残した mlx_lm ChatDataset 形式",
+  "schema_version": "navspec.armament_teacher.v1",
+  "seed": 42,
+  "sources": [
+    "data/navspec/lora/stage4a_armament_v0",
+    "data/navspec/lora/stage4a_armament_critique_v0"
+  ],
+  "split_counts": {
+    "test": 323,
+    "train": 1558,
+    "valid": 309
+  }
+}
