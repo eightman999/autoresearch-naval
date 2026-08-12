@@ -401,7 +401,9 @@ def build_dataset(count: int, output_dir: Path, data_dir: Path, seed: int = 42) 
     write_jsonl(output_dir / "test.jsonl", by_split["test"])
 
     manifest = {
-        "dataset": "stage4a_armament_critique_v0",
+        # 出力先を v1 などへ切り替えたときも manifest が実体と一致するよう、
+        # 固定名ではなくディレクトリ名を正本にする。
+        "dataset": output_dir.name,
         "schema": "schemas/navspec_armament_teacher_stage4a.schema.json",
         "schema_version": SCHEMA_VERSION,
         "task": "critique_navspec_armament",

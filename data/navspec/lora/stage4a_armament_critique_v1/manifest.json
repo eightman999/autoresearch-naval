@@ -1,0 +1,50 @@
+{
+  "category_counts": {
+    "anachronistic_mount": 90,
+    "bad_positions": 99,
+    "clean": 288,
+    "early_radar_fire_control": 72,
+    "foreign_mount": 99,
+    "incompatible_mount": 89,
+    "oversized_magazine": 81,
+    "stacked_mounts": 81,
+    "unknown_fire_control": 81
+  },
+  "dataset": "stage4a_armament_critique_v1",
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True",
+  "purpose": "生成タスクでは到達できない reason code を、候補を壊して踏ませることで学習させる",
+  "reason_code_counts": {
+    "armament.armament_displacement_conflict": 41,
+    "armament.fire_control_unavailable": 81,
+    "armament.firing_arc_conflict": 217,
+    "armament.mount_unavailable_for_era": 151,
+    "armament.mount_unavailable_for_nation": 170,
+    "armament.turret_weight_exceeds_hull_limit": 40,
+    "armament.weapon_mount_incompatible": 278
+  },
+  "requested": 900,
+  "rows": 980,
+  "schema": "schemas/navspec_armament_teacher_stage4a.schema.json",
+  "schema_version": "navspec.armament_teacher.v1",
+  "seed": 42,
+  "skipped_no_material": 10,
+  "split_counts": {
+    "test": 142,
+    "train": 679,
+    "validation": 159
+  },
+  "status_counts": {
+    "impossible": 543,
+    "ok": 437
+  },
+  "system_prompt": "You are navspec-armament-review, a naval main battery reviewer. You are given a ship context and a proposed main battery. Return only JSON matching navspec.armament_teacher.v1. Do not repeat the user request. The top-level keys must be schema_version,status,armament,reason,warnings,suggested_revision,design_rationale,confidence. Set status=ok and echo the accepted battery when the proposal is sound. Set status=impossible with armament=null and reason[] when the proposal violates an armament rule. Report non-fatal concerns in warnings[].",
+  "task": "critique_navspec_armament",
+  "teacher": "navspec_armament_validator.validate_armament の判定をそのまま写す (no LLM in the loop)",
+  "warning_code_counts": {
+    "armament.barbette_too_large_for_beam": 78,
+    "armament.blast_interference": 145,
+    "armament.fire_control_unavailable": 68,
+    "armament.magazine_volume_insufficient": 73,
+    "armament.topweight_limit_exceeded": 48
+  }
+}

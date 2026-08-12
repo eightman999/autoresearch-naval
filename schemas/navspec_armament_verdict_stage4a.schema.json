@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.armament_verdict.v1",
+  "title": "NavSpec Stage 4a armament verdict output",
+  "description": "判定信号を薄めないための status/reason code 専用補助タスクの出力契約。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "reason_codes"],
+  "properties": {
+    "schema_version": { "const": "navspec.armament_verdict.v1" },
+    "status": { "enum": ["ok", "impossible"] },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "armament.weapon_unavailable_for_era",
+          "armament.weapon_unavailable_for_nation",
+          "armament.mount_unavailable_for_era",
+          "armament.mount_unavailable_for_nation",
+          "armament.weapon_mount_incompatible",
+          "armament.barbette_too_large_for_beam",
+          "armament.turret_weight_exceeds_hull_limit",
+          "armament.magazine_volume_insufficient",
+          "armament.topweight_limit_exceeded",
+          "armament.firing_arc_conflict",
+          "armament.blast_interference",
+          "armament.battery_layout_conflict",
+          "armament.armament_displacement_conflict",
+          "armament.fire_control_unavailable"
+        ]
+      }
+    }
+  }
+}

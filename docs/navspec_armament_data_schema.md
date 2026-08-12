@@ -18,13 +18,13 @@ ShipSpecRecord v1 の集約 `armament{main_caliber_mm, main_barrels, mounts[]}` 
 
 | ファイル | 件数 | 主ソース | 生成方法 |
 | --- | --- | --- | --- |
-| `weapons.jsonl` | 59 | navweaps.com 個別武器ページ | `tools/navspec_armament_scraper.py` 機械抽出 |
-| `mounts.jsonl` | 59 | navweaps.com Mount/Turret Data 表 | 同上 (1 weapon = 1 代表 mount) |
-| `ammunition.jsonl` | 59 | navweaps.com Ammunition 表 | 同上 (1 weapon = 1 代表弾) |
+| `weapons.jsonl` | 71 | navweaps.com 個別武器ページ | `tools/navspec_armament_scraper.py` 機械抽出 |
+| `mounts.jsonl` | 71 | navweaps.com Mount/Turret Data 表 | 同上 (1 weapon = 1 代表 mount) |
+| `ammunition.jsonl` | 71 | navweaps.com Ammunition 表 | 同上 (1 weapon = 1 代表弾) |
 | `fire_control.jsonl` | 17 | 公式文献 / Wikipedia | `tools/navspec_armament_static_data.py` 手動定義 |
-| `compatibility_rules.json` | 59 entries | weapons.jsonl + mounts.jsonl + 本ファイル定義 | 同上 (自動 + 手動) |
+| `compatibility_rules.json` | 71 entries | weapons.jsonl + mounts.jsonl + 本ファイル定義 | 同上 (自動 + 手動) |
 
-収集範囲: 6カ国 (JP/US/UK/DE/FR/IT) / 1911-1944 / 90-460mm / 代表的主力艦・巡洋艦・駆逐艦主砲・両用砲。初期35件に、各国4件ずつ計24件の巡洋艦砲・駆逐艦砲・両用砲を追加した。
+収集範囲: 11カ国 (JP/US/UK/DE/FR/IT/RU/AH/ES/SE/NL) / 1910-1949 / 90-460mm / 代表的主力艦・巡洋艦・駆逐艦主砲・両用砲。NavWeapsの個別ページから、複数形式を含むページは notes と target override で代表形式を明示する。RU_152MM_B38_M1938 は1949年就役の戦後エントリ、ES_381MM_MARK_B は沿岸用途を含むため、用途注記を保持する。
 
 ---
 
@@ -34,7 +34,7 @@ progress §3 の方針に従い、国ごとに慣習的な口径表記を使う:
 
 | 国コード | 口径表記 | 例 |
 | --- | --- | --- |
-| JP / FR / IT | `MM` (メートル法) | `JP_460MM_94SHIKI`, `FR_381MM_M1935`, `IT_381MM_M1934` |
+| JP / FR / IT / RU / AH / ES / SE / NL | `MM` (メートル法) | `JP_460MM_94SHIKI`, `RU_305MM_P1907`, `NL_150MM_MK9_M1938` |
 | UK / US | `INCH` (ヤード・ポンド法) | `UK_15INCH_MKI`, `US_16INCH_MK7` |
 | DE | `CM` (メートル法) | `DE_38CM_SKC34` |
 
@@ -60,7 +60,7 @@ progress §3 の方針に従い、国ごとに慣習的な口径表記を使う:
 | --- | --- | --- | --- |
 | `weapon_id` | str | ✓ | `{NATION}_{CALIBER}_{FORM}` |
 | `name` | str | ✓ | 人間向け名称 |
-| `nation` | str | ✓ | JP / US / UK / DE / FR / IT |
+| `nation` | str | ✓ | JP / US / UK / DE / FR / IT / RU / AH / ES / SE / NL |
 | `year_introduced` | int | | 就役年 (navweaps "Date In Service") |
 | `year_retired` | int\|null | | 退役年 (現状 null; 運用で補完可能) |
 | `caliber_mm` | int | ✓ | 実口径。navweaps "Actual Size" 優先、なければ Designation の cm 表記、最後に URL 推定 |
@@ -94,7 +94,7 @@ progress §3 の方針に従い、国ごとに慣習的な口径表記を使う:
 | `weapon_id` | str | ✓ | weapons.jsonl への参照 |
 | `name` | str | ✓ | 人間向け名称 |
 | `nation` | str | ✓ | |
-| `year_introduced` | int\|null | | 砲塔としての就役年 (現状 null) |
+| `year_introduced` | int\|null | | 砲塔としての就役年 (NSDB自動照合65件 + 手動補正2件 = 71件中67件を充填、未確認4件はnull) |
 | `barrels_per_mount` | int | ✓ | 1 / 2 / 3 / 4 |
 | `mount_type` | str | ✓ | single / twin / triple / quadruple |
 | `turret_weight_t` | float | ✓ | 砲塔重量 (tons 優先、mt/kg 換算) |
@@ -154,6 +154,8 @@ progress §3 の方針に従い、国ごとに慣習的な口径表記を使う:
 | `source`, `source_type`, `verified`, `confidence`, `notes`, `fictional` | | | |
 
 17件を収録。progress §3 の `JP_TYPE94_DIRECTOR` / `UK_AFKCT` (AFCT の alias 扱い) を含む。
+RU/AH/ES/SE/NL の追加武装には未監査の射撃指揮装置を推測で割り当てず、現段階では
+旧6カ国分の17件だけを保持する（追加国の retriever 出力では fire-control ID を省略）。
 
 ---
 

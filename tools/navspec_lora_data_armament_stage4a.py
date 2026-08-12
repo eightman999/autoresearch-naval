@@ -19,8 +19,8 @@ navspec.lora_candidate.v1 に揃えてあり、`spec` を `armament` に、
 `design_concept` を `design_rationale` に置き換えただけの形。
 
 語彙について: nation / ship_type は **armament DB 側の語彙**をそのまま使う
-(DB は JP/UK/US/DE/FR/IT の6カ国、battleship/battlecruiser/heavy_cruiser/
-light_cruiser/destroyer/coastal_defense の6艦種、砲は1911-1944年)。
+(DB は JP/UK/US/DE/FR/IT/RU/AH/ES/SE/NL の11カ国、battleship/battlecruiser/heavy_cruiser/
+light_cruiser/destroyer/coastal_defense の6艦種、砲は1910-1949年)。
 Stage 2 の SHIP_TYPES へ写像するエイリアス表は作らない。DB に無い国・艦種・年代は
 そのまま「不可能ケース」の材料として使う。
 
@@ -89,9 +89,9 @@ TOP_LEVEL_OUTPUT_FIELDS = [
 ]
 
 # --- 語彙（DB 側に合わせる） -------------------------------------------------
-DB_NATIONS = ["JP", "UK", "US", "DE", "FR", "IT"]
+DB_NATIONS = ["JP", "UK", "US", "DE", "FR", "IT", "RU", "AH", "ES", "SE", "NL"]
 # DB に砲を持たない国。nation 不成立ケースの材料
-UNCOVERED_NATIONS = ["NL", "AR", "BR", "SE", "PT", "TH", "CN", "CL", "EG", "NO"]
+UNCOVERED_NATIONS = ["AR", "BR", "PT", "TH", "CN", "CL", "EG", "NO"]
 
 DB_SHIP_TYPES = [
     "battleship",
@@ -180,7 +180,7 @@ def _hull_for(ship_type: str, rng: random.Random, scale: float = 1.0) -> tuple[f
 def feasible_combos(db: dict[str, Any]) -> list[tuple[str, str, int]]:
     """DB 上で実際に主砲が引ける (nation, ship_type, year) を列挙する。
 
-    「normal」を名前どおり成立ケースにするために必要。DB は59門・6カ国しか
+    「normal」を名前どおり成立ケースにするために必要。DB は71門・11カ国しか
     無く、たとえば US の最古の主砲は1926年なので、素朴に年を振ると normal の
     2〜3割が impossible になってしまう（判定自体は正しいが、カテゴリの意味が壊れる）。
     """
@@ -778,14 +778,16 @@ def write_manifest(
 ) -> None:
     split_counts = Counter(row["split"] for row in rows)
     manifest = {
-        "dataset": "stage4a_armament_v0",
+        # 出力先を v1 などへ切り替えたときも manifest が実体と一致するよう、
+        # 固定名ではなくディレクトリ名を正本にする。
+        "dataset": output_dir.name,
         "schema": "schemas/navspec_armament_teacher_stage4a.schema.json",
         "schema_version": SCHEMA_VERSION,
         "teacher": (
             "navspec_armament_retriever.retrieve_armament + "
             "navspec_armament_validator.validate_armament (no LLM in the loop)"
         ),
-        "armament_db": "data/navspec/armament/ (59 weapons / 59 mounts / 6 nations / 1911-1944)",
+        "armament_db": "data/navspec/armament/ (71 weapons / 71 mounts / 11 nations / 1910-1949; RU B-38 provides the post-war 1949 entry)",
         "rows": len(rows),
         "requested": requested,
         "seed": seed,

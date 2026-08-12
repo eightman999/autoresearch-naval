@@ -88,7 +88,9 @@ def test_weapon_schema(db):
     for wid, w in db["weapons"].items():
         for f in required:
             assert w.get(f) is not None, f"weapon {wid} missing {f}"
-        assert w["nation"] in {"JP", "US", "UK", "DE", "FR", "IT"}
+        assert w["nation"] in {
+            "JP", "US", "UK", "DE", "FR", "IT", "RU", "AH", "ES", "SE", "NL",
+        }
         assert 50 <= w["caliber_mm"] <= 510
 
 

@@ -2,11 +2,11 @@
   "schema": "navspec.armament.weapons.v1",
   "source_type": "navweaps",
   "generated_by": "tools/navspec_armament_scraper.py",
-  "target_count": 59,
-  "record_count": 59,
-  "mount_count": 59,
-  "ammo_count": 59,
-  "ok_count": 59,
+  "target_count": 71,
+  "record_count": 71,
+  "mount_count": 71,
+  "ammo_count": 71,
+  "ok_count": 71,
   "partial_count": 0,
   "failed_count": 0,
   "entries": [
@@ -479,6 +479,102 @@
       "status": "ok",
       "missing_fields": [],
       "url": "https://www.navweaps.com/Weapons/WNIT_4-45_m1917.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "RU_130MM_P1913",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNRussian_51-55_m1913.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "RU_305MM_P1907",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNRussian_12-52_m1907.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "RU_180MM_B1P_M1932",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNRussian_71-57_m1932.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "RU_152MM_B38_M1938",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNRussian_6-57_m1938.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "RU_130MM_B13_M1936",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNRussian_51-50_m1936.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "RU_100MM_B34_M1940",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNRussian_39-56_m1940.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "AH_305MM_SKODA_K10",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNAust_12-45.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "ES_381MM_MARK_B",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNSpain_15-45_mkB.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "SE_283MM_M1912",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNSweden_11-45_m1912.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "SE_120MM_M1924",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNSweden_47-50_m1924.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "NL_150MM_MK9_M1938",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNNeth_59-50_mk9.php",
+      "mount": "ok",
+      "ammo": "ok"
+    },
+    {
+      "weapon_id": "NL_120MM_MK6_M1937",
+      "status": "ok",
+      "missing_fields": [],
+      "url": "https://www.navweaps.com/Weapons/WNNeth_47-45_mk6.php",
       "mount": "ok",
       "ammo": "ok"
     }

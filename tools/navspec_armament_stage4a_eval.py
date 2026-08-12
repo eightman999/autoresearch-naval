@@ -37,6 +37,7 @@ from mlx_lm_compat import patch_transformers_5_tokenizer_register  # noqa: E402
 patch_transformers_5_tokenizer_register()
 
 from navspec_lora_data_armament_stage4a import validate_teacher  # noqa: E402
+from navspec_armament_validator import ARMAMENT_REASON_CODES  # noqa: E402
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -107,6 +108,12 @@ def main(argv: list[str] | None = None) -> int:
     rows = read_jsonl(args.data / f"{args.split}.jsonl")[: args.limit]
     stats = Counter()
     reason_tp = reason_fp = reason_fn = 0
+    warning_tp = warning_fp = warning_fn = 0
+    predicted_status_counts: Counter[str] = Counter()
+    predicted_reason_counts: Counter[str] = Counter()
+    predicted_warning_counts: Counter[str] = Counter()
+    predicted_unknown_reason_counts: Counter[str] = Counter()
+    predicted_unknown_warning_counts: Counter[str] = Counter()
     failures: list[dict[str, Any]] = []
 
     for i, row in enumerate(rows, 1):
@@ -137,15 +144,36 @@ def main(argv: list[str] | None = None) -> int:
         else:
             stats["contract_ok"] += 1
 
+        if isinstance(got.get("status"), str):
+            predicted_status_counts[got["status"]] += 1
         if got.get("status") == expected["status"]:
             stats["status_match"] += 1
         exp_codes = {r["code"] for r in expected.get("reason") or []}
         got_codes = {r.get("code") for r in (got.get("reason") or []) if isinstance(r, dict)}
+        exp_warning_codes = {r["code"] for r in expected.get("warnings") or []}
+        got_warning_codes = {
+            r.get("code") for r in (got.get("warnings") or []) if isinstance(r, dict)
+        }
+        for code in got_codes:
+            if isinstance(code, str):
+                predicted_reason_counts[code] += 1
+                if code not in ARMAMENT_REASON_CODES:
+                    predicted_unknown_reason_counts[code] += 1
+        for code in got_warning_codes:
+            if isinstance(code, str):
+                predicted_warning_counts[code] += 1
+                if code not in ARMAMENT_REASON_CODES:
+                    predicted_unknown_warning_counts[code] += 1
         reason_tp += len(exp_codes & got_codes)
         reason_fp += len(got_codes - exp_codes)
         reason_fn += len(exp_codes - got_codes)
+        warning_tp += len(exp_warning_codes & got_warning_codes)
+        warning_fp += len(got_warning_codes - exp_warning_codes)
+        warning_fn += len(exp_warning_codes - got_warning_codes)
         if exp_codes == got_codes:
             stats["reason_set_exact"] += 1
+        if exp_warning_codes == got_warning_codes:
+            stats["warning_set_exact"] += 1
 
         if i % 20 == 0:
             print(f"  {i}/{len(rows)} ...", file=sys.stderr)
@@ -155,6 +183,18 @@ def main(argv: list[str] | None = None) -> int:
     recall = reason_tp / (reason_tp + reason_fn) if (reason_tp + reason_fn) else None
     f1 = (2 * precision * recall / (precision + recall)
           if precision and recall else None)
+    warning_precision = (
+        warning_tp / (warning_tp + warning_fp)
+        if warning_tp + warning_fp else None
+    )
+    warning_recall = (
+        warning_tp / (warning_tp + warning_fn)
+        if warning_tp + warning_fn else None
+    )
+    warning_f1 = (
+        2 * warning_precision * warning_recall / (warning_precision + warning_recall)
+        if warning_precision and warning_recall else None
+    )
 
     report = {
         "model": args.model,
@@ -169,7 +209,16 @@ def main(argv: list[str] | None = None) -> int:
         "reason_code_precision": round(precision, 4) if precision is not None else None,
         "reason_code_recall": round(recall, 4) if recall is not None else None,
         "reason_code_f1": round(f1, 4) if f1 is not None else None,
+        "warning_set_exact_rate": round(stats["warning_set_exact"] / total, 4),
+        "warning_code_precision": round(warning_precision, 4) if warning_precision is not None else None,
+        "warning_code_recall": round(warning_recall, 4) if warning_recall is not None else None,
+        "warning_code_f1": round(warning_f1, 4) if warning_f1 is not None else None,
         "counts": dict(stats),
+        "predicted_status_counts": dict(sorted(predicted_status_counts.items())),
+        "predicted_reason_code_counts": dict(sorted(predicted_reason_counts.items())),
+        "predicted_warning_code_counts": dict(sorted(predicted_warning_counts.items())),
+        "predicted_unknown_reason_counts": dict(sorted(predicted_unknown_reason_counts.items())),
+        "predicted_unknown_warning_counts": dict(sorted(predicted_unknown_warning_counts.items())),
         "failure_samples": failures,
     }
     print(json.dumps(report, ensure_ascii=False, indent=2))

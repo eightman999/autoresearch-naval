@@ -12,8 +12,11 @@ from typing import Any
 
 
 NATION_TIERS: dict[str, int] = {
+    # Armament DB の短縮コード（正式国名の部分一致に頼らない）。
+    "US": 1, "UK": 1, "DE": 1, "JP": 1, "FR": 1, "IT": 1,
+    "RU": 2, "AH": 2, "ES": 2, "SE": 2, "NL": 2,
     "United States": 1, "United States of America": 1,
-    "United Kingdom": 1, "UK": 1, "Great Britain": 1,
+    "United Kingdom": 1, "Great Britain": 1,
     "Germany": 1,
     "Japan": 1,
     "France": 1,

@@ -162,6 +162,7 @@ def test_build_dataset_writes_expected_files(tmp_path, db):
         assert (tmp_path / name).exists(), name
     assert not (tmp_path / "validation.jsonl").exists()
     manifest = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["dataset"] == tmp_path.name
     assert manifest["schema_version"] == SCHEMA_VERSION
     assert manifest["task"] == "critique_navspec_armament"
     # スキップは黙って捨てず件数を残していること

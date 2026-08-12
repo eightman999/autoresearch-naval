@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-from tools.navspec_armament_scraper import _first_angular_rate, _first_rate_of_fire
+from tools.navspec_armament_scraper import (
+    _extract_ammo_type,
+    _first_angular_rate,
+    _first_rate_of_fire,
+)
 
 
 def test_rate_of_fire_ignores_model_year() -> None:
@@ -27,3 +31,10 @@ def test_rate_of_fire_keeps_type_value_not_type_number() -> None:
 def test_angular_rate_ignores_model_year() -> None:
     text = "Model 1929: 6 degrees per second Model 1934: 10 degrees per second"
     assert _first_angular_rate(text) == 6.0
+
+
+def test_semi_ap_is_normalized_to_sap() -> None:
+    assert _extract_ammo_type("Semi-AP mod 1928: 33.5 kg HE mod 1911: 36.86 kg") == (
+        "SAP",
+        "Semi-AP mod 1928",
+    )

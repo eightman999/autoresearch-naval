@@ -14,7 +14,7 @@
 これを armament DB の砲塔レコードと突合すれば、その砲塔を積んだ艦級が特定でき、
 艦級の年をもって砲塔の就役年とできる。
 
-同名異艦の罠: 6カ国すべてで艦名が世代をまたいで再利用されている
+同名異艦の罠: 対象国では艦名が世代をまたいで再利用されている
 (扶桑 1877/1915、Tennessee 1904/1919、Brooklyn 1895/1936)。
 **艦級名では突合しない。** 口径と連装数で絞り、形式記号と砲身長で順位付けする。
 
@@ -56,6 +56,11 @@ NATION_TO_COUNTRY = {
     "DE": "Germany",
     "FR": "France",
     "IT": "Italy",
+    "RU": "Russian",
+    "AH": "Austria-Hungary",
+    "ES": "Spain",
+    "SE": "Sweden",
+    "NL": "Netherlands",
 }
 
 # "3 x 3 - 406/45 Mk 6" → (mounts, barrels, caliber_mm, length_cal, designation)
@@ -239,6 +244,18 @@ def main(argv: list[str] | None = None) -> int:
         "class_name\tclass_type\tnsdb_entry\tyear_from\tcandidates"
     ]
     for mount in mounts:
+        # scraper の手動形式補正（例: Kirov MK-3-180=1938）は NSDB の
+        # クラス名マッチより優先し、再適用で上書きしない。
+        if str(mount.get("year_source", "")).startswith(("manual:", "Kirov class commissioning year")):
+            weapon = weapons.get(mount.get("weapon_id"))
+            if weapon and mount.get("year_introduced") is not None:
+                # 手動補正もレビュー表から欠落させず、NSDB 自動照合と区別して記録する。
+                report_lines.append(
+                    f"{mount['mount_id']}\t{weapon.get('year_introduced')}\t"
+                    f"{mount.get('year_introduced')}\t\tmanual\t\t\t\tmanual"
+                )
+                resolved += 1
+            continue
         weapon = weapons.get(mount.get("weapon_id"))
         if not weapon:
             continue

@@ -58,3 +58,15 @@ IT_203MM_TWIN_M1927	1931	1931	1932	False	ZARA1932) Class	heavy-cruisers	4 x 2 - 
 IT_152MM_TRIPLE_M1936	1940	1940	1942	False	VITTORIOVENETO1942) Class	battleships	4 x 3 - 152/55 OTO 1936	class_name	3
 IT_120MM_TWIN_M1926	1936	1936	1936	False	ALFREDOORIANI Class	destroyers	2 x 2 - 120/50 OTO 1936	ship_launch	13
 IT_102MM_TWIN_M1917	1917	1924	1924	False	CURTATONE1924) Class	destroyers	2 x 2 - 102/45 Schneider-Armstrong 1919	class_name	10
+RU_130MM_SINGLE_P1913	1914	1914		manual				manual
+RU_305MM_TRIPLE_P1907	1910	1910	1911	False	SEVASTOPOL Class	battleships	4 x 3 - 305/50	ship_launch	4
+RU_180MM_TRIPLE_B1P_M1932	1932	1938		manual				manual
+RU_152MM_TRIPLE_B38_M1938	1949	1949	1940	False	CHAPAEV(projects68-68K) Class	light-cruisers	4 x 3 - 152/57 MK-5	ship_launch	4
+RU_130MM_SINGLE_B13_M1936	1936	1936	1936	False	OPYTNYY(project45) Class	destroyer	3 x 1 - 130/50 B-13	ship_launch	23
+RU_100MM_SINGLE_B34_M1940	1940	1940	1941	False	PURGA(project52) Class	guard-ship	4 x 1 - 100/56 B-34USMA	ship_launch	57
+AH_305MM_TRIPLE_SKODA_K10	1910	1910	1911	False	VIRIBUSUNITIS Class	battleships	4 x 3 - 305/42 G. L/45 K.10	ship_launch	2
+ES_381MM_SINGLE_MARK_B	1929								0
+SE_283MM_TWIN_M1912	1917	1917	1915	False	SVERIGE Class	coastal-battleships	2 x 2 - 283/44 K/45 M12	ship_launch	1
+SE_120MM_SINGLE_M1924	1928	1928	1912	False	CLASFLEMINGcruiser-minelayer Class		4 x 1 - 120/48 K/50 M11	ship_launch	11
+NL_150MM_TWIN_MK9_M1938	1938	1938	1937	False	TROMP Class	light-cruisers	3 x 2 - 149/50 Bofors/Wilton-Fijenoord No.11	ship_launch	3
+NL_120MM_SINGLE_MK6_M1937	1939	1939	1939	False	GERARDCALLENBURGH Class	destroyers	1 x 1 - 120/45 Wilton-Fijenoord No.8	ship_launch	20

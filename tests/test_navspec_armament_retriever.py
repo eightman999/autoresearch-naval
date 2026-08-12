@@ -169,6 +169,24 @@ def test_retrieve_armament_no_candidate(db):
     assert retrieve_armament(ctx, db) is None
 
 
+def test_retrieve_armament_new_nation_ru(db):
+    """追加したRU武装が時代・艦種・砲塔就役年を通じて検索できる。"""
+    ctx = {
+        "ship_type": "coastal_defense",
+        "year": 1940,
+        "nation": "RU",
+        "displacement_t": 15000,
+        "beam_m": 18.0,
+    }
+    cand = retrieve_armament(ctx, db, rng=random.Random(7))
+    assert cand is not None
+    battery = cand["main_batteries"][0]
+    assert battery["weapon_id"] == "RU_180MM_B1P_M1932"
+    assert battery["mount_id"] == "RU_180MM_TRIPLE_B1P_M1932"
+    result = validate_armament(cand, ctx, db)
+    assert result["status"] == "ok", result["issues"]
+
+
 def test_retrieve_armament_validates_ok(db, yamato_context):
     """生成 candidate が validator で ok になる (主要主力艦)。"""
     cand = retrieve_armament(yamato_context, db, rng=random.Random(42))

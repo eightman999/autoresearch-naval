@@ -1,0 +1,119 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage4a-armament-r8-v1",
+  "data": "data/navspec/lora/stage4a_armament_combined_v1",
+  "split": "test",
+  "n": 299,
+  "json_valid_rate": 0.9599,
+  "contract_ok_rate": 0.9498,
+  "status_accuracy": 0.5552,
+  "reason_set_exact_rate": 0.2676,
+  "reason_code_precision": 0.1906,
+  "reason_code_recall": 0.3,
+  "reason_code_f1": 0.2331,
+  "warning_set_exact_rate": 0.699,
+  "warning_code_precision": 0.5,
+  "warning_code_recall": 0.0233,
+  "warning_code_f1": 0.0444,
+  "counts": {
+    "total": 299,
+    "json_valid": 287,
+    "contract_ok": 284,
+    "status_match": 166,
+    "warning_set_exact": 209,
+    "reason_set_exact": 80,
+    "json_invalid": 12,
+    "contract_violation": 3
+  },
+  "predicted_status_counts": {
+    "impossible": 181,
+    "ok": 105
+  },
+  "predicted_reason_code_counts": {
+    "armament.armament_count_incompatible": 1,
+    "armament.armament_weight_limit_exceeded": 1,
+    "armament.battery_layout_conflict": 1,
+    "armament.mount_unavailable_for_era": 1,
+    "armament.mount_unavailable_for_nation": 135,
+    "armament.nation_unavailable": 1,
+    "armament.weapon_mount_incompatible": 116,
+    "armament.weapon_unavailable_for_nation": 43
+  },
+  "predicted_warning_code_counts": {
+    "armament.blast_interference": 4
+  },
+  "predicted_unknown_reason_counts": {
+    "armament.armament_count_incompatible": 1,
+    "armament.armament_weight_limit_exceeded": 1,
+    "armament.nation_unavailable": 1
+  },
+  "predicted_unknown_warning_counts": {},
+  "failure_samples": [
+    {
+      "index": 10,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":12,\"main_gun_mount_count\":4},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":3,\"battery_id\":\"main_1\",\"fire_control_id\":\"FR_M1912_M1\",\"mount_count\":4,\"mount_id\":\"FR_305MM_TRIPLE_SKODA\",\"positions\":[\"A\",\"B\",\"X\",\"Y\"],\"total"
+    },
+    {
+      "index": 22,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":12,\"main_gun_mount_count\":4},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":3,\"battery_id\":\"main_1\",\"fire_control_id\":\"NL_MK36_DIRECTOR\",\"mount_count\":4,\"mount_id\":\"NL_36CM100MM_TWIN_SKC30\",\"positions\":[\"A\",\"B\",\"X\",\"Y\"]"
+    },
+    {
+      "index": 35,
+      "kind": "contract",
+      "problems": [
+        "unknown reason code: 'armament.armament_weight_limit_exceeded'"
+      ]
+    },
+    {
+      "index": 44,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":12,\"main_gun_mount_count\":4},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":3,\"battery_id\":\"main_1\",\"fire_control_id\":\"UK_DREYER_TABLE\",\"mount_count\":4,\"mount_id\":\"UK_3INCH_TRIPLE_MKIX\",\"positions\":[\"A\",\"B\",\"X\",\"Y\"],\"to"
+    },
+    {
+      "index": 67,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":12,\"main_gun_mount_count\":4},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":3,\"battery_id\":\"main_1\",\"fire_control_id\":\"US_MK34_GFCS\",\"mount_count\":4,\"mount_id\":\"US_14INCH_TRIPLE_MK10\",\"positions\":[\"A\",\"B\",\"X\",\"Y\"],\"tota"
+    },
+    {
+      "index": 97,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":12,\"main_gun_mount_count\":4},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":3,\"battery_id\":\"main_1\",\"fire_control_id\":\"IT_MK32\",\"mount_count\":4,\"mount_id\":\"IT_156MM_TWIN_MK1\",\"positions\":[\"A\",\"B\",\"X\",\"Y\"],\"total_barrels"
+    },
+    {
+      "index": 133,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":null,\"confidence\":0.9,\"design_rationale\":\"\",\"reason\":[{\"code\":\"armament.mount_unavailable_for_nation\",\"message\":\"mount ES_381MM_SINGLE_MARK_B nation ES != mount availability ['ES', 'UK', 'FR', 'AT', 'DE', 'CH', 'CH', 'CY', 'CL', 'CO', 'CZ', 'CZ', 'DE', 'EE', 'ES', 'ES', 'EE', 'FR', 'FR',"
+    },
+    {
+      "index": 142,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":null,\"confidence\":0.9,\"design_rationale\":\"\",\"reason\":[{\"code\":\"armament.mount_unavailable_for_nation\",\"message\":\"mount ES_381MM_SINGLE_MARK_B nation ES != mount availability ['ES', 'UK', 'FR', 'AT', 'DE', 'CH', 'CH', 'CY', 'CL', 'CO', 'CZ', 'CZ', 'DE', 'EE', 'ES', 'FR', 'GB', 'GR', 'GT',"
+    },
+    {
+      "index": 149,
+      "kind": "contract",
+      "problems": [
+        "missing top-level key: schema_version",
+        "missing top-level key: status",
+        "missing top-level key: warnings",
+        "missing top-level key: suggested_revision",
+        "schema_version != navspec.armament_teacher.v1"
+      ]
+    },
+    {
+      "index": 160,
+      "kind": "json_invalid",
+      "error": "unbalanced JSON object",
+      "raw": "{\"armament\":{\"aggregate\":{\"main_gun_caliber_mm\":null,\"main_gun_count\":12,\"main_gun_mount_count\":4},\"main_batteries\":[{\"ammo_per_gun\":100,\"barrels_per_mount\":3,\"battery_id\":\"main_1\",\"fire_control_id\":\"NL_MK30_GFCS\",\"mount_count\":4,\"mount_id\":\"NL_150MM_TRIPLE_SKODA\",\"positions\":[\"A\",\"B\",\"X\",\"Y\"],\"tota"
+    }
+  ]
+}

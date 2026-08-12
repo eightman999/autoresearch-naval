@@ -249,3 +249,66 @@ test_weapon_schema, test_mount_schema, test_weapon_mount_compatibility, test_bar
 - 50MB超JSONL(train/tasks.train)は技術的負債として維持（将来 maintenance-navspec-dataset-history で整理）
 - Stage 2 default / classic validator は絶対に触らない（保護対象）
 - DB レコードの架空装備は `fictional: true` で区別
+
+---
+
+## 7. 2026-08-12 継続実験（現行DB v1・verdict補助タスク）
+
+### 7.1 実験概要・DB実測値
+- **Armament DB 実測値**:
+  - `weapons`: 71件 / `mounts`: 71件 / `ammunition`: 71件 / `fire_control`: 17件
+  - 11 nations、weapon years: 1910–1949、mount year null: 4件
+- **保護対象不変**: 既存 v0 adapter / Stage 2 default (`navspec-qwen2.5-0.5b-stage2-r8`) / classic validator は一切変更していない。
+
+### 7.2 データセット実測値 (v1)
+
+| データセット | 総行数 (rows) | ok 件数 | impossible 件数 | train | valid | test | 備考 |
+|---|---|---|---|---|---|---|---|
+| **generation v1** | 1,200 | 832 | 368 | 866 | 177 | 157 | 教師生成タスク |
+| **critique v1** | 980 | 437 | 543 | 679 | 159 | 142 | 批評タスク (requested: 900, skipped_no_material: 10) |
+| **combined v1** | 2,180 | 1,269 | 911 | 1,545 | 336 | 299 | generation + critique 結合 |
+
+- **Reason / Warning コード関係**:
+  - **Combined v1 (generation v1 + critique v1)** の `reason[]` カバレッジ: 全14種中 **10/14 種**。
+  - **Critique-only v1** の `reason[]` カバレッジ: 全14種中 **7/14 種**（Combined v1 の 10/14 とは母集団が異なる）。
+  - `barbette_too_large_for_beam`, `magazine_volume_insufficient`, `topweight_limit_exceeded`, `blast_interference` は warning-only の4種であり、`reason[]` の 14/14 とは表記しない（ただし warning code として学習データ内には存在する）。
+
+### 7.3 Full Armament Adapter (stage4a-armament-r8-v1) 評価結果
+- **ハイパーパラメータ**: Qwen2.5-0.5B-Instruct, 500 iter, 16 layers, lr = 5e-6, mask-prompt, final Val loss = 0.102
+- **評価対象**: `docs/navspec_armament_stage4a_eval_v1.json` (実生成 299件 test 全件)
+
+| 指標 | 実測値 | 備考 |
+|---|---|---|
+| `json_valid` | 0.9599 | JSONパース成功率 (287/299) |
+| `contract_ok` | 0.9498 | 契約遵守率 (284/299) |
+| `status_accuracy` | 0.5552 | status 一致率 (166/299, 多数派ベースライン 0.5452 近傍) |
+| `reason F1` | 0.2331 | Precision: 0.1906 / Recall: 0.3000 |
+| `warning F1` | 0.0444 | Precision: 0.5000 / Recall: 0.0233 |
+| `reason_set_exact` | 0.2676 | (80/299) |
+| `warning_set_exact` | 0.6990 | (209/299) |
+
+- **予測 status 分布**: `impossible`: 181件 / `ok`: 105件
+- **未知 Reason Code**: 以下の3種（定義外）が発生。
+  - `armament.armament_count_incompatible` (1件)
+  - `armament.armament_weight_limit_exceeded` (1件)
+  - `armament.nation_unavailable` (1件)
+
+### 7.4 Verdict Auxiliary Task 評価結果 (診断用)
+critique v1 全980件を使用し、判定特化補助タスクとして検証を実施。
+
+| バージョン | 特徴 | Final Val Loss | Test 142件 JSON/Contract | Status Accuracy | Reason F1 | 予測 status 分布 | 結果 |
+|---|---|---|---|---|---|---|---|
+| **v1** | `status` が JSON 末尾 | 0.070 | 1.0 (142/142) | 0.4296 (61/142) | N/A (0.0) | `ok` 142件固定 / reason 0 | 診断用・採用不可 |
+| **v2** | `status` キーを JSON 先頭に変更 | 0.078 | 1.0 (142/142) | 0.4296 (61/142) | N/A (0.0) | `ok` 142件固定 / reason 0 | 診断用・採用不可 |
+
+### 7.5 テスト・検証および結論
+- **検証**: seed validator OK。Stage4a関連・combiner・verdictテスト群を含む `PYTHONPATH=. pytest` 全体テスト実行によりパスを確認（`PYTHONPATH=. pytest` 全体 82 passed）。full v1 評価は実生成 299件。
+- **結論**:
+  1. データ再生成・結合・学習・評価の全工程を完了。
+  2. Full JSON モデルはフォーマット/形式を約95-96%で高精度に習得するが、ルール判定器としては多数派ベースライン(0.5452)付近に留まる。Verdict 補助タスクにおいても判定ロジック未学習。
+  3. 既存の v0 adapter / default / Stage 2 等のプロダクション環境には一切影響なし（未変更）。
+- **次ステップ候補**:
+  - クラス別オーバーサンプリングおよび損失設計の変更
+  - より大きいベースモデル (3B / 7B等) の採用
+  - 生成タスクと批評タスク間のスプリット漏洩防止・厳格分割
+  - Warning 評価の継続

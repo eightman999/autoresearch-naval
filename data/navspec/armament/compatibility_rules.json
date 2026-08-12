@@ -178,6 +178,42 @@
     ],
     "IT_102MM_M1917": [
       "IT_102MM_TWIN_M1917"
+    ],
+    "RU_130MM_P1913": [
+      "RU_130MM_SINGLE_P1913"
+    ],
+    "RU_305MM_P1907": [
+      "RU_305MM_TRIPLE_P1907"
+    ],
+    "RU_180MM_B1P_M1932": [
+      "RU_180MM_TRIPLE_B1P_M1932"
+    ],
+    "RU_152MM_B38_M1938": [
+      "RU_152MM_TRIPLE_B38_M1938"
+    ],
+    "RU_130MM_B13_M1936": [
+      "RU_130MM_SINGLE_B13_M1936"
+    ],
+    "RU_100MM_B34_M1940": [
+      "RU_100MM_SINGLE_B34_M1940"
+    ],
+    "AH_305MM_SKODA_K10": [
+      "AH_305MM_TRIPLE_SKODA_K10"
+    ],
+    "ES_381MM_MARK_B": [
+      "ES_381MM_SINGLE_MARK_B"
+    ],
+    "SE_283MM_M1912": [
+      "SE_283MM_TWIN_M1912"
+    ],
+    "SE_120MM_M1924": [
+      "SE_120MM_SINGLE_M1924"
+    ],
+    "NL_150MM_MK9_M1938": [
+      "NL_150MM_TWIN_MK9_M1938"
+    ],
+    "NL_120MM_MK6_M1937": [
+      "NL_120MM_SINGLE_MK6_M1937"
     ]
   },
   "caliber_min_max_by_ship_type": {

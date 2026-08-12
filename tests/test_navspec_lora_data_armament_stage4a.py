@@ -253,6 +253,7 @@ def test_build_dataset_writes_all_splits(tmp_path, db):
     assert not (tmp_path / "validation.jsonl").exists()
     assert not (tmp_path / "all.jsonl").exists()
     manifest = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["dataset"] == tmp_path.name
     assert manifest["schema_version"] == SCHEMA_VERSION
     assert sum(manifest["split_counts"].values()) == len(rows)
     assert sum(manifest["status_counts"].values()) == len(rows)

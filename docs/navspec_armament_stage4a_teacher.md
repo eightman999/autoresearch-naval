@@ -43,10 +43,13 @@ Stage 2/3 と同じく **LLM はループに入らない**。classic ルール�
 armament DB 側の語彙をそのまま使う。Stage 2 の `SHIP_TYPES` へのエイリアス表は
 **意図的に作っていない**（対応付けを勝手に決めるとデータの意味が変わるため）。
 
-- 国 (6): `JP` `UK` `US` `DE` `FR` `IT`
+- 国 (v0生成時点の6): `JP` `UK` `US` `DE` `FR` `IT`
 - 艦種 (6): `battleship` `battlecruiser` `heavy_cruiser` `light_cruiser` `destroyer` `coastal_defense`
-- 砲: 59門 / 1911–1944年（`weapons.jsonl` の実測。`STAGE4_PROGRESS.md` の
+- 砲: 59門 / 1911–1944年（この v0 教師データ生成時点の `weapons.jsonl` 実測。現在のDBは71門/11カ国へ拡張済み。`STAGE4_PROGRESS.md` の
   「35件」は初回収集時の値で、`a2e1528` の増分が反映されていなかった）
+
+この文書と既存 v0 出力は旧59門DBのスナップショットであり、現行11カ国/71門を反映するには
+`tools/navspec_lora_data_armament_stage4a.py` を再実行する。
 
 DB に無い国・艦種・年代は、そのまま不成立ケースの材料として使う。
 
@@ -282,7 +285,7 @@ armament DB 側も同じ情報を持っているので、直接突合できる�
 
 ### 結果
 
-- **59件中56件**で就役年を決定（未決定3件: `FR_381MM_TRIPLE_M1935` /
+- **（v0旧59件スナップショット）59件中56件**で就役年を決定（未決定3件: `FR_381MM_TRIPLE_M1935` /
   `IT_320MM_TRIPLE_M1934` / `IT_135MM_TRIPLE_M1938`。null のまま残す）
 - うち **43件は砲の形式記号まで一致**（`Mk 6` `SK C/34` `94-shiki` 等）
 - **15件が砲より後年**になり、`mount_unavailable_for_era` が踏めるようになった

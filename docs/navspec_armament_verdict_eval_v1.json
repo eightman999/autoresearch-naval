@@ -1,0 +1,27 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage4a-armament-verdict-r8-v1",
+  "data": "data/navspec/lora/stage4a_armament_verdict_v1",
+  "split": "test",
+  "n": 142,
+  "json_valid_rate": 1.0,
+  "contract_ok_rate": 1.0,
+  "status_accuracy": 0.4296,
+  "reason_set_exact_rate": 0.4296,
+  "reason_code_precision": null,
+  "reason_code_recall": 0.0,
+  "reason_code_f1": null,
+  "counts": {
+    "total": 142,
+    "json_valid": 142,
+    "contract_ok": 142,
+    "status_match": 61,
+    "reason_set_exact": 61
+  },
+  "predicted_status_counts": {
+    "ok": 142
+  },
+  "predicted_reason_code_counts": {},
+  "predicted_unknown_reason_counts": {},
+  "failure_samples": []
+}

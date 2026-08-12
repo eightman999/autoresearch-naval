@@ -1,0 +1,40 @@
+{
+  "dataset": "stage4a_armament_verdict_v1",
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True",
+  "max_output_tokens": 64,
+  "purpose": "status/reason code の判定信号を full teacher JSON から分離する補助タスク",
+  "reason_code_counts": {
+    "armament.armament_displacement_conflict": 41,
+    "armament.fire_control_unavailable": 81,
+    "armament.firing_arc_conflict": 180,
+    "armament.mount_unavailable_for_era": 151,
+    "armament.mount_unavailable_for_nation": 170,
+    "armament.turret_weight_exceeds_hull_limit": 40,
+    "armament.weapon_mount_incompatible": 278
+  },
+  "rows": 980,
+  "schema": "schemas/navspec_armament_verdict_stage4a.schema.json",
+  "schema_version": "navspec.armament_verdict.v1",
+  "seed": 42,
+  "source": "data/navspec/lora/stage4a_armament_critique_v1",
+  "source_manifest": {
+    "dataset": "stage4a_armament_critique_v1",
+    "rows": 980,
+    "split_counts": {
+      "test": 142,
+      "train": 679,
+      "validation": 159
+    }
+  },
+  "split_counts": {
+    "test": 142,
+    "train": 679,
+    "valid": 159
+  },
+  "status_counts": {
+    "impossible": 543,
+    "ok": 437
+  },
+  "system_prompt": "You are navspec-armament-judge. Given the ship context and proposed main battery, return only JSON matching navspec.armament_verdict.v1. The top-level keys must be schema_version,status,reason_codes. Use status=impossible when any armament rule is violated; otherwise use status=ok. reason_codes must contain only the error reason codes, as a JSON string array.",
+  "task": "judge_navspec_armament"
+}

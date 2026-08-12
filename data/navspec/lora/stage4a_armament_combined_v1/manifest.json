@@ -1,0 +1,39 @@
+{
+  "dataset": "stage4a_armament_combined_v1",
+  "format": "mlx_lm ChatDataset/messages, compact JSON sort_keys=True",
+  "purpose": "Stage 4a generation + critique datasets",
+  "rows": 2180,
+  "schema": "schemas/navspec_armament_teacher_stage4a.schema.json",
+  "schema_version": "navspec.armament_teacher.v1",
+  "seed": 42,
+  "source_manifests": {
+    "critique": {
+      "dataset": "stage4a_armament_critique_v1",
+      "rows": 980,
+      "skipped_no_material": 10,
+      "split_counts": {
+        "test": 142,
+        "train": 679,
+        "validation": 159
+      }
+    },
+    "generation": {
+      "dataset": "stage4a_armament_v1",
+      "rows": 1200,
+      "split_counts": {
+        "test": 157,
+        "train": 866,
+        "validation": 177
+      }
+    }
+  },
+  "sources": {
+    "critique": "data/navspec/lora/stage4a_armament_critique_v1",
+    "generation": "data/navspec/lora/stage4a_armament_v1"
+  },
+  "split_counts": {
+    "test": 299,
+    "train": 1545,
+    "valid": 336
+  }
+}

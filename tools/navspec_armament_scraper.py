@@ -1,7 +1,7 @@
 """Stage 4 Commit A: navweaps.com からの主砲データ機械的スクレイピング.
 
 STAGE4_PROGRESS.md §2 Commit A の DB seed 収集フェーズ。
-progress §4 の代表的主砲候補リストを起点に、6カ国 / 76-460mm / 59件を
+progress §4 の代表的主砲候補リストを起点に、11カ国 / 90-460mm / 71件を
 navweaps.com の個別武器ページから機械的に抽出し、
 ``data/navspec/armament/weapons.jsonl`` を生成する。
 
@@ -47,7 +47,7 @@ class WeaponTarget:
     """スクレイピング対象1件の定義."""
 
     weapon_id: str
-    nation: str  # JP / US / UK / DE / FR / IT
+    nation: str  # JP / US / UK / DE / FR / IT / RU / AH / ES / SE / NL
     display_name: str  # 人間向け名称 (例: "46 cm/45 Type 94 (Yamato)")
     url: str
     # ページから機械抽出困難な属性は target 側で指定する
@@ -55,9 +55,20 @@ class WeaponTarget:
     technology_tier: str = "mainstream"
     notes_hint: str = ""
     # 抽出値の補正 ( navweaps 表記ゆれや本文中のみの数値に対する上書き )
+    year_introduced_override: int | None = None
     caliber_override: int | None = None
+    barrel_length_override: float | None = None
+    gun_weight_override_t: float | None = None
+    shell_weight_override_kg: float | None = None
+    muzzle_velocity_override_mps: float | None = None
+    rate_of_fire_override_rpm: float | None = None
     max_range_override: int | None = None
+    loading_type_override: str | None = None
     mount_type_override: str | None = None
+    mount_year_override: int | None = None
+    mount_year_source_override: str | None = None
+    mount_turret_weight_override_t: float | None = None
+    mount_elevation_override: str | None = None
 
 
 # progress §3 の id 体系例に従う:
@@ -342,6 +353,107 @@ TARGETS: list[WeaponTarget] = [
         "IT_102MM_M1917", "IT", "102 mm/45 Mle 1917/1919 (torpedo boats/submarines)",
         BASE_URL + "WNIT_4-45_m1917.php",
         technology_tier="legacy",
+    ),
+    # --- Russia / USSR (mm 表記) ---
+    # NavWeaps のロシアページは複数の砲架形式を同一ページにまとめているため、
+    # ここでは実艦・代表形式を notes_hint に明記し、抽出器の代表 mount を採用する。
+    WeaponTarget(
+        "RU_130MM_P1913", "RU", "130 mm/55 Pattern 1913 (Russian destroyers/cruisers)",
+        BASE_URL + "WNRussian_51-55_m1913.php",
+        muzzle_velocity_override_mps=861.0,
+        mount_year_override=1914,
+        mount_year_source_override="manual: NavWeaps Date In Service 1914; NSDB form match is ambiguous across Pattern 1913 variants.",
+        technology_tier="legacy",
+        notes_hint="Representative Semi-AP mod 1928 trajectory at 861 m/s and 22,315 m; page also lists the 823 m/s mod 1911 trajectory and combines Pattern 1913 variants with shore/river users.",
+    ),
+    WeaponTarget(
+        "RU_305MM_P1907", "RU", "305 mm/52 Pattern 1907 (Gangut class)",
+        BASE_URL + "WNRussian_12-52_m1907.php",
+        max_range_override=23230,
+        technology_tier="legacy",
+        notes_hint="Representative naval MK-3-12 triple mount and 23,230 m naval range; page also lists higher-angle coastal and railway mountings.",
+    ),
+    WeaponTarget(
+        "RU_180MM_B1P_M1932", "RU", "180 mm/57 B-1-P Pattern 1932 (Kirov class)",
+        BASE_URL + "WNRussian_71-57_m1932.php",
+        year_introduced_override=1932,
+        barrel_length_override=57.0,
+        gun_weight_override_t=17.23,
+        muzzle_velocity_override_mps=920.0,
+        rate_of_fire_override_rpm=2.0,
+        mount_year_override=1938,
+        mount_year_source_override="Kirov class commissioning year 1938 (Wikipedia/NavWeaps ship-class usage); NSDB class-year match was 1940.",
+        mount_turret_weight_override_t=232.0,
+        mount_elevation_override="-4/+48",
+        technology_tier="mainstream",
+        notes_hint="Kirov/Maxim Gorky MK-3-180 triple representative: 180/57 B-1-P, 17.23 t shallow-liner gun, 920 m/s, practical 2 rpm; mount year 1938 follows Kirov commissioning, while the page also combines B-1-K/B-1-P and coastal variants.",
+    ),
+    WeaponTarget(
+        "RU_152MM_B38_M1938", "RU", "152 mm/57 B-38 Pattern 1938 (Chapaev class)",
+        BASE_URL + "WNRussian_6-57_m1938.php",
+        mount_turret_weight_override_t=240.0,
+        technology_tier="mainstream",
+        notes_hint="Chapaev MK-5 triple representative (240 t); NavWeaps lists 1949 service, so this post-war entry is retained for 1950-era coverage.",
+    ),
+    WeaponTarget(
+        "RU_130MM_B13_M1936", "RU", "130 mm/50 B-13 Pattern 1936 (Soviet destroyers)",
+        BASE_URL + "WNRussian_51-50_m1936.php",
+        muzzle_velocity_override_mps=870.0,
+        mount_type_override="single",
+        notes_hint="Representative B-13 single mount and SAP/HE representative ammunition at 870 m/s (25,731 m range); page also lists the 823 m/s SAP mod 1911 trajectory plus B-2LM/B-2LMT/B-28 twin and B-2-U dual-purpose variants.",
+    ),
+    WeaponTarget(
+        "RU_100MM_B34_M1940", "RU", "100 mm/56 B-34 Pattern 1940 (Soviet dual-purpose)",
+        BASE_URL + "WNRussian_39-56_m1940.php",
+        dual_purpose=True,
+        rate_of_fire_override_rpm=15.0,
+        mount_type_override="single",
+        notes_hint="Representative Soviet B-34 single mount at 15 rpm; page also lists B-34-U/B-34-USM variants, uncompleted M3-14/M3-16 twin mounts and Chinese Type 79.",
+    ),
+    # --- Austria-Hungary (mm 表記) ---
+    WeaponTarget(
+        "AH_305MM_SKODA_K10", "AH", "305 mm/45 Škoda K10 (Tegetthoff class)",
+        BASE_URL + "WNAust_12-45.php",
+        mount_turret_weight_override_t=669.0,
+        technology_tier="legacy",
+        notes_hint="Tegetthoff three-gun turret representative (669 tons); page also lists the lighter Radetzky twin turret.",
+    ),
+    # --- Spain (mm 表記) ---
+    WeaponTarget(
+        "ES_381MM_MARK_B", "ES", "381 mm/45 Mark B (Spanish coastal defense)",
+        BASE_URL + "WNSpain_15-45_mkB.php",
+        technology_tier="legacy",
+        notes_hint="Spanish coastal-defense weapon; retained as a historical shore-based naval weapon entry.",
+    ),
+    # --- Sweden (mm 表記) ---
+    WeaponTarget(
+        "SE_283MM_M1912", "SE", "283 mm/45 Model 1912 (Sverige class)",
+        BASE_URL + "WNSweden_11-45_m1912.php",
+        technology_tier="legacy",
+    ),
+    WeaponTarget(
+        "SE_120MM_M1924", "SE", "120 mm/50 Bofors Model 1924 (Swedish destroyers)",
+        BASE_URL + "WNSweden_47-50_m1924.php",
+        technology_tier="mainstream",
+        notes_hint="Page also documents Dutch Bofors Mark 4/5 users; this entry represents the Swedish M1924 series.",
+    ),
+    # --- Netherlands (mm 表記) ---
+    WeaponTarget(
+        "NL_150MM_MK9_M1938", "NL", "150 mm/50 Marks 9/10/11 (De Ruyter/Tromp)",
+        BASE_URL + "WNNeth_59-50_mk9.php",
+        mount_turret_weight_override_t=71.2,
+        technology_tier="mainstream",
+        notes_hint="De Ruyter Mark 9 twin turret representative (71.2 t); Mark 10 was a 25 t single mount and Tromp Mark 11 weight is N/A.",
+    ),
+    WeaponTarget(
+        "NL_120MM_MK6_M1937", "NL", "120 mm/45 Wilton-Fijenoord Marks 6-9 (Dutch ships)",
+        BASE_URL + "WNNeth_47-45_mk6.php",
+        mount_type_override="single",
+        mount_turret_weight_override_t=20.935,
+        mount_elevation_override="-10/+55",
+        dual_purpose=True,
+        technology_tier="mainstream",
+        notes_hint="Van Kinsbergen Mark 6 single half-shield representative (20.935 t); page also lists Mark 7 single and Mark 8/9 twin high-angle variants.",
     ),
 ]
 
@@ -634,6 +746,11 @@ def _barrel_length_from_text(text: str | None) -> float | None:
     m = re.search(r"(?:cm|mm|inch|in\.?|\")\s*/\s*(\d+(?:\.\d+)?)", text, re.I)
     if m:
         return float(m.group(1))
+    # Austria-Hungary/Skoda designation uses ``G. L/45`` or ``L/50``.
+    # ``SK C/34`` and similar model labels must not be mistaken for caliber length.
+    m = re.search(r"\b(?:G\.\s*)?L\s*/\s*(\d+(?:\.\d+)?)\b", text, re.I)
+    if m:
+        return float(m.group(1))
     # "N caliber" 表記
     m = re.search(r"(\d+(?:\.\d+)?)\s*caliber", text, re.I)
     if m:
@@ -691,10 +808,16 @@ def extract_record(target: WeaponTarget, html: str) -> dict[str, Any]:
     rate_of_fire = find_row(tables, r"Rate of Fire")
 
     caliber_mm, barrel_len = _extract_caliber_and_length(designation, title, target.url)
+    if target.barrel_length_override is not None:
+        barrel_len = target.barrel_length_override
     gun_weight_kg = _first_kg(gun_weight)
     gun_weight_t = round(gun_weight_kg / 1000.0, 3) if gun_weight_kg else None
+    if target.gun_weight_override_t is not None:
+        gun_weight_t = target.gun_weight_override_t
 
     shell_weight_kg = _first_kg(projectile_weights)
+    if target.shell_weight_override_kg is not None:
+        shell_weight_kg = target.shell_weight_override_kg
     mv_mps = None
     if muzzle_velocity:
         m = _RE_MPS.search(muzzle_velocity)
@@ -704,11 +827,17 @@ def extract_record(target: WeaponTarget, html: str) -> dict[str, Any]:
             m = _RE_FPS.search(muzzle_velocity)
             if m:
                 mv_mps = round(float(m.group(1).replace(",", "")) * 0.3048, 1)
+    if target.muzzle_velocity_override_mps is not None:
+        mv_mps = target.muzzle_velocity_override_mps
     max_range_m = find_max_range_m(tables)
     rate_of_fire_rpm = _first_rate_of_fire(rate_of_fire)
     if rate_of_fire_rpm is not None:
         rate_of_fire_rpm = round(rate_of_fire_rpm, 2)
+    if target.rate_of_fire_override_rpm is not None:
+        rate_of_fire_rpm = target.rate_of_fire_override_rpm
     year_introduced = year_introduced_for(date_in_service, date_of_design, target.weapon_id)
+    if target.year_introduced_override is not None:
+        year_introduced = target.year_introduced_override
 
     record: dict[str, Any] = {
         "weapon_id": target.weapon_id,
@@ -723,7 +852,7 @@ def extract_record(target: WeaponTarget, html: str) -> dict[str, Any]:
         "muzzle_velocity_mps": mv_mps,
         "rate_of_fire_rpm": rate_of_fire_rpm,
         "max_range_m": target.max_range_override if target.max_range_override else max_range_m,
-        "loading_type": _normalize_loading_type(ammo_type),
+        "loading_type": target.loading_type_override or _normalize_loading_type(ammo_type),
         "dual_purpose": target.dual_purpose,
         "technology_tier": target.technology_tier,
         "source": target.url,
@@ -838,7 +967,11 @@ def extract_mount_record(target: WeaponTarget, html: str) -> dict[str, Any] | No
     train_range = find_row([mt], r"^Train\b")
 
     turret_weight_t = _first_tons(weight)
+    if target.mount_turret_weight_override_t is not None:
+        turret_weight_t = target.mount_turret_weight_override_t
     elevation_rng = _elevation_range(elevation)
+    if target.mount_elevation_override is not None:
+        elevation_rng = target.mount_elevation_override
     train_rate_val = _first_angular_rate(train_rate) or _first_angular_rate(elev_rate)
 
     # mount_id 構築: {NATION}_{CALIBER_PART}_{TYPE_UPPER}_{FORM}
@@ -856,7 +989,12 @@ def extract_mount_record(target: WeaponTarget, html: str) -> dict[str, Any] | No
         "weapon_id": target.weapon_id,
         "name": f"{mount_type.title()} mount ({target.display_name})",
         "nation": target.nation,
-        "year_introduced": None,
+        "year_introduced": target.mount_year_override,
+        **(
+            {"year_source": target.mount_year_source_override}
+            if target.mount_year_source_override is not None
+            else {}
+        ),
         "barrels_per_mount": barrels,
         "mount_type": mount_type,
         "turret_weight_t": turret_weight_t,
@@ -890,6 +1028,12 @@ def _extract_ammo_type(text: str | None) -> tuple[str, str]:
     """Projectile Types 行から代表弾の type と name を抽出。APC を最優先。"""
     if not text:
         return "AP", "AP"
+    # NavWeaps の ``Semi-AP`` は schema 上の SAP (semi-armor-piercing) に対応する。
+    # ``\bAP\b`` を先に走査するとハイフン直後の AP に誤マッチするため先に処理する。
+    m = re.search(r"\bSemi[- ]?AP\b\s*[A-Za-z0-9 /,''.-]*", text, re.I)
+    if m:
+        name = re.sub(r"\s+", " ", m.group(0)).strip().rstrip(":,' ")
+        return "SAP", name or "Semi-AP"
     for t in _AMMO_TYPE_ORDER:
         m = re.search(rf"\b{t}\b\s*[A-Za-z0-9 /,''.-]*", text, re.I)
         if m:
@@ -909,7 +1053,11 @@ def extract_ammo_record(target: WeaponTarget, html: str) -> dict[str, Any] | Non
     burst = find_row(tables, r"Bursting Charge|Bursting Charge ")
 
     ammo_type, name = _extract_ammo_type(projectile)
-    shell_weight = _first_mass_kg(projectile)
+    shell_weight = (
+        target.shell_weight_override_kg
+        if target.shell_weight_override_kg is not None
+        else _first_mass_kg(projectile)
+    )
     mv_mps: float | None = None
     if muzzle:
         m = _RE_MPS.search(muzzle)
@@ -920,6 +1068,8 @@ def extract_ammo_record(target: WeaponTarget, html: str) -> dict[str, Any] | Non
             if m:
                 mv_mps = round(float(m.group(1).replace(",", "")) * 0.3048, 1)
     explosive = _first_mass_kg(burst)
+    if target.muzzle_velocity_override_mps is not None:
+        mv_mps = target.muzzle_velocity_override_mps
 
     ammo_id = f"{target.weapon_id}_{ammo_type}"
 
@@ -970,6 +1120,24 @@ def run(
     manifest_entries: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
 
+    # 再生成で手動/NSDB由来の砲塔就役年を失わないよう、既存レコードから
+    # 運用メタデータを引き継ぐ。抽出値そのものは常に最新ページから再計算する。
+    existing_mounts: dict[str, dict[str, Any]] = {}
+    if mounts_path and mounts_path.exists():
+        try:
+            existing_mounts = {
+                r["mount_id"]: r
+                for r in (
+                    json.loads(line)
+                    for line in mounts_path.open(encoding="utf-8")
+                    if line.strip()
+                )
+                if r.get("mount_id")
+            }
+        except (OSError, json.JSONDecodeError, KeyError):
+            # 壊れた旧ファイルは抽出を止めず、manifest/validator で検出させる。
+            existing_mounts = {}
+
     for i, t in enumerate(targets, 1):
         print(f"[{i}/{len(targets)}] {t.weapon_id} <- {t.url}")
         try:
@@ -1011,6 +1179,18 @@ def run(
             try:
                 m_rec = extract_mount_record(t, html)
                 if m_rec:
+                    old = existing_mounts.get(m_rec["mount_id"])
+                    if old:
+                        for key in (
+                            "year_introduced", "year_source", "barbette_diameter_m",
+                            "deck_penetration_count", "minimum_beam_m",
+                            "minimum_displacement_t", "turret_armor", "crew",
+                            "power_requirement_kw", "magazine_volume_m3", "notes",
+                        ):
+                            if key in {"year_introduced", "year_source"} and t.mount_year_override is not None:
+                                continue
+                            if key in old and (old[key] is not None or key == "year_introduced"):
+                                m_rec[key] = old[key]
                     mount_records.append(m_rec)
                     missing.extend(
                         f"mount.{k}" for k in (

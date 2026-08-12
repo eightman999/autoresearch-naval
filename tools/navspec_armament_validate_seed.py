@@ -37,7 +37,7 @@ FC_REQUIRED = [
     "system_type", "radar", "technology_tier", "source",
 ]
 
-VALID_NATIONS = {"JP", "US", "UK", "DE", "FR", "IT"}
+VALID_NATIONS = {"JP", "US", "UK", "DE", "FR", "IT", "RU", "AH", "ES", "SE", "NL"}
 VALID_MOUNT_TYPES = {"single", "twin", "triple", "quadruple"}
 VALID_LOADING_TYPES = {"bag", "cartridge", "qf_cartridge", "fixed", "unknown"}
 
