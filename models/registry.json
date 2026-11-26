@@ -1,4 +1,24 @@
 {
+  "pipelines": {
+    "navspec-pipeline-armament-v1": {
+      "id": "navspec-pipeline-armament-v1",
+      "entrypoint": "tools/navspec_two_stage_pipeline.py",
+      "facade": "tools/navspec_armament_pipeline.py",
+      "result_schema": "schemas/navspec_pipeline_result.schema.json",
+      "contract": "data/navspec/lora/contracts/navspec_end_to_end_eval_contract_v1.json",
+      "stage2_adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage2-status-r8",
+      "numeric_adapter": "models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8-v1",
+      "armament_db": "data/navspec/armament",
+      "classic_final_authority": true,
+      "default": false,
+      "status": "candidate",
+      "promotion_decision": "p0-integration-ready-gates-pending",
+      "known_limits": [
+        "armament DBは11か国・対応艦種に限定され、対象外は理由付きfallback",
+        "P0ではarmament LoRAを本番判定へ昇格しない"
+      ]
+    }
+  },
   "classic": {
     "navspec-classic-v1": {
       "archive": "artifacts/navspec-classic-v1",

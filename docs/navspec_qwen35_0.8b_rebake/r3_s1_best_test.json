@@ -1,0 +1,146 @@
+{
+  "model": "Qwen/Qwen3.5-0.8B",
+  "adapter": "out/r3_s1/best",
+  "data": "data/stage4a_armament_verdict_v3",
+  "split": "test",
+  "backend": "hf",
+  "batch_size": 8,
+  "max_tokens": 64,
+  "n": 142,
+  "json_valid_rate": 1.0,
+  "contract_ok_rate": 1.0,
+  "status_accuracy": 1.0,
+  "reason_set_exact_rate": 0.8732,
+  "reason_code_precision": 0.9417,
+  "reason_code_recall": 0.8188,
+  "reason_code_f1": 0.876,
+  "counts": {
+    "total": 142,
+    "json_valid": 142,
+    "contract_ok": 142,
+    "status_match": 142,
+    "reason_set_exact": 124
+  },
+  "predicted_status_counts": {
+    "impossible": 81,
+    "ok": 61
+  },
+  "predicted_reason_code_counts": {
+    "armament.fire_control_unavailable": 9,
+    "armament.firing_arc_conflict": 36,
+    "armament.mount_unavailable_for_era": 18,
+    "armament.mount_unavailable_for_nation": 21,
+    "armament.weapon_mount_incompatible": 36
+  },
+  "predicted_unknown_reason_counts": {},
+  "unknown_reason_code_total": 0,
+  "status_confusion": {
+    "impossible": {
+      "impossible": 81,
+      "ok": 0
+    },
+    "ok": {
+      "impossible": 0,
+      "ok": 61
+    }
+  },
+  "status_recall_by_class": {
+    "impossible": {
+      "support": 81,
+      "recall": 1.0
+    },
+    "ok": {
+      "support": 61,
+      "recall": 1.0
+    }
+  },
+  "reason_code_metrics": {
+    "armament.armament_displacement_conflict": {
+      "support": 9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 9,
+      "precision": null,
+      "recall": 0.0,
+      "defined": true
+    },
+    "armament.fire_control_unavailable": {
+      "support": 9,
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "defined": true
+    },
+    "armament.firing_arc_conflict": {
+      "support": 36,
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "defined": true
+    },
+    "armament.mount_unavailable_for_era": {
+      "support": 18,
+      "tp": 11,
+      "fp": 7,
+      "fn": 7,
+      "precision": 0.6111,
+      "recall": 0.6111,
+      "defined": true
+    },
+    "armament.mount_unavailable_for_nation": {
+      "support": 21,
+      "tp": 21,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "defined": true
+    },
+    "armament.turret_weight_exceeds_hull_limit": {
+      "support": 9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 9,
+      "precision": null,
+      "recall": 0.0,
+      "defined": true
+    },
+    "armament.weapon_mount_incompatible": {
+      "support": 36,
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "defined": true
+    }
+  },
+  "reason_code_metrics_note": "json_invalid の行は空集合を予測したものとして fn に数える（全体 precision/recall は mlx 版互換で除外）",
+  "failure_samples": [],
+  "generation_samples": [
+    {
+      "index": 1,
+      "raw": "{\"schema_version\": \"navspec.armament_verdict.v1\", \"status\": \"impossible\", \"reason_codes\": [\"armament.mount_unavailable_for_nation\", \"armament.weapon_mount_incompatible\"]}"
+    },
+    {
+      "index": 2,
+      "raw": "{\"schema_version\": \"navspec.armament_verdict.v1\", \"status\": \"impossible\", \"reason_codes\": [\"armament.weapon_mount_incompatible\"]}"
+    },
+    {
+      "index": 3,
+      "raw": "{\"schema_version\": \"navspec.armament_verdict.v1\", \"status\": \"impossible\", \"reason_codes\": [\"armament.firing_arc_conflict\"]}"
+    },
+    {
+      "index": 4,
+      "raw": "{\"schema_version\": \"navspec.armament_verdict.v1\", \"status\": \"impossible\", \"reason_codes\": [\"armament.mount_unavailable_for_era\", \"armament.mount_unavailable_for_nation\", \"armament.weapon_mount_incompatible\"]}"
+    },
+    {
+      "index": 5,
+      "raw": "{\"schema_version\": \"navspec.armament_verdict.v1\", \"status\": \"impossible\", \"reason_codes\": [\"armament.weapon_mount_incompatible\"]}"
+    }
+  ]
+}

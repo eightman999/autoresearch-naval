@@ -97,6 +97,19 @@ def parse_year(*texts: str | None) -> int | None:
     return None
 
 
+def parse_when_date_year(text: str | None) -> int | None:
+    """`CLASS.WHEN_DATE` (見出しの日付。再取得した NSDB の新列) -> 最小の年。
+
+    "(1941 - 1942)" -> 1941、"(1944/1947)" -> 1944、"(2018-)" -> 2018、"(1990s)" -> 1990。
+    `parse_year` は "1990s" の年を拾えない（\\b が成立しない）ので別関数にしてある。
+    `parse_year` 自体は変えない（旧 DB 由来の既存データの再現性を保つため）。
+    """
+    if not text:
+        return None
+    years = [int(y) for y in re.findall(r"(?<!\d)(18\d{2}|19\d{2}|20\d{2})(?!\d)", text)]
+    return min(years) if years else None
+
+
 def parse_belt_mm(armour: str | None, sections: str | None = None) -> float | None:
     candidates: list[int] = []
     for text in [sections, armour]:

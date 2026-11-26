@@ -1,0 +1,819 @@
+{
+ "pages_total": 40,
+ "pages_by_origin_status": {
+  "200": 38,
+  "404": 2
+ },
+ "pages_by_mirror_status": {
+  "200": 39,
+  "404": 1
+ },
+ "pages_compared": 38,
+ "pages_compared_in_db": 34,
+ "pages_not_in_db_but_on_site": 4,
+ "spec_cells": {
+  "db": {
+   "ok": 351,
+   "absent": 26,
+   "missing": 4,
+   "different": 3,
+   "spurious": 3
+  },
+  "fetcher_live": {
+   "ok": 404,
+   "absent": 33,
+   "different": 3,
+   "spurious": 3
+  },
+  "fetcher_mirror": {
+   "ok": 392,
+   "missing": 7,
+   "absent": 33,
+   "ok_digit_split": 4,
+   "different": 3,
+   "partial_substring": 1,
+   "spurious": 3
+  }
+ },
+ "spec_cells_armour_only": {
+  "db": {
+   "missing": 4
+  },
+  "fetcher_live": {
+   "ok": 4
+  },
+  "fetcher_mirror": {
+   "ok_digit_split": 1,
+   "ok": 3
+  }
+ },
+ "spec_db_by_label": {
+  "Armament": {
+   "ok": 27,
+   "absent": 1
+  },
+  "Armour, mm": {
+   "missing": 4
+  },
+  "Breadth, m": {
+   "ok": 27,
+   "absent": 1
+  },
+  "Complement": {
+   "ok": 26,
+   "absent": 2
+  },
+  "Displacement full, t": {
+   "ok": 17,
+   "absent": 5
+  },
+  "Displacement normal, t": {
+   "ok": 11
+  },
+  "Displacement standard, t": {
+   "ok": 14,
+   "absent": 3,
+   "different": 3,
+   "spurious": 3
+  },
+  "Draught, m": {
+   "ok": 27,
+   "absent": 1
+  },
+  "Electronic equipment": {
+   "ok": 19,
+   "absent": 1
+  },
+  "Endurance, nm(kts)": {
+   "ok": 22,
+   "absent": 5
+  },
+  "Fuel, t": {
+   "ok": 27,
+   "absent": 1
+  },
+  "Length, m": {
+   "ok": 27,
+   "absent": 1
+  },
+  "Machinery": {
+   "ok": 27,
+   "absent": 1
+  },
+  "Max speed, kts": {
+   "ok": 27,
+   "absent": 1
+  },
+  "No of shafts": {
+   "ok": 27,
+   "absent": 1
+  },
+  "Power, h. p.": {
+   "ok": 26,
+   "absent": 2
+  }
+ },
+ "unmapped_labels_on_pages": [
+  [
+   "Diving depth operational, m",
+   6
+  ],
+  [
+   "Military load",
+   3
+  ],
+  [
+   "Data variant",
+   1
+  ]
+ ],
+ "sections": {
+  "db_fixed_column": {
+   "ok_but_spaces_lost": 36,
+   "ok": 60,
+   "missing": 16
+  },
+  "db_anywhere": {
+   "ok_but_spaces_lost": 40,
+   "ok": 66,
+   "partial_or_different": 6
+  },
+  "fetcher_live": {
+   "ok": 101,
+   "ok_but_extra_spaces": 16,
+   "partial_or_different": 6
+  },
+  "fetcher_mirror": {
+   "missing": 123
+  }
+ },
+ "sections_by_title": {
+  "db_fixed_column": {
+   "Project history": {
+    "ok_but_spaces_lost": 16,
+    "ok": 17
+   },
+   "Modernizations": {
+    "ok_but_spaces_lost": 8,
+    "ok": 23
+   },
+   "Naval service": {
+    "ok_but_spaces_lost": 12,
+    "ok": 20
+   },
+   "100 - 1000 t displacement/ BRT tonnage vessels": {
+    "missing": 4
+   },
+   "Ship protection": {
+    "missing": 4
+   },
+   "Modernizations N. (numbered)": {
+    "missing": 2
+   },
+   "Fate Notes": {
+    "missing": 1
+   },
+   "Air group": {
+    "missing": 2
+   },
+   "Aircraft facilities": {
+    "missing": 2
+   },
+   "Protection": {
+    "missing": 1
+   }
+  },
+  "db_anywhere": {
+   "Project history": {
+    "ok_but_spaces_lost": 16,
+    "ok": 17
+   },
+   "Modernizations": {
+    "ok_but_spaces_lost": 8,
+    "ok": 23
+   },
+   "Naval service": {
+    "ok_but_spaces_lost": 12,
+    "ok": 20
+   },
+   "100 - 1000 t displacement/ BRT tonnage vessels": {
+    "partial_or_different": 4
+   },
+   "Ship protection": {
+    "ok": 3,
+    "ok_but_spaces_lost": 1
+   },
+   "Modernizations N. (numbered)": {
+    "ok_but_spaces_lost": 2
+   },
+   "Fate Notes": {
+    "ok_but_spaces_lost": 1
+   },
+   "Air group": {
+    "partial_or_different": 2
+   },
+   "Aircraft facilities": {
+    "ok": 2
+   },
+   "Protection": {
+    "ok": 1
+   }
+  },
+  "fetcher_live": {
+   "Project history": {
+    "ok": 30,
+    "ok_but_extra_spaces": 6
+   },
+   "Modernizations": {
+    "ok_but_extra_spaces": 5,
+    "ok": 29
+   },
+   "Naval service": {
+    "ok": 33,
+    "ok_but_extra_spaces": 3
+   },
+   "100 - 1000 t displacement/ BRT tonnage vessels": {
+    "partial_or_different": 4
+   },
+   "Ship protection": {
+    "ok": 4
+   },
+   "Modernizations N. (numbered)": {
+    "ok_but_extra_spaces": 2
+   },
+   "Fate Notes": {
+    "ok": 1
+   },
+   "Air group": {
+    "partial_or_different": 2
+   },
+   "Aircraft facilities": {
+    "ok": 2
+   },
+   "Protection": {
+    "ok": 1
+   },
+   "Project history Former LCU1646 class craft of the US Army. Modernizations": {
+    "ok": 1
+   }
+  },
+  "fetcher_mirror": {
+   "Project history": {
+    "missing": 36
+   },
+   "Modernizations": {
+    "missing": 34
+   },
+   "Naval service": {
+    "missing": 36
+   },
+   "100 - 1000 t displacement/ BRT tonnage vessels": {
+    "missing": 4
+   },
+   "Ship protection": {
+    "missing": 4
+   },
+   "Modernizations N. (numbered)": {
+    "missing": 2
+   },
+   "Fate Notes": {
+    "missing": 1
+   },
+   "Air group": {
+    "missing": 2
+   },
+   "Aircraft facilities": {
+    "missing": 2
+   },
+   "Protection": {
+    "missing": 1
+   },
+   "Project history Former LCU1646 class craft of the US Army. Modernizations": {
+    "missing": 1
+   }
+  }
+ },
+ "pages_with_numbered_modernizations_title": [
+  "/ships/japan/jap_bb_yamato.html",
+  "/ships/japan/jap_ss_kd4.html"
+ ],
+ "ships": {
+  "pages": 38,
+  "truth_rows": 1231,
+  "truth_rows_with_Comp_date": 1111,
+  "truth_blank_name_rows": 287,
+  "db_pages": 34,
+  "db_truth_rows_for_db_pages": 1225,
+  "db_rows_total": 37633,
+  "db_rows_distinct": 1235,
+  "db_missing_vs_truth": 1,
+  "db_extra_vs_truth": 13,
+  "db_pages_with_dup_rows": 5,
+  "fetcher_live_rows": 0,
+  "fetcher_live_missing_vs_truth": 962,
+  "fetcher_mirror_rows": 1228,
+  "fetcher_mirror_missing_vs_truth": 3,
+  "fetcher_mirror_extra_vs_truth": 0,
+  "pages_where_fetcher_live_returns_0_ships_but_page_has_ships": 33,
+  "pages_where_fetcher_mirror_returns_0_ships_but_page_has_ships": 2
+ },
+ "class_name_type_examples": [
+  {
+   "canon": "/ships/russia/ru_cf_r141.html",
+   "page_heading": "TK-36 missile patrol craft (projects 205, 205U) (1960 - 1977)",
+   "db_CLASS_NAME": "TK-36(projects205-205U)1977) Class",
+   "db_TYPE": "missile-patrol-craft",
+   "fetcher_live_class_name": "TK-36 (projects 205- 205U) (1960 Class",
+   "fetcher_live_type": "missile-patrol-craft",
+   "fetcher_mirror_class_name": "TK-36 Missile Class",
+   "fetcher_mirror_type": "patrol-craft-project"
+  },
+  {
+   "canon": "/ships/china/ch_cf_2201.html",
+   "page_heading": "No2201 (project 022) fast attack craft (missile) (2004-2010)",
+   "db_CLASS_NAME": "No2201(project022) Class",
+   "db_TYPE": "fast-attack-craft",
+   "fetcher_live_class_name": "No2201 (project 022) (missile) Class",
+   "fetcher_live_type": "fast-attack-craft",
+   "fetcher_mirror_class_name": "No2201 (project 022) Fast Attack Craft (missile) Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/germany/ger_mb_kfk2.html",
+   "page_heading": "KFK2 ASW boats (1942 - 1945)",
+   "db_CLASS_NAME": "KFK2ASW1945) Class",
+   "db_TYPE": "boats",
+   "fetcher_live_class_name": "KFK2 ASW (1942 Class",
+   "fetcher_live_type": "boats",
+   "fetcher_mirror_class_name": "COASTAL FORCES Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/finland/fi_cm_pg2.html",
+   "page_heading": "gunboats of WWII",
+   "db_CLASS_NAME": "WWII Class",
+   "db_TYPE": "gunboats-of",
+   "fetcher_live_class_name": "WWII Class",
+   "fetcher_live_type": "gunboats",
+   "fetcher_mirror_class_name": "Auxiliary Class",
+   "fetcher_mirror_type": "gunboats-of-wwii"
+  },
+  {
+   "canon": "/ships/canada/can_cm_ww2_fv.html",
+   "page_heading": "requisitioned fishing vessels of WWII",
+   "db_CLASS_NAME": "WWII Class",
+   "db_TYPE": "requisitioned-fishing-vessels-of",
+   "fetcher_live_class_name": "requisitioned fishing WWII Class",
+   "fetcher_live_type": "vessels",
+   "fetcher_mirror_class_name": "Requisitioned Fishing Vessels Of WWII Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/bulgaria/bu_cm_rms2.html",
+   "page_heading": "river minesweepers of WWII",
+   "db_CLASS_NAME": "WWII Class",
+   "db_TYPE": "river-minesweepers-of",
+   "fetcher_live_class_name": "WWII Class",
+   "fetcher_live_type": "river-minesweepers",
+   "fetcher_mirror_class_name": "Auxiliary River Class",
+   "fetcher_mirror_type": "minesweepers-of-wwii"
+  },
+  {
+   "canon": "/ships/japan/jap_bb_yamato.html",
+   "page_heading": "YAMATO battleships (1941 - 1942)",
+   "db_CLASS_NAME": "YAMATO1942) Class",
+   "db_TYPE": "battleships",
+   "fetcher_live_class_name": "YAMATO (1941 Class",
+   "fetcher_live_type": "battleships",
+   "fetcher_mirror_class_name": "YAMATO Class",
+   "fetcher_mirror_type": "battleships"
+  },
+  {
+   "canon": "/ships/japan/jap_ss_kd4.html",
+   "page_heading": "\"Kaidai 4\" large submarines (I61) (1929 - 1930)",
+   "db_CLASS_NAME": "\"Kaidai4\"1930) Class",
+   "db_TYPE": "large-submarines",
+   "fetcher_live_class_name": "\"Kaidai 4\" (I61) (1929 Class",
+   "fetcher_live_type": "large-submarines",
+   "fetcher_mirror_class_name": "Kaidai 4 Class",
+   "fetcher_mirror_type": "large-submarines"
+  },
+  {
+   "canon": "/ships/usa/us_sc_sc453.html",
+   "page_heading": "SC453 submarine-chaser (1941)",
+   "db_CLASS_NAME": "SC453submarine-chaser Class",
+   "db_TYPE": "",
+   "fetcher_live_class_name": "SC453 submarine-chaser Class",
+   "fetcher_live_type": "",
+   "fetcher_mirror_class_name": "SC453 Class",
+   "fetcher_mirror_type": "submarine-chaser"
+  },
+  {
+   "canon": "/ships/uk/brit_o_esc_bangor_turbine.html",
+   "page_heading": "BANGOR minesweepers, turbine-engined (BEAUMARIS) (1940 - 1942)",
+   "db_CLASS_NAME": "BANGORminesweepers-turbine-engined1942) Class",
+   "db_TYPE": "",
+   "fetcher_live_class_name": "BANGOR minesweepers- turbine-engined (BEAUMARIS) (1940 Class",
+   "fetcher_live_type": "",
+   "fetcher_mirror_class_name": "BANGOR Class",
+   "fetcher_mirror_type": "minesweepers-turbine-engined"
+  },
+  {
+   "canon": "/ships/india/in_cv_vikrant.html",
+   "page_heading": "VIKRANT aircraft carrier (1961)",
+   "db_CLASS_NAME": "VIKRANT Class",
+   "db_TYPE": "aircraft-carrier",
+   "fetcher_live_class_name": "VIKRANT Class",
+   "fetcher_live_type": "aircraft-carrier",
+   "fetcher_mirror_class_name": "VIKRANT Aircraft Carrier Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/usa/us_cv_independence.html",
+   "page_heading": "INDEPENDENCE light aircraft carriers (1943)",
+   "db_CLASS_NAME": "INDEPENDENCE Class",
+   "db_TYPE": "light-aircraft-carriers",
+   "fetcher_live_class_name": "INDEPENDENCE Class",
+   "fetcher_live_type": "light-aircraft-carriers",
+   "fetcher_mirror_class_name": "INDEPENDENCE Light Aircraft Carriers Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/thailand/th_cf_t8199.html",
+   "page_heading": "T81 patrol boats (1999-2000)",
+   "db_CLASS_NAME": "T81 Class",
+   "db_TYPE": "patrol-boats",
+   "fetcher_live_class_name": "T81 Class",
+   "fetcher_live_type": "patrol-boats",
+   "fetcher_mirror_class_name": "T81 Class",
+   "fetcher_mirror_type": "patrol-boats"
+  },
+  {
+   "canon": "/ships/france/fr_bb_rochambeau.html",
+   "page_heading": "ROCHAMBEAU broadside ironclad (1867)",
+   "db_CLASS_NAME": "ROCHAMBEAU Class",
+   "db_TYPE": "broadside-ironclad",
+   "fetcher_live_class_name": "ROCHAMBEAU broadside Class",
+   "fetcher_live_type": "ironclad",
+   "fetcher_mirror_class_name": "ROCHAMBEAU Broadside Ironclad Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/germany/ger_ss_u57.html",
+   "page_heading": "U57 submarines (1916-1917)",
+   "db_CLASS_NAME": "U57 Class",
+   "db_TYPE": "submarines",
+   "fetcher_live_class_name": "U57 Class",
+   "fetcher_live_type": "submarines",
+   "fetcher_mirror_class_name": "U57 Class",
+   "fetcher_mirror_type": "submarines"
+  },
+  {
+   "canon": "/ships/colombia/col_es_almirante_padilla.html",
+   "page_heading": "ALMIRANTE PADILLA frigates (1944/1947-1953)",
+   "db_CLASS_NAME": "ALMIRANTEPADILLA Class",
+   "db_TYPE": "frigates",
+   "fetcher_live_class_name": "ALMIRANTE PADILLA Class",
+   "fetcher_live_type": "frigates",
+   "fetcher_mirror_class_name": "ALMIRANTE PADILLA Class",
+   "fetcher_mirror_type": "frigates"
+  },
+  {
+   "canon": "/ships/uk/brit_aws_lss.html",
+   "page_heading": "\"LSS\"-type landing ships with stern chute (DAFFODIL) (2, 1917 / 1941)",
+   "db_CLASS_NAME": "\"LSS\"-type19171941) Class",
+   "db_TYPE": "landing-ships-with-stern-chute",
+   "fetcher_live_class_name": "\"LSS\"-type (DAFFODIL) Class",
+   "fetcher_live_type": "landing-ships",
+   "fetcher_mirror_class_name": "LSS\"- Class",
+   "fetcher_mirror_type": "landing-ships-with-stern-chute"
+  },
+  {
+   "canon": "/ships/namibia/nam_cg_globe.html",
+   "page_heading": "GLOBE fishery patrol ship (1952/1990)",
+   "db_CLASS_NAME": "GLOBE Class",
+   "db_TYPE": "fishery-patrol-ship",
+   "fetcher_live_class_name": "GLOBE fishery Class",
+   "fetcher_live_type": "patrol-ship",
+   "fetcher_mirror_class_name": "GLOBE Fishery Class",
+   "fetcher_mirror_type": "patrol-ship"
+  },
+  {
+   "canon": "/ships/algeria/alg_es_rais_hassen_barbiar.html",
+   "page_heading": "RAÏS HASSEN BARBIAR corvette (2017)",
+   "db_CLASS_NAME": "RAÏSHASSENBARBIAR Class",
+   "db_TYPE": "corvette",
+   "fetcher_live_class_name": "RAÏS HASSEN BARBIAR Class",
+   "fetcher_live_type": "corvette",
+   "fetcher_mirror_class_name": "RAÏS HASSEN BARBIAR Class",
+   "fetcher_mirror_type": "corvette"
+  },
+  {
+   "canon": "/ships/norway/no_ss_utsira.html",
+   "page_heading": "UTSIRA submarines (1944, 1943-1944/1946)",
+   "db_CLASS_NAME": "UTSIRA1943-1944/1946) Class",
+   "db_TYPE": "submarines",
+   "fetcher_live_class_name": "UTSIRA Class",
+   "fetcher_live_type": "submarines",
+   "fetcher_mirror_class_name": "UTSIRA Class",
+   "fetcher_mirror_type": "submarines"
+  },
+  {
+   "canon": "/ships/cuba/cub_ms_501.html",
+   "page_heading": "501 inshore minesweepers (1977-1984)",
+   "db_CLASS_NAME": "501 Class",
+   "db_TYPE": "inshore-minesweepers",
+   "fetcher_live_class_name": "501 inshore Class",
+   "fetcher_live_type": "minesweepers",
+   "fetcher_mirror_class_name": "501 Inshore Class",
+   "fetcher_mirror_type": "minesweepers"
+  },
+  {
+   "canon": "/ships/italy/it_cr_libia.html",
+   "page_heading": "LIBIA protected cruiser (1913)",
+   "db_CLASS_NAME": "LIBIA Class",
+   "db_TYPE": "protected-cruiser",
+   "fetcher_live_class_name": "LIBIA Class",
+   "fetcher_live_type": "protected-cruiser",
+   "fetcher_mirror_class_name": "LIBIA Protected Class",
+   "fetcher_mirror_type": "cruiser"
+  },
+  {
+   "canon": "/ships/russia/ru_dd_vzryv.html",
+   "page_heading": "VZRYV torpedo boat (1877)",
+   "db_CLASS_NAME": "VZRYV Class",
+   "db_TYPE": "torpedo-boat",
+   "fetcher_live_class_name": "VZRYV Class",
+   "fetcher_live_type": "torpedo-boat",
+   "fetcher_mirror_class_name": "VZRYV Torpedo Boat Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/china/ch_ss_cc119.html",
+   "page_heading": "CHANGCHENG 119 submarines (project 613/03, 1957-1964)",
+   "db_CLASS_NAME": "CHANGCHENG119(project613/03-1957-1964) Class",
+   "db_TYPE": "submarines",
+   "fetcher_live_class_name": "CHANGCHENG 119 Class",
+   "fetcher_live_type": "submarines",
+   "fetcher_mirror_class_name": "CHANGCHENG 119 Class",
+   "fetcher_mirror_type": "submarines"
+  },
+  {
+   "canon": "/ships/indonesia/ino_ls_adrixlv.html",
+   "page_heading": "ADRI XLV logistics landing craft (2004)",
+   "db_CLASS_NAME": "ADRIXLV Class",
+   "db_TYPE": "logistics-landing-craft",
+   "fetcher_live_class_name": "ADRI XLV logistics Class",
+   "fetcher_live_type": "landing-craft",
+   "fetcher_mirror_class_name": "ADRI XLV Logistics Landing Craft Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/turkey/tu_cm_wwi_gv.html",
+   "page_heading": "guard vessels of WWI",
+   "db_CLASS_NAME": "WWI Class",
+   "db_TYPE": "guard-vessels-of",
+   "fetcher_live_class_name": "guard WWI Class",
+   "fetcher_live_type": "vessels",
+   "fetcher_mirror_class_name": "Guard Vessels Of WWI Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/portugal/pr_ss_delfim_2.html",
+   "page_heading": "DELFIM submarines (1935)",
+   "db_CLASS_NAME": "DELFIM Class",
+   "db_TYPE": "submarines",
+   "fetcher_live_class_name": "DELFIM Class",
+   "fetcher_live_type": "submarines",
+   "fetcher_mirror_class_name": "DELFIM Class",
+   "fetcher_mirror_type": "submarines"
+  },
+  {
+   "canon": "/ships/japan/jap_dd_hatsuyuki.html",
+   "page_heading": "HATSUYUKI destroyers (1982 - 1987)",
+   "db_CLASS_NAME": "HATSUYUKI1987) Class",
+   "db_TYPE": "destroyers",
+   "fetcher_live_class_name": "HATSUYUKI (1982 Class",
+   "fetcher_live_type": "destroyers",
+   "fetcher_mirror_class_name": "HATSUYUKI Class",
+   "fetcher_mirror_type": "destroyers"
+  },
+  {
+   "canon": "/ships/brazil/br_cr_primeiro_de_marco.html",
+   "page_heading": "PRIMEIRO DE MARÇO screw sloop (1881)",
+   "db_CLASS_NAME": "PRIMEIRODEMARÇO Class",
+   "db_TYPE": "screw-sloop",
+   "fetcher_live_class_name": "PRIMEIRO DE MARÇO Class",
+   "fetcher_live_type": "screw-sloop",
+   "fetcher_mirror_class_name": "PRIMEIRO DE MARÇO Screw Class",
+   "fetcher_mirror_type": "sloop"
+  },
+  {
+   "canon": "/ships/denmark/dk_ms_mr152.html",
+   "page_heading": "MR152 minesweeping boats (1940 - 1943 / 1945)",
+   "db_CLASS_NAME": "MR15219431945) Class",
+   "db_TYPE": "minesweeping-boats",
+   "fetcher_live_class_name": "MR152 minesweeping (1940 Class",
+   "fetcher_live_type": "boats",
+   "fetcher_mirror_class_name": "MR152 Minesweeping Boats Class",
+   "fetcher_mirror_type": ""
+  },
+  {
+   "canon": "/ships/usa/us_dd_tucker.html",
+   "page_heading": "TUCKER destroyers (1915 - 1916)",
+   "db_CLASS_NAME": "TUCKER1916) Class",
+   "db_TYPE": "destroyers",
+   "fetcher_live_class_name": "TUCKER (1915 Class",
+   "fetcher_live_type": "destroyers",
+   "fetcher_mirror_class_name": "TUCKER Class",
+   "fetcher_mirror_type": "destroyers"
+  },
+  {
+   "canon": "/ships/sweden/sw_ss_draken61.html",
+   "page_heading": "DRAKEN submarines (1961-1962)",
+   "db_CLASS_NAME": "DRAKEN Class",
+   "db_TYPE": "submarines",
+   "fetcher_live_class_name": "DRAKEN Class",
+   "fetcher_live_type": "submarines",
+   "fetcher_mirror_class_name": "DRAKEN Class",
+   "fetcher_mirror_type": "submarines"
+  },
+  {
+   "canon": "/ships/india/in_cg_h181.html",
+   "page_heading": "H181 air-cushion patrol boats (2000-2014)",
+   "db_CLASS_NAME": "H181air-cushion Class",
+   "db_TYPE": "patrol-boats",
+   "fetcher_live_class_name": "H181 air-cushion Class",
+   "fetcher_live_type": "patrol-boats",
+   "fetcher_mirror_class_name": "H181 Air-cushion Class",
+   "fetcher_mirror_type": "patrol-boats"
+  },
+  {
+   "canon": "/ships/jamaica/jam_cg.html",
+   "page_heading": "JAMAICA",
+   "db_CLASS_NAME": "JAMAICA Class",
+   "db_TYPE": "",
+   "fetcher_live_class_name": "JAMAICA Class",
+   "fetcher_live_type": "",
+   "fetcher_mirror_class_name": "Coast Guard Of Jamaica (Jamaica) Class",
+   "fetcher_mirror_type": ""
+  }
+ ],
+ "images": {
+  "pages": 34,
+  "photo_page_has_images": 25,
+  "photo_db_has_first_image": 25,
+  "standard scale images_page_has_images": 19,
+  "standard scale images_db_has_first_image": 19,
+  "standard scale images_page_has_multiple_images": 5,
+  "graphics_page_has_images": 25,
+  "graphics_db_has_first_image": 25,
+  "graphics_page_has_multiple_images": 3
+ },
+ "pages_with_multiple_blue_or_cwd_tables": [],
+ "extra_blue_rows_examples": [],
+ "h2_titles_on_sample_pages": [
+  [
+   "Menu",
+   38
+  ],
+  [
+   "Project history",
+   36
+  ],
+  [
+   "Naval service",
+   36
+  ],
+  [
+   "Modernizations",
+   34
+  ],
+  [
+   "Ships",
+   33
+  ],
+  [
+   "Technical data",
+   32
+  ],
+  [
+   "Photo",
+   29
+  ],
+  [
+   "Graphics",
+   29
+  ],
+  [
+   "Standard scale images",
+   20
+  ],
+  [
+   "100 - 1000 t displacement/ BRT tonnage vessels",
+   4
+  ],
+  [
+   "Ship protection",
+   4
+  ],
+  [
+   "Air group",
+   2
+  ],
+  [
+   "Aircraft facilities",
+   2
+  ],
+  [
+   "Modernizations 9.",
+   1
+  ],
+  [
+   "Modernizations 4.",
+   1
+  ],
+  [
+   "Fate Notes",
+   1
+  ],
+  [
+   "Protection",
+   1
+  ],
+  [
+   "Project history Former LCU1646 class craft of the US Army. Modernizations",
+   1
+  ]
+ ],
+ "random_only": {
+  "pages": 21,
+  "spec_cells": {
+   "db": {
+    "ok": 230,
+    "absent": 23,
+    "missing": 2,
+    "spurious": 3,
+    "different": 2
+   },
+   "fetcher_live": {
+    "ok": 232,
+    "absent": 23,
+    "spurious": 3,
+    "different": 2
+   },
+   "fetcher_mirror": {
+    "ok": 228,
+    "absent": 23,
+    "spurious": 3,
+    "missing": 2,
+    "different": 2,
+    "ok_digit_split": 2
+   }
+  },
+  "sections": {
+   "db_fixed_column": {
+    "ok": 45,
+    "ok_but_spaces_lost": 18,
+    "missing": 3
+   },
+   "db_anywhere": {
+    "ok": 47,
+    "ok_but_spaces_lost": 18,
+    "partial_or_different": 1
+   },
+   "fetcher_live": {
+    "ok": 58,
+    "ok_but_extra_spaces": 7,
+    "partial_or_different": 1
+   }
+  },
+  "ships": {
+   "pages": 21,
+   "truth_rows": 109,
+   "db_rows": 178,
+   "db_distinct": 109,
+   "db_missing": 0
+  }
+ },
+ "pages_with_spaces_lost_in_db_text": {
+  "pages_in_db": 34,
+  "pages_with_glued_text": 23
+ },
+ "pages_not_reachable": [
+  {
+   "canon": "/ships/bahamas/baha_cf_yellow%20elder.html",
+   "origin": 404,
+   "mirror": 200,
+   "origin_url": "https://www.navypedia.org/ships/bahamas/baha_cf_yellow%20elder.htm",
+   "why": "現行サイトにあって NSDB に無い艦級 (URL に空白 %20 / 壊れた file:/// href)"
+  },
+  {
+   "canon": "/ships/sarawak/sa_of_aden.html",
+   "origin": 404,
+   "mirror": 404,
+   "origin_url": "https://www.navypedia.org/ships/sarawak/sa_of_aden.htm",
+   "why": "現行サイトにあって NSDB に無い艦級 (URL に空白 %20 / 壊れた file:/// href)"
+  }
+ ]
+}

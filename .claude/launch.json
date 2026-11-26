@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "shipknow-playground",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "tools/shipknow_playground.py",
+        "--port",
+        "8765",
+        "--design-extra",
+        "LoRA強度0.7版=http://127.0.0.1:18801,design_v1_step1200_lam0.7"
+      ],
+      "port": 8765
+    }
+  ]
+}

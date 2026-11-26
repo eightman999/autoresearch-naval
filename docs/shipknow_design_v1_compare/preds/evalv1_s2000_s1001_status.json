@@ -1,0 +1,31 @@
+{
+ "A": {
+  "feasible": 49,
+  "infeasible": 1
+ },
+ "B": {
+  "feasible": 39,
+  "relaxed": 10,
+  "infeasible": 1
+ },
+ "C": {
+  "feasible": 35,
+  "relaxed": 13,
+  "infeasible": 2
+ },
+ "D": {
+  "feasible": 35,
+  "relaxed": 11,
+  "infeasible": 4
+ },
+ "E": {
+  "infeasible": 32,
+  "relaxed": 12,
+  "feasible": 6
+ },
+ "P": {
+  "feasible": 94,
+  "infeasible": 3,
+  "relaxed": 3
+ }
+}

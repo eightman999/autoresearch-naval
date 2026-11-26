@@ -1,0 +1,1780 @@
+{
+ "meta": {
+  "pred": "docs/shipknow_design_v1_compare/preds/dv1test_s0500",
+  "gold": "data/navspec/shipknow_design_v1/test.jsonl",
+  "n_pred": 900,
+  "n_scored": 900,
+  "n_pred_ids_not_in_gold": 0
+ },
+ "overall": {
+  "n": 900,
+  "json_ok": {
+   "n": 900,
+   "k": 897,
+   "rate": 0.9966666666666667
+  },
+  "json_loose_ok": {
+   "n": 900,
+   "k": 897,
+   "rate": 0.9966666666666667
+  },
+  "schema_ok": {
+   "n": 900,
+   "k": 897,
+   "rate": 0.9966666666666667
+  },
+  "status_match": {
+   "n": 900,
+   "k": 775,
+   "rate": 0.8611111111111112
+  },
+  "row_ok": {
+   "n": 900,
+   "k": 638,
+   "rate": 0.7088888888888889
+  },
+  "design_req_ok": {
+   "n": 805,
+   "k": 639,
+   "rate": 0.7937888198757764
+  },
+  "validator_ok": {
+   "n": 805,
+   "k": 592,
+   "rate": 0.7354037267080745
+  },
+  "false_feasible": {
+   "n": 805,
+   "k": 213,
+   "rate": 0.2645962732919255
+  },
+  "check_crash_any": {
+   "n": 900,
+   "k": 0,
+   "rate": 0.0
+  },
+  "conflict_set_exact": {
+   "n": 196,
+   "k": 55,
+   "rate": 0.28061224489795916
+  },
+  "conflict_relaxed_exact": {
+   "n": 75,
+   "k": 10,
+   "rate": 0.13333333333333333
+  },
+  "gold_infeasible_design_null": {
+   "n": 121,
+   "k": 75,
+   "rate": 0.6198347107438017
+  },
+  "infeasible_design_null": {
+   "n": 92,
+   "k": 92,
+   "rate": 1.0
+  },
+  "design_exact_gold": {
+   "n": 760,
+   "k": 42,
+   "rate": 0.05526315789473684
+  },
+  "repair_valid": {
+   "n": 150,
+   "k": 124,
+   "rate": 0.8266666666666667
+  },
+  "repair_changed": {
+   "n": 130,
+   "k": 126,
+   "rate": 0.9692307692307692
+  },
+  "repair_fixed_listed": {
+   "n": 130,
+   "k": 108,
+   "rate": 0.8307692307692308
+  },
+  "context_type_match": {
+   "n": 145,
+   "k": 145,
+   "rate": 1.0
+  },
+  "context_copy_prev": {
+   "n": 145,
+   "k": 0,
+   "rate": 0.0
+  },
+  "context_follows_distractor_type": {
+   "n": 145,
+   "k": 0,
+   "rate": 0.0
+  },
+  "context_era_ok": {
+   "n": 145,
+   "k": 145,
+   "rate": 1.0
+  },
+  "context_final_ok": {
+   "n": 145,
+   "k": 116,
+   "rate": 0.8
+  },
+  "modify_target_follow": {
+   "n": 143,
+   "k": 141,
+   "rate": 0.986013986013986
+  },
+  "modify_linked_follow": {
+   "n": 85,
+   "k": 78,
+   "rate": 0.9176470588235294
+  },
+  "modify_changed": {
+   "n": 150,
+   "k": 149,
+   "rate": 0.9933333333333333
+  },
+  "ood_no_unpremised_anachronism": {
+   "n": 148,
+   "k": 143,
+   "rate": 0.9662162162162162
+  },
+  "ood_premise_tech_present": {
+   "n": 56,
+   "k": 39,
+   "rate": 0.6964285714285714
+  },
+  "conflict_recall": {
+   "n": 196,
+   "mean": 0.3435374149659865
+  },
+  "conflict_precision": {
+   "n": 196,
+   "mean": 0.42636054421768715
+  },
+  "relaxed_hidden_violations": {
+   "n": 0,
+   "mean": null
+  },
+  "relaxed_declared_not_violated": {
+   "n": 0,
+   "mean": null
+  },
+  "repair_new_violations": {
+   "n": 130,
+   "mean": 0.023076923076923078
+  },
+  "status_confusion": {
+   "feasible": {
+    "feasible": 700,
+    "relaxed": 0,
+    "infeasible": 3,
+    "invalid": 1
+   },
+   "relaxed": {
+    "feasible": 60,
+    "relaxed": 0,
+    "infeasible": 14,
+    "invalid": 1
+   },
+   "infeasible": {
+    "feasible": 45,
+    "relaxed": 0,
+    "infeasible": 75,
+    "invalid": 1
+   }
+  },
+  "status_counts_gold": {
+   "feasible": 704,
+   "infeasible": 121,
+   "relaxed": 75
+  },
+  "status_counts_pred": {
+   "feasible": 805,
+   "infeasible": 92,
+   "invalid": 3
+  }
+ },
+ "by_category": {
+  "single": {
+   "n": 150,
+   "json_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "json_loose_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "schema_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "status_match": {
+    "n": 150,
+    "k": 149,
+    "rate": 0.9933333333333333
+   },
+   "row_ok": {
+    "n": 150,
+    "k": 110,
+    "rate": 0.7333333333333333
+   },
+   "design_req_ok": {
+    "n": 149,
+    "k": 115,
+    "rate": 0.7718120805369127
+   },
+   "validator_ok": {
+    "n": 149,
+    "k": 110,
+    "rate": 0.738255033557047
+   },
+   "false_feasible": {
+    "n": 149,
+    "k": 39,
+    "rate": 0.26174496644295303
+   },
+   "check_crash_any": {
+    "n": 150,
+    "k": 0,
+    "rate": 0.0
+   },
+   "conflict_set_exact": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "conflict_relaxed_exact": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "gold_infeasible_design_null": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "infeasible_design_null": {
+    "n": 1,
+    "k": 1,
+    "rate": 1.0
+   },
+   "design_exact_gold": {
+    "n": 149,
+    "k": 0,
+    "rate": 0.0
+   },
+   "repair_valid": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_fixed_listed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_type_match": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_copy_prev": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_follows_distractor_type": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_era_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_final_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_target_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_linked_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_no_unpremised_anachronism": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_premise_tech_present": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "conflict_recall": {
+    "n": 0,
+    "mean": null
+   },
+   "conflict_precision": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_hidden_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_declared_not_violated": {
+    "n": 0,
+    "mean": null
+   },
+   "repair_new_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "status_confusion": {
+    "feasible": {
+     "feasible": 149,
+     "relaxed": 0,
+     "infeasible": 1,
+     "invalid": 0
+    },
+    "relaxed": {
+     "feasible": 0,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    },
+    "infeasible": {
+     "feasible": 0,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    }
+   },
+   "status_counts_gold": {
+    "feasible": 150
+   },
+   "status_counts_pred": {
+    "feasible": 149,
+    "infeasible": 1
+   }
+  },
+  "modify": {
+   "n": 150,
+   "json_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "json_loose_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "schema_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "status_match": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "row_ok": {
+    "n": 150,
+    "k": 135,
+    "rate": 0.9
+   },
+   "design_req_ok": {
+    "n": 150,
+    "k": 139,
+    "rate": 0.9266666666666666
+   },
+   "validator_ok": {
+    "n": 150,
+    "k": 135,
+    "rate": 0.9
+   },
+   "false_feasible": {
+    "n": 150,
+    "k": 15,
+    "rate": 0.1
+   },
+   "check_crash_any": {
+    "n": 150,
+    "k": 0,
+    "rate": 0.0
+   },
+   "conflict_set_exact": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "conflict_relaxed_exact": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "gold_infeasible_design_null": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "infeasible_design_null": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "design_exact_gold": {
+    "n": 150,
+    "k": 0,
+    "rate": 0.0
+   },
+   "repair_valid": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_fixed_listed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_type_match": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_copy_prev": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_follows_distractor_type": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_era_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_final_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_target_follow": {
+    "n": 143,
+    "k": 141,
+    "rate": 0.986013986013986
+   },
+   "modify_linked_follow": {
+    "n": 85,
+    "k": 78,
+    "rate": 0.9176470588235294
+   },
+   "modify_changed": {
+    "n": 150,
+    "k": 149,
+    "rate": 0.9933333333333333
+   },
+   "ood_no_unpremised_anachronism": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_premise_tech_present": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "conflict_recall": {
+    "n": 0,
+    "mean": null
+   },
+   "conflict_precision": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_hidden_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_declared_not_violated": {
+    "n": 0,
+    "mean": null
+   },
+   "repair_new_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "status_confusion": {
+    "feasible": {
+     "feasible": 150,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    },
+    "relaxed": {
+     "feasible": 0,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    },
+    "infeasible": {
+     "feasible": 0,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    }
+   },
+   "status_counts_gold": {
+    "feasible": 150
+   },
+   "status_counts_pred": {
+    "feasible": 150
+   }
+  },
+  "repair": {
+   "n": 150,
+   "json_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "json_loose_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "schema_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "status_match": {
+    "n": 150,
+    "k": 145,
+    "rate": 0.9666666666666667
+   },
+   "row_ok": {
+    "n": 150,
+    "k": 122,
+    "rate": 0.8133333333333334
+   },
+   "design_req_ok": {
+    "n": 132,
+    "k": 122,
+    "rate": 0.9242424242424242
+   },
+   "validator_ok": {
+    "n": 132,
+    "k": 109,
+    "rate": 0.8257575757575758
+   },
+   "false_feasible": {
+    "n": 132,
+    "k": 23,
+    "rate": 0.17424242424242425
+   },
+   "check_crash_any": {
+    "n": 150,
+    "k": 0,
+    "rate": 0.0
+   },
+   "conflict_set_exact": {
+    "n": 19,
+    "k": 14,
+    "rate": 0.7368421052631579
+   },
+   "conflict_relaxed_exact": {
+    "n": 4,
+    "k": 2,
+    "rate": 0.5
+   },
+   "gold_infeasible_design_null": {
+    "n": 15,
+    "k": 15,
+    "rate": 1.0
+   },
+   "infeasible_design_null": {
+    "n": 18,
+    "k": 18,
+    "rate": 1.0
+   },
+   "design_exact_gold": {
+    "n": 132,
+    "k": 42,
+    "rate": 0.3181818181818182
+   },
+   "repair_valid": {
+    "n": 150,
+    "k": 124,
+    "rate": 0.8266666666666667
+   },
+   "repair_changed": {
+    "n": 130,
+    "k": 126,
+    "rate": 0.9692307692307692
+   },
+   "repair_fixed_listed": {
+    "n": 130,
+    "k": 108,
+    "rate": 0.8307692307692308
+   },
+   "context_type_match": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_copy_prev": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_follows_distractor_type": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_era_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_final_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_target_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_linked_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_no_unpremised_anachronism": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_premise_tech_present": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "conflict_recall": {
+    "n": 19,
+    "mean": 0.7894736842105263
+   },
+   "conflict_precision": {
+    "n": 19,
+    "mean": 0.8947368421052632
+   },
+   "relaxed_hidden_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_declared_not_violated": {
+    "n": 0,
+    "mean": null
+   },
+   "repair_new_violations": {
+    "n": 130,
+    "mean": 0.023076923076923078
+   },
+   "status_confusion": {
+    "feasible": {
+     "feasible": 130,
+     "relaxed": 0,
+     "infeasible": 1,
+     "invalid": 0
+    },
+    "relaxed": {
+     "feasible": 2,
+     "relaxed": 0,
+     "infeasible": 2,
+     "invalid": 0
+    },
+    "infeasible": {
+     "feasible": 0,
+     "relaxed": 0,
+     "infeasible": 15,
+     "invalid": 0
+    }
+   },
+   "status_counts_gold": {
+    "feasible": 131,
+    "infeasible": 15,
+    "relaxed": 4
+   },
+   "status_counts_pred": {
+    "feasible": 132,
+    "infeasible": 18
+   }
+  },
+  "infeasible": {
+   "n": 150,
+   "json_ok": {
+    "n": 150,
+    "k": 148,
+    "rate": 0.9866666666666667
+   },
+   "json_loose_ok": {
+    "n": 150,
+    "k": 148,
+    "rate": 0.9866666666666667
+   },
+   "schema_ok": {
+    "n": 150,
+    "k": 148,
+    "rate": 0.9866666666666667
+   },
+   "status_match": {
+    "n": 150,
+    "k": 56,
+    "rate": 0.37333333333333335
+   },
+   "row_ok": {
+    "n": 150,
+    "k": 56,
+    "rate": 0.37333333333333335
+   },
+   "design_req_ok": {
+    "n": 81,
+    "k": 38,
+    "rate": 0.4691358024691358
+   },
+   "validator_ok": {
+    "n": 81,
+    "k": 21,
+    "rate": 0.25925925925925924
+   },
+   "false_feasible": {
+    "n": 81,
+    "k": 60,
+    "rate": 0.7407407407407407
+   },
+   "check_crash_any": {
+    "n": 150,
+    "k": 0,
+    "rate": 0.0
+   },
+   "conflict_set_exact": {
+    "n": 150,
+    "k": 37,
+    "rate": 0.24666666666666667
+   },
+   "conflict_relaxed_exact": {
+    "n": 54,
+    "k": 7,
+    "rate": 0.12962962962962962
+   },
+   "gold_infeasible_design_null": {
+    "n": 96,
+    "k": 56,
+    "rate": 0.5833333333333334
+   },
+   "infeasible_design_null": {
+    "n": 67,
+    "k": 67,
+    "rate": 1.0
+   },
+   "design_exact_gold": {
+    "n": 42,
+    "k": 0,
+    "rate": 0.0
+   },
+   "repair_valid": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_fixed_listed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_type_match": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_copy_prev": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_follows_distractor_type": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_era_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_final_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_target_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_linked_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_no_unpremised_anachronism": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_premise_tech_present": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "conflict_recall": {
+    "n": 150,
+    "mean": 0.3200000000000001
+   },
+   "conflict_precision": {
+    "n": 150,
+    "mean": 0.41044444444444445
+   },
+   "relaxed_hidden_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_declared_not_violated": {
+    "n": 0,
+    "mean": null
+   },
+   "repair_new_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "status_confusion": {
+    "feasible": {
+     "feasible": 0,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    },
+    "relaxed": {
+     "feasible": 42,
+     "relaxed": 0,
+     "infeasible": 11,
+     "invalid": 1
+    },
+    "infeasible": {
+     "feasible": 39,
+     "relaxed": 0,
+     "infeasible": 56,
+     "invalid": 1
+    }
+   },
+   "status_counts_gold": {
+    "infeasible": 96,
+    "relaxed": 54
+   },
+   "status_counts_pred": {
+    "infeasible": 67,
+    "invalid": 2,
+    "feasible": 81
+   }
+  },
+  "ood": {
+   "n": 150,
+   "json_ok": {
+    "n": 150,
+    "k": 149,
+    "rate": 0.9933333333333333
+   },
+   "json_loose_ok": {
+    "n": 150,
+    "k": 149,
+    "rate": 0.9933333333333333
+   },
+   "schema_ok": {
+    "n": 150,
+    "k": 149,
+    "rate": 0.9933333333333333
+   },
+   "status_match": {
+    "n": 150,
+    "k": 135,
+    "rate": 0.9
+   },
+   "row_ok": {
+    "n": 150,
+    "k": 101,
+    "rate": 0.6733333333333333
+   },
+   "design_req_ok": {
+    "n": 148,
+    "k": 106,
+    "rate": 0.7162162162162162
+   },
+   "validator_ok": {
+    "n": 148,
+    "k": 101,
+    "rate": 0.6824324324324325
+   },
+   "false_feasible": {
+    "n": 148,
+    "k": 47,
+    "rate": 0.31756756756756754
+   },
+   "check_crash_any": {
+    "n": 150,
+    "k": 0,
+    "rate": 0.0
+   },
+   "conflict_set_exact": {
+    "n": 13,
+    "k": 0,
+    "rate": 0.0
+   },
+   "conflict_relaxed_exact": {
+    "n": 13,
+    "k": 0,
+    "rate": 0.0
+   },
+   "gold_infeasible_design_null": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "infeasible_design_null": {
+    "n": 1,
+    "k": 1,
+    "rate": 1.0
+   },
+   "design_exact_gold": {
+    "n": 148,
+    "k": 0,
+    "rate": 0.0
+   },
+   "repair_valid": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_fixed_listed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_type_match": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_copy_prev": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_follows_distractor_type": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_era_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_final_ok": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_target_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_linked_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_no_unpremised_anachronism": {
+    "n": 148,
+    "k": 143,
+    "rate": 0.9662162162162162
+   },
+   "ood_premise_tech_present": {
+    "n": 56,
+    "k": 39,
+    "rate": 0.6964285714285714
+   },
+   "conflict_recall": {
+    "n": 13,
+    "mean": 0.0
+   },
+   "conflict_precision": {
+    "n": 13,
+    "mean": 0.0
+   },
+   "relaxed_hidden_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_declared_not_violated": {
+    "n": 0,
+    "mean": null
+   },
+   "repair_new_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "status_confusion": {
+    "feasible": {
+     "feasible": 135,
+     "relaxed": 0,
+     "infeasible": 1,
+     "invalid": 1
+    },
+    "relaxed": {
+     "feasible": 13,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    },
+    "infeasible": {
+     "feasible": 0,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    }
+   },
+   "status_counts_gold": {
+    "feasible": 137,
+    "relaxed": 13
+   },
+   "status_counts_pred": {
+    "feasible": 148,
+    "infeasible": 1,
+    "invalid": 1
+   }
+  },
+  "context": {
+   "n": 150,
+   "json_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "json_loose_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "schema_ok": {
+    "n": 150,
+    "k": 150,
+    "rate": 1.0
+   },
+   "status_match": {
+    "n": 150,
+    "k": 140,
+    "rate": 0.9333333333333333
+   },
+   "row_ok": {
+    "n": 150,
+    "k": 114,
+    "rate": 0.76
+   },
+   "design_req_ok": {
+    "n": 145,
+    "k": 119,
+    "rate": 0.8206896551724138
+   },
+   "validator_ok": {
+    "n": 145,
+    "k": 116,
+    "rate": 0.8
+   },
+   "false_feasible": {
+    "n": 145,
+    "k": 29,
+    "rate": 0.2
+   },
+   "check_crash_any": {
+    "n": 150,
+    "k": 0,
+    "rate": 0.0
+   },
+   "conflict_set_exact": {
+    "n": 14,
+    "k": 4,
+    "rate": 0.2857142857142857
+   },
+   "conflict_relaxed_exact": {
+    "n": 4,
+    "k": 1,
+    "rate": 0.25
+   },
+   "gold_infeasible_design_null": {
+    "n": 10,
+    "k": 4,
+    "rate": 0.4
+   },
+   "infeasible_design_null": {
+    "n": 5,
+    "k": 5,
+    "rate": 1.0
+   },
+   "design_exact_gold": {
+    "n": 139,
+    "k": 0,
+    "rate": 0.0
+   },
+   "repair_valid": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "repair_fixed_listed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "context_type_match": {
+    "n": 145,
+    "k": 145,
+    "rate": 1.0
+   },
+   "context_copy_prev": {
+    "n": 145,
+    "k": 0,
+    "rate": 0.0
+   },
+   "context_follows_distractor_type": {
+    "n": 145,
+    "k": 0,
+    "rate": 0.0
+   },
+   "context_era_ok": {
+    "n": 145,
+    "k": 145,
+    "rate": 1.0
+   },
+   "context_final_ok": {
+    "n": 145,
+    "k": 116,
+    "rate": 0.8
+   },
+   "modify_target_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_linked_follow": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "modify_changed": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_no_unpremised_anachronism": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "ood_premise_tech_present": {
+    "n": 0,
+    "k": 0,
+    "rate": null
+   },
+   "conflict_recall": {
+    "n": 14,
+    "mean": 0.3095238095238095
+   },
+   "conflict_precision": {
+    "n": 14,
+    "mean": 0.35714285714285715
+   },
+   "relaxed_hidden_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "relaxed_declared_not_violated": {
+    "n": 0,
+    "mean": null
+   },
+   "repair_new_violations": {
+    "n": 0,
+    "mean": null
+   },
+   "status_confusion": {
+    "feasible": {
+     "feasible": 136,
+     "relaxed": 0,
+     "infeasible": 0,
+     "invalid": 0
+    },
+    "relaxed": {
+     "feasible": 3,
+     "relaxed": 0,
+     "infeasible": 1,
+     "invalid": 0
+    },
+    "infeasible": {
+     "feasible": 6,
+     "relaxed": 0,
+     "infeasible": 4,
+     "invalid": 0
+    }
+   },
+   "status_counts_gold": {
+    "feasible": 136,
+    "infeasible": 10,
+    "relaxed": 4
+   },
+   "status_counts_pred": {
+    "feasible": 145,
+    "infeasible": 5
+   }
+  }
+ },
+ "by_subtype": {
+  "single": {
+   "aircraft": {
+    "n": 24,
+    "row_ok": 0.7083333333333334,
+    "status_match": 1.0
+   },
+   "barrels": {
+    "n": 47,
+    "row_ok": 0.7021276595744681,
+    "status_match": 1.0
+   },
+   "plain": {
+    "n": 33,
+    "row_ok": 0.9090909090909091,
+    "status_match": 1.0
+   },
+   "prop": {
+    "n": 17,
+    "row_ok": 0.7058823529411765,
+    "status_match": 1.0
+   },
+   "tubes": {
+    "n": 29,
+    "row_ok": 0.6206896551724138,
+    "status_match": 0.9655172413793104
+   }
+  },
+  "modify": {
+   "add_ciws": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "add_heli": {
+    "n": 3,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "add_sam": {
+    "n": 2,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "add_ssm": {
+    "n": 2,
+    "row_ok": 0.5,
+    "status_match": 1.0
+   },
+   "aircraft_up": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "country_change": {
+    "n": 4,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "crew_down": {
+    "n": 14,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "disp_down": {
+    "n": 23,
+    "row_ok": 0.9565217391304348,
+    "status_match": 1.0
+   },
+   "disp_up": {
+    "n": 29,
+    "row_ok": 0.9655172413793104,
+    "status_match": 1.0
+   },
+   "endurance_up": {
+    "n": 11,
+    "row_ok": 0.9090909090909091,
+    "status_match": 1.0
+   },
+   "gun_barrels_up": {
+    "n": 17,
+    "row_ok": 0.7647058823529411,
+    "status_match": 1.0
+   },
+   "gun_cal_up": {
+    "n": 5,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "propulsion_change": {
+    "n": 6,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "speed_down": {
+    "n": 11,
+    "row_ok": 0.5454545454545454,
+    "status_match": 1.0
+   },
+   "speed_up": {
+    "n": 18,
+    "row_ok": 0.9444444444444444,
+    "status_match": 1.0
+   },
+   "year_change": {
+    "n": 3,
+    "row_ok": 0.6666666666666666,
+    "status_match": 1.0
+   }
+  },
+  "repair": {
+   "aircraft_count_short": {
+    "n": 9,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "aircraft_count_short+armament_excess": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "aircraft_count_short+gun_barrels_short": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "aircraft_count_short+req_unmet": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "aircraft_size": {
+    "n": 11,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "aircraft_size+req_unmet": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "armament_excess": {
+    "n": 9,
+    "row_ok": 0.5555555555555556,
+    "status_match": 1.0
+   },
+   "armament_excess+aircraft_size": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "armament_excess+req_unmet": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "armament_excess+speed_power": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "era_sensor": {
+    "n": 8,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "era_sensor+armament_excess": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "era_sensor+era_weapon": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "era_sensor+req_unmet": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "era_sensor+speed_power": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "era_weapon": {
+    "n": 9,
+    "row_ok": 0.8888888888888888,
+    "status_match": 1.0
+   },
+   "era_weapon+gun_barrels_short": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "era_weapon+speed_power": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "era_weapon+torpedo_tubes_short": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "gun_barrels_short": {
+    "n": 9,
+    "row_ok": 0.7777777777777778,
+    "status_match": 1.0
+   },
+   "gun_barrels_short+era_weapon": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "gun_barrels_short+req_unmet": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "gun_barrels_short+speed_power": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "gun_barrels_short+torpedo_tubes_short": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "propulsion_era": {
+    "n": 4,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "propulsion_era+req_unmet": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "req_unmet": {
+    "n": 14,
+    "row_ok": 0.7857142857142857,
+    "status_match": 0.9285714285714286
+   },
+   "req_unmet+aircraft_size": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "req_unmet+armament_excess": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "req_unmet+era_sensor": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "req_unmet+era_weapon": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "req_unmet+propulsion_era": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "req_unmet+torpedo_tubes_short": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "request_impossible": {
+    "n": 19,
+    "row_ok": 0.7894736842105263,
+    "status_match": 0.7894736842105263
+   },
+   "speed_power": {
+    "n": 15,
+    "row_ok": 0.8666666666666667,
+    "status_match": 1.0
+   },
+   "speed_power+armament_excess": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "speed_power+gun_barrels_short": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "speed_power+propulsion_era": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "speed_power+torpedo_tubes_short": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "torpedo_tubes_short": {
+    "n": 10,
+    "row_ok": 0.9,
+    "status_match": 1.0
+   },
+   "torpedo_tubes_short+aircraft_size": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "torpedo_tubes_short+gun_barrels_short": {
+    "n": 1,
+    "row_ok": 0.0,
+    "status_match": 1.0
+   },
+   "torpedo_tubes_short+req_unmet": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   },
+   "torpedo_tubes_short+speed_power": {
+    "n": 1,
+    "row_ok": 1.0,
+    "status_match": 1.0
+   }
+  },
+  "infeasible": {
+   "aircraft": {
+    "n": 12,
+    "row_ok": 0.16666666666666666,
+    "status_match": 0.16666666666666666
+   },
+   "contradiction": {
+    "n": 10,
+    "row_ok": 0.9,
+    "status_match": 0.9
+   },
+   "crew": {
+    "n": 22,
+    "row_ok": 0.0,
+    "status_match": 0.0
+   },
+   "era_cap": {
+    "n": 19,
+    "row_ok": 0.0,
+    "status_match": 0.0
+   },
+   "era_core": {
+    "n": 5,
+    "row_ok": 0.4,
+    "status_match": 0.4
+   },
+   "era_multi": {
+    "n": 6,
+    "row_ok": 0.8333333333333334,
+    "status_match": 0.8333333333333334
+   },
+   "extreme": {
+    "n": 23,
+    "row_ok": 0.9565217391304348,
+    "status_match": 0.9565217391304348
+   },
+   "gun_barrels": {
+    "n": 11,
+    "row_ok": 0.0,
+    "status_match": 0.0
+   },
+   "gun_cal": {
+    "n": 8,
+    "row_ok": 0.375,
+    "status_match": 0.375
+   },
+   "hull_type": {
+    "n": 6,
+    "row_ok": 0.8333333333333334,
+    "status_match": 0.8333333333333334
+   },
+   "speed": {
+    "n": 18,
+    "row_ok": 0.2777777777777778,
+    "status_match": 0.2777777777777778
+   },
+   "torpedo": {
+    "n": 6,
+    "row_ok": 0.0,
+    "status_match": 0.0
+   },
+   "type_size": {
+    "n": 4,
+    "row_ok": 0.75,
+    "status_match": 0.75
+   }
+  },
+  "ood": {
+   "doctrine": {
+    "n": 25,
+    "row_ok": 0.68,
+    "status_match": 1.0
+   },
+   "fictional_nation": {
+    "n": 52,
+    "row_ok": 0.8076923076923077,
+    "status_match": 0.9615384615384616
+   },
+   "tech_contrast": {
+    "n": 13,
+    "row_ok": 0.0,
+    "status_match": 0.0
+   },
+   "tech_early": {
+    "n": 43,
+    "row_ok": 0.6511627906976745,
+    "status_match": 1.0
+   },
+   "war_outcome": {
+    "n": 17,
+    "row_ok": 0.8235294117647058,
+    "status_match": 1.0
+   }
+  },
+  "context": {
+   "conflict_ref": {
+    "n": 17,
+    "row_ok": 0.6470588235294118,
+    "status_match": 1.0
+   },
+   "conflict_ref_long": {
+    "n": 35,
+    "row_ok": 0.7714285714285715,
+    "status_match": 1.0
+   },
+   "diff": {
+    "n": 32,
+    "row_ok": 0.875,
+    "status_match": 1.0
+   },
+   "final_infeasible": {
+    "n": 14,
+    "row_ok": 0.2857142857142857,
+    "status_match": 0.2857142857142857
+   },
+   "long_prev": {
+    "n": 15,
+    "row_ok": 0.9333333333333333,
+    "status_match": 1.0
+   },
+   "prev_infeasible": {
+    "n": 10,
+    "row_ok": 0.7,
+    "status_match": 1.0
+   },
+   "reference": {
+    "n": 27,
+    "row_ok": 0.8518518518518519,
+    "status_match": 1.0
+   }
+  }
+ }
+}

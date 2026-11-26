@@ -1,0 +1,93 @@
+{
+ "nsdb": {
+  "CLASS_rows": 11144,
+  "CLASS_distinct_pages": 10717,
+  "CLASS_duplicate_rows": 418,
+  "CLASS_null_source_rows": 9,
+  "SHIPS_rows": 108778,
+  "SHIPS_distinct_rows": 61875,
+  "SHIPS_duplicate_rows": 46903
+ },
+ "site": {
+  "live_class_pages": 10928,
+  "mirror_class_pages": 10928,
+  "live_type_pages": 815
+ },
+ "page_level": {
+  "live_not_in_nsdb": 212,
+  "pct_live_missing": 1.94,
+  "nsdb_not_on_live": 1,
+  "causes": {
+   "URL に空白(%20)。現行サイトは 404、ミラーには存在": 6,
+   "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)": 197,
+   "原因不明 (現行・ミラーとも 200 で取得可。2026-02 取得時の一時エラー等の疑い)": 4,
+   "壊れた href (file:///C:/seawar/...)。現行・ミラーとも 404 (リンク切れ)": 4,
+   "現行サイトが HTTP 500 を返すページ (ミラーには存在)": 1
+  },
+  "countries_zero_class_in_nsdb": [
+   "Falkland",
+   "Malawi",
+   "Marshall",
+   "Micronesia",
+   "Montserrat",
+   "Sarawak",
+   "Solomon",
+   "Vanuatu"
+  ]
+ },
+ "armour": {
+  "nsdb_armour_nonempty": 0,
+  "classes_with_armour_row_estimate_mirror_parse": 1102,
+  "classes_with_protection_prose_in_sections": 1029
+ },
+ "ships": {
+  "class_pages_all_blank_ship_rows": 2648,
+  "class_pages_zero_ship_rows": 144
+ },
+ "sample": {
+  "pages": 40,
+  "compared": 38,
+  "in_db": 34,
+  "spec_cells_db": {
+   "ok": 351,
+   "absent": 26,
+   "missing": 4,
+   "different": 3,
+   "spurious": 3
+  },
+  "sections_db_fixed_column": {
+   "ok_but_spaces_lost": 36,
+   "ok": 60,
+   "missing": 16
+  },
+  "sections_db_anywhere": {
+   "ok_but_spaces_lost": 40,
+   "ok": 66,
+   "partial_or_different": 6
+  },
+  "ships": {
+   "pages": 38,
+   "truth_rows": 1231,
+   "truth_rows_with_Comp_date": 1111,
+   "truth_blank_name_rows": 287,
+   "db_pages": 34,
+   "db_truth_rows_for_db_pages": 1225,
+   "db_rows_total": 37633,
+   "db_rows_distinct": 1235,
+   "db_missing_vs_truth": 1,
+   "db_extra_vs_truth": 13,
+   "db_pages_with_dup_rows": 5,
+   "fetcher_live_rows": 0,
+   "fetcher_live_missing_vs_truth": 962,
+   "fetcher_mirror_rows": 1228,
+   "fetcher_mirror_missing_vs_truth": 3,
+   "fetcher_mirror_extra_vs_truth": 0,
+   "pages_where_fetcher_live_returns_0_ships_but_page_has_ships": 33,
+   "pages_where_fetcher_mirror_returns_0_ships_but_page_has_ships": 2
+  }
+ },
+ "requests": {
+  "total_approx": 2120,
+  "wall_clock_min": 49.3
+ }
+}

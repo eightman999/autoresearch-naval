@@ -1,0 +1,28 @@
+{
+  "mode": "multi_turn_eval",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "adapter": "shipknow/design_v1/out/full_keep/ckpt_step00500/adapter",
+  "merged": false,
+  "n": 900,
+  "by_category": {
+    "context": 150,
+    "infeasible": 150,
+    "modify": 150,
+    "repair": 150,
+    "ood": 150,
+    "single": 150
+  },
+  "batch_size": 16,
+  "max_new_tokens": 512,
+  "sample_seed": null,
+  "temperature": null,
+  "top_p": null,
+  "seed": 0,
+  "ids_file": null,
+  "sec": 593.2,
+  "peak_gib": 6.43,
+  "batches": 57,
+  "prompt_tokens": 1131715,
+  "generated_tokens": 152519,
+  "generated_tokens_per_sec": 257.1
+}

@@ -1,0 +1,8 @@
+{
+  "name": "stage2-semantic-622-golden-v1",
+  "runner": "golden",
+  "contract": "data/navspec/lora/contracts/navspec_end_to_end_eval_contract_v1.json",
+  "seed": 0,
+  "temperature": 0.0,
+  "notes": "622件semantic基準線。決定的golden replay。"
+}

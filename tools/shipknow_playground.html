@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>design-v1 Playground</title>
+<style>
+[hidden] { display: none !important; }
+:root {
+  --bg: #f4f5f7; --panel: #ffffff; --ink: #1c2330; --muted: #5d6676; --line: #d9dde4; --accent: #1f5fbf;
+  --ok: #17794a; --ok-bg: #e3f4ea; --warn: #8a5a00; --warn-bg: #fff2d6; --bad: #b3261e; --bad-bg: #fde7e5; --unv: #5d6676; --unv-bg: #eceef2;
+  --code-bg: #f0f2f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12151b; --panel: #1b2029; --ink: #e4e8ef; --muted: #98a2b3; --line: #313846; --accent: #6ea8ff;
+    --ok: #6fd6a0; --ok-bg: #16352a; --warn: #f0c36a; --warn-bg: #3a2e12; --bad: #ff8d85; --bad-bg: #40191a; --unv: #98a2b3; --unv-bg: #262c38;
+    --code-bg: #232937;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 -apple-system, "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif; }
+header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+header h1 { font-size: 16px; margin: 0; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--unv); margin-right: 6px; }
+.dot.on { background: var(--ok); } .dot.off { background: var(--bad); }
+main { display: grid; grid-template-columns: minmax(340px, 430px) 1fr; gap: 14px; padding: 14px 16px; align-items: start; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin-bottom: 14px; }
+.card h2 { font-size: 14px; margin: 0 0 8px; }
+.card h3 { font-size: 13px; margin: 12px 0 6px; color: var(--muted); }
+label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+input, select, textarea, button { font: inherit; color: inherit; }
+input[type=text], input[type=number], select, textarea { width: 100%; padding: 5px 7px; background: var(--panel); border: 1px solid var(--line); border-radius: 5px; }
+textarea { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; resize: vertical; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px 10px; }
+.row { margin-bottom: 8px; }
+.checks { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.checks label { display: inline-flex; align-items: center; gap: 4px; color: var(--ink); font-size: 13px; margin: 0; }
+button { padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+button.danger { color: var(--bad); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.muted { color: var(--muted); } .small { font-size: 12px; }
+.badge { display: inline-block; padding: 1px 9px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+.badge.ok { color: var(--ok); background: var(--ok-bg); } .badge.warn { color: var(--warn); background: var(--warn-bg); }
+.badge.bad { color: var(--bad); background: var(--bad-bg); } .badge.unv { color: var(--unv); background: var(--unv-bg); }
+.msg { padding: 3px 9px; border-radius: 5px; margin: 3px 0; font-size: 13px; }
+.msg.ok { color: var(--ok); background: var(--ok-bg); } .msg.warn { color: var(--warn); background: var(--warn-bg); } .msg.bad { color: var(--bad); background: var(--bad-bg); font-weight: 600; }
+.banner-bad { padding: 8px 12px; border-radius: 6px; background: var(--bad-bg); color: var(--bad); font-weight: 700; margin: 6px 0; border: 1px solid var(--bad); }
+table { border-collapse: collapse; width: 100%; font-size: 12.5px; margin: 4px 0 8px; }
+th, td { text-align: left; padding: 3px 7px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+td.num { font-variant-numeric: tabular-nums; }
+pre, code { background: var(--code-bg); border-radius: 5px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; }
+pre { padding: 8px 10px; overflow: auto; max-height: 340px; white-space: pre-wrap; word-break: break-all; margin: 4px 0; }
+details { margin: 4px 0; } summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
+.turn { border-top: 3px solid var(--line); padding-top: 8px; margin-top: 10px; }
+.turn:first-child { border-top: 0; margin-top: 0; }
+.bubble-user { background: var(--code-bg); border-radius: 8px; padding: 8px 10px; margin: 6px 0; }
+.tabs { display: flex; gap: 4px; margin-bottom: 8px; border-bottom: 1px solid var(--line); }
+.tabs button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: none; }
+.tabs button.active { border-bottom-color: var(--accent); color: var(--accent); font-weight: 600; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } @media (max-width: 1100px) { .two { grid-template-columns: 1fr; } }
+.chg { display: grid; grid-template-columns: 170px 1fr auto; gap: 6px; margin-bottom: 4px; align-items: center; }
+.tagline { font-size: 12px; color: var(--muted); }
+.spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: sp 0.8s linear infinite; vertical-align: -2px; margin-right: 6px; }
+@keyframes sp { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<header>
+  <h1>design-v1 Playground</h1>
+  <span class="tabs" style="margin:0;border:0"><button id="mode-form" class="active">フォーム</button><button id="mode-chat">会話モード</button></span>
+  <span id="health" class="muted small"><span class="dot"></span>推論サーバ確認中...</span>
+  <span class="muted small" id="meta-line"></span>
+</header>
+<main id="form-mode">
+  <section id="left">
+    <div class="card">
+      <h2>プリセット</h2>
+      <div class="grid2" style="grid-template-columns: 1fr auto;">
+        <select id="preset"></select>
+        <button id="preset-apply">フォームに反映</button>
+      </div>
+      <div id="preset-note" class="tagline" style="margin-top:4px"></div>
+    </div>
+
+    <div class="card">
+      <h2>要求フォーム</h2>
+      <div class="grid2">
+        <div class="row"><label for="f-country">国（実艦データの国 / 架空国家は自由入力）</label><input id="f-country" type="text" list="countries" autocomplete="off"><datalist id="countries"></datalist><div id="country-hint" class="tagline"></div></div>
+        <div class="row"><label for="f-year">年</label><input id="f-year" type="number" step="1"></div>
+        <div class="row"><label for="f-type">艦種 (coarse)</label><select id="f-type"></select></div>
+        <div class="row"><label for="f-fine">細分類 (fine)</label><select id="f-fine"></select></div>
+      </div>
+      <div class="row"><label>任務</label><div class="checks" id="f-mission"></div></div>
+
+      <h3>排水量・速力・その他の上限/下限</h3>
+      <div class="grid3">
+        <div class="row"><label for="f-basis">排水量の基準</label><select id="f-basis"><option value="normal">normal 常備</option><option value="full">full 満載</option><option value="standard">standard 基準</option></select></div>
+        <div class="row"><label for="f-maxd">排水量 上限 (t)</label><input id="f-maxd" type="number" step="any"></div>
+        <div class="row"><label for="f-mind">排水量 下限 (t)</label><input id="f-mind" type="number" step="any"></div>
+        <div class="row"><label for="f-minv">速力 下限 (kn)</label><input id="f-minv" type="number" step="any"></div>
+        <div class="row"><label for="f-maxv">速力 上限 (kn)</label><input id="f-maxv" type="number" step="any"></div>
+        <div class="row"><label for="f-crew">乗員 上限</label><input id="f-crew" type="number" step="1"></div>
+        <div class="row"><label for="f-endu">航続 下限 (nm)</label><input id="f-endu" type="number" step="any"></div>
+        <div class="row"><label for="f-gun">主砲口径 下限 (mm)</label><input id="f-gun" type="number" step="any"></div>
+        <div class="row"><label for="f-barrels">砲門数 下限</label><input id="f-barrels" type="number" step="1"></div>
+        <div class="row"><label for="f-barcal">砲門数の口径 下限 (mm)</label><input id="f-barcal" type="number" step="any"></div>
+        <div class="row"><label for="f-tubes">魚雷管数 下限</label><input id="f-tubes" type="number" step="1"></div>
+        <div class="row"><label for="f-air">搭載機数 下限</label><input id="f-air" type="number" step="1"></div>
+      </div>
+      <h3>必須装備</h3>
+      <div class="checks" id="f-required"></div>
+      <h3>推進方式の指定</h3>
+      <div class="checks" id="f-prop"></div>
+
+      <h3>前提 (premise)</h3>
+      <div class="row"><select id="pm-type">
+        <option value="">なし</option><option value="fictional_nation">架空国家（似ている国）</option><option value="tech_early">技術前倒し（技術と年）</option>
+        <option value="war_outcome">戦争結果変更</option><option value="doctrine">ドクトリン</option></select></div>
+      <div id="pm-fict" class="row" hidden><label for="pm-like-f">似ている国（国欄に架空の国名を入れる）</label><input id="pm-like-f" type="text" list="countries"></div>
+      <div id="pm-tech" class="grid2" hidden>
+        <div class="row"><label for="pm-tech-s">技術</label><select id="pm-tech-s"></select></div>
+        <div class="row"><label for="pm-tech-y">実用化の年</label><input id="pm-tech-y" type="number" step="1"></div>
+      </div>
+      <div id="pm-war" class="grid2" hidden>
+        <div class="row"><label for="pm-war-n">戦勝国</label><input id="pm-war-n" type="text" list="war-nations"><datalist id="war-nations"></datalist></div>
+        <div class="row"><label for="pm-war-l">設計が倣う国（任意）</label><input id="pm-war-l" type="text" list="countries"></div>
+      </div>
+      <div id="pm-doc" class="row" hidden><label for="pm-doc-s">ドクトリン</label><select id="pm-doc-s"></select></div>
+
+      <h3>文型・生成</h3>
+      <div class="grid3">
+        <div class="row"><label for="f-variant">要求文の文型 (0-5)</label><select id="f-variant"></select></div>
+        <div class="row"><label for="g-temp">temperature</label><select id="g-temp"><option value="0">0（決定的）</option><option value="0.7">0.7 + seed</option></select></div>
+        <div class="row"><label for="g-seed">seed</label><input id="g-seed" type="number" step="1" value="1"></div>
+      </div>
+      <div class="row" style="max-width:150px"><label for="g-max">max_tokens</label><input id="g-max" type="number" value="2048"></div>
+      <div class="btns"><button id="btn-preview">プレビュー更新</button></div>
+    </div>
+  </section>
+
+  <section id="right">
+    <div class="card" id="composer">
+      <h2>次に送るメッセージ</h2>
+      <div class="tabs" id="tabs">
+        <button data-tab="new" class="active">新しい要求</button>
+        <button data-tab="modify">条件を変更 (modify)</button>
+        <button data-tab="repair">違反を送って修正 (repair)</button>
+      </div>
+      <div id="tab-new" class="tabpane">
+        <div class="tagline">左のフォームから要求を作ります。新しい会話として送るか、いまの会話に別の艦の要求（context）として足せます。</div>
+      </div>
+      <div id="tab-modify" class="tabpane" hidden>
+        <div id="mod-cur" class="tagline"></div>
+        <div id="mod-rows"></div>
+        <div class="chg">
+          <select id="mod-field"></select>
+          <span id="mod-val-wrap"><input id="mod-val" type="text" placeholder="値（空欄=その制約を外す）"></span>
+          <button id="mod-add">追加</button>
+        </div>
+        <div class="btns"><button id="mod-preview">変更をプレビュー</button></div>
+      </div>
+      <div id="tab-repair" class="tabpane" hidden>
+        <div id="rep-body" class="tagline"></div>
+      </div>
+
+      <h3>送信内容（編集可）</h3>
+      <div id="warns"></div>
+      <div class="two">
+        <div>
+          <label for="c-request">request（英語）</label><textarea id="c-request" rows="4"></textarea>
+          <div id="c-ja" class="tagline" style="margin-top:4px"></div>
+        </div>
+        <div>
+          <label for="c-req">req（構造化要求 JSON）</label><textarea id="c-req" rows="6"></textarea>
+        </div>
+      </div>
+      <details id="c-nbr-d"><summary>nbr（近傍の実艦 k=3、規則 NB-1）<span id="c-nbr-n"></span></summary>
+        <div id="c-nbr-table"></div>
+        <label for="c-nbr">nbr JSON（編集可）</label><textarea id="c-nbr" rows="5"></textarea>
+      </details>
+      <details><summary>user メッセージ全文（プレビュー）</summary><pre id="c-user"></pre></details>
+      <div class="btns" id="send-btns"></div>
+      <div id="busy" class="tagline"></div>
+    </div>
+
+    <div class="card">
+      <h2>会話 <span class="muted small" id="conv-info"></span></h2>
+      <div class="btns" style="margin:0 0 8px">
+        <button id="btn-reset" class="danger">会話をリセット</button>
+        <button id="btn-download">会話を JSON でダウンロード</button>
+        <button id="btn-copy">JSON をコピー</button>
+        <button id="btn-sys">system プロンプトを見る</button>
+      </div>
+      <pre id="sys-pre" hidden></pre>
+      <div id="conv"><div class="muted">まだ会話がありません。左のフォームから要求を作り「新しい会話として送信」してください。</div></div>
+    </div>
+  </section>
+</main>
+
+<main id="chat-mode" hidden>
+  <section>
+    <div class="card">
+      <h2>会話モード <span class="muted small">会話役（gemma）が聞き取り、設計役（design-v1）が設計します</span></h2>
+      <div id="chat-msgs" style="max-height:60vh;overflow:auto"></div>
+      <div class="row" style="margin-top:8px"><textarea id="chat-in" rows="3" placeholder="例: 1920年の日本の装甲巡洋艦、魚雷付きで　／　架空の国の1975年の防空フリゲート、ヘリ2機　（Cmd/Ctrl+Enter で送信）"></textarea></div>
+      <div class="btns">
+        <button id="chat-send" class="primary">送信</button>
+        <button id="chat-reset" class="danger">会話をリセット</button>
+        <button id="chat-dl">会話を JSON で保存</button>
+        <span id="chat-busy" class="tagline"></span>
+      </div>
+      <div class="tagline" style="margin-top:6px">例: <a href="#" class="ex">1920年の日本の装甲巡洋艦、魚雷付きで</a> / <a href="#" class="ex">架空の国ノルヴァーンの1975年の防空フリゲート、ヘリ2機</a> / <a href="#" class="ex">1895年の日本の駆逐艦にイージス級の防空能力を付けたい</a> / <a href="#" class="ex">速力をもっと上げて</a> / <a href="#" class="ex">ヘリを2機に</a> / <a href="#" class="ex">今度は1960年のイタリアの駆逐艦を</a></div>
+    </div>
+    <div class="card">
+      <h2>設定</h2>
+      <div class="grid2">
+        <div class="row"><label for="cs-dsel">設計役（design-v1）の選択肢</label><select id="cs-dsel"></select></div>
+        <div class="row"><label>設計役の状態</label><div id="cs-dhealth" class="small muted">—</div></div>
+        <div class="row"><label for="cs-durl">設計役 URL</label><input id="cs-durl" type="text"></div>
+        <div class="row"><label for="cs-dmodel">設計役 model</label><input id="cs-dmodel" type="text"></div>
+        <div class="row"><label for="cs-gurl">会話役 URL</label><input id="cs-gurl" type="text"></div>
+        <div class="row"><label for="cs-gmodel">会話役 model</label><input id="cs-gmodel" type="text"></div>
+        <div class="row"><label for="cs-rep">自動修正 (repair) の最大回数</label><input id="cs-rep" type="number" min="0" max="4" value="2"></div>
+        <div class="row"><label for="cs-res">根拠不一致の取り直しの最大回数</label><input id="cs-res" type="number" min="0" max="2" value="2"></div>
+      </div>
+      <div id="cs-ghealth" class="small muted"></div>
+    </div>
+  </section>
+  <section>
+    <div class="card"><h2>最新の設計 <span id="lat-info" class="muted small"></span></h2><div id="lat">まだ設計がありません。</div></div>
+    <div class="card"><h2>設計役との往復ログ（デバッグ）</h2><div id="chat-log" class="small muted">まだありません。</div></div>
+  </section>
+</main>
+
+<script>
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+function h(tag, props, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (k === "class") e.className = v;
+    else if (k === "text") e.textContent = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v !== false && v !== null && v !== undefined) e.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of kids.flat(Infinity)) { if (c === null || c === undefined || c === false) continue; e.append(c.nodeType ? c : document.createTextNode(String(c))); }
+  return e;
+}
+const fmt = (x) => (x === null || x === undefined) ? "—" : (typeof x === "number" ? String(Math.round(x * 1000) / 1000) : String(x));
+const S = { meta: null, messages: [], turns: [], req: null, kind: "request", lastAnalysis: null, busy: false, changes: [], tab: "new", pendingKind: null, reference: null };
+
+async function api(path, body) {
+  const r = await fetch(path, body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  let j; try { j = await r.json(); } catch (e) { j = { ok: false, error: "応答が JSON ではありません (" + r.status + ")" }; }
+  if (!r.ok && !j.user_content) throw new Error(j.error || r.statusText);
+  return j;
+}
+
+// ------------------------------------------------------------------ form
+function checkboxes(container, items, name) {
+  container.replaceChildren(...items.map((it) => h("label", {}, h("input", { type: "checkbox", name, value: it.id }), it.ja ? `${it.ja}` : it.id)));
+}
+const checked = (container) => [...container.querySelectorAll("input:checked")].map((i) => i.value);
+const setChecked = (container, vals) => container.querySelectorAll("input").forEach((i) => { i.checked = (vals || []).includes(i.value); });
+const val = (id) => $(id).value.trim();
+
+function updateFine(selected) {
+  const t = S.meta.ship_types.find((x) => x.id === $("#f-type").value);
+  $("#f-fine").replaceChildren(h("option", { value: "" }, "(指定なし)"), ...((t && t.fine) || []).map((f) => h("option", { value: f }, f)));
+  if (selected) $("#f-fine").value = selected;
+}
+function updateCountryHint() {
+  const known = new Set(S.meta.countries.map((c) => c.name));
+  const c = val("#f-country").replace(/\s+/g, "-");
+  $("#country-hint").textContent = !c ? "" : known.has(c) ? "" : "実艦データに無い国です。架空国家なら下の前提「架空国家」を選んでください。";
+}
+function showPremise() {
+  const t = $("#pm-type").value;
+  $("#pm-fict").hidden = t !== "fictional_nation"; $("#pm-tech").hidden = t !== "tech_early";
+  $("#pm-war").hidden = t !== "war_outcome"; $("#pm-doc").hidden = t !== "doctrine";
+}
+function readForm() {
+  const pt = $("#pm-type").value;
+  const premise = pt === "fictional_nation" ? { type: pt, like: val("#pm-like-f") }
+    : pt === "tech_early" ? { type: pt, tech: $("#pm-tech-s").value, available_from: val("#pm-tech-y") }
+    : pt === "war_outcome" ? { type: pt, nation: val("#pm-war-n"), like: val("#pm-war-l") }
+    : pt === "doctrine" ? { type: pt, doctrine: $("#pm-doc-s").value } : null;
+  return {
+    country: val("#f-country"), year: val("#f-year"), ship_type: $("#f-type").value, ship_type_fine: $("#f-fine").value,
+    mission: checked($("#f-mission")), displacement_basis: $("#f-basis").value,
+    max_displacement_t: val("#f-maxd"), min_displacement_t: val("#f-mind"), min_speed_kn: val("#f-minv"), max_speed_kn: val("#f-maxv"),
+    max_complement: val("#f-crew"), min_endurance_nm: val("#f-endu"), main_gun_mm: val("#f-gun"), min_gun_barrels: val("#f-barrels"),
+    min_gun_barrels_cal_mm: val("#f-barcal"), min_torpedo_tubes: val("#f-tubes"), min_aircraft: val("#f-air"),
+    required: checked($("#f-required")), required_propulsion: checked($("#f-prop")), premise,
+  };
+}
+function fillForm(f) {
+  const set = (id, v) => { $(id).value = (v === undefined || v === null) ? "" : v; };
+  set("#f-country", f.country); set("#f-year", f.year); $("#f-type").value = f.ship_type || ""; updateFine(f.ship_type_fine || "");
+  setChecked($("#f-mission"), f.mission); $("#f-basis").value = f.displacement_basis || "normal";
+  set("#f-maxd", f.max_displacement_t); set("#f-mind", f.min_displacement_t); set("#f-minv", f.min_speed_kn); set("#f-maxv", f.max_speed_kn);
+  set("#f-crew", f.max_complement); set("#f-endu", f.min_endurance_nm); set("#f-gun", f.main_gun_mm); set("#f-barrels", f.min_gun_barrels);
+  set("#f-barcal", f.min_gun_barrels_cal_mm); set("#f-tubes", f.min_torpedo_tubes); set("#f-air", f.min_aircraft);
+  setChecked($("#f-required"), f.required); setChecked($("#f-prop"), f.required_propulsion);
+  const p = f.premise || {};
+  $("#pm-type").value = p.type || ""; showPremise();
+  set("#pm-like-f", p.type === "fictional_nation" ? p.like : ""); if (p.tech) $("#pm-tech-s").value = p.tech; set("#pm-tech-y", p.available_from);
+  set("#pm-war-n", p.nation); set("#pm-war-l", p.type === "war_outcome" ? p.like : ""); if (p.doctrine) $("#pm-doc-s").value = p.doctrine;
+  updateCountryHint();
+}
+
+// ------------------------------------------------------------------ composer
+function gen() {
+  const t = parseFloat($("#g-temp").value);
+  return { temperature: t, seed: t > 0 ? parseInt($("#g-seed").value || "1", 10) : null, max_tokens: parseInt($("#g-max").value || "2048", 10) };
+}
+function setPreview(p) {
+  // p: {req, request, request_ja, nbr, warnings}
+  $("#c-request").value = p.request || "";
+  $("#c-req").value = p.req ? JSON.stringify(p.req, null, 1) : "";
+  $("#c-nbr").value = (p.nbr && p.nbr.length) ? JSON.stringify(p.nbr) : "";
+  $("#c-ja").textContent = p.request_ja ? "日本語訳: " + p.request_ja : "";
+  $("#warns").replaceChildren(...(p.warnings || []).map((w) => h("div", { class: "msg warn", text: w })));
+  renderNbr(p.nbr || []); refreshUserPreview();
+}
+function parseJsonField(sel, what, required) {
+  const t = $(sel).value.trim();
+  if (!t) { if (required) throw new Error(what + " が空です"); return null; }
+  try { return JSON.parse(t); } catch (e) { throw new Error(what + " が JSON として読めません: " + e.message); }
+}
+function currentSpec() {
+  const req = parseJsonField("#c-req", "req", true);
+  const nbr = parseJsonField("#c-nbr", "nbr", false);
+  return { request: $("#c-request").value.trim(), req, nbr: nbr && nbr.length ? nbr : null };
+}
+function refreshUserPreview() {
+  try {
+    if (S.tab === "repair") { $("#c-user").textContent = JSON.stringify({ validator: { valid: false, violations: (S.lastAnalysis && S.lastAnalysis.repair_violations) || [] }, instruction: "Fix the design. Keep the original request as far as possible." }); return; }
+    const sp = currentSpec(); const o = { request: sp.request, req: sp.req }; if (S.reference) o.reference = S.reference; if (sp.nbr) o.nbr = sp.nbr;
+    $("#c-user").textContent = JSON.stringify(o);
+  } catch (e) { $("#c-user").textContent = String(e.message); }
+}
+const nbrDesc = (n) => [n.cn, n.y, (n.ft || n.ty)].join(" ");
+function weaponsText(ws) {
+  return (ws || []).map((w) => `${w.kind}${w.n ? " " + w.n : ""}${w.per ? "x" + w.per : ""}${w.cal ? " " + w.cal + "mm" : ""}`).join(", ");
+}
+function renderNbr(nbr) {
+  $("#c-nbr-n").textContent = nbr.length ? ` (${nbr.length} 隻)` : " (なし)";
+  $("#c-nbr-table").replaceChildren(nbrTable(nbr));
+}
+function nbrTable(nbr) {
+  return h("table", {}, h("tr", {}, ["国 / 年 / 艦種", "排水量 t", "速力", "出力", "乗員", "武装", "センサー"].map((x) => h("th", { text: x }))),
+    nbr.map((n) => h("tr", {}, h("td", { text: nbrDesc(n) }), h("td", { class: "num", text: ["dn", "ds", "df"].filter((k) => n[k]).map((k) => k + " " + n[k]).join(" / ") }),
+      h("td", { class: "num", text: fmt(n.v) }), h("td", { class: "num", text: fmt(n.hp) }), h("td", { class: "num", text: fmt(n.cm) }), h("td", { text: weaponsText(n.w) }), h("td", { text: (n.s || []).join(", ") }))));
+}
+async function doPreviewNew() {
+  try {
+    const p = await api("/api/build_request", { form: readForm(), variant: parseInt($("#f-variant").value, 10) });
+    S.reference = null; setPreview(p); return p;
+  } catch (e) { setPreview({ request: "", req: null, warnings: ["フォームのエラー: " + e.message] }); return null; }
+}
+function renderSendButtons() {
+  const box = $("#send-btns"); box.replaceChildren();
+  const dis = S.busy;
+  if (S.tab === "new") {
+    box.append(h("button", { class: "primary", disabled: dis, onclick: () => send("request", true) }, "新しい会話として送信"),
+      h("button", { disabled: dis || S.messages.length < 2, title: "会話を保ったまま別の艦の要求を足します", onclick: () => send("context", false) }, "この会話に新しい要求を追加 (context)"));
+    const lastD = lastDesign();
+    box.append(h("label", { style: "display:inline-flex;align-items:center;gap:4px;margin:0;color:var(--ink)" }, h("input", { type: "checkbox", id: "use-ref", disabled: !lastD }), "直前の設計を reference に付ける"));
+  } else if (S.tab === "modify") {
+    box.append(h("button", { class: "primary", disabled: dis || !S.req, onclick: () => send("modify", false) }, "変更を送信 (modify)"));
+  } else {
+    const n = ((S.lastAnalysis && S.lastAnalysis.repair_violations) || []).length;
+    box.append(h("button", { class: "primary", disabled: dis || !n, onclick: () => send("repair", false) }, `validator の違反 ${n} 件を送って修正させる (repair)`));
+  }
+}
+const lastDesign = () => { for (let i = S.turns.length - 1; i >= 0; i--) { try { const o = JSON.parse(S.turns[i].assistant_content); if (o && o.design) return o.design; } catch (e) { /* skip */ } } return null; };
+
+async function send(kind, fresh) {
+  if (S.busy) return;
+  let turn, messages = S.messages;
+  try {
+    if (kind === "repair") {
+      const v = (S.lastAnalysis && S.lastAnalysis.repair_violations) || [];
+      turn = { kind, req: S.req, validator: v };
+    } else {
+      const sp = currentSpec();
+      if (!sp.request) throw new Error("request が空です");
+      turn = { kind, request: sp.request, req: sp.req, nbr: sp.nbr };
+      if (kind === "request" && $("#use-ref") && $("#use-ref").checked && lastDesign()) turn.reference = lastDesign();
+    }
+  } catch (e) { alert(e.message); return; }
+  if (fresh) { messages = []; S.turns = []; S.messages = []; S.lastAnalysis = null; }
+  S.busy = true; renderSendButtons();
+  $("#busy").replaceChildren(h("span", { class: "spinner" }), "推論中...");
+  try {
+    const g = gen();
+    const r = await api("/api/turn", { messages, turn, gen: g });
+    if (!r.ok) { $("#busy").replaceChildren(h("span", { class: "msg bad", text: r.error || "エラー" })); }
+    else {
+      S.messages = r.messages; S.req = r.req; S.lastAnalysis = r.analysis;
+      S.turns.push({ kind: turn.kind, request: turn.request || null, request_ja: kind === "repair" ? null : ($("#c-ja").textContent || "").replace(/^(日本語訳|変更): /, ""), req: r.req, nbr: turn.nbr || null, validator: turn.validator || null,
+        user_content: r.user_content, assistant_content: r.assistant_content, analysis: r.analysis, gen: g, elapsed_s: r.elapsed_s, usage: r.usage, finish_reason: r.finish_reason });
+      $("#busy").textContent = `完了 (${r.elapsed_s}s, ${r.usage ? r.usage.completion_tokens : "?"} tokens${r.finish_reason === "length" ? ", max_tokens で打ち切り" : ""})`;
+      S.changes = []; renderChanges(); renderModifyCur(); renderRepair();
+    }
+  } catch (e) { $("#busy").replaceChildren(h("span", { class: "msg bad", text: "通信エラー: " + e.message })); }
+  S.busy = false; renderSendButtons(); renderConversation();
+}
+
+// ------------------------------------------------------------------ modify
+const MOD_LABEL = { max_displacement_t: "排水量 上限 (t)", min_displacement_t: "排水量 下限 (t)", min_speed_kn: "速力 下限 (kn)", max_speed_kn: "速力 上限 (kn)", max_complement: "乗員 上限",
+  min_endurance_nm: "航続 下限 (nm)", min_gun_barrels: "砲門数 下限", min_gun_barrels_cal_mm: "砲門数の口径 下限 (mm)", min_aircraft: "搭載機数 下限", min_torpedo_tubes: "魚雷管数 下限",
+  main_gun_mm: "主砲口径 下限 (mm)", add_required: "必須装備を追加", remove_required: "必須装備を外す", required_propulsion: "推進方式（空欄=指定なし）", country: "国", year: "年", displacement_basis: "排水量の基準" };
+function modOptionsFor(field) {
+  if (field === "add_required" || field === "remove_required") return S.meta.required.map((r) => [r.id, r.ja]);
+  if (field === "required_propulsion") return [["", "(指定なし)"], ...S.meta.propulsion.map((p) => [p, p])];
+  if (field === "displacement_basis") return [["normal", "normal 常備"], ["full", "full 満載"], ["standard", "standard 基準"]];
+  return null;
+}
+function renderModField() {
+  const f = $("#mod-field").value, opts = modOptionsFor(f);
+  const inp = opts ? h("select", { id: "mod-val" }, opts.map(([v, t]) => h("option", { value: v }, t)))
+    : h("input", { id: "mod-val", type: (f === "country") ? "text" : "number", step: "any", placeholder: f === "country" ? "例: Italy" : "値（空欄=その制約を外す）", list: f === "country" ? "countries" : null });
+  $("#mod-val-wrap").replaceChildren(inp);
+}
+function renderChanges() {
+  $("#mod-rows").replaceChildren(...S.changes.map((c, i) => h("div", { class: "chg" }, h("span", { text: MOD_LABEL[c.field] || c.field }), h("code", { text: c.value === "" || c.value === null ? "(外す)" : JSON.stringify(c.value) }),
+    h("button", { onclick: () => { S.changes.splice(i, 1); renderChanges(); } }, "削除"))));
+}
+function renderModifyCur() {
+  $("#mod-cur").textContent = S.req ? "現在の要求: " + JSON.stringify(S.req) : "まず新しい会話を始めてください（modify は直前の要求を変更します）。";
+}
+async function modPreview() {
+  if (!S.req) { alert("会話がありません"); return; }
+  if (!S.changes.length) { alert("変更を 1 つ以上追加してください"); return; }
+  try {
+    const p = await api("/api/preview_modify", { req: S.req, changes: S.changes, variant: parseInt($("#f-variant").value, 10) % 8 });
+    S.reference = null; setPreview(p);
+    $("#c-ja").textContent = p.request_ja + "  ／ 更新後: " + p.full_request_ja;
+  } catch (e) { alert(e.message); }
+}
+function renderRepair() {
+  const v = (S.lastAnalysis && S.lastAnalysis.repair_violations) || [];
+  const body = $("#rep-body");
+  if (!S.lastAnalysis) { body.textContent = "まだ返答がありません。"; return; }
+  if (!v.length) { body.replaceChildren("直前の返答に validator の違反はありません（修正ターンは送れません）。"); return; }
+  body.replaceChildren(h("div", {}, "直前の返答の validator 違反を、学習データと同じ書式で送ります:"),
+    h("table", {}, h("tr", {}, ["code", "field", "detail"].map((x) => h("th", { text: x }))), v.map((x) => h("tr", {}, h("td", { text: x.code }), h("td", { text: x.field }), h("td", { text: x.detail })))));
+}
+function setTab(t) {
+  S.tab = t;
+  document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("active", b.dataset.tab === t));
+  document.querySelectorAll(".tabpane").forEach((p) => { p.hidden = p.id !== "tab-" + t; });
+  renderSendButtons(); refreshUserPreview();
+}
+
+// ------------------------------------------------------------------ result rendering
+const STATUS_JA = { feasible: "実現可能", relaxed: "緩和して実現", infeasible: "実現不可能" };
+const STATUS_CLS = { feasible: "ok", relaxed: "warn", infeasible: "bad" };
+const VERDICT = { ok: ["一致", "ok"], mismatch: ["根拠不一致", "bad"], weak: ["弱い根拠", "warn"], unverified: ["未検証", "unv"] };
+function kv(rows) { return h("table", {}, rows.filter((r) => r[1] !== undefined && r[1] !== null && r[1] !== "").map(([k, v]) => h("tr", {}, h("th", { text: k }), h("td", { class: "num", text: String(v) })))); }
+function designTables(d) {
+  if (!d) return h("div", { class: "muted", text: "design: null" });
+  const wp = (d.weapons || []).map((w) => h("tr", {}, h("td", { text: w.kind }), h("td", { class: "num", text: fmt(w.n) }), h("td", { class: "num", text: fmt(w.per) }), h("td", { class: "num", text: fmt(w.cal) })));
+  const armour = d.armour ? Object.entries(d.armour).map(([k, v]) => `${k} ${v}`).join(", ") : null;
+  return h("div", { class: "two" },
+    h("div", {}, h("h3", { text: "諸元" }), kv([["艦種", `${d.ship_type || "?"} / ${d.ship_type_fine || "?"}`], ["排水量 normal / full / standard (t)", [d.displacement_normal_t, d.displacement_full_t, d.displacement_standard_t].map(fmt).join(" / ")],
+      ["全長 × 幅 × 喫水 (m)", [d.length_m, d.beam_m, d.draught_m].map(fmt).join(" × ")], ["推進", (d.propulsion || []).join(", ")], ["軸数", d.shafts], ["出力 (hp)", d.power_hp], ["速力 (kn)", d.speed_kn],
+      ["航続 (nm)", d.endurance_nm], ["乗員", d.complement], ["装甲 (mm)", armour]])),
+    h("div", {}, h("h3", { text: "武装" }), wp.length ? h("table", {}, h("tr", {}, ["kind", "n", "per", "cal"].map((x) => h("th", { text: x }))), wp) : h("div", { class: "muted", text: "(なし)" }),
+      h("h3", { text: "センサー" }), h("div", { text: (d.sensors || []).join(", ") || "(なし)" }), h("h3", { text: "航空機" }), h("div", { text: (d.air || []).join(", ") || "(なし)" })));
+}
+function shipRow(s) {
+  return h("tr", {}, h("td", { text: `${s.country} ${s.year} ${s.fine || s.type}` }), h("td", { class: "num", text: Object.entries(s.disp).map(([k, v]) => k[0] + " " + v).join(" / ") }),
+    h("td", { class: "num", text: fmt(s.speed) }), h("td", { class: "num", text: fmt(s.crew) }), h("td", { class: "num", text: `${s.barrels}/${s.aircraft}/${s.tubes}` }));
+}
+function shipTable(ex) {
+  return h("table", {}, h("tr", {}, ["実艦", "排水量 t", "速力 kn", "乗員", "砲門/搭載機/魚雷管"].map((x) => h("th", { text: x }))), ex.map(shipRow));
+}
+function analysisBlock(a, obj) {
+  const out = [];
+  const g = a.grounding;
+  if (g && g.verdict === "mismatch") out.push(h("div", { class: "banner-bad", text: "根拠不一致: conflicts / 拒否の主張が実データと合いません" }));
+  out.push(...(a.messages || []).map((m) => h("div", { class: "msg " + m.level, text: m.text })));
+  if (a.checks && a.checks.length) {
+    out.push(h("details", { open: true }, h("summary", { text: `要求の充足 (${a.checks.filter((c) => c.ok === true).length}/${a.checks.length})` }),
+      h("table", {}, h("tr", {}, ["制約", "判定", "設計の値"].map((x) => h("th", { text: x }))), a.checks.map((c) => h("tr", {}, h("td", { text: c.id }),
+        h("td", {}, h("span", { class: "badge " + (c.ok === true ? "ok" : c.ok === false ? "bad" : "unv"), text: c.ok === true ? "OK" : c.ok === false ? "NG" : "不明" })), h("td", { class: "num", text: c.detail || "" }))))));
+  }
+  if (a.violations && a.violations.length) {
+    out.push(h("details", { open: true }, h("summary", { text: `validator の違反 (${a.violations.length})` }),
+      h("table", {}, h("tr", {}, ["code", "field", "detail"].map((x) => h("th", { text: x }))), a.violations.map((v) => h("tr", {}, h("td", { text: v.code }), h("td", { text: v.field }), h("td", { text: v.detail }))))));
+  }
+  if (a.warnings && a.warnings.length) out.push(h("details", {}, h("summary", { text: `validator の警告 (${a.warnings.length})` }), h("pre", { text: JSON.stringify(a.warnings, null, 1) })));
+  if (g) {
+    const real = g.real || {};
+    out.push(h("details", { open: true }, h("summary", { text: "実データとの照合" }),
+      h("div", {}, `要求を全て満たす実艦（同艦種・${real.year_hi || "?"} 年までに設計）: `, h("b", { text: `${real.n_all ?? "?"} 隻` }), ` （train のみ ${real.n_train ?? "?"} 隻）`),
+      (real.examples && real.examples.length) ? shipTable(real.examples) : null,
+      ...(g.problems || []).map((p) => h("div", { class: "msg bad", text: p })),
+      (g.items && g.items.length) ? h("table", {}, h("tr", {}, ["conflicts の制約", "モデルの理由", "判定", "実データ"].map((x) => h("th", { text: x }))), g.items.map((i) => {
+        const [lab, cls] = VERDICT[i.verdict] || [i.verdict, "unv"];
+        return h("tr", {}, h("td", { text: i.constraint }), h("td", { text: i.reason }), h("td", {}, h("span", { class: "badge " + cls, text: lab })),
+          h("td", {}, i.detail, (i.examples && i.examples.length) ? shipTable(i.examples) : null));
+      })) : h("div", { class: "muted small", text: "conflicts はありません。" })));
+  }
+  return out;
+}
+function nbrBrief(nbr) { return nbr && nbr.length ? nbr.map(nbrDesc).join(" | ") : null; }
+function renderTurn(t, i, last) {
+  let obj = null; try { obj = JSON.parse(t.assistant_content); } catch (e) { /* raw only */ }
+  const st = obj && obj.status;
+  const kindJa = { request: "新しい要求", context: "新しい要求 (context)", modify: "条件変更 (modify)", repair: "修正依頼 (repair)" }[t.kind] || t.kind;
+  const userPart = t.kind === "repair"
+    ? h("div", { class: "bubble-user" }, h("b", { text: "validator の違反" }), h("table", {}, h("tr", {}, ["code", "field", "detail"].map((x) => h("th", { text: x }))), (t.validator || []).map((v) => h("tr", {}, h("td", { text: v.code }), h("td", { text: v.field }), h("td", { text: v.detail })))), h("div", { class: "tagline", text: "Fix the design. Keep the original request as far as possible." }))
+    : h("div", { class: "bubble-user" }, h("div", { text: t.request }), t.request_ja ? h("div", { class: "tagline", text: t.request_ja }) : null,
+        h("details", {}, h("summary", { text: "req / nbr" }), h("pre", { text: JSON.stringify(t.req) }), nbrBrief(t.nbr) ? h("div", { class: "small muted", text: "nbr: " + nbrBrief(t.nbr) }) : null));
+  const asst = [h("div", {}, st ? h("span", { class: "badge " + (STATUS_CLS[st] || "unv"), text: `${st} ${STATUS_JA[st] || ""}` }) : h("span", { class: "badge bad", text: "status 不明" }),
+    h("span", { class: "tagline", text: `  ${t.elapsed_s}s / ${t.usage ? t.usage.completion_tokens : "?"} tokens / temp ${t.gen.temperature}${t.gen.seed !== null ? " seed " + t.gen.seed : ""}` }))];
+  if (obj) {
+    if ((obj.conflicts || []).length) asst.push(h("h3", { text: "conflicts" }), h("table", {}, h("tr", {}, [h("th", { text: "constraint" }), h("th", { text: "reason" })]), obj.conflicts.map((c) => h("tr", {}, h("td", { text: c.constraint }), h("td", { text: c.reason })))));
+    if ((obj.relaxations || []).length) asst.push(h("h3", { text: "relaxations" }), h("table", {}, h("tr", {}, ["constraint", "requested", "relaxed_to", "reason"].map((x) => h("th", { text: x }))),
+      obj.relaxations.map((r) => h("tr", {}, h("td", { text: r.constraint }), h("td", { text: fmt(r.requested) }), h("td", { text: fmt(r.relaxed_to) }), h("td", { text: r.reason })))));
+    asst.push(designTables(obj.design));
+  }
+  asst.push(...analysisBlock(t.analysis || {}, obj));
+  asst.push(h("details", {}, h("summary", { text: "生の出力 JSON" }), h("pre", { text: t.assistant_content })));
+  return h("div", { class: "turn" }, h("div", { class: "tagline" }, h("b", { text: `#${i + 1} ${kindJa}` })), userPart, ...asst);
+}
+function renderConversation() {
+  $("#conv-info").textContent = S.turns.length ? `${S.turns.length} ターン` : "";
+  $("#btn-download").disabled = $("#btn-copy").disabled = !S.turns.length;
+  if (!S.turns.length) { $("#conv").replaceChildren(h("div", { class: "muted", text: "まだ会話がありません。左のフォームから要求を作り「新しい会話として送信」してください。" })); return; }
+  $("#conv").replaceChildren(...S.turns.map((t, i) => renderTurn(t, i, i === S.turns.length - 1)));
+  renderSendButtons();
+}
+function conversationJson() {
+  return { id: "playground_" + new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14), category: "playground", messages: S.messages,
+    metadata: { model: S.meta.model, llm_url: S.meta.llm_url, turns: S.turns.map((t) => ({ kind: t.kind, req: t.req, gen: t.gen, status: t.analysis && t.analysis.status, elapsed_s: t.elapsed_s })) } };
+}
+
+// ------------------------------------------------------------------ init
+async function refreshHealth() {
+  try {
+    const hl = await api("/api/health");
+    $("#health").replaceChildren(h("span", { class: "dot " + (hl.ok ? "on" : "off") }), hl.ok ? `推論サーバ OK (${hl.llm_url}, ${hl.model})` : `推論サーバに接続できません (${hl.llm_url}): ${hl.detail}`);
+  } catch (e) { $("#health").textContent = "health 取得失敗: " + e.message; }
+}
+async function init() {
+  S.meta = await api("/api/meta");
+  const m = S.meta;
+  $("#meta-line").textContent = `実艦 ${m.n_ships} 隻 (train ${m.n_train})`;
+  $("#countries").replaceChildren(...m.countries.map((c) => h("option", { value: c.name }, `${c.n}`)));
+  $("#war-nations").replaceChildren(...m.war_nations.map((c) => h("option", { value: c })));
+  $("#f-type").replaceChildren(...m.ship_types.map((t) => h("option", { value: t.id }, `${t.ja} (${t.id})`)));
+  checkboxes($("#f-mission"), m.missions, "mission"); checkboxes($("#f-required"), m.required, "required"); checkboxes($("#f-prop"), m.propulsion.map((p) => ({ id: p, ja: p.replace("_", " ") })), "prop");
+  $("#pm-tech-s").replaceChildren(...m.techs.map((t) => h("option", { value: t.id }, t.ja)));
+  $("#pm-doc-s").replaceChildren(...m.doctrines.map((t) => h("option", { value: t.id }, t.ja)));
+  $("#f-variant").replaceChildren(...[0, 1, 2, 3, 4, 5].map((i) => h("option", { value: i }, `文型 ${i}`)));
+  $("#preset").replaceChildren(...m.presets.map((p, i) => h("option", { value: i }, p.title)));
+  $("#mod-field").replaceChildren(...m.modify_fields.map((f) => h("option", { value: f }, MOD_LABEL[f] || f)));
+  const o = (i) => { $("#preset-note").textContent = m.presets[i].note; };
+  $("#preset").addEventListener("change", () => o($("#preset").value));
+  $("#preset-apply").addEventListener("click", async () => { const p = m.presets[$("#preset").value]; fillForm(p.form); o($("#preset").value); setTab("new"); await doPreviewNew(); });
+  $("#f-type").addEventListener("change", () => updateFine(""));
+  $("#f-country").addEventListener("input", updateCountryHint);
+  $("#pm-type").addEventListener("change", showPremise);
+  $("#pm-tech-s").addEventListener("change", () => {
+    const t = $("#pm-tech-s").value, tokMap = { radar: "air_search_radar", sonar: "sonar", helicopter: "helicopter", ssm: "ssm", sam: "sam", ciws: "ciws", esm_ecm: "esm_ecm" };
+    if (tokMap[t]) $("#f-required input[value=" + tokMap[t] + "]").checked = true;
+    else $("#f-prop input[value=" + t + "]").checked = true;
+  });
+  $("#g-temp").addEventListener("change", () => { $("#g-seed").disabled = $("#g-temp").value === "0"; });
+  $("#g-seed").disabled = true;
+  $("#btn-preview").addEventListener("click", doPreviewNew);
+  ["#c-request", "#c-req", "#c-nbr"].forEach((s) => $(s).addEventListener("input", refreshUserPreview));
+  document.querySelectorAll("#tabs button").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tab)));
+  $("#mod-field").addEventListener("change", renderModField); renderModField();
+  $("#mod-add").addEventListener("click", () => { const f = $("#mod-field").value, v = $("#mod-val").value.trim(); S.changes.push({ field: f, value: v }); renderChanges(); });
+  $("#mod-preview").addEventListener("click", modPreview);
+  $("#btn-reset").addEventListener("click", () => { if (S.turns.length && !confirm("会話をリセットしますか？")) return; S.messages = []; S.turns = []; S.req = null; S.lastAnalysis = null; S.changes = []; renderChanges(); renderModifyCur(); renderRepair(); renderConversation(); $("#busy").textContent = ""; });
+  $("#btn-download").addEventListener("click", () => {
+    const blob = new Blob([JSON.stringify(conversationJson(), null, 1)], { type: "application/json" });
+    const a = h("a", { href: URL.createObjectURL(blob), download: conversationJson().id + ".json" }); document.body.append(a); a.click(); a.remove();
+  });
+  $("#btn-copy").addEventListener("click", async () => { try { await navigator.clipboard.writeText(JSON.stringify(conversationJson(), null, 1)); $("#busy").textContent = "コピーしました"; } catch (e) { $("#busy").textContent = "コピーできませんでした: " + e.message; } });
+  $("#btn-sys").addEventListener("click", () => { const p = $("#sys-pre"); p.textContent = m.system; p.hidden = !p.hidden; });
+  fillForm(m.presets[0].form); o(0);
+  renderModifyCur(); renderRepair(); renderSendButtons(); renderConversation();
+  await doPreviewNew();
+  refreshHealth(); setInterval(refreshHealth, 15000);
+}
+
+// ------------------------------------------------------------------ chat mode
+const CH = { sid: null, snap: null, busy: false, inited: false };
+function setMode(m) {
+  $("#form-mode").hidden = m !== "form"; $("#chat-mode").hidden = m !== "chat";
+  $("#mode-form").classList.toggle("active", m === "form"); $("#mode-chat").classList.toggle("active", m === "chat");
+  if (m === "chat" && !CH.inited) initChat();
+}
+function chatSettings() {
+  return { design_url: $("#cs-durl").value.trim() || null, design_model: $("#cs-dmodel").value.trim() || null, gemma_url: $("#cs-gurl").value.trim() || null, gemma_model: $("#cs-gmodel").value.trim() || null,
+    max_repairs: parseInt($("#cs-rep").value || "2", 10), max_resamples: parseInt($("#cs-res").value || "2", 10) };
+}
+async function initChat() {
+  CH.inited = true;
+  const m = await api("/api/chat/meta");
+  $("#cs-dsel").replaceChildren(...m.design_presets.map((p, i) => h("option", { value: i }, p.label)), h("option", { value: "-1" }, "（URL / model を直接入力）"));
+  const pick = () => { const p = m.design_presets[$("#cs-dsel").value]; if (p) { $("#cs-durl").value = p.url; $("#cs-dmodel").value = p.model; } checkDesignHealth(); };
+  $("#cs-dsel").addEventListener("change", pick); $("#cs-durl").addEventListener("change", checkDesignHealth); pick();
+  $("#cs-gurl").value = m.gemma_url || ""; $("#cs-gmodel").value = m.gemma_model || "";
+  $("#cs-ghealth").textContent = m.gemma && m.gemma.ok ? "会話役 OK" : "会話役に接続できません: " + ((m.gemma && m.gemma.detail) || "");
+  $("#chat-send").addEventListener("click", chatSend);
+  $("#chat-in").addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); chatSend(); } });
+  $("#chat-reset").addEventListener("click", async () => { if (CH.snap && CH.snap.display.length && !confirm("会話をリセットしますか？")) return; await api("/api/chat/reset", { session_id: CH.sid }); CH.sid = null; CH.snap = null; renderChat(); });
+  $("#chat-dl").addEventListener("click", () => {
+    if (!CH.snap) return;
+    const o = { id: "chat_" + CH.snap.session_id, category: "playground_chat", display: CH.snap.display, design_v1_messages: CH.snap.dv1_messages, gemma_history: CH.snap.gemma_history, latest: CH.snap.latest, settings: chatSettings() };
+    const a = h("a", { href: URL.createObjectURL(new Blob([JSON.stringify(o, null, 1)], { type: "application/json" })), download: o.id + ".json" }); document.body.append(a); a.click(); a.remove();
+  });
+  document.querySelectorAll("a.ex").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); $("#chat-in").value = a.textContent; $("#chat-in").focus(); }));
+  renderChat();
+}
+async function checkDesignHealth() {
+  try { const hl = await api("/api/health?url=" + encodeURIComponent($("#cs-durl").value.trim())); $("#cs-dhealth").textContent = hl.ok ? "設計役 OK" : "設計役に接続できません: " + hl.detail; } catch (e) { $("#cs-dhealth").textContent = e.message; }
+}
+async function chatSend() {
+  if (CH.busy) return;
+  const text = $("#chat-in").value.trim(); if (!text) return;
+  CH.busy = true; $("#chat-send").disabled = true; $("#chat-busy").replaceChildren(h("span", { class: "spinner" }), "会話役と設計役が作業中...");
+  const t0 = performance.now();
+  try {
+    const snap = await api("/api/chat/send", { session_id: CH.sid, text, settings: chatSettings() });
+    CH.sid = snap.session_id; CH.snap = snap; $("#chat-in").value = "";
+    $("#chat-busy").textContent = `完了 (${((performance.now() - t0) / 1000).toFixed(1)}s)`;
+  } catch (e) { $("#chat-busy").replaceChildren(h("span", { class: "msg bad", text: "エラー: " + e.message })); }
+  CH.busy = false; $("#chat-send").disabled = false; renderChat();
+}
+function stepLine(l) {
+  const { step } = l;
+  if (step === "dv1") return h("details", {}, h("summary", { text: `設計役 ${l.label}: status=${l.status} 違反=${l.violations} 根拠=${l.grounding || "-"} (temp ${l.temperature}${l.seed ? " seed " + l.seed : ""}, ${l.elapsed_s}s)` }),
+    h("div", { class: "tagline", text: "user" }), h("pre", { text: l.user }), h("div", { class: "tagline", text: "assistant" }), h("pre", { text: l.assistant }), h("div", { class: "tagline", text: (l.messages || []).join(" / ") }));
+  if (step === "action") return h("details", {}, h("summary", { text: `会話役のアクション: ${l.kind}` + ((l.fills || []).length ? "（システムが補った項目あり）" : "") }), h("pre", { text: JSON.stringify(l, null, 1) }));
+  if (step.startsWith("gemma")) return h("details", {}, h("summary", { text: `会話役 ${step}${l.elapsed_s ? " (" + l.elapsed_s + "s)" : ""}${l.error ? " — " + l.error : ""}` }), h("pre", { text: l.output || l.error || "" }));
+  return h("details", {}, h("summary", { text: step + (l.error ? ": " + l.error : "") }), h("pre", { text: JSON.stringify(l, null, 1) }));
+}
+function renderChat() {
+  const snap = CH.snap, box = $("#chat-msgs");
+  if (!snap || !snap.display.length) { box.replaceChildren(h("div", { class: "muted", text: "日本語で話しかけてください。" })); $("#lat").textContent = "まだ設計がありません。"; $("#chat-log").textContent = "まだありません。"; $("#chat-dl").disabled = true; return; }
+  $("#chat-dl").disabled = false;
+  box.replaceChildren(...snap.display.map((m) => m.role === "user" ? h("div", { class: "bubble-user", style: "margin-left:40px" }, m.text)
+    : h("div", { class: "bubble-user", style: "background:transparent;border:1px solid var(--line);margin-right:40px" },
+      m.say ? h("div", { class: "tagline", text: "会話役: " + m.say }) : null, h("div", { style: "white-space:pre-wrap", class: m.error ? "msg bad" : "" }, m.text),
+      ...(m.check_notes || []).map((n) => h("div", { class: "msg bad", text: "検査: " + n })),
+      ...(m.grounding_notes || []).map((n) => h("div", { class: "msg bad", text: "根拠不一致（実データと照合）: " + n })),
+      m.explanation_source === "template" ? h("div", { class: "msg warn", text: "会話役の説明が数値照合に通らなかったため、コードで作った説明です" }) : null,
+      m.log ? h("details", {}, h("summary", { text: "この回の処理ログ" }), ...m.log.map(stepLine)) : null)));
+  box.scrollTop = box.scrollHeight;
+  const lat = snap.latest;
+  if (!lat) { $("#lat").textContent = "まだ設計がありません。"; }
+  else {
+    const st = lat.status, obj = lat.obj;
+    const names = lat.names;
+    $("#lat-info").textContent = `${lat.kind} / repair ${lat.repairs} 回 / 試行 ${lat.attempts.length}`;
+    $("#lat").replaceChildren(...[
+      h("div", {}, st ? h("span", { class: "badge " + (STATUS_CLS[st] || "unv"), text: `${st} ${STATUS_JA[st] || ""}` }) : h("span", { class: "badge bad", text: "status 不明" }),
+        lat.ungrounded_refusal ? h("span", { class: "badge bad", style: "margin-left:6px", text: "根拠不一致の拒否（取り直し後も）" }) : null),
+      (lat.fills || []).length ? h("div", { class: "msg warn", text: "システムが補った項目: " + lat.fills.join(" ／ ") }) : null,
+      ...(lat.warnings || []).map((w) => h("div", { class: "msg warn", text: w })),
+      names ? h("div", {}, h("h3", { text: "艦名" }), h("div", {}, `艦級: ${names.class_name || "—"}　艦名: ` + (names.ships || []).map((x) => x.name + (x.native ? `（${x.native}）` : "")).join("、")), h("div", { class: "tagline", text: names.note || "" })) : null,
+      h("h3", { text: "要求文 / req" }), h("div", { text: lat.request }), h("details", {}, h("summary", { text: "req JSON" }), h("pre", { text: JSON.stringify(lat.req, null, 1) })),
+      obj && (obj.conflicts || []).length ? h("div", {}, h("h3", { text: "conflicts" }), h("table", {}, h("tr", {}, [h("th", { text: "constraint" }), h("th", { text: "reason" })]), obj.conflicts.map((c) => h("tr", {}, h("td", { text: c.constraint }), h("td", { text: c.reason }))))) : null,
+      obj ? designTables(obj.design) : null,
+      ...analysisBlock(lat.analysis || {}, obj),
+      h("details", {}, h("summary", { text: `近傍の実艦 nbr (${(lat.nbr || []).length})` }), (lat.nbr && lat.nbr.length) ? nbrTable(lat.nbr) : h("div", { class: "muted", text: "この回は nbr なし（modify は国・年の変更時だけ付く）" })),
+      h("details", {}, h("summary", { text: "生の出力 JSON" }), h("pre", { text: lat.content }))].filter((x) => x !== null && x !== undefined && x !== false));
+  }
+  const flat = snap.display.filter((m) => m.log).flatMap((m, i) => [h("div", { class: "tagline", style: "margin-top:6px", text: `— ${i + 1} 回目の依頼 —` }), ...m.log.map(stepLine)]);
+  $("#chat-log").replaceChildren(...flat);
+}
+$("#mode-form").addEventListener("click", () => setMode("form"));
+$("#mode-chat").addEventListener("click", () => setMode("chat"));
+
+init().catch((e) => { document.body.prepend(h("div", { class: "banner-bad", text: "初期化に失敗: " + e.message })); });
+</script>
+</body>
+</html>

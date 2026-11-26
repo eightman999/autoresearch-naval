@@ -1,0 +1,7937 @@
+{
+ "sample": [
+  {
+   "canon": "/ships/russia/ru_cf_r141.html",
+   "why": "SHIPS 重複倍率が極端なクラス",
+   "origin_url": "https://www.navypedia.org/ships/russia/ru_cf_r141.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/russia/ru_cf_r141.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Russian",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "TK-36 missile patrol craft (projects 205, 205U) (1960 - 1977)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 281,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate",
+     "Modification"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 4,
+     "graphics": 2
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "TK-36 (projects 205- 205U) (1960 Class",
+    "ship_type": "missile-patrol-craft",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "TK-36 Missile Class",
+    "ship_type": "patrol-craft-project",
+    "n_ships": 280,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "TK-36(projects205-205U)1977) Class",
+     "TYPE": "missile-patrol-craft",
+     "source_url": "https://www.navypedia.org/ships/russia/ru_cf_r141.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 31180,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "pr. 205 earlier, 205Ch, 205E: 172 pr. 205 later: 184 pr. 205U: 192",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "pr. 205 earlier, 205Ch, 205E: 209 pr. 205 later: 226 pr. 205U: 235 pr. 205ER: 24",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "38.6",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "7.60",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "pr. 205 earlier, 205Ch: 1.73 pr. 205 later, 205U: 1.84 pr. 205ER: 2.00 pr. 205E:",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "3",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "pr. 205 earlier, 205Ch, 205E: 3 M-503G diesels pr. 205 later, 205U, 205ER: 3 M-5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "pr. 205 earlier, 205Ch, 205E: 12000 pr. 205 later, 205U, 205ER: 15000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "pr. 205 earlier, 205Ch: 38.5 pr. 205 later, 205U, 205ER: 42 pr. 205E: 50",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "pr. 205, 205Ch, 205U: 1800(14) pr. 205ER: 1620(15)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "pr. 205, 205Ch: 4 x 1 P-15/P-15T SSM (4 P-15/P-15T), 2 x 2 - 30/71 AK-230 pr. 20",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "MR-101 Rangout, MR-104 Rys' radars",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Complement": {
+      "truth": "pr. 205, 205Ch: 28 pr. 205U, 205ER, 205E: 29",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 868,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 430,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 115,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 281,
+     "truth_with_comp": 281,
+     "truth_blank_name_rows": 187,
+     "db_rows": 31180,
+     "db_distinct_rows": 278,
+     "db_missing_vs_truth": 1,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 102,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 280,
+     "fetcher_mirror_missing_vs_truth": 1,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/china/ch_cf_2201.html",
+   "why": "SHIPS 重複倍率が極端なクラス",
+   "origin_url": "https://www.navypedia.org/ships/china/ch_cf_2201.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/china/ch_cf_2201.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "China",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "No2201 (project 022) fast attack craft (missile) (2004-2010)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 82,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "No2201 (project 022) (missile) Class",
+    "ship_type": "fast-attack-craft",
+    "when_date": "(2004-2010)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "No2201 (project 022) Fast Attack Craft (missile) Class",
+    "ship_type": "",
+    "n_ships": 82,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "No2201(project022) Class",
+     "TYPE": "fast-attack-craft",
+     "source_url": "https://www.navypedia.org/ships/china/ch_cf_2201.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 3403,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "200",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "220",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "42.6",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "12.2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "1.50",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "4 waterjets",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "6900",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "36",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "1800(18)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "2 x 4 Ying Ji-83 SSM (8 C-803), 1 x 6 - 30/54 AK-630",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "type 348, type 765, HEOS-300 e/o director, type 826 ECM suite, 2x type 945 decoy",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Complement": {
+      "truth": "14",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 227,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 44,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 82,
+     "truth_with_comp": 82,
+     "truth_blank_name_rows": 82,
+     "db_rows": 3403,
+     "db_distinct_rows": 82,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 5,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 82,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/germany/ger_mb_kfk2.html",
+   "why": "SHIPS 重複倍率が極端なクラス",
+   "origin_url": "https://www.navypedia.org/ships/germany/ger_mb_kfk2.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/germany/ger_mb_kfk2.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Germany",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "KFK2 ASW boats (1942 - 1945)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Data variant",
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 709,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "KFK2 ASW (1942 Class",
+    "ship_type": "boats",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "COASTAL FORCES Class",
+    "ship_type": "",
+    "n_ships": 709,
+    "n_sections": 0
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "KFK2ASW1945) Class",
+     "TYPE": "boats",
+     "source_url": "https://www.navypedia.org/ships/germany/ger_mb_kfk2.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 2828,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": false,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Displacement full, t": {
+      "truth": "110",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "24.0",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "6.40",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "2.75",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "1 Demag diesel",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "175",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "9",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 7",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "1200(7)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 37/80 SK C/30, 1 x 1 - 20/65 C/38 or 2 x 1 - 20/65 C/38 or 2 x 2 - 20/65",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "hydrophone",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "15 - 18",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 947,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 208,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 259,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 709,
+     "truth_with_comp": 617,
+     "truth_blank_name_rows": 0,
+     "db_rows": 2828,
+     "db_distinct_rows": 722,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 13,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 709,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 709,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Data variant",
+      "as completed"
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/finland/fi_cm_pg2.html",
+   "why": "SHIPS が 0 件のクラス",
+   "origin_url": "https://www.navypedia.org/ships/finland/fi_cm_pg2.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/finland/fi_cm_pg2.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Finland",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "gunboats of WWII",
+    "n_specs": 0,
+    "spec_labels": [],
+    "n_ships": 0,
+    "ship_headers": [],
+    "n_blue_tables": 0,
+    "n_cwd_tables": 0,
+    "h2_titles": [
+     "Menu",
+     "100 - 1000 t displacement/ BRT tonnage vessels",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {},
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "WWII Class",
+    "ship_type": "gunboats",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "Auxiliary Class",
+    "ship_type": "gunboats-of-wwii",
+    "n_ships": 0,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "WWII Class",
+     "TYPE": "gunboats-of",
+     "source_url": "https://www.navypedia.org/ships/finland/fi_cm_pg2.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 0,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {},
+    "sections": {
+     "100 - 1000 t displacement/ BRT tonnage vessels": {
+      "truth_len": 135,
+      "n_p": 0,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "partial_or_different",
+      "fetcher_live": "partial_or_different",
+      "fetcher_mirror": "missing"
+     },
+     "Project history": {
+      "truth_len": 16,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 0,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 0,
+     "db_distinct_rows": 0,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 0,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 0,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/canada/can_cm_ww2_fv.html",
+   "why": "SHIPS が 0 件のクラス",
+   "origin_url": "https://www.navypedia.org/ships/canada/can_cm_ww2_fv.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/canada/can_cm_ww2_fv.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Canada",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "requisitioned fishing vessels of WWII",
+    "n_specs": 0,
+    "spec_labels": [],
+    "n_ships": 0,
+    "ship_headers": [],
+    "n_blue_tables": 0,
+    "n_cwd_tables": 0,
+    "h2_titles": [
+     "Menu",
+     "100 - 1000 t displacement/ BRT tonnage vessels",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {},
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "requisitioned fishing WWII Class",
+    "ship_type": "vessels",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "Requisitioned Fishing Vessels Of WWII Class",
+    "ship_type": "",
+    "n_ships": 0,
+    "n_sections": 2
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "WWII Class",
+     "TYPE": "requisitioned-fishing-vessels-of",
+     "source_url": "https://www.navypedia.org/ships/canada/can_cm_ww2_fv.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 0,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {},
+    "sections": {
+     "100 - 1000 t displacement/ BRT tonnage vessels": {
+      "truth_len": 425,
+      "n_p": 0,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "partial_or_different",
+      "fetcher_live": "partial_or_different",
+      "fetcher_mirror": "missing"
+     },
+     "Project history": {
+      "truth_len": 49,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 290,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 0,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 0,
+     "db_distinct_rows": 0,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 0,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 0,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/bulgaria/bu_cm_rms2.html",
+   "why": "SHIPS が 0 件のクラス",
+   "origin_url": "https://www.navypedia.org/ships/bulgaria/bu_cm_rms2.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/bulgaria/bu_cm_rms2.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Bulgaria",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "river minesweepers of WWII",
+    "n_specs": 0,
+    "spec_labels": [],
+    "n_ships": 0,
+    "ship_headers": [],
+    "n_blue_tables": 0,
+    "n_cwd_tables": 0,
+    "h2_titles": [
+     "Menu",
+     "100 - 1000 t displacement/ BRT tonnage vessels",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {},
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "WWII Class",
+    "ship_type": "river-minesweepers",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "Auxiliary River Class",
+    "ship_type": "minesweepers-of-wwii",
+    "n_ships": 0,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "WWII Class",
+     "TYPE": "river-minesweepers-of",
+     "source_url": "https://www.navypedia.org/ships/bulgaria/bu_cm_rms2.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 0,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {},
+    "sections": {
+     "100 - 1000 t displacement/ BRT tonnage vessels": {
+      "truth_len": 421,
+      "n_p": 0,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "partial_or_different",
+      "fetcher_live": "partial_or_different",
+      "fetcher_mirror": "missing"
+     },
+     "Project history": {
+      "truth_len": 59,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 0,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 0,
+     "db_distinct_rows": 0,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 0,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 0,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/japan/jap_bb_yamato.html",
+   "why": "Modernizations が番号付き見出し ('Modernizations N.')",
+   "origin_url": "https://www.navypedia.org/ships/japan/jap_bb_yamato.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/japan/jap_bb_yamato.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Japan",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "YAMATO battleships (1941 - 1942)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armour, mm",
+     "Armament",
+     "Complement"
+    ],
+    "n_ships": 4,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Ship protection",
+     "Modernizations 9.",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 3,
+     "graphics": 2
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "YAMATO (1941 Class",
+    "ship_type": "battleships",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "YAMATO Class",
+    "ship_type": "battleships",
+    "n_ships": 4,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "YAMATO1942) Class",
+     "TYPE": "battleships",
+     "source_url": "https://www.navypedia.org/ships/japan/jap_bb_yamato.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 4,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "63200",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "72810",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "244.0 pp 256.0 wl 263.0 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "36.9",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "10.4",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "4",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "4 sets Kampon geared steam turbines, 12 Kampon boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "150000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "27",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "oil 6300",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "7200(16)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armour, mm": {
+      "truth": "belt: 410, bulkheads: 300, main deck: 230 - 200, upper deck: 50 - 35, barbettes:",
+      "db": "missing",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok_digit_split"
+     },
+     "Armament": {
+      "truth": "Yamato: 3 x 3 - 460/45 94-shiki, 4 x 3 - 155/60 3-shiki, 6 x 2 - 127/40 89-shiki",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "2500",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 4069,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Ship protection": {
+      "truth_len": 1052,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations 9.": {
+      "truth_len": 584,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": true,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 755,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 4,
+     "truth_with_comp": 2,
+     "truth_blank_name_rows": 0,
+     "db_rows": 4,
+     "db_distinct_rows": 4,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 4,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 4,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/japan/jap_ss_kd4.html",
+   "why": "Modernizations が番号付き見出し ('Modernizations N.')",
+   "origin_url": "https://www.navypedia.org/ships/japan/jap_ss_kd4.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/japan/jap_ss_kd4.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Japan",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "\"Kaidai 4\" large submarines (I61) (1929 - 1930)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement normal, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement",
+     "Diving depth operational, m"
+    ],
+    "n_ships": 3,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations 4.",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "\"Kaidai 4\" (I61) (1929 Class",
+    "ship_type": "large-submarines",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "Kaidai 4 Class",
+    "ship_type": "large-submarines",
+    "n_ships": 3,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "\"Kaidai4\"1930) Class",
+     "TYPE": "large-submarines",
+     "source_url": "https://www.navypedia.org/ships/japan/jap_ss_kd4.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 3,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "1635",
+      "db": "different",
+      "fetcher_live": "different",
+      "fetcher_mirror": "different"
+     },
+     "Displacement normal, t": {
+      "truth": "1720 / 2300",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "91.0 pp 95.5 wl 97.7 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "7.80",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "4.83",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 Kampon diesels / 2 electric motors",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "6000 / 1800",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "20 / 8.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 190",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "10800(10) / 60(3)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 120/45 11-shiki, 6 - 533 TT (4 bow, 2 stern, 14)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "K-chubu hydrophone",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "58",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 244,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations 4.": {
+      "truth_len": 57,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": true,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 497,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 3,
+     "truth_with_comp": 3,
+     "truth_blank_name_rows": 0,
+     "db_rows": 3,
+     "db_distinct_rows": 3,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 3,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 3,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Diving depth operational, m",
+      "60"
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/usa/us_sc_sc453.html",
+   "why": "TYPE が空",
+   "origin_url": "https://www.navypedia.org/ships/usa/us_sc_sc453.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/usa/us_sc_sc453.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "United-States",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "SC453 submarine-chaser (1941)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "No",
+     "Name",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comm",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Fate Notes"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "SC453 submarine-chaser Class",
+    "ship_type": "",
+    "when_date": "(1941)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "SC453 Class",
+    "ship_type": "submarine-chaser",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "SC453submarine-chaser Class",
+     "TYPE": "",
+     "source_url": "https://www.navypedia.org/ships/usa/us_sc_sc453.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": false,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "100",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Length, m": {
+      "truth": "33.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "5.50",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "1.80",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "1540",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "17",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 76/23 Mk 14, 2 x 1 - 12.7/90, 1 DCT (\"Y\"-gun)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "QC sonar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "27",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 956,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Fate Notes": {
+      "truth_len": 41,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 1,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/uk/brit_o_esc_bangor_turbine.html",
+   "why": "TYPE が空",
+   "origin_url": "https://www.navypedia.org/ships/uk/brit_o_esc_bangor_turbine.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/uk/brit_o_esc_bangor_turbine.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "United-Kingdom",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "BANGOR minesweepers, turbine-engined (BEAUMARIS) (1940 - 1942)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 26,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "BANGOR minesweepers- turbine-engined (BEAUMARIS) (1940 Class",
+    "ship_type": "",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "BANGOR Class",
+    "ship_type": "minesweepers-turbine-engined",
+    "n_ships": 26,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "BANGORminesweepers-turbine-engined1942) Class",
+     "TYPE": "",
+     "source_url": "https://www.navypedia.org/ships/uk/brit_o_esc_bangor_turbine.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 26,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "605",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "780",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "53.0",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "8.69",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "2.95 deep load",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 sets geared steam turbines, 2 Admiralty 3-drum boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "2000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "16.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "oil 150",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "4000(10)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 76/45 20cwt QF Mk I/II/III/IV, 1 x 1 - 40/39 2pdr QF Mk VIII or 1 x 4 - ",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "type 286PU radar (some), type 128 sonar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Complement": {
+      "truth": "60 - 87",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 1848,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 122,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 228,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 26,
+     "truth_with_comp": 26,
+     "truth_blank_name_rows": 0,
+     "db_rows": 26,
+     "db_distinct_rows": 26,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 26,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 26,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/india/in_cv_vikrant.html",
+   "why": "空母 (Air group / Aircraft facilities セクション)",
+   "origin_url": "https://www.navypedia.org/ships/india/in_cv_vikrant.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/india/in_cv_vikrant.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "India",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "VIKRANT aircraft carrier (1961)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Air group",
+     "Standard scale images",
+     "Graphics",
+     "Aircraft facilities",
+     "Project history",
+     "Protection",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "VIKRANT Class",
+    "ship_type": "aircraft-carrier",
+    "when_date": "(1961)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "VIKRANT Aircraft Carrier Class",
+    "ship_type": "",
+    "n_ships": 1,
+    "n_sections": 0
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "VIKRANT Class",
+     "TYPE": "aircraft-carrier",
+     "source_url": "https://www.navypedia.org/ships/india/in_cv_vikrant.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "16000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "partial_substring"
+     },
+     "Displacement full, t": {
+      "truth": "19550",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "192.0 pp 213.6 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok_digit_split"
+     },
+     "Breadth, m": {
+      "truth": "24.4 wl 32.0 fd",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "7.32 deep load",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 sets Parsons geared steam turbines, 4 Admiralty 3-drum boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "42000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "24.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "oil 3000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "12000(14)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "4 x 2 - 40/60 Mk 5, 7 x 1 - 40/60 Mk 7, 22 aircraft (Sea Hawk attackers, Alizé A",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "type 960, type 977Q, type 293Q, type 963 radars",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "1075 (peace), 1345 (war)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Air group": {
+      "truth_len": 201,
+      "n_p": 0,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "partial_or_different",
+      "fetcher_live": "partial_or_different",
+      "fetcher_mirror": "missing"
+     },
+     "Aircraft facilities": {
+      "truth_len": 173,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Project history": {
+      "truth_len": 478,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Protection": {
+      "truth_len": 149,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 235,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/usa/us_cv_independence.html",
+   "why": "Ship protection セクションあり",
+   "origin_url": "https://www.navypedia.org/ships/usa/us_cv_independence.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/usa/us_cv_independence.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "United-States",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "INDEPENDENCE light aircraft carriers (1943)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armour, mm",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 9,
+    "ship_headers": [
+     "No",
+     "Name",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comm",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Air group",
+     "Standard scale images",
+     "Graphics",
+     "Aircraft facilities",
+     "Project history",
+     "Ship protection",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 2,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "INDEPENDENCE Class",
+    "ship_type": "light-aircraft-carriers",
+    "when_date": "(1943)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "INDEPENDENCE Light Aircraft Carriers Class",
+    "ship_type": "",
+    "n_ships": 9,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "INDEPENDENCE Class",
+     "TYPE": "light-aircraft-carriers",
+     "source_url": "https://www.navypedia.org/ships/usa/us_cv_independence.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 9,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "10622",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "14751",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "182.9 wl 189.7 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "21.8 wl 33.3 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "7.39 full load",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "4",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "4 sets General Electric geared steam turbines, 4 Babcock & Wilcox boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "100000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "31.6",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "oil 2633",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "13000 (15)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armour, mm": {
+      "truth": "CVL22, 23: belt: 16, bulkheads: 127, main deck: 51 CVL24 - 30: belt: 127 on 16mm",
+      "db": "missing",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "CVL22, 23: 2 x 4 - 40/56 Mk 1.2, 8 x 2 - 40/56 Mk 1.2, 22 x 1 - 20/70 Mk 4, 30 a",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "SK, SC-2, SG radars",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Complement": {
+      "truth": "1569",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Air group": {
+      "truth_len": 217,
+      "n_p": 0,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "partial_or_different",
+      "fetcher_live": "partial_or_different",
+      "fetcher_mirror": "missing"
+     },
+     "Aircraft facilities": {
+      "truth_len": 221,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Project history": {
+      "truth_len": 1464,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Ship protection": {
+      "truth_len": 174,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 1288,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 474,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 9,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 9,
+     "db_distinct_rows": 9,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 9,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 9,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/thailand/th_cf_t8199.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/thailand/th_cf_t8199.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/thailand/th_cf_t8199.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Thailand",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "T81 patrol boats (1999-2000)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 3,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comm",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "T81 Class",
+    "ship_type": "patrol-boats",
+    "when_date": "(1999-2000)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "T81 Class",
+    "ship_type": "patrol-boats",
+    "n_ships": 3,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "T81 Class",
+     "TYPE": "patrol-boats",
+     "source_url": "https://www.navypedia.org/ships/thailand/th_cf_t8199.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 3,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": false,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "110",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "120",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "28.0 pp 30.1 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "6.30",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "1.70",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 MTU 16V200 TE90 diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "3600",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "25",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 24",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "1300(15)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 40/60 Mk 3, 1 x 1 - 20/90 GAM-B01, 2 x 1 - 12.7/90",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "Sperry SM5000 radar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "28",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 165,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 3,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 3,
+     "db_distinct_rows": 3,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 3,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 3,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/france/fr_bb_rochambeau.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/france/fr_bb_rochambeau.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/france/fr_bb_rochambeau.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "France",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "ROCHAMBEAU broadside ironclad (1867)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement normal, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armour, mm",
+     "Armament",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Ships",
+     "Technical data",
+     "Project history",
+     "Ship protection",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "ships": 0,
+     "technical data": 0
+    },
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "ROCHAMBEAU broadside Class",
+    "ship_type": "ironclad",
+    "when_date": "(1867)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "ROCHAMBEAU Broadside Ironclad Class",
+    "ship_type": "",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "ROCHAMBEAU Class",
+     "TYPE": "broadside-ironclad",
+     "source_url": "https://www.navypedia.org/ships/france/fr_bb_rochambeau.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {
+     "Displacement normal, t": {
+      "truth": "7800",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Length, m": {
+      "truth": "107.4 pp 115.0 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "22.2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "6.52 mean",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "1 2-cyl HSE return connecting rod, 6 'return flame' tubular boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "4500",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "15",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "coal 540 - 1000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "1200(8)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armour, mm": {
+      "truth": "wrought iron; belt: 89 - 63, deck: 18, casemate: 114, CT: 250",
+      "db": "missing",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "4 x 1 - 274/18 M1864-66 MLR, 10 x 1 - 240/18 M1864-66 MLR",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "600",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 883,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Ship protection": {
+      "truth_len": 73,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/germany/ger_ss_u57.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/germany/ger_ss_u57.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/germany/ger_ss_u57.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Germany",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "U57 submarines (1916-1917)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement normal, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Complement",
+     "Diving depth operational, m"
+    ],
+    "n_ships": 12,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Ships",
+     "Technical data",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "ships": 0,
+     "technical data": 0
+    },
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "U57 Class",
+    "ship_type": "submarines",
+    "when_date": "(1916-1917)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "U57 Class",
+    "ship_type": "submarines",
+    "n_ships": 12,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "U57 Class",
+     "TYPE": "submarines",
+     "source_url": "https://www.navypedia.org/ships/germany/ger_ss_u57.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 12,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "",
+      "db": "spurious",
+      "fetcher_live": "spurious",
+      "fetcher_mirror": "spurious"
+     },
+     "Displacement normal, t": {
+      "truth": "U57 - 59: 786 / 954 U60 - 62: 768 / 956 U99 - 104: 750 / 952",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "U57 - 62: 67.0 U99 - 104: 67.6",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "6.32",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "U57 - 59: 3.79 U60 - 62: 3.74 U99 - 104: 3.65",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 MAN diesels / 2 SSW electric motors",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "U57 - 59: 1800 / 1200 U60 - 62, 99 - 104: 2400 / 1200",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "U57 - 59: 14.7 / 8.4 U60 - 62: 16.5 / 8.4 U99 - 104: 16.5 / 8.8",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "U57 - 59: diesel oil 119 U60 - 62: diesel oil 128 U99 - 104: diesel oil 114",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "U57 - 59: 7730(8) / 55(5) U60 - 62: 11400(8) / 49(5) U99 - 104: 10100(8) / 45(5)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "U57 - 60: 2 x 1 - 88/27 TK L/30 C/08, 4 - 500 TT (2 bow, 2 stern, 7) U61, 62: 1 ",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "36",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 138,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 236,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 531,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 12,
+     "truth_with_comp": 12,
+     "truth_blank_name_rows": 0,
+     "db_rows": 12,
+     "db_distinct_rows": 12,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 12,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 12,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Diving depth operational, m",
+      "50"
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/colombia/col_es_almirante_padilla.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/colombia/col_es_almirante_padilla.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/colombia/col_es_almirante_padilla.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Colombia",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "ALMIRANTE PADILLA frigates (1944/1947-1953)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 3,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "ALMIRANTE PADILLA Class",
+    "ship_type": "frigates",
+    "when_date": "(1944/1947-1953)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "ALMIRANTE PADILLA Class",
+    "ship_type": "frigates",
+    "n_ships": 3,
+    "n_sections": 0
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "ALMIRANTEPADILLA Class",
+     "TYPE": "frigates",
+     "source_url": "https://www.navypedia.org/ships/colombia/col_es_almirante_padilla.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 3,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "1509",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "2238",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "87.0 wl 92.6 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "11.4",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "3.86",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 VTE, 3 boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "5500",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "20",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "oil 768",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "9500 (12)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "3 x 1 - 76/50 Mk 21, 2 x 2 - 40/60 Mk 1, 9 x 1 - 20/70 Mk 10, 1 x 24 - 178 Hedge",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "SA, SL radars, QGA sonar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "190",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 33,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 3,
+     "truth_with_comp": 3,
+     "truth_blank_name_rows": 0,
+     "db_rows": 3,
+     "db_distinct_rows": 3,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 3,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 3,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/uk/brit_aws_lss.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/uk/brit_aws_lss.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/uk/brit_aws_lss.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "United-Kingdom",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "\"LSS\"-type landing ships with stern chute (DAFFODIL) (2, 1917 / 1941)",
+    "n_specs": 0,
+    "spec_labels": [],
+    "n_ships": 2,
+    "ship_headers": [
+     "Name",
+     "Launched // Comm.",
+     "Builder",
+     "Tonnage, BRT",
+     "Dimensions, m",
+     "Speed, kts",
+     "Machinery, Fuel, t",
+     "Armament // Capacity",
+     "Fate"
+    ],
+    "n_blue_tables": 0,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "\"LSS\"-type (DAFFODIL) Class",
+    "ship_type": "landing-ships",
+    "when_date": "(2- 1917 / 1941)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "LSS\"- Class",
+    "ship_type": "landing-ships-with-stern-chute",
+    "n_ships": 2,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "\"LSS\"-type19171941) Class",
+     "TYPE": "landing-ships-with-stern-chute",
+     "source_url": "https://www.navypedia.org/ships/uk/brit_aws_lss.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 2,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {},
+    "sections": {
+     "Project history": {
+      "truth_len": 315,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 29,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 2,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 2,
+     "db_distinct_rows": 2,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 2,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 2,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/namibia/nam_cg_globe.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/namibia/nam_cg_globe.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/namibia/nam_cg_globe.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Namibia",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "GLOBE fishery patrol ship (1952/1990)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Ships",
+     "Technical data",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "ships": 0,
+     "technical data": 0
+    },
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "GLOBE fishery Class",
+    "ship_type": "patrol-ship",
+    "when_date": "(1952/1990)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "GLOBE Fishery Class",
+    "ship_type": "patrol-ship",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "GLOBE Class",
+     "TYPE": "fishery-patrol-ship",
+     "source_url": "https://www.navypedia.org/ships/namibia/nam_cg_globe.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Displacement full, t": {
+      "truth": "~500?",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Breadth, m": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Draught, m": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "No of shafts": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Machinery": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Power, h. p.": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Max speed, kts": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Fuel, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Armament": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Electronic equipment": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Complement": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 60,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/algeria/alg_es_rais_hassen_barbiar.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/algeria/alg_es_rais_hassen_barbiar.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/algeria/alg_es_rais_hassen_barbiar.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Algeria",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "RAÏS HASSEN BARBIAR corvette (2017)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "RAÏS HASSEN BARBIAR Class",
+    "ship_type": "corvette",
+    "when_date": "(2017)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "RAÏS HASSEN BARBIAR Class",
+    "ship_type": "corvette",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "RAÏSHASSENBARBIAR Class",
+     "TYPE": "corvette",
+     "source_url": "https://www.navypedia.org/ships/algeria/alg_es_rais_hassen_barbiar.htm"
+    },
+    "mirror": {
+     "CLASS_NAME": "RAÏS HASSEN BARBIAR Class",
+     "TYPE": "corvette",
+     "source_url": "https://myownonpmirror.com/ships/algeria/alg_es_rais_hassen_barbiar.html"
+    },
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 1
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": false,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "600",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Length, m": {
+      "truth": "61.7",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "8.45",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "2.50",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "3",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "3 MTU 16V595 TE90 diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Max speed, kts": {
+      "truth": "28",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Armament": {
+      "truth": "2 x 2 C802 SSM (4 C802), 1 x 1 - 76/59 AK-176, 1 x 6 - 30/54 AK-630",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "nav., surf./air search, GFC radars, e/o system, ECM suite, 2x 6 decoy RL",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Complement": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 80,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/norway/no_ss_utsira.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/norway/no_ss_utsira.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/norway/no_ss_utsira.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Norway",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "UTSIRA submarines (1944, 1943-1944/1946)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement normal, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement",
+     "Diving depth operational, m"
+    ],
+    "n_ships": 4,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "UTSIRA Class",
+    "ship_type": "submarines",
+    "when_date": "(1944- 1943-1944/1946)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "UTSIRA Class",
+    "ship_type": "submarines",
+    "n_ships": 4,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "UTSIRA1943-1944/1946) Class",
+     "TYPE": "submarines",
+     "source_url": "https://www.navypedia.org/ships/norway/no_ss_utsira.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 4,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "545",
+      "db": "different",
+      "fetcher_live": "different",
+      "fetcher_mirror": "different"
+     },
+     "Displacement normal, t": {
+      "truth": "658 - 662 / 740",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "62.3",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "4.90",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "4.65",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 Paxman diesel-generators, 2 electric motors",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "615 / 825",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "11.25 / 10",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 55",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "4700(10) / 30(9)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 76/45 20cwt QF Mk II, 2 x 1 - 20/70 Oerlikon Mk IV, 4 - 533 TT (bow, 8 t",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "type 267QW radar, type 129, type 138 sonars",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "33",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 365,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 76,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 4,
+     "truth_with_comp": 4,
+     "truth_blank_name_rows": 0,
+     "db_rows": 4,
+     "db_distinct_rows": 4,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 4,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 4,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Diving depth operational, m",
+      "90"
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/cuba/cub_ms_501.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/cuba/cub_ms_501.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/cuba/cub_ms_501.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Cuba",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "501 inshore minesweepers (1977-1984)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 12,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate",
+     "Modification"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 2
+    },
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "501 inshore Class",
+    "ship_type": "minesweepers",
+    "when_date": "(1977-1984)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "501 Inshore Class",
+    "ship_type": "minesweepers",
+    "n_ships": 12,
+    "n_sections": 0
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "501 Class",
+     "TYPE": "inshore-minesweepers",
+     "source_url": "https://www.navypedia.org/ships/cuba/cub_ms_501.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 78,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": true,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "88",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "pr. 1258: 91 pr. 1258E: 97",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "26.1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "5.40",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "1.38",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 3D12 diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "600",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "12",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "pr. 1258: 300(10) pr. 1258E: 350(10)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "pr. 1258: 1 x 2 - 25/112 2M-3M, 1 x 7 - 55 MRG-1 GL, 2 DCR (12), IT-1 Neva-1 USV",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "Kivach radar, MG-7 Braslet sonar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "10",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 63,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 12,
+     "truth_with_comp": 12,
+     "truth_blank_name_rows": 12,
+     "db_rows": 78,
+     "db_distinct_rows": 12,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 12,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/italy/it_cr_libia.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/italy/it_cr_libia.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/italy/it_cr_libia.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Italy",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "LIBIA protected cruiser (1913)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement normal, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armour, mm",
+     "Armament",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Ship protection",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "LIBIA Class",
+    "ship_type": "protected-cruiser",
+    "when_date": "(1913)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "LIBIA Protected Class",
+    "ship_type": "cruiser",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "LIBIA Class",
+     "TYPE": "protected-cruiser",
+     "source_url": "https://www.navypedia.org/ships/italy/it_cr_libia.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement normal, t": {
+      "truth": "3760",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "4466",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "103.6 wl 111.8 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "14.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "5.51",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 4-cyl VTE, 16 Niclausse boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "11530",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "22.9",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "coal 600",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "3150(10)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armour, mm": {
+      "truth": "deck: 100, CT: 100, gunshields: 76",
+      "db": "missing",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "2 x 1 - 152/50 A1913, 8 x 1 - 120/45 A1913, 8 x 1 - 47/50 V1908, 6 x 1 - 37/25 H",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "314",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 341,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Ship protection": {
+      "truth_len": 52,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 57,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/russia/ru_dd_vzryv.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/russia/ru_dd_vzryv.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/russia/ru_dd_vzryv.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Russian",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "VZRYV torpedo boat (1877)",
+    "n_specs": 13,
+    "spec_labels": [
+     "Displacement normal, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "VZRYV Class",
+    "ship_type": "torpedo-boat",
+    "when_date": "(1877)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "VZRYV Torpedo Boat Class",
+    "ship_type": "",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "VZRYV Class",
+     "TYPE": "torpedo-boat",
+     "source_url": "https://www.navypedia.org/ships/russia/ru_dd_vzryv.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement normal, t": {
+      "truth": "160",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Length, m": {
+      "truth": "36.5 pp 39.6 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "4.93",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "3.38 max",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "1 VC, 2 locomotive boilers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "800",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "13.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "coal 16",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "600(10)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "2 - 381 TT (bow), 2 fired torpedoes",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "33",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 203,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 31,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 41,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/china/ch_ss_cc119.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/china/ch_ss_cc119.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/china/ch_ss_cc119.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "China",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "CHANGCHENG 119 submarines (project 613/03, 1957-1964)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement normal, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement",
+     "Diving depth operational, m"
+    ],
+    "n_ships": 21,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 2,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "CHANGCHENG 119 Class",
+    "ship_type": "submarines",
+    "when_date": "(project 613/03- 1957-1964)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "CHANGCHENG 119 Class",
+    "ship_type": "submarines",
+    "n_ships": 21,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "CHANGCHENG119(project613/03-1957-1964) Class",
+     "TYPE": "submarines",
+     "source_url": "https://www.navypedia.org/ships/china/ch_ss_cc119.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 21,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "",
+      "db": "spurious",
+      "fetcher_live": "spurious",
+      "fetcher_mirror": "spurious"
+     },
+     "Displacement normal, t": {
+      "truth": "1045 / 1342",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "76.0",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "6.30",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "4.55",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 37D diesels / 2 PG-101 electric motors",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "4000 / 2700",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "18.3 / 13.1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "8580(10) / 353(2)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "earlier boats: 1 x 2 - 25/112 2M-8, 6 - 533 TT (4 bow, 2 stern, 12 or 22 mines) ",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "Flag radar, Tamir-5L, Feniks sonars, Nakat ECM suite",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "55",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 372,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 42,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 41,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 21,
+     "truth_with_comp": 21,
+     "truth_blank_name_rows": 0,
+     "db_rows": 21,
+     "db_distinct_rows": 21,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 21,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 21,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Diving depth operational, m",
+      "170"
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/indonesia/ino_ls_adrixlv.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/indonesia/ino_ls_adrixlv.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/indonesia/ino_ls_adrixlv.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Indonesia",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "ADRI XLV logistics landing craft (2004)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Military load",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 3,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comm",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "ADRI XLV logistics Class",
+    "ship_type": "landing-craft",
+    "when_date": "(2004)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "ADRI XLV Logistics Landing Craft Class",
+    "ship_type": "",
+    "n_ships": 3,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "ADRIXLV Class",
+     "TYPE": "logistics-landing-craft",
+     "source_url": "https://www.navypedia.org/ships/indonesia/ino_ls_adrixlv.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 6,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": false,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Displacement full, t": {
+      "truth": "580",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "38.0 pp 42.0 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "10.7",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "1.80",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 General Motors 6-71 diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "680",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "10",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "1500(10)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "none",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "radar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "15",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 56,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 3,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 3,
+     "db_rows": 6,
+     "db_distinct_rows": 3,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 3,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Military load",
+      "122 t of vehicles, 120 t of liquids"
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/turkey/tu_cm_wwi_gv.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/turkey/tu_cm_wwi_gv.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/turkey/tu_cm_wwi_gv.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Turkey",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "guard vessels of WWI",
+    "n_specs": 0,
+    "spec_labels": [],
+    "n_ships": 0,
+    "ship_headers": [],
+    "n_blue_tables": 0,
+    "n_cwd_tables": 0,
+    "h2_titles": [
+     "Menu",
+     "100 - 1000 t displacement/ BRT tonnage vessels",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {},
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "guard WWI Class",
+    "ship_type": "vessels",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "Guard Vessels Of WWI Class",
+    "ship_type": "",
+    "n_ships": 0,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "WWI Class",
+     "TYPE": "guard-vessels-of",
+     "source_url": "https://www.navypedia.org/ships/turkey/tu_cm_wwi_gv.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 0,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {},
+    "sections": {
+     "100 - 1000 t displacement/ BRT tonnage vessels": {
+      "truth_len": 622,
+      "n_p": 0,
+      "col": null,
+      "numbered_title": false,
+      "db_fixed_column": "missing",
+      "db_anywhere": "partial_or_different",
+      "fetcher_live": "partial_or_different",
+      "fetcher_mirror": "missing"
+     },
+     "Project history": {
+      "truth_len": 44,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 0,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 0,
+     "db_distinct_rows": 0,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 0,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 0,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/portugal/pr_ss_delfim_2.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/portugal/pr_ss_delfim_2.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/portugal/pr_ss_delfim_2.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Portugal",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "DELFIM submarines (1935)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement normal, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement",
+     "Diving depth operational, m"
+    ],
+    "n_ships": 3,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "DELFIM Class",
+    "ship_type": "submarines",
+    "when_date": "(1935)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "DELFIM Class",
+    "ship_type": "submarines",
+    "n_ships": 3,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "DELFIM Class",
+     "TYPE": "submarines",
+     "source_url": "https://www.navypedia.org/ships/portugal/pr_ss_delfim_2.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 3,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "",
+      "db": "spurious",
+      "fetcher_live": "spurious",
+      "fetcher_mirror": "spurious"
+     },
+     "Displacement normal, t": {
+      "truth": "800/1092",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "69.2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "6.50",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "3.86",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 Vickers diesels / 2 electric motors",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "2300 / 1000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "16.5 / 9.2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "5000(10) / 110(4)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 102/40 Vickers-Armstrong Mk M, 2 x 1 - 12.7/62, 6 - 533 TT (4 bow, 2 ste",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "presumably type 120 sonar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "38",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 922,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 3,
+     "truth_with_comp": 3,
+     "truth_blank_name_rows": 0,
+     "db_rows": 3,
+     "db_distinct_rows": 3,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 3,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 3,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Diving depth operational, m",
+      ""
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/japan/jap_dd_hatsuyuki.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/japan/jap_dd_hatsuyuki.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/japan/jap_dd_hatsuyuki.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Japan",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "HATSUYUKI destroyers (1982 - 1987)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 12,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 2
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "HATSUYUKI (1982 Class",
+    "ship_type": "destroyers",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "HATSUYUKI Class",
+    "ship_type": "destroyers",
+    "n_ships": 12,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "HATSUYUKI1987) Class",
+     "TYPE": "destroyers",
+     "source_url": "https://www.navypedia.org/ships/japan/jap_dd_hatsuyuki.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 12,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "122-128: 2950 129-132: 3050",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "122-128: 3700 129-132: 3800",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "126.0 wl 131.7 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "13.7",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "122-128: 4.10 hull 129-132: 4.30 hull",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "COGOG: 2 Kawasaki - Rolls-Royce Olympus TM-3B gas turbines / 2 Tyne RM-1C gas tu",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "50000 / 10000",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "30",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "gas turbine oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "5590(20)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "122, 123: 2 x 4 Harpoon SSM (8 RGM-84), 1 x 8 Sea Sparrow SAM (18 RIM-7), 1 x 8 ",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "122, 123: OPS-18-1, OPS-14B, FCS-2-21A, FCS-2-12 radars, OQS-4A sonar, NOLQ-6C, ",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "170",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 299,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 231,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 12,
+     "truth_with_comp": 12,
+     "truth_blank_name_rows": 0,
+     "db_rows": 12,
+     "db_distinct_rows": 12,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 12,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 12,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/brazil/br_cr_primeiro_de_marco.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/brazil/br_cr_primeiro_de_marco.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/brazil/br_cr_primeiro_de_marco.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Brazil",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "PRIMEIRO DE MARÇO screw sloop (1881)",
+    "n_specs": 13,
+    "spec_labels": [
+     "Displacement normal, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "PRIMEIRO DE MARÇO Class",
+    "ship_type": "screw-sloop",
+    "when_date": "(1881)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "PRIMEIRO DE MARÇO Screw Class",
+    "ship_type": "sloop",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "PRIMEIRODEMARÇO Class",
+     "TYPE": "screw-sloop",
+     "source_url": "https://www.navypedia.org/ships/brazil/br_cr_primeiro_de_marco.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": false,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement normal, t": {
+      "truth": "750",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Length, m": {
+      "truth": "50.8 pp",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "8.43",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "3.48",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "1 HC",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "750",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "8.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "coal 84",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Armament": {
+      "truth": "7 x 1 - 127/24 Whitworth 70pdr MLR",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "142",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 91,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 76,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 85,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/denmark/dk_ms_mr152.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/denmark/dk_ms_mr152.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/denmark/dk_ms_mr152.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Denmark",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "MR152 minesweeping boats (1940 - 1943 / 1945)",
+    "n_specs": 12,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Armament",
+     "Complement"
+    ],
+    "n_ships": 15,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "MR152 minesweeping (1940 Class",
+    "ship_type": "boats",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "MR152 Minesweeping Boats Class",
+    "ship_type": "",
+    "n_ships": 15,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "MR15219431945) Class",
+     "TYPE": "minesweeping-boats",
+     "source_url": "https://www.navypedia.org/ships/denmark/dk_ms_mr152.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 15,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "110",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "MR152 - 176: 126 MR214: 128",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "MR152 - 176: 34.4 wl 35.4 oa MR214: 34.4 wl 36.2 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "5.55",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "MR152 - 176: 1.38 normal 1.50 deep load MR214: 1.40 normal 1.50 deep load",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 MWM diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "1800",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "23.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 10",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 37/83 SK C/30, 2 x 2 - 20/65 C/38, 2 x 1 - 20/65 C/38, DCR, 10 mines, me",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "29 - 31",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 55,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 15,
+     "truth_with_comp": 15,
+     "truth_blank_name_rows": 0,
+     "db_rows": 15,
+     "db_distinct_rows": 15,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 15,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 15,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/usa/us_dd_tucker.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/usa/us_dd_tucker.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/usa/us_dd_tucker.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "United-States",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "TUCKER destroyers (1915 - 1916)",
+    "n_specs": 13,
+    "spec_labels": [
+     "Displacement normal, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Complement"
+    ],
+    "n_ships": 6,
+    "ship_headers": [
+     "No",
+     "Name",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comm",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "TUCKER (1915 Class",
+    "ship_type": "destroyers",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "TUCKER Class",
+    "ship_type": "destroyers",
+    "n_ships": 6,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "TUCKER1916) Class",
+     "TYPE": "destroyers",
+     "source_url": "https://www.navypedia.org/ships/usa/us_dd_tucker.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 6,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement normal, t": {
+      "truth": "DD57 - 59: 1090 DD60: 1060 DD61, 62: 1150",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "1205",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "96.1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "DD57, 60, 62: 9.10 DD58, 59: 9.30",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "DD57 - 59, 62: 2.90 DD60: 2.80",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "DD57 - 59, 61, 62: 2 Curtis steam turbines / 1 stream turbine for cruising, 4 Ya",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "DD57, 61, 62: 17000 DD58, 59: 18000 DD60: 17500",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok_digit_split"
+     },
+     "Max speed, kts": {
+      "truth": "29.5",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "oil 310",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "2500(20)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "4 x 1 - 102/50 Mk IX, 4 x 2 - 533 TT, 2 DCR",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "99",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 128,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 33,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 234,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 6,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 6,
+     "db_distinct_rows": 6,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 6,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 6,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/sweden/sw_ss_draken61.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/sweden/sw_ss_draken61.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/sweden/sw_ss_draken61.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Sweden",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "DRAKEN submarines (1961-1962)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement normal, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement",
+     "Diving depth operational, m"
+    ],
+    "n_ships": 6,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "DRAKEN Class",
+    "ship_type": "submarines",
+    "when_date": "(1961-1962)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "DRAKEN Class",
+    "ship_type": "submarines",
+    "n_ships": 6,
+    "n_sections": 1
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "DRAKEN Class",
+     "TYPE": "submarines",
+     "source_url": "https://www.navypedia.org/ships/sweden/sw_ss_draken61.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 6,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": true,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "770",
+      "db": "different",
+      "fetcher_live": "different",
+      "fetcher_mirror": "different"
+     },
+     "Displacement normal, t": {
+      "truth": "835 / 950",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "67.5 wl 69.3 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "5.10",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "5.30",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "1",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 Pielstick diesel-generators / 2 ASEA electric motors",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "1600 / 2280",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "17 / 22",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "",
+      "db": "absent",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Armament": {
+      "truth": "4 - 533 TT (bow, 12), mines",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "radar, sonar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "36",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 169,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 115,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok_but_extra_spaces",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 93,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok_but_spaces_lost",
+      "db_anywhere": "ok_but_spaces_lost",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 6,
+     "truth_with_comp": 6,
+     "truth_blank_name_rows": 0,
+     "db_rows": 6,
+     "db_distinct_rows": 6,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 6,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 6,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Diving depth operational, m",
+      "150"
+     ]
+    ],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/india/in_cg_h181.html",
+   "why": "層化ランダム",
+   "origin_url": "https://www.navypedia.org/ships/india/in_cg_h181.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/india/in_cg_h181.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "India",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "H181 air-cushion patrol boats (2000-2014)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Names",
+     "Builders",
+     "Completed",
+     "Losses",
+     "Transfers",
+     "Discarding"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "H181 air-cushion Class",
+    "ship_type": "patrol-boats",
+    "when_date": "(2000-2014)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "H181 Air-cushion Class",
+    "ship_type": "patrol-boats",
+    "n_ships": 0,
+    "n_sections": 0
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "H181air-cushion Class",
+     "TYPE": "patrol-boats",
+     "source_url": "https://www.navypedia.org/ships/india/in_cg_h181.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 1,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": true,
+    "has_images": false,
+    "has_graphics": true
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "18",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "24",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "19.9 hull 21.2 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok_digit_split"
+     },
+     "Breadth, m": {
+      "truth": "8.70 hull 11.3 oa",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "0.32 / 0",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2 air propellers",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 MTU 12V183 TB32 diesels",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "1600",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "50",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 2",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "400(45)",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "1 x 1 - 12.7/79",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "Raytheon R-80 radar",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Complement": {
+      "truth": "13",
+      "db": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 69,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "db_fixed_column": "ok",
+      "db_anywhere": "ok",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 1,
+     "db_rows": 1,
+     "db_distinct_rows": 1,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 0,
+     "fetcher_mirror_missing_vs_truth": 1,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  },
+  {
+   "canon": "/ships/bahamas/baha_cf_yellow%20elder.html",
+   "why": "現行サイトにあって NSDB に無い艦級 (URL に空白 %20 / 壊れた file:/// href)",
+   "origin_url": "https://www.navypedia.org/ships/bahamas/baha_cf_yellow%20elder.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/bahamas/baha_cf_yellow%20elder.html",
+   "origin_status": 404,
+   "mirror_status": 200,
+   "country": "BAHAMAS",
+   "in_db": false
+  },
+  {
+   "canon": "/ships/sarawak/sa_of_aden.html",
+   "why": "現行サイトにあって NSDB に無い艦級 (URL に空白 %20 / 壊れた file:/// href)",
+   "origin_url": "https://www.navypedia.org/ships/sarawak/sa_of_aden.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/sarawak/sa_of_aden.html",
+   "origin_status": 404,
+   "mirror_status": 404,
+   "country": "SARAWAK",
+   "in_db": false
+  },
+  {
+   "canon": "/ships/italy/it_cf_cp245.html",
+   "why": "現行サイトにあって NSDB に無い艦級",
+   "origin_url": "https://www.navypedia.org/ships/italy/it_cf_cp245.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/italy/it_cf_cp245.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "ITALY",
+   "in_db": false,
+   "truth_summary": {
+    "heading": "CP245 patrol boat (1976)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Names",
+     "Builders",
+     "Completed",
+     "Losses",
+     "Transfers",
+     "Discarding"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "CP245 Class",
+    "ship_type": "patrol-boat",
+    "when_date": "(1976)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "CP245 Coast Guard Class",
+    "ship_type": "patrol-boat",
+    "n_ships": 0,
+    "n_sections": 1
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "",
+      "db": "n/a",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Displacement full, t": {
+      "truth": "",
+      "db": "n/a",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Length, m": {
+      "truth": "16.8",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "5.02",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "",
+      "db": "n/a",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 Isotta-Fraschini ID36 SS6V diesels",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "1520",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "",
+      "db": "n/a",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "",
+      "db": "n/a",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Armament": {
+      "truth": "none",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "radar",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "",
+      "db": "n/a",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 29,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 28,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 1,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 0,
+     "fetcher_mirror_missing_vs_truth": 1,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": []
+   }
+  },
+  {
+   "canon": "/ships/portugal/pr_ls_bombarda.html",
+   "why": "現行サイトにあって NSDB に無い艦級",
+   "origin_url": "https://www.navypedia.org/ships/portugal/pr_ls_bombarda.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/portugal/pr_ls_bombarda.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "PORTUGAL",
+   "in_db": false,
+   "truth_summary": {
+    "heading": "BOMBARDA small landing ships (1969-1985)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Military load",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 3,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 2
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "BOMBARDA Class",
+    "ship_type": "small-landing-ships",
+    "when_date": "(1969-1985)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "BOMBARDA Small Landing Ships Class",
+    "ship_type": "",
+    "n_ships": 3,
+    "n_sections": 0
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "510",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "652",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "52.9 pp 59.0 oa",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "11.9",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "1.60",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "2 MTU MD225 diesels",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "910",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "11",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "1800(8)",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "2 x 1 - 20/70 Mk 4",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "Decca RM316P radar",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "21",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 62,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 3,
+     "truth_with_comp": 3,
+     "truth_blank_name_rows": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 3,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 3,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Military load",
+      "350 t of cargo"
+     ]
+    ]
+   }
+  },
+  {
+   "canon": "/ships/falklands/falk_cg_falkland_desire.html",
+   "why": "現行サイトにあって NSDB に無い艦級",
+   "origin_url": "https://www.navypedia.org/ships/falklands/falk_cg_falkland_desire.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/falklands/falk_cg_falkland_desire.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "FALKLAND ISLANDS",
+   "in_db": false,
+   "truth_summary": {
+    "heading": "FALKLAND DESIRE patrol ship (1969/1987)",
+    "n_specs": 14,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Graphics",
+     "Project history",
+     "Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "FALKLAND DESIRE Class",
+    "ship_type": "patrol-ship",
+    "when_date": "(1969/1987)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "FALKLAND DESIRE Class",
+    "ship_type": "patrol-ship",
+    "n_ships": 1,
+    "n_sections": 1
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "1900",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "",
+      "db": "n/a",
+      "fetcher_live": "absent",
+      "fetcher_mirror": "absent"
+     },
+     "Length, m": {
+      "truth": "64.3 pp 69.6 oa",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "12.7",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "4.57",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "1",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "1 Mirrles National KMR-8 diesel",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "2880",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "15",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 400",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "15000(15)",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "small arms, helicopter deck",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "2x radars",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "40",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history": {
+      "truth_len": 99,
+      "n_p": 1,
+      "col": "Project_history",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Modernizations": {
+      "truth_len": 5,
+      "n_p": 1,
+      "col": "Modernizations",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": []
+   }
+  },
+  {
+   "canon": "/ships/dominicanrep/dom_ls_neyba.html",
+   "why": "現行サイトにあって NSDB に無い艦級",
+   "origin_url": "https://www.navypedia.org/ships/dominicanrep/dom_ls_neyba.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/dominicanrep/dom_ls_neyba.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "DOMINICAN REPUBLIC",
+   "in_db": false,
+   "truth_summary": {
+    "heading": "NEYBA utility landing craft (1978/2006)",
+    "n_specs": 15,
+    "spec_labels": [
+     "Displacement standard, t",
+     "Displacement full, t",
+     "Length, m",
+     "Breadth, m",
+     "Draught, m",
+     "No of shafts",
+     "Machinery",
+     "Power, h. p.",
+     "Max speed, kts",
+     "Fuel, t",
+     "Endurance, nm(kts)",
+     "Armament",
+     "Military load",
+     "Electronic equipment",
+     "Complement"
+    ],
+    "n_ships": 1,
+    "ship_headers": [
+     "Name",
+     "No",
+     "Yard No",
+     "Builder",
+     "Laid down",
+     "Launched",
+     "Comp",
+     "Fate"
+    ],
+    "n_blue_tables": 1,
+    "n_cwd_tables": 1,
+    "h2_titles": [
+     "Menu",
+     "Photo",
+     "Ships",
+     "Technical data",
+     "Standard scale images",
+     "Graphics",
+     "Project history Former LCU1646 class craft of the US Army. Modernizations",
+     "Naval service"
+    ],
+    "img_counts": {
+     "photo": 1,
+     "ships": 0,
+     "technical data": 0,
+     "standard scale images": 1,
+     "graphics": 1
+    },
+    "has_photo": true,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "NEYBA utility Class",
+    "ship_type": "landing-craft",
+    "when_date": "(1978/2006)",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "NEYBA Utility Landing Craft Class",
+    "ship_type": "",
+    "n_ships": 1,
+    "n_sections": 0
+   },
+   "compare": {
+    "specs": {
+     "Displacement standard, t": {
+      "truth": "170",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Displacement full, t": {
+      "truth": "437",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Length, m": {
+      "truth": "41.1 oa",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Breadth, m": {
+      "truth": "9.07",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Draught, m": {
+      "truth": "2.08",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "No of shafts": {
+      "truth": "2 Kort-nozzle",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Machinery": {
+      "truth": "4 General Motors 6-71 diesels",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Power, h. p.": {
+      "truth": "1200",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Max speed, kts": {
+      "truth": "11",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Fuel, t": {
+      "truth": "diesel oil 13",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Endurance, nm(kts)": {
+      "truth": "1200(11)",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Armament": {
+      "truth": "2 x 1 - 12.7/90",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Electronic equipment": {
+      "truth": "Furuno radar",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     },
+     "Complement": {
+      "truth": "10",
+      "db": "n/a",
+      "fetcher_live": "ok",
+      "fetcher_mirror": "ok"
+     }
+    },
+    "sections": {
+     "Project history Former LCU1646 class craft of the US Army. Modernizations": {
+      "truth_len": 64,
+      "n_p": 1,
+      "col": null,
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     },
+     "Naval service": {
+      "truth_len": 22,
+      "n_p": 1,
+      "col": "Naval_service",
+      "numbered_title": false,
+      "fetcher_live": "ok",
+      "fetcher_mirror": "missing"
+     }
+    },
+    "ships": {
+     "truth_rows": 1,
+     "truth_with_comp": 1,
+     "truth_blank_name_rows": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 1,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 1,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [
+     [
+      "Military load",
+      "4 medium or 3 heavy tanks or 180 t of cargo or 400 troops"
+     ]
+    ]
+   }
+  },
+  {
+   "canon": "/ships/jamaica/jam_cg.html",
+   "why": "NSDB にあって現行サイト一覧に無い艦級",
+   "origin_url": "https://www.navypedia.org/ships/jamaica/jam_cg.htm",
+   "mirror_url": "https://myownonpmirror.com/ships/jamaica/jam_cg.html",
+   "origin_status": 200,
+   "mirror_status": 200,
+   "country": "Jamaica",
+   "in_db": true,
+   "truth_summary": {
+    "heading": "JAMAICA",
+    "n_specs": 0,
+    "spec_labels": [],
+    "n_ships": 0,
+    "ship_headers": [],
+    "n_blue_tables": 0,
+    "n_cwd_tables": 0,
+    "h2_titles": [
+     "Menu"
+    ],
+    "img_counts": {},
+    "has_photo": false,
+    "extra_blue_rows": []
+   },
+   "fetcher_live_meta": {
+    "class_name": "JAMAICA Class",
+    "ship_type": "",
+    "when_date": "",
+    "n_ships": 0
+   },
+   "fetcher_mirror_meta": {
+    "class_name": "Coast Guard Of Jamaica (Jamaica) Class",
+    "ship_type": "",
+    "n_ships": 0,
+    "n_sections": 0
+   },
+   "db_meta": {
+    "origin": {
+     "CLASS_NAME": "JAMAICA Class",
+     "TYPE": "",
+     "source_url": "https://www.navypedia.org/ships/jamaica/jam_cg.htm"
+    },
+    "mirror": null,
+    "origin_ship_rows": 0,
+    "mirror_ship_rows": 0
+   },
+   "db_images": {
+    "has_photo": false,
+    "has_images": false,
+    "has_graphics": false
+   },
+   "compare": {
+    "specs": {},
+    "sections": {},
+    "ships": {
+     "truth_rows": 0,
+     "truth_with_comp": 0,
+     "truth_blank_name_rows": 0,
+     "db_rows": 0,
+     "db_distinct_rows": 0,
+     "db_missing_vs_truth": 0,
+     "db_extra_vs_truth": 0,
+     "fetcher_live_rows": 0,
+     "fetcher_live_missing_vs_truth": 0,
+     "fetcher_live_extra_vs_truth": 0,
+     "fetcher_mirror_rows": 0,
+     "fetcher_mirror_missing_vs_truth": 0,
+     "fetcher_mirror_extra_vs_truth": 0
+    },
+    "unmapped_labels": [],
+    "db_spurious_cols": []
+   }
+  }
+ ],
+ "request_stats": {
+  "network_requests": 0,
+  "cache_hits": 80,
+  "elapsed_sec": 16.9,
+  "cache_bytes": 17216488
+ },
+ "errors": []
+}

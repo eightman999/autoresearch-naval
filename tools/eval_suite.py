@@ -34,10 +34,16 @@ TEST_CASES_PATH = ROOT / "tools/eval_test_cases.json"
 OUT_DIR = ROOT / "data/navspec/generated/eval"
 
 
-def run_generation(test: dict[str, Any], checkpoint: Path, profile: int, max_new_tokens: int) -> dict[str, Any]:
+def run_generation(
+    test: dict[str, Any],
+    checkpoint: Path,
+    profile: int,
+    max_new_tokens: int,
+    out_dir: Path = OUT_DIR,
+) -> dict[str, Any]:
     test_id = test["test_id"]
-    raw_out = OUT_DIR / f"{test_id}_raw.txt"
-    json_out = OUT_DIR / f"{test_id}.json"
+    raw_out = out_dir / f"{test_id}_raw.txt"
+    json_out = out_dir / f"{test_id}.json"
     cmd = [
         sys.executable, str(ROOT / "generate_navspec.py"),
         "--checkpoint", str(checkpoint),
@@ -646,6 +652,7 @@ def main() -> None:
     parser.add_argument("--profile", type=int, default=0)
     parser.add_argument("--skip-existing", action="store_true", help="既存の生成結果を再利用")
     parser.add_argument("--json-report", type=Path, default=None)
+    parser.add_argument("--out-dir", type=Path, default=OUT_DIR, help="生成結果とraw出力の保存先")
     parser.add_argument("--extended-count", type=int, default=100, help="既存ケースに追加するdeterministic拡張テスト数")
     parser.add_argument("--max-new-tokens", type=int, default=256)
     args = parser.parse_args()
@@ -653,12 +660,12 @@ def main() -> None:
     tests = json.loads(args.test_cases.read_text(encoding="utf-8"))
     if args.extended_count > 0:
         tests = tests + build_extended_tests(args.extended_count)
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    args.out_dir.mkdir(parents=True, exist_ok=True)
     results: list[dict[str, Any]] = []
     for i, test in enumerate(tests):
         tid = test["test_id"]
-        json_out = OUT_DIR / f"{tid}.json"
-        raw_out = OUT_DIR / f"{tid}_raw.txt"
+        json_out = args.out_dir / f"{tid}.json"
+        raw_out = args.out_dir / f"{tid}_raw.txt"
         print(f"[{i+1}/{len(tests)}] {tid} ({test['nation']}/{test['year']}/{test['ship_type']})...", flush=True)
 
         if args.skip_existing and json_out.exists() and raw_out.exists():
@@ -667,7 +674,7 @@ def main() -> None:
                 "raw_out": raw_out, "json_out": json_out,
             }
         else:
-            gen_result = run_generation(test, args.checkpoint, args.profile, args.max_new_tokens)
+            gen_result = run_generation(test, args.checkpoint, args.profile, args.max_new_tokens, args.out_dir)
 
         if gen_result["returncode"] != 0:
             err_lines = gen_result["stderr"].strip().split("\n")[-5:]

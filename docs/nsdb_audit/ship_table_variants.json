@@ -1,0 +1,222 @@
+{
+ "db_pages_whose_ship_rows_are_all_blank": 2648,
+ "checked": [
+  {
+   "url": "https://www.navypedia.org/ships/uk/brit_c_f_mtb539.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Completed",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "MTB539, 1948 - P1602 FPB1602",
+    "Builders": "Saunders-Roe, Beaumaris: MTB539",
+    "Completed": "1948: MTB539",
+    "Losses": "none",
+    "Transfers": "none",
+    "Discarding": "1956: P1602"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/bahrain/bahr_cg_deraa2.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Commissioned",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "2, 6 - 8 درءا [Dera'a 2, 6 - 8]",
+    "Builders": "Halmatic, Havant, UK: Dera'a 2, 6 - 8",
+    "Commissioned": "1991: Dera'a 2, 6, 7 1992: Dera'a 8",
+    "Losses": "none",
+    "Transfers": "none",
+    "Discarding": "in service (2020): Dera'a 2, 6 - 8"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/greece/gr_cg_ls129.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Completed",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "ΛΣ-129-133 [LS-129-133]",
+    "Builders": "Intermarine, La Spezia, Italy: LS-129-133",
+    "Completed": "1996-1997: LS-129-133",
+    "Losses": "None",
+    "Transfers": "None",
+    "Discarding": "2017-18: LS129-131 in service (2019): LS-132, 133"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/germany/ger_cg_prignitz07.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Commissioned",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "BP61 Prignitz BP62 Uckermark BP63 Altmark BP64 Börde BP65 Rhön 2",
+    "Builders": "SET Werft, Genthin: BP61-65",
+    "Commissioned": "2007: BP61-63 2008: BP64, 65",
+    "Losses": "None",
+    "Transfers": "None",
+    "Discarding": "in service (2019): BP61-65"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/colombia/col_cf_jaime_gomez_castro.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Commissioned",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "GC105 Sgto 2.° Jaime Gómez Castro, 1999- PM105 Sgto 2.° Jaime Gómez Castro GC106 Juan Nepomuceno Peña, 1999- PM106 Juan Nepomuceno Peña",
+    "Builders": "Peterson Bldrs, Sturgeon Bay, USA: GC105, 106",
+    "Commissioned": "1975 // 1989: GC105 1977 // 1990: GC106",
+    "Losses": "none",
+    "Transfers": "none",
+    "Discarding": "in service (2019): PM105, 106"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/uk/brit_c_f_mtb100.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Completed",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "MTB100 (ex-MMS51)",
+    "Builders": "British Power Boat, Hythe: MTB100",
+    "Completed": "4.1938: MTB100",
+    "Losses": "None",
+    "Transfers": "None",
+    "Discarding": "controlled target CT11 from 1943: MTB100"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/korea_north/kon_ms_yukto.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Completed",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "Yukto 1: 19 units Yukto 2: 5 units",
+    "Builders": "North Korea: 24 units",
+    "Completed": "1980-1987: 24 units",
+    "Losses": "none",
+    "Transfers": "none",
+    "Discarding": "in service (2019): 24 units"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/china/ch_ls_363.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Commissioned",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "some craft",
+    "Builders": "Luda SY, Dalian: some",
+    "Commissioned": "1956: some",
+    "Losses": "none",
+    "Transfers": "none",
+    "Discarding": "1980s: some"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/spain/sp_cg_rio_aller.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Completed",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "M40 Río Aller M41 Cabo de Gata M42 Río Tormes L16 Río Vero",
+    "Builders": "Armon, Vigo: M40-42, L16",
+    "Completed": "2008: M40-42 2016: L16",
+    "Losses": "none",
+    "Transfers": "none",
+    "Discarding": "in service (2019): M40-42, L16"
+   }
+  },
+  {
+   "url": "https://www.navypedia.org/ships/yugoslavia/yu_cf_rpch200.htm",
+   "status": 200,
+   "ship_headers": [
+    "Names",
+    "Builders",
+    "Commissioned",
+    "Losses",
+    "Transfers",
+    "Discarding"
+   ],
+   "n_rows": 1,
+   "first_row": {
+    "Names": "РПЧ200, 201 [RPCh200, 201]",
+    "Builders": "Yugoslavia: RPCh200, 201",
+    "Commissioned": "1949: RPCh200, 201",
+    "Losses": "none",
+    "Transfers": "none",
+    "Discarding": "late 1970s: RPCh200, 201"
+   }
+  }
+ ],
+ "pages_with_group_summary_table_headers": 10,
+ "stats": {
+  "network_requests": 0,
+  "cache_hits": 10,
+  "elapsed_sec": 0.0,
+  "cache_bytes": 17398369
+ }
+}

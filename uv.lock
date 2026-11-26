@@ -51,6 +51,11 @@ dependencies = [
 dev = [
     { name = "pytest" },
 ]
+fast = [
+    { name = "beautifulsoup4" },
+    { name = "pytest" },
+    { name = "requests" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -68,6 +73,11 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=9.1.1" }]
+fast = [
+    { name = "beautifulsoup4", specifier = ">=4.15.0" },
+    { name = "pytest", specifier = ">=9.1.1" },
+    { name = "requests", specifier = ">=2.32.0" },
+]
 
 [[package]]
 name = "beautifulsoup4"

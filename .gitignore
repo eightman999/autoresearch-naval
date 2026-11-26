@@ -34,8 +34,16 @@ models/navspec-lora-0.5b-v0.1/adapter/stage3-numeric-quality-r8/
 .idea/
 runs/
 
+# Unified evaluation run output is reproducible and should not dirty the checkout.
+evaluation/runs/
+
 # navspec raw generation logs
 docs/*_free_raw_*.md
 
 # navspec Stage 4 armament scraper HTML cache (regenerable from navweaps.com)
 data/navspec/armament/_cache_html/
+
+# --- ignore cleanup 2026-11-26 ---
+data/navspec/shipknow_*/
+hf_upload/
+navspec-lora-peft/

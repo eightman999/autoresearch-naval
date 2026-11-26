@@ -15,6 +15,7 @@ from navspec_common import (
     parse_belt_mm,
     parse_length,
     parse_power,
+    parse_when_date_year,
     parse_year,
     render_wiki_table,
     ship_hull_kind,
@@ -27,10 +28,14 @@ DEFAULT_OUTPUT = Path("data/navspec/battleship_real_specs.jsonl")
 
 
 def fetch_rows(db_path: Path, limit: int | None) -> list[sqlite3.Row]:
-    conn = sqlite3.connect(db_path)
+    # 読み取り専用で開く（正本 DB に書かない）
+    conn = sqlite3.connect(f"file:{Path(db_path).resolve()}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
     try:
-        sql = """
+        # 再取得した DB には CLASS.WHEN_DATE がある（艦級名に年は入らない）。旧 DB には無いので NULL にする。
+        has_when = "WHEN_DATE" in {r[1] for r in conn.execute("PRAGMA table_info(CLASS)")}
+        class_when = "CLASS.WHEN_DATE" if has_when else "NULL"
+        sql = f"""
             SELECT
                 CLASS_NAME, TYPE, COUNTRY,
                 Displacement_normal, Displacement_full,
@@ -38,7 +43,8 @@ def fetch_rows(db_path: Path, limit: int | None) -> list[sqlite3.Row]:
                 No_of_shafts, Machinery, Power, speed, Fuel, Endurance,
                 Armour, Armament, Complement, sections, source_url, fetched_at,
                 (SELECT WHEN_DATE FROM SHIPS s WHERE s.source_url = CLASS.source_url LIMIT 1) as when_date,
-                (SELECT Laid_down FROM SHIPS s WHERE s.source_url = CLASS.source_url LIMIT 1) as laid_down
+                (SELECT Laid_down FROM SHIPS s WHERE s.source_url = CLASS.source_url LIMIT 1) as laid_down,
+                {class_when} as class_when_date
             FROM CLASS
             WHERE lower(TYPE) NOT LIKE '%submarine%'
               AND lower(TYPE) NOT LIKE '%aircraft%'
@@ -58,7 +64,10 @@ def make_record(row: sqlite3.Row, index: int) -> dict[str, Any]:
     ship_type = row["TYPE"] or "unknown"
     country = row["COUNTRY"] or "unknown"
     armament = parse_armament_summary(row["Armament"])
-    year = parse_year(class_name, row["source_url"], row["sections"], row["when_date"], row["laid_down"])
+    # 年は CLASS.WHEN_DATE（新 DB）を優先し、無ければ従来の順（艦級名 -> URL -> sections -> SHIPS.WHEN_DATE -> 起工）
+    year = parse_when_date_year(row["class_when_date"]) or parse_year(
+        class_name, row["source_url"], row["sections"], row["when_date"], row["laid_down"]
+    )
     record = {
         "schema_version": "navspec.ship_spec_record.v1",
         "record_id": f"nsdb:{country}:{ship_type}:{class_name}:{index}",

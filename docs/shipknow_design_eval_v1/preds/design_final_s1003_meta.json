@@ -1,0 +1,43 @@
+{
+  "model": "Qwen/Qwen3.5-0.8B",
+  "adapter": "shipknow/design_v0/out/cont_v1_2/final",
+  "merged": false,
+  "n": 350,
+  "tasks": [
+    "D"
+  ],
+  "per_task": 0,
+  "seed": 0,
+  "temperature": 0.7,
+  "t3_samples": 5,
+  "max_new_tokens": {
+    "T1": 64,
+    "T2": 320,
+    "T3": 64,
+    "D": 448
+  },
+  "batch_size": 32,
+  "sample_seed": 1003,
+  "sample_tasks": [
+    "D"
+  ],
+  "top_p": 1.0,
+  "ids_file": null,
+  "peak_gib": 6.03,
+  "peak_gib_after_load": 1.76,
+  "gen_stats": {
+    "D": {
+      "mode": "sample",
+      "n": 350,
+      "batch_size": 32,
+      "sec": 161.9,
+      "peak_gib": 6.03,
+      "batches": 11,
+      "prompt_tokens": 374379,
+      "generated_tokens": 58554,
+      "generated_tokens_per_sec": 361.7
+    }
+  },
+  "total_sec": 161.9,
+  "D_sample_sec": 161.9
+}

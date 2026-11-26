@@ -169,6 +169,21 @@ def test_retrieve_armament_no_candidate(db):
     assert retrieve_armament(ctx, db) is None
 
 
+def test_retrieve_armament_skips_unmounted_max_caliber(db):
+    """最大口径の砲塔が未就役でも、利用可能な代替砲を選ぶ。"""
+    ctx = {
+        "ship_type": "destroyer",
+        "year": 1936,
+        "nation": "US",
+        "displacement_t": 2106.3,
+        "beam_m": 10.52,
+    }
+    candidate = retrieve_armament(ctx, db)
+    assert candidate is not None
+    assert candidate["main_batteries"][0]["weapon_id"] == "US_5INCH_MK10"
+    assert candidate["main_batteries"][0]["mount_id"] == "US_5INCH_SINGLE_MK10"
+
+
 def test_retrieve_armament_new_nation_ru(db):
     """追加したRU武装が時代・艦種・砲塔就役年を通じて検索できる。"""
     ctx = {

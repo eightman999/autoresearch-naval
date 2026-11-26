@@ -1,0 +1,1178 @@
+{
+ "T1": {
+  "n": 1000,
+  "missing_predictions": 0,
+  "json_invalid_rate": 0.0,
+  "schema_violation_rate": 0.0,
+  "schema_errors": {},
+  "metrics": {
+   "n": 1000,
+   "coarse_acc": 0.836,
+   "fine_acc": 0.629,
+   "macro_f1": 0.7056773317149221,
+   "top_confusions": [
+    {
+     "gold": "amphibious",
+     "pred": "patrol",
+     "count": 22
+    },
+    {
+     "gold": "fast_attack_craft",
+     "pred": "patrol",
+     "count": 7
+    },
+    {
+     "gold": "coast_guard",
+     "pred": "patrol",
+     "count": 7
+    },
+    {
+     "gold": "patrol",
+     "pred": "amphibious",
+     "count": 7
+    },
+    {
+     "gold": "gunboat_river",
+     "pred": "patrol",
+     "count": 5
+    },
+    {
+     "gold": "amphibious",
+     "pred": "mine_warfare",
+     "count": 5
+    },
+    {
+     "gold": "mine_warfare",
+     "pred": "amphibious",
+     "count": 5
+    },
+    {
+     "gold": "corvette",
+     "pred": "fast_attack_craft",
+     "count": 4
+    },
+    {
+     "gold": "patrol",
+     "pred": "gunboat_river",
+     "count": 4
+    },
+    {
+     "gold": "patrol",
+     "pred": "mine_warfare",
+     "count": 4
+    },
+    {
+     "gold": "coastal_defense_monitor",
+     "pred": "gunboat_river",
+     "count": 3
+    },
+    {
+     "gold": "destroyer",
+     "pred": "frigate",
+     "count": 3
+    }
+   ],
+   "per_class": {
+    "battleship": {
+     "p": 0.667,
+     "r": 0.75,
+     "f1": 0.706,
+     "support": 8
+    },
+    "battlecruiser": {
+     "p": 0.0,
+     "r": 0.0,
+     "f1": 0.0,
+     "support": 2
+    },
+    "ship_of_the_line": {
+     "p": 1.0,
+     "r": 0.9,
+     "f1": 0.947,
+     "support": 10
+    },
+    "ironclad": {
+     "p": 0.667,
+     "r": 0.6,
+     "f1": 0.632,
+     "support": 10
+    },
+    "coastal_defense_monitor": {
+     "p": 0.769,
+     "r": 0.625,
+     "f1": 0.69,
+     "support": 16
+    },
+    "aircraft_carrier": {
+     "p": 0.667,
+     "r": 1.0,
+     "f1": 0.8,
+     "support": 8
+    },
+    "armored_protected_cruiser": {
+     "p": 0.944,
+     "r": 0.773,
+     "f1": 0.85,
+     "support": 22
+    },
+    "heavy_cruiser": {
+     "p": 1.0,
+     "r": 0.5,
+     "f1": 0.667,
+     "support": 6
+    },
+    "light_cruiser": {
+     "p": 0.727,
+     "r": 0.8,
+     "f1": 0.762,
+     "support": 10
+    },
+    "cruiser": {
+     "p": 0.571,
+     "r": 0.5,
+     "f1": 0.533,
+     "support": 8
+    },
+    "destroyer": {
+     "p": 0.935,
+     "r": 0.923,
+     "f1": 0.929,
+     "support": 78
+    },
+    "frigate": {
+     "p": 0.677,
+     "r": 0.955,
+     "f1": 0.792,
+     "support": 22
+    },
+    "corvette": {
+     "p": 0.667,
+     "r": 0.286,
+     "f1": 0.4,
+     "support": 14
+    },
+    "escort": {
+     "p": 0.846,
+     "r": 0.611,
+     "f1": 0.71,
+     "support": 18
+    },
+    "torpedo_boat": {
+     "p": 0.967,
+     "r": 0.906,
+     "f1": 0.935,
+     "support": 64
+    },
+    "fast_attack_craft": {
+     "p": 0.889,
+     "r": 0.875,
+     "f1": 0.882,
+     "support": 64
+    },
+    "patrol": {
+     "p": 0.81,
+     "r": 0.912,
+     "f1": 0.858,
+     "support": 238
+    },
+    "coast_guard": {
+     "p": 0.8,
+     "r": 0.545,
+     "f1": 0.649,
+     "support": 22
+    },
+    "gunboat_river": {
+     "p": 0.692,
+     "r": 0.833,
+     "f1": 0.756,
+     "support": 54
+    },
+    "submarine": {
+     "p": 0.989,
+     "r": 0.979,
+     "f1": 0.984,
+     "support": 94
+    },
+    "mine_warfare": {
+     "p": 0.718,
+     "r": 0.823,
+     "f1": 0.767,
+     "support": 62
+    },
+    "amphibious": {
+     "p": 0.844,
+     "r": 0.723,
+     "f1": 0.779,
+     "support": 112
+    },
+    "auxiliary": {
+     "p": 1.0,
+     "r": 0.333,
+     "f1": 0.5,
+     "support": 6
+    },
+    "training": {
+     "p": 0.0,
+     "r": 0.0,
+     "f1": 0.0,
+     "support": 6
+    },
+    "early_warship": {
+     "p": 0.793,
+     "r": 0.958,
+     "f1": 0.868,
+     "support": 24
+    },
+    "sailing_ship": {
+     "p": 1.0,
+     "r": 0.909,
+     "f1": 0.952,
+     "support": 22
+    }
+   },
+   "ranking": {
+    "n": 1000,
+    "top1_acc": 0.836,
+    "top3_acc": 0.946,
+    "ece": 0.01520241668250342,
+    "mean_top1_confidence": 0.8491000413596757
+   }
+  },
+  "by_variant": {
+   "full": {
+    "n": 500,
+    "coarse_acc": 0.864,
+    "fine_acc": 0.65,
+    "macro_f1": 0.7479620845535321,
+    "top_confusions": [
+     {
+      "gold": "amphibious",
+      "pred": "patrol",
+      "count": 14
+     },
+     {
+      "gold": "patrol",
+      "pred": "amphibious",
+      "count": 5
+     },
+     {
+      "gold": "fast_attack_craft",
+      "pred": "patrol",
+      "count": 4
+     },
+     {
+      "gold": "coast_guard",
+      "pred": "patrol",
+      "count": 4
+     },
+     {
+      "gold": "patrol",
+      "pred": "gunboat_river",
+      "count": 3
+     },
+     {
+      "gold": "training",
+      "pred": "frigate",
+      "count": 2
+     },
+     {
+      "gold": "escort",
+      "pred": "mine_warfare",
+      "count": 2
+     },
+     {
+      "gold": "gunboat_river",
+      "pred": "coastal_defense_monitor",
+      "count": 2
+     },
+     {
+      "gold": "corvette",
+      "pred": "early_warship",
+      "count": 1
+     },
+     {
+      "gold": "armored_protected_cruiser",
+      "pred": "gunboat_river",
+      "count": 1
+     },
+     {
+      "gold": "destroyer",
+      "pred": "escort",
+      "count": 1
+     },
+     {
+      "gold": "patrol",
+      "pred": "frigate",
+      "count": 1
+     }
+    ],
+    "per_class": {
+     "battleship": {
+      "p": 0.75,
+      "r": 0.75,
+      "f1": 0.75,
+      "support": 4
+     },
+     "battlecruiser": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0,
+      "support": 1
+     },
+     "ship_of_the_line": {
+      "p": 1.0,
+      "r": 1.0,
+      "f1": 1.0,
+      "support": 5
+     },
+     "ironclad": {
+      "p": 0.714,
+      "r": 1.0,
+      "f1": 0.833,
+      "support": 5
+     },
+     "coastal_defense_monitor": {
+      "p": 0.75,
+      "r": 0.75,
+      "f1": 0.75,
+      "support": 8
+     },
+     "aircraft_carrier": {
+      "p": 0.571,
+      "r": 1.0,
+      "f1": 0.727,
+      "support": 4
+     },
+     "armored_protected_cruiser": {
+      "p": 1.0,
+      "r": 0.818,
+      "f1": 0.9,
+      "support": 11
+     },
+     "heavy_cruiser": {
+      "p": 1.0,
+      "r": 0.667,
+      "f1": 0.8,
+      "support": 3
+     },
+     "light_cruiser": {
+      "p": 1.0,
+      "r": 0.8,
+      "f1": 0.889,
+      "support": 5
+     },
+     "cruiser": {
+      "p": 0.667,
+      "r": 0.5,
+      "f1": 0.571,
+      "support": 4
+     },
+     "destroyer": {
+      "p": 0.974,
+      "r": 0.949,
+      "f1": 0.961,
+      "support": 39
+     },
+     "frigate": {
+      "p": 0.733,
+      "r": 1.0,
+      "f1": 0.846,
+      "support": 11
+     },
+     "corvette": {
+      "p": 1.0,
+      "r": 0.429,
+      "f1": 0.6,
+      "support": 7
+     },
+     "escort": {
+      "p": 0.714,
+      "r": 0.556,
+      "f1": 0.625,
+      "support": 9
+     },
+     "torpedo_boat": {
+      "p": 0.969,
+      "r": 0.969,
+      "f1": 0.969,
+      "support": 32
+     },
+     "fast_attack_craft": {
+      "p": 0.966,
+      "r": 0.875,
+      "f1": 0.918,
+      "support": 32
+     },
+     "patrol": {
+      "p": 0.805,
+      "r": 0.899,
+      "f1": 0.849,
+      "support": 119
+     },
+     "coast_guard": {
+      "p": 1.0,
+      "r": 0.455,
+      "f1": 0.625,
+      "support": 11
+     },
+     "gunboat_river": {
+      "p": 0.727,
+      "r": 0.889,
+      "f1": 0.8,
+      "support": 27
+     },
+     "submarine": {
+      "p": 1.0,
+      "r": 1.0,
+      "f1": 1.0,
+      "support": 47
+     },
+     "mine_warfare": {
+      "p": 0.833,
+      "r": 0.968,
+      "f1": 0.896,
+      "support": 31
+     },
+     "amphibious": {
+      "p": 0.872,
+      "r": 0.732,
+      "f1": 0.796,
+      "support": 56
+     },
+     "auxiliary": {
+      "p": 1.0,
+      "r": 0.333,
+      "f1": 0.5,
+      "support": 3
+     },
+     "training": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0,
+      "support": 3
+     },
+     "early_warship": {
+      "p": 0.8,
+      "r": 1.0,
+      "f1": 0.889,
+      "support": 12
+     },
+     "sailing_ship": {
+      "p": 1.0,
+      "r": 0.909,
+      "f1": 0.952,
+      "support": 11
+     }
+    },
+    "ranking": {
+     "n": 500,
+     "top1_acc": 0.868,
+     "top3_acc": 0.968,
+     "ece": 0.01348947335443822,
+     "mean_top1_confidence": 0.876105398957569
+    }
+   },
+   "partial": {
+    "n": 500,
+    "coarse_acc": 0.808,
+    "fine_acc": 0.608,
+    "macro_f1": 0.6580034398803215,
+    "top_confusions": [
+     {
+      "gold": "amphibious",
+      "pred": "patrol",
+      "count": 8
+     },
+     {
+      "gold": "amphibious",
+      "pred": "mine_warfare",
+      "count": 5
+     },
+     {
+      "gold": "mine_warfare",
+      "pred": "amphibious",
+      "count": 5
+     },
+     {
+      "gold": "gunboat_river",
+      "pred": "patrol",
+      "count": 4
+     },
+     {
+      "gold": "corvette",
+      "pred": "fast_attack_craft",
+      "count": 3
+     },
+     {
+      "gold": "coast_guard",
+      "pred": "patrol",
+      "count": 3
+     },
+     {
+      "gold": "fast_attack_craft",
+      "pred": "patrol",
+      "count": 3
+     },
+     {
+      "gold": "patrol",
+      "pred": "mine_warfare",
+      "count": 3
+     },
+     {
+      "gold": "coastal_defense_monitor",
+      "pred": "gunboat_river",
+      "count": 2
+     },
+     {
+      "gold": "destroyer",
+      "pred": "frigate",
+      "count": 2
+     },
+     {
+      "gold": "torpedo_boat",
+      "pred": "gunboat_river",
+      "count": 2
+     },
+     {
+      "gold": "torpedo_boat",
+      "pred": "destroyer",
+      "count": 2
+     }
+    ],
+    "per_class": {
+     "battleship": {
+      "p": 0.6,
+      "r": 0.75,
+      "f1": 0.667,
+      "support": 4
+     },
+     "battlecruiser": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0,
+      "support": 1
+     },
+     "ship_of_the_line": {
+      "p": 1.0,
+      "r": 0.8,
+      "f1": 0.889,
+      "support": 5
+     },
+     "ironclad": {
+      "p": 0.5,
+      "r": 0.2,
+      "f1": 0.286,
+      "support": 5
+     },
+     "coastal_defense_monitor": {
+      "p": 0.8,
+      "r": 0.5,
+      "f1": 0.615,
+      "support": 8
+     },
+     "aircraft_carrier": {
+      "p": 0.8,
+      "r": 1.0,
+      "f1": 0.889,
+      "support": 4
+     },
+     "armored_protected_cruiser": {
+      "p": 0.889,
+      "r": 0.727,
+      "f1": 0.8,
+      "support": 11
+     },
+     "heavy_cruiser": {
+      "p": 1.0,
+      "r": 0.333,
+      "f1": 0.5,
+      "support": 3
+     },
+     "light_cruiser": {
+      "p": 0.571,
+      "r": 0.8,
+      "f1": 0.667,
+      "support": 5
+     },
+     "cruiser": {
+      "p": 0.5,
+      "r": 0.5,
+      "f1": 0.5,
+      "support": 4
+     },
+     "destroyer": {
+      "p": 0.897,
+      "r": 0.897,
+      "f1": 0.897,
+      "support": 39
+     },
+     "frigate": {
+      "p": 0.625,
+      "r": 0.909,
+      "f1": 0.741,
+      "support": 11
+     },
+     "corvette": {
+      "p": 0.333,
+      "r": 0.143,
+      "f1": 0.2,
+      "support": 7
+     },
+     "escort": {
+      "p": 1.0,
+      "r": 0.667,
+      "f1": 0.8,
+      "support": 9
+     },
+     "torpedo_boat": {
+      "p": 0.964,
+      "r": 0.844,
+      "f1": 0.9,
+      "support": 32
+     },
+     "fast_attack_craft": {
+      "p": 0.824,
+      "r": 0.875,
+      "f1": 0.848,
+      "support": 32
+     },
+     "patrol": {
+      "p": 0.815,
+      "r": 0.924,
+      "f1": 0.866,
+      "support": 119
+     },
+     "coast_guard": {
+      "p": 0.7,
+      "r": 0.636,
+      "f1": 0.667,
+      "support": 11
+     },
+     "gunboat_river": {
+      "p": 0.656,
+      "r": 0.778,
+      "f1": 0.712,
+      "support": 27
+     },
+     "submarine": {
+      "p": 0.978,
+      "r": 0.957,
+      "f1": 0.968,
+      "support": 47
+     },
+     "mine_warfare": {
+      "p": 0.6,
+      "r": 0.677,
+      "f1": 0.636,
+      "support": 31
+     },
+     "amphibious": {
+      "p": 0.816,
+      "r": 0.714,
+      "f1": 0.762,
+      "support": 56
+     },
+     "auxiliary": {
+      "p": 1.0,
+      "r": 0.333,
+      "f1": 0.5,
+      "support": 3
+     },
+     "training": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0,
+      "support": 3
+     },
+     "early_warship": {
+      "p": 0.786,
+      "r": 0.917,
+      "f1": 0.846,
+      "support": 12
+     },
+     "sailing_ship": {
+      "p": 1.0,
+      "r": 0.909,
+      "f1": 0.952,
+      "support": 11
+     }
+    },
+    "ranking": {
+     "n": 500,
+     "top1_acc": 0.804,
+     "top3_acc": 0.924,
+     "ece": 0.01934419012184991,
+     "mean_top1_confidence": 0.8220946837617824
+    }
+   }
+  }
+ },
+ "T2": {
+  "n": 1000,
+  "missing_predictions": 0,
+  "json_invalid_rate": 0.0,
+  "schema_violation_rate": 0.0,
+  "schema_errors": {},
+  "metrics": {
+   "n": 1000,
+   "weapon_item": {
+    "precision": 0.6069551152446422,
+    "recall": 0.609172077922078,
+    "f1": 0.6080615758557829,
+    "tp": 1501,
+    "fp": 972,
+    "fn": 963,
+    "example_mean_f1": 0.5969993561993562
+   },
+   "main_caliber_acc": 0.5457227138643068,
+   "main_caliber_n": 678,
+   "main_barrels": {
+    "n": 370,
+    "mae": 0.7567567567567568,
+    "exact": 0.6675675675675675
+   },
+   "kind_presence_f1": {
+    "torpedo": {
+     "f1": 0.9233,
+     "p": 0.9108,
+     "r": 0.9361,
+     "support": 360
+    },
+    "missile": {
+     "f1": 0.72,
+     "p": 0.6923,
+     "r": 0.75,
+     "support": 60
+    },
+    "ssm": {
+     "f1": 0.7059,
+     "p": 0.6923,
+     "r": 0.72,
+     "support": 50
+    },
+    "sam": {
+     "f1": 0.6269,
+     "p": 0.5122,
+     "r": 0.8077,
+     "support": 26
+    },
+    "aircraft": {
+     "f1": 0.7368,
+     "p": 0.8116,
+     "r": 0.6747,
+     "support": 83
+    },
+    "asw": {
+     "f1": 0.7615,
+     "p": 0.7444,
+     "r": 0.7795,
+     "support": 127
+    },
+    "mine": {
+     "f1": 0.751,
+     "p": 0.7863,
+     "r": 0.7188,
+     "support": 128
+    },
+    "ciws": {
+     "f1": 0.6545,
+     "p": 0.6429,
+     "r": 0.6667,
+     "support": 27
+    },
+    "gun": {
+     "f1": 0.9136,
+     "p": 0.9136,
+     "r": 0.9136,
+     "support": 683
+    },
+    "sonar": {
+     "f1": 0.8646,
+     "p": 0.8427,
+     "r": 0.8876,
+     "support": 169
+    },
+    "radar_any": {
+     "f1": 0.9822,
+     "p": 0.9714,
+     "r": 0.9933,
+     "support": 445
+    },
+    "esm_ecm": {
+     "f1": 0.7432,
+     "p": 0.7816,
+     "r": 0.7083,
+     "support": 96
+    },
+    "macro": 0.7819583333333333
+   },
+   "sensor_kinds": {
+    "n": 840,
+    "precision": 0.7211646136618141,
+    "recall": 0.7260428410372041,
+    "f1": 0.7235955056179775,
+    "exact_match": 0.7,
+    "mean_jaccard": 0.7832794784580499
+   }
+  },
+  "by_variant": {
+   "full": {
+    "n": 501,
+    "weapon_item": {
+     "precision": 0.615993665874901,
+     "recall": 0.6289409862570736,
+     "f1": 0.6224000000000001,
+     "tp": 778,
+     "fp": 485,
+     "fn": 459,
+     "example_mean_f1": 0.6114300204120563
+    },
+    "main_caliber_acc": 0.5647058823529412,
+    "main_caliber_n": 340,
+    "main_barrels": {
+     "n": 192,
+     "mae": 0.6197916666666666,
+     "exact": 0.71875
+    },
+    "kind_presence_f1": {
+     "torpedo": {
+      "f1": 0.9251,
+      "p": 0.9105,
+      "r": 0.9402,
+      "support": 184
+     },
+     "missile": {
+      "f1": 0.6562,
+      "p": 0.6562,
+      "r": 0.6562,
+      "support": 32
+     },
+     "ssm": {
+      "f1": 0.64,
+      "p": 0.64,
+      "r": 0.64,
+      "support": 25
+     },
+     "sam": {
+      "f1": 0.6316,
+      "p": 0.5217,
+      "r": 0.8,
+      "support": 15
+     },
+     "aircraft": {
+      "f1": 0.7711,
+      "p": 0.8,
+      "r": 0.7442,
+      "support": 43
+     },
+     "asw": {
+      "f1": 0.7939,
+      "p": 0.7647,
+      "r": 0.8254,
+      "support": 63
+     },
+     "mine": {
+      "f1": 0.7863,
+      "p": 0.8214,
+      "r": 0.7541,
+      "support": 61
+     },
+     "ciws": {
+      "f1": 0.7407,
+      "p": 0.7143,
+      "r": 0.7692,
+      "support": 13
+     },
+     "gun": {
+      "f1": 0.9173,
+      "p": 0.9133,
+      "r": 0.9213,
+      "support": 343
+     },
+     "sonar": {
+      "f1": 0.8667,
+      "p": 0.8387,
+      "r": 0.8966,
+      "support": 87
+     },
+     "radar_any": {
+      "f1": 0.9778,
+      "p": 0.9649,
+      "r": 0.991,
+      "support": 222
+     },
+     "esm_ecm": {
+      "f1": 0.7174,
+      "p": 0.7333,
+      "r": 0.7021,
+      "support": 47
+     },
+     "macro": 0.7853416666666667
+    },
+    "sensor_kinds": {
+     "n": 424,
+     "precision": 0.6961206896551724,
+     "recall": 0.7083333333333334,
+     "f1": 0.7021739130434783,
+     "exact_match": 0.6910377358490566,
+     "mean_jaccard": 0.7696933962264151
+    }
+   },
+   "partial": {
+    "n": 499,
+    "weapon_item": {
+     "precision": 0.5975206611570248,
+     "recall": 0.589242053789731,
+     "f1": 0.5933524825605253,
+     "tp": 723,
+     "fp": 487,
+     "fn": 504,
+     "example_mean_f1": 0.5825108536531383
+    },
+    "main_caliber_acc": 0.5266272189349113,
+    "main_caliber_n": 338,
+    "main_barrels": {
+     "n": 178,
+     "mae": 0.9044943820224719,
+     "exact": 0.6123595505617978
+    },
+    "kind_presence_f1": {
+     "torpedo": {
+      "f1": 0.9213,
+      "p": 0.9111,
+      "r": 0.9318,
+      "support": 176
+     },
+     "missile": {
+      "f1": 0.7869,
+      "p": 0.7273,
+      "r": 0.8571,
+      "support": 28
+     },
+     "ssm": {
+      "f1": 0.7692,
+      "p": 0.7407,
+      "r": 0.8,
+      "support": 25
+     },
+     "sam": {
+      "f1": 0.6207,
+      "p": 0.5,
+      "r": 0.8182,
+      "support": 11
+     },
+     "aircraft": {
+      "f1": 0.6957,
+      "p": 0.8276,
+      "r": 0.6,
+      "support": 40
+     },
+     "asw": {
+      "f1": 0.7287,
+      "p": 0.7231,
+      "r": 0.7344,
+      "support": 64
+     },
+     "mine": {
+      "f1": 0.7188,
+      "p": 0.7541,
+      "r": 0.6866,
+      "support": 67
+     },
+     "ciws": {
+      "f1": 0.5714,
+      "p": 0.5714,
+      "r": 0.5714,
+      "support": 14
+     },
+     "gun": {
+      "f1": 0.9099,
+      "p": 0.9139,
+      "r": 0.9059,
+      "support": 340
+     },
+     "sonar": {
+      "f1": 0.8623,
+      "p": 0.8471,
+      "r": 0.878,
+      "support": 82
+     },
+     "radar_any": {
+      "f1": 0.9867,
+      "p": 0.978,
+      "r": 0.9955,
+      "support": 223
+     },
+     "esm_ecm": {
+      "f1": 0.7692,
+      "p": 0.8333,
+      "r": 0.7143,
+      "support": 49
+     },
+     "macro": 0.7784
+    },
+    "sensor_kinds": {
+     "n": 416,
+     "precision": 0.7482517482517482,
+     "recall": 0.7447795823665894,
+     "f1": 0.7465116279069767,
+     "exact_match": 0.7091346153846154,
+     "mean_jaccard": 0.7971268315018315
+    }
+   }
+  }
+ },
+ "T3": {
+  "n": 1000,
+  "missing_predictions": 0,
+  "json_invalid_rate": 0.0,
+  "schema_violation_rate": 0.0,
+  "schema_errors": {},
+  "metrics": {
+   "n_examples": 1000,
+   "n_fields": 1693,
+   "valid_field_rate": 1.0,
+   "overall": {
+    "n": 1693,
+    "mape": 0.16706426238530434,
+    "median_rel_err": 0.08058608058608056,
+    "within_10pct": 0.561724748966332,
+    "within_25pct": 0.8074424099232133
+   },
+   "per_field": {
+    "beam_m": {
+     "n": 237,
+     "mape": 0.11002835282889811,
+     "median_rel_err": 0.06557377049180334,
+     "within_10pct": 0.6286919831223629,
+     "within_25pct": 0.8776371308016878
+    },
+    "complement": {
+     "n": 225,
+     "mape": 0.24875408407943297,
+     "median_rel_err": 0.13333333333333333,
+     "within_10pct": 0.4,
+     "within_25pct": 0.7111111111111111
+    },
+    "displacement_full_t": {
+     "n": 163,
+     "mape": 0.1706426843069754,
+     "median_rel_err": 0.08333333333333333,
+     "within_10pct": 0.5705521472392638,
+     "within_25pct": 0.8159509202453987
+    },
+    "displacement_normal_t": {
+     "n": 179,
+     "mape": 0.0653491361849101,
+     "median_rel_err": 0.0,
+     "within_10pct": 0.7988826815642458,
+     "within_25pct": 0.9217877094972067
+    },
+    "draught_m": {
+     "n": 223,
+     "mape": 0.16742278190540016,
+     "median_rel_err": 0.10256410256410255,
+     "within_10pct": 0.48878923766816146,
+     "within_25pct": 0.7443946188340808
+    },
+    "length_m": {
+     "n": 241,
+     "mape": 0.0895434595588836,
+     "median_rel_err": 0.05500000000000007,
+     "within_10pct": 0.7053941908713693,
+     "within_25pct": 0.91701244813278
+    },
+    "power_hp": {
+     "n": 198,
+     "mape": 0.3761040939076531,
+     "median_rel_err": 0.20714285714285713,
+     "within_10pct": 0.3333333333333333,
+     "within_25pct": 0.5454545454545454
+    },
+    "speed_kn": {
+     "n": 227,
+     "mape": 0.12289555087468083,
+     "median_rel_err": 0.07692307692307693,
+     "within_10pct": 0.5770925110132159,
+     "within_25pct": 0.9074889867841409
+    }
+   },
+   "per_k": {
+    "k1": {
+     "n": 501,
+     "mape": 0.14850481705132043,
+     "median_rel_err": 0.07142857142857142,
+     "within_10pct": 0.592814371257485,
+     "within_25pct": 0.8243512974051896
+    },
+    "k2": {
+     "n": 610,
+     "mape": 0.1539940999974442,
+     "median_rel_err": 0.07735042735042734,
+     "within_10pct": 0.5639344262295082,
+     "within_25pct": 0.8032786885245902
+    },
+    "k3": {
+     "n": 582,
+     "mape": 0.1967396595827624,
+     "median_rel_err": 0.09090909090909091,
+     "within_10pct": 0.5326460481099656,
+     "within_25pct": 0.7972508591065293
+    }
+   },
+   "interval": {
+    "quantiles": [
+     0.1,
+     0.9
+    ],
+    "coverage": 0.5428233904311872,
+    "n": 1693,
+    "mean_rel_width": 0.24776609910448377,
+    "median_rel_width": 0.1557692307692307,
+    "per_field": {
+     "beam_m": {
+      "coverage": 0.4219409282700422,
+      "n": 237,
+      "median_rel_width": 0.1050000000000001
+     },
+     "complement": {
+      "coverage": 0.5555555555555556,
+      "n": 225,
+      "median_rel_width": 0.2763636363636364
+     },
+     "displacement_full_t": {
+      "coverage": 0.558282208588957,
+      "n": 163,
+      "median_rel_width": 0.1565217391304348
+     },
+     "displacement_normal_t": {
+      "coverage": 0.7653631284916201,
+      "n": 179,
+      "median_rel_width": 0.0125
+     },
+     "draught_m": {
+      "coverage": 0.5201793721973094,
+      "n": 223,
+      "median_rel_width": 0.21935483870967745
+     },
+     "length_m": {
+      "coverage": 0.5020746887966805,
+      "n": 241,
+      "median_rel_width": 0.11735537190082644
+     },
+     "power_hp": {
+      "coverage": 0.5505050505050505,
+      "n": 198,
+      "median_rel_width": 0.389
+     },
+     "speed_kn": {
+      "coverage": 0.5286343612334802,
+      "n": 227,
+      "median_rel_width": 0.14545454545454542
+     }
+    }
+   }
+  },
+  "by_variant": {}
+ }
+}

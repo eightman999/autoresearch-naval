@@ -1,0 +1,350 @@
+{"id": "A01", "seed": 1001, "category": "A", "verdict": "unsupported", "status": "infeasible", "n_witness": 109, "witness_ids": ["c00227", "c00608", "c00609", "c00695", "c00696", "c00697", "c00698", "c00817", "c01065", "c01389"], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": null, "alone_ok": null}]}
+{"id": "A02", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A03", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A04", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A05", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A06", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A07", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A08", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A09", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A10", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A11", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A12", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A13", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A14", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A15", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A16", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A17", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A18", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A19", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A20", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A21", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A22", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A23", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A24", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A25", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A26", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A27", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A28", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A29", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A30", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A31", "seed": 1001, "category": "A", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "max_displacement_t", "in_request": true, "blocking": false, "alone_ok": null}]}
+{"id": "A32", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A33", "seed": 1001, "category": "A", "verdict": "unsupported", "status": "infeasible", "n_witness": 187, "witness_ids": ["c00382", "c00383", "c00385", "c00387", "c00389", "c00523", "c00524", "c00526", "c00528", "c00536"], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": null, "alone_ok": null}]}
+{"id": "A34", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A35", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A36", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A37", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A38", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A39", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A40", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A41", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A42", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A43", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A44", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A45", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A46", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A47", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A48", "seed": 1001, "category": "A", "verdict": "unsupported", "status": "infeasible", "n_witness": 17, "witness_ids": ["c01125", "c01126", "c01127", "c02014", "c02762", "c02763", "c02764", "c03733", "c04554", "c04555"], "claims": [{"constraint": "ship_type", "in_request": false, "blocking": null, "alone_ok": null}]}
+{"id": "A49", "seed": 1001, "category": "A", "verdict": "feasible", "status": "feasible"}
+{"id": "A50", "seed": 1001, "category": "A", "verdict": "invalid", "status": null}
+{"id": "B01", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B02", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B03", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B04", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B05", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B06", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B07", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B08", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B09", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B10", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B11", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B12", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B13", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B14", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B15", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B16", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B17", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B18", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B19", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B20", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B21", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B22", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B23", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B24", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B25", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B26", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B27", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B28", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B29", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B30", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B31", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B32", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B33", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B34", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B35", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B36", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B37", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B38", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B39", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B40", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B41", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B42", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B43", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B44", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B45", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B46", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B47", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B48", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B49", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "B50", "seed": 1001, "category": "B", "verdict": "feasible", "status": "feasible"}
+{"id": "C01", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C02", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C03", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C04", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C05", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C06", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C07", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C08", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C09", "seed": 1001, "category": "C", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "C10", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C11", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C12", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C13", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C14", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C15", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C16", "seed": 1001, "category": "C", "verdict": "false_claims", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": true, "alone_ok": true}]}
+{"id": "C17", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C18", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C19", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C20", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C21", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C22", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C23", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C24", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C25", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C26", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C27", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C28", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C29", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C30", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C31", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C32", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C33", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C34", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C35", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C36", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C37", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C38", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C39", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C40", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C41", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C42", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C43", "seed": 1001, "category": "C", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "C44", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C45", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C46", "seed": 1001, "category": "C", "verdict": "false_claims", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": true}]}
+{"id": "C47", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C48", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C49", "seed": 1001, "category": "C", "verdict": "feasible", "status": "feasible"}
+{"id": "C50", "seed": 1001, "category": "C", "verdict": "supported", "status": "relaxed", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "D01", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D02", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D03", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D04", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D05", "seed": 1001, "category": "D", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:sam", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "D06", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D07", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D08", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D09", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D10", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D11", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D12", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D13", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D14", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D15", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D16", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D17", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D18", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D19", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D20", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D21", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D22", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D23", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D24", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D25", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D26", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D27", "seed": 1001, "category": "D", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:fire_control_radar", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "D28", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D29", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D30", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D31", "seed": 1001, "category": "D", "verdict": "supported", "status": "relaxed", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "D32", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D33", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D34", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D35", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D36", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D37", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D38", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D39", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D40", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D41", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D42", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D43", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D44", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D45", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D46", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D47", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D48", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D49", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "D50", "seed": 1001, "category": "D", "verdict": "feasible", "status": "feasible"}
+{"id": "E01", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:ssm", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:ciws", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E02", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E03", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E04", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:ciws", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:ciws", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E05", "seed": 1001, "category": "E", "verdict": "invalid", "status": null}
+{"id": "E06", "seed": 1001, "category": "E", "verdict": "supported", "status": "relaxed", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E07", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E08", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:ssm", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:ciws", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:main_gun>=130mm", "in_request": true, "blocking": false, "alone_ok": true}]}
+{"id": "E09", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:helicopter", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:sonar", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E10", "seed": 1001, "category": "E", "verdict": "invalid", "status": null}
+{"id": "E11", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required_propulsion:nuclear", "in_request": true, "blocking": true, "alone_ok": false}, {"constraint": "required:main_gun>=280mm", "in_request": true, "blocking": false, "alone_ok": true}]}
+{"id": "E12", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:ballistic_missile", "in_request": true, "blocking": true, "alone_ok": false}, {"constraint": "required:torpedo_tubes", "in_request": true, "blocking": false, "alone_ok": true}, {"constraint": "required:torpedo_tubes", "in_request": true, "blocking": false, "alone_ok": true}, {"constraint": "required:ballistic_missile", "in_request": true, "blocking": true, "alone_ok": false}]}
+{"id": "E13", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E14", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E15", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E16", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E17", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E18", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E19", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E20", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E21", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E22", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E23", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E24", "seed": 1001, "category": "E", "verdict": "supported", "status": "relaxed", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E25", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E26", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E27", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E28", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E29", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E30", "seed": 1001, "category": "E", "verdict": "supported", "status": "relaxed", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E31", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:main_gun>=305mm", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E32", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required_propulsion:nuclear", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:ssm", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required_propulsion:nuclear", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E33", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E34", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E35", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E36", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": true, "alone_ok": false}]}
+{"id": "E37", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E38", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E39", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E40", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E41", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E42", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:sam", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "required:air_search_radar", "in_request": true, "blocking": false, "alone_ok": false}, {"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E43", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E44", "seed": 1001, "category": "E", "verdict": "invalid", "status": null}
+{"id": "E45", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E46", "seed": 1001, "category": "E", "verdict": "supported", "status": "relaxed", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E47", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E48", "seed": 1001, "category": "E", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "required:main_gun>=127mm", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "E49", "seed": 1001, "category": "E", "verdict": "feasible", "status": "feasible"}
+{"id": "E50", "seed": 1001, "category": "E", "verdict": "supported", "status": "relaxed", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_aircraft", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "pair_01_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_01_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_02_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_02_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_03_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_03_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_04_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_04_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_05_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_05_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_06_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_06_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_07_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_07_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_08_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_08_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_09_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_09_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_10_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_10_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_11_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_11_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_12_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_12_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_13_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_13_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_14_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_14_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_15_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_15_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_16_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_16_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_17_A", "seed": 1001, "category": "P", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "pair_17_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_18_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_18_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_19_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_19_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_20_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_20_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_21_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_21_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_22_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_22_B", "seed": 1001, "category": "P", "verdict": "unsupported", "status": "infeasible", "n_witness": 1, "witness_ids": ["c06352"], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": null, "alone_ok": null}]}
+{"id": "pair_23_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_23_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_24_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_24_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_25_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_25_B", "seed": 1001, "category": "P", "verdict": "unsupported", "status": "infeasible", "n_witness": 49, "witness_ids": ["c00889", "c03666", "c03668", "c04854", "c04855", "c04857", "c04860", "c08572", "c08573", "c08574"], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": null, "alone_ok": null}]}
+{"id": "pair_26_A", "seed": 1001, "category": "P", "verdict": "unsupported", "status": "infeasible", "n_witness": 2, "witness_ids": ["c03034", "c09439"], "claims": [{"constraint": "required:main_gun>=100mm", "in_request": true, "blocking": null, "alone_ok": null}]}
+{"id": "pair_26_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_27_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_27_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_28_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_28_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_29_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_29_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_30_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_30_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_31_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_31_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_32_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_32_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_33_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_33_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_34_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_34_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_35_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_35_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_36_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_36_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_37_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_37_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_38_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_38_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_39_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_39_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_40_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_40_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_41_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_41_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_42_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_42_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_43_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_43_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_44_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_44_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_45_A", "seed": 1001, "category": "P", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "pair_45_B", "seed": 1001, "category": "P", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": false, "alone_ok": false}]}
+{"id": "pair_46_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_46_B", "seed": 1001, "category": "P", "verdict": "unsupported", "status": "relaxed", "n_witness": 3, "witness_ids": ["c03516", "c07745", "c10450"], "claims": [{"constraint": "min_speed_kn", "in_request": true, "blocking": null, "alone_ok": null}]}
+{"id": "pair_47_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_47_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_48_A", "seed": 1001, "category": "P", "verdict": "unsupported", "status": "infeasible", "n_witness": 38, "witness_ids": ["c00346", "c00591", "c00793", "c00794", "c00902", "c01607", "c02477", "c02479", "c02488", "c03194"], "claims": [{"constraint": "ship_type", "in_request": false, "blocking": null, "alone_ok": null}]}
+{"id": "pair_48_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_49_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_49_B", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_50_A", "seed": 1001, "category": "P", "verdict": "feasible", "status": "feasible"}
+{"id": "pair_50_B", "seed": 1001, "category": "P", "verdict": "supported", "status": "infeasible", "n_witness": 0, "witness_ids": [], "claims": [{"constraint": "min_gun_barrels", "in_request": true, "blocking": false, "alone_ok": false}]}

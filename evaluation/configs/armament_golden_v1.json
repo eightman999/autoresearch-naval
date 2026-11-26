@@ -1,0 +1,19 @@
+{
+  "name": "armament-golden-v1",
+  "runner": "command",
+  "runner_command": [
+    "uv",
+    "run",
+    "python",
+    "tools/navspec_eval_runner.py",
+    "--mode",
+    "armament",
+    "--strategy",
+    "representative"
+  ],
+  "contract": "data/navspec/lora/contracts/navspec_end_to_end_eval_contract_v1.json",
+  "seed": 0,
+  "temperature": 0.0,
+  "timeout_seconds": 60,
+  "notes": "DB-covered expected_output.armament ケースのみを実行する。"
+}

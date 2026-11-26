@@ -1,0 +1,29 @@
+{
+  "baseline_version": "navspec-stage2-baseline-v1",
+  "runner": "golden",
+  "source": "data/navspec/lora/stage2x_eval_contract_v1/stage2_eval/cases.jsonl",
+  "cases": 480,
+  "input_sha256": "faafea9430da091d021373fb3ce761f8ec1d365532e189eec81f6c00c95ac23a",
+  "data_sha256": "4fc55ef1cbf75b7abf9331af695f030b54c53832c25f7096670f324497e89bd2",
+  "contract": {
+    "path": "data/navspec/lora/contracts/navspec_end_to_end_eval_contract_v1.json",
+    "sha256": "f1f890d8ed364285f14a36e9c045471a4552af037ce0fc156bb5df4300d17f43"
+  },
+  "code_sha256": "a4d8fd728797eb807dacbbfecb0a8ffd579b7dac4001eb68ef76b8b818acf759",
+  "score": {
+    "schema_rate": 1.0,
+    "status_accuracy": 1.0,
+    "status_balanced_accuracy": 1.0,
+    "impossible_f1": 1.0,
+    "reason_micro_f1": 1.0,
+    "warning_micro_f1": 1.0,
+    "unknown_code_rate": 0.0,
+    "overall_passed": true
+  },
+  "interpretation": "golden runnerが既存gold出力を再現した基準線。モデル推論品質の主張ではなく、評価基盤の決定性・採点・diffの固定点として使用する。",
+  "protected_default": {
+    "id": "navspec-qwen2.5-0.5b-stage2-r8",
+    "registry": "models/registry.json",
+    "sha256": "1b9f5eb892e70a321ff04236af5e753bf19d035d639a0039c0bece75752f4098"
+  }
+}

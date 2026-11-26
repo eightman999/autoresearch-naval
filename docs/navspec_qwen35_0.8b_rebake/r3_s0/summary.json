@@ -1,0 +1,8 @@
+{
+  "best_step": 375,
+  "best_status_acc": 0.9874213836477987,
+  "best_valid_loss": 0.01096390098973395,
+  "steps": 424,
+  "train_sec": 919.7,
+  "peak_gib": 10.24
+}

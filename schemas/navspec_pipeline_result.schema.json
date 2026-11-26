@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.pipeline_result.v1",
+  "title": "NavSpec Pipeline Result",
+  "description": "Stage 2、numeric specialist、classic armament validatorの結果を束ねる加算的な統合契約。既存のShipSpecRecordとArmamentCandidateを参照し、既存schemaを変更しない。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "ship_spec",
+    "detailed_armament",
+    "reason",
+    "warnings",
+    "validation_trace",
+    "provenance",
+    "fallback"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "navspec.pipeline_result.v1"
+    },
+    "status": {
+      "enum": ["ok", "impossible"]
+    },
+    "ship_spec": {
+      "oneOf": [
+        {"$ref": "ship_spec_record.schema.json"},
+        {"type": "null"}
+      ]
+    },
+    "detailed_armament": {
+      "oneOf": [
+        {"$ref": "navspec_armament_candidate.schema.json"},
+        {"type": "null"}
+      ]
+    },
+    "armament_aggregate": {
+      "oneOf": [
+        {"$ref": "#/$defs/armament_aggregate"},
+        {"type": "null"}
+      ]
+    },
+    "reason": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/issue"}
+    },
+    "warnings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/issue"}
+    },
+    "suggested_revision": {
+      "type": ["object", "null"]
+    },
+    "design_rationale": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "equipment_consistency": {
+      "$ref": "#/$defs/equipment_consistency"
+    },
+    "validation_trace": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/trace_entry"}
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "fallback": {
+      "$ref": "#/$defs/fallback"
+    }
+  },
+  "$defs": {
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "displacement_limit_exceeded",
+        "main_gun_too_large_for_hull",
+        "armor_too_heavy_for_hull",
+        "speed_power_conflict",
+        "range_volume_conflict",
+        "speed_armor_range_conflict",
+        "era_equipment_unavailable",
+        "treaty_limit_exceeded",
+        "nation_capability_exceeded",
+        "ship_type_role_conflict",
+        "armament.weapon_unavailable_for_era",
+        "armament.weapon_unavailable_for_nation",
+        "armament.mount_unavailable_for_era",
+        "armament.mount_unavailable_for_nation",
+        "armament.weapon_mount_incompatible",
+        "armament.barbette_too_large_for_beam",
+        "armament.turret_weight_exceeds_hull_limit",
+        "armament.magazine_volume_insufficient",
+        "armament.topweight_limit_exceeded",
+        "armament.firing_arc_conflict",
+        "armament.blast_interference",
+        "armament.battery_layout_conflict",
+        "armament.armament_displacement_conflict",
+        "armament.fire_control_unavailable"
+      ]
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "message", "severity", "source"],
+      "properties": {
+        "code": {"$ref": "#/$defs/reason_code"},
+        "message": {"type": "string", "minLength": 1},
+        "severity": {"enum": ["error", "warn"]},
+        "source": {"type": "string", "minLength": 1},
+        "battery_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "trace_value": {},
+    "trace_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence",
+        "phase",
+        "rule",
+        "action",
+        "before",
+        "after",
+        "reason",
+        "warning",
+        "severity",
+        "source"
+      ],
+      "properties": {
+        "sequence": {"type": "integer", "minimum": 1},
+        "phase": {"enum": ["stage2", "numeric", "armament", "pipeline"]},
+        "rule": {"type": "string", "minLength": 1},
+        "action": {"type": "string", "minLength": 1},
+        "before": {"$ref": "#/$defs/trace_value"},
+        "after": {"$ref": "#/$defs/trace_value"},
+        "reason": {
+          "oneOf": [
+            {"$ref": "#/$defs/issue"},
+            {"type": "null"}
+          ]
+        },
+        "warning": {
+          "oneOf": [
+            {"$ref": "#/$defs/issue"},
+            {"type": "null"}
+          ]
+        },
+        "severity": {"enum": ["info", "warn", "error"]},
+        "source": {
+          "oneOf": [
+            {"type": "string", "minLength": 1},
+            {"type": "array", "items": {"type": "string", "minLength": 1}}
+          ]
+        }
+      }
+    },
+    "armament_aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["main_gun_caliber_mm", "main_gun_count", "main_gun_mount_count"],
+      "properties": {
+        "main_gun_caliber_mm": {"type": ["number", "null"]},
+        "main_gun_count": {"type": "integer", "minimum": 0},
+        "main_gun_mount_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "equipment_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["main_caliber_mm", "main_barrels"],
+      "properties": {
+        "main_caliber_mm": {"type": ["number", "null"]},
+        "main_barrels": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "equipment_consistency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "before", "after", "detail"],
+      "properties": {
+        "status": {"enum": ["not_applicable", "consistent", "reconciled", "mismatch", "not_evaluated"]},
+        "before": {"$ref": "#/$defs/equipment_summary"},
+        "after": {"$ref": "#/$defs/equipment_summary"},
+        "detail": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "db_version",
+        "db_hash",
+        "contract_version",
+        "contract_hash",
+        "model",
+        "adapter",
+        "seed"
+      ],
+      "properties": {
+        "db_version": {"type": "string", "minLength": 1},
+        "db_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "contract_version": {"type": "string", "minLength": 1},
+        "contract_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "result_schema_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "model": {"type": "string", "minLength": 1},
+        "adapter": {"type": "string", "minLength": 1},
+        "seed": {"type": "integer"},
+        "status_validator": {"type": "string", "minLength": 1},
+        "armament_retriever": {"type": "string", "minLength": 1},
+        "armament_validator": {"type": "string", "minLength": 1},
+        "source_files": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["used", "stage", "reason", "message"],
+      "properties": {
+        "used": {"type": "boolean"},
+        "stage": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]},
+        "message": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "best_step": 3000,
+  "best_valid_loss": 0.22310345041736318,
+  "steps": 3110,
+  "train_sec": 5960.3,
+  "train_sec_excl_eval": 5363.2,
+  "peak_gib": 10.04,
+  "train_tokens": 15020850
+}

@@ -337,12 +337,19 @@ def retrieve_armament(
     weapons = retrieve_available_weapons(context, db)
     if not weapons:
         return None
-    weapon = select_representative_weapon(weapons, context, strategy, rng)
+    # 先に砲塔の存在も確認する。最大口径の砲だけを選んでから mount を
+    # 探すと、同時代に使える小口径の代替があるのに no_candidate になる。
+    weapon_mounts = [
+        (weapon, retrieve_available_mounts(weapon["weapon_id"], context, db))
+        for weapon in weapons
+    ]
+    weapon_mounts = [(weapon, mounts) for weapon, mounts in weapon_mounts if mounts]
+    if not weapon_mounts:
+        return None
+    weapon = select_representative_weapon([item[0] for item in weapon_mounts], context, strategy, rng)
     if not weapon:
         return None
-    mounts = retrieve_available_mounts(weapon["weapon_id"], context, db)
-    if not mounts:
-        return None
+    mounts = next(mounts for candidate, mounts in weapon_mounts if candidate["weapon_id"] == weapon["weapon_id"])
     mount = mounts[0]
     mount_count = estimate_mount_count(weapon, context)
     positions = generate_positions(mount_count, rng)

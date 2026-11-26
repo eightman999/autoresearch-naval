@@ -1,0 +1,64 @@
+{
+ "pred": "docs/shipknow_design_v1_compare/preds/evalv1_s0800_s1001",
+ "index_size": 5767,
+ "by_category": {
+  "A": {
+   "feasible": 46,
+   "unsupported": 3,
+   "supported": 1
+  },
+  "B": {
+   "feasible": 41,
+   "unsupported": 8,
+   "invalid": 1
+  },
+  "C": {
+   "feasible": 42,
+   "supported": 3,
+   "false_claims": 3,
+   "unsupported": 2
+  },
+  "D": {
+   "feasible": 35,
+   "unsupported": 4,
+   "false_claims": 4,
+   "supported": 7
+  },
+  "E": {
+   "supported": 35,
+   "feasible": 8,
+   "false_claims": 6,
+   "invalid": 1
+  },
+  "P": {
+   "feasible": 91,
+   "supported": 2,
+   "unsupported": 5,
+   "false_claims": 2
+  }
+ },
+ "claims": {
+  "unsupported": {
+   "in_request": 20,
+   "not_in_request": 2
+  },
+  "supported": {
+   "in_request": 61,
+   "not_blocking": 60,
+   "alone_ng": 59,
+   "alone_ok": 1,
+   "blocking": 1
+  },
+  "false_claims": {
+   "in_request": 14,
+   "not_blocking": 13,
+   "alone_ok": 14,
+   "blocking": 1,
+   "not_in_request": 2
+  }
+ },
+ "rerequest_on": [
+  "unsupported"
+ ],
+ "n_rerequest": 22
+}

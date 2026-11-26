@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "navspec.end_to_end_eval.v1",
+  "title": "NavSpec end-to-end evaluation contract",
+  "contract_version": "navspec-end-to-end-eval-contract-v1",
+  "description": "Stage 2、numeric、詳細兵装を同じ入力・run・採点契約で比較するための評価定義。閾値は既存契約を参照し、このファイルでは重複定義しない。",
+  "schema_refs": {
+    "stage2_candidate": "schemas/navspec_lora_candidate.schema.json",
+    "pipeline_result": "schemas/navspec_pipeline_result.schema.json",
+    "armament_candidate": "schemas/navspec_armament_candidate.schema.json",
+    "stage2_eval_contract": "data/navspec/lora/stage2x_eval_contract_v1/manifest.json",
+    "numeric_eval_contract": "data/navspec/lora/contracts/navspec_numeric_specialist_eval_contract_v1.json"
+  },
+  "threshold_sources": {
+    "stage2_regression": "data/navspec/lora/stage2x_eval_contract_v1/manifest.json",
+    "numeric_adoption": "data/navspec/lora/contracts/navspec_numeric_specialist_eval_contract_v1.json",
+    "armament_codes": "tools/navspec_armament_validator.py"
+  },
+  "prediction_schema_versions": [
+    "navspec.lora_candidate.v1",
+    "navspec.lora_candidate.v2",
+    "navspec.pipeline_result.v1"
+  ],
+  "statuses": ["ok", "impossible"],
+  "axes": {
+    "schema": {
+      "kind": "rate",
+      "description": "予測成果物が許可されたschema_versionと最低限の条件を満たす割合。"
+    },
+    "status": {
+      "kind": "classification",
+      "description": "期待statusと予測statusの一致率。balanced_accuracyも併記する。"
+    },
+    "reason": {
+      "kind": "multilabel",
+      "description": "reason codeのmicro precision/recall/F1とset exact率。"
+    },
+    "warning": {
+      "kind": "multilabel",
+      "description": "warning codeのmicro precision/recall/F1とset exact率。"
+    },
+    "numeric": {
+      "kind": "field_comparison",
+      "description": "status=okでspecが存在する場合だけ比較する。非該当はnull。"
+    },
+    "armament": {
+      "kind": "contract_and_reference",
+      "description": "詳細兵装の契約・参照整合性を比較する。非該当はnull。"
+    },
+    "fallback": {
+      "kind": "rate",
+      "description": "fallback発生率と理由。記録が無い旧出力はnull。"
+    },
+    "latency": {
+      "kind": "distribution",
+      "description": "item単位の秒数からmean/p50/p95を計算する。記録が無い場合はnull。"
+    }
+  },
+  "null_semantics": {
+    "not_applicable": null,
+    "needs_manual": "needs_manual",
+    "unknown_code": "独立FAIL軸として数える"
+  },
+  "golden_case_fields": {
+    "id": "入力由来の安定識別子。無い場合は正規化入力hashから生成する。",
+    "case_group_id": "同一条件・同一候補を表すcanonical group識別子。split間重複検査に使用する。"
+  },
+  "known_codes": {
+    "stage2_reason": [
+      "displacement_limit_exceeded",
+      "main_gun_too_large_for_hull",
+      "armor_too_heavy_for_hull",
+      "speed_power_conflict",
+      "range_volume_conflict",
+      "speed_armor_range_conflict",
+      "era_equipment_unavailable",
+      "treaty_limit_exceeded",
+      "nation_capability_exceeded",
+      "ship_type_role_conflict"
+    ],
+    "armament_reason": [
+      "armament.weapon_unavailable_for_era",
+      "armament.weapon_unavailable_for_nation",
+      "armament.mount_unavailable_for_era",
+      "armament.mount_unavailable_for_nation",
+      "armament.weapon_mount_incompatible",
+      "armament.barbette_too_large_for_beam",
+      "armament.turret_weight_exceeds_hull_limit",
+      "armament.magazine_volume_insufficient",
+      "armament.topweight_limit_exceeded",
+      "armament.firing_arc_conflict",
+      "armament.blast_interference",
+      "armament.battery_layout_conflict",
+      "armament.armament_displacement_conflict",
+      "armament.fire_control_unavailable"
+    ],
+    "armament_warning": [
+      "armament.barbette_too_large_for_beam",
+      "armament.turret_weight_exceeds_hull_limit",
+      "armament.magazine_volume_insufficient",
+      "armament.topweight_limit_exceeded",
+      "armament.firing_arc_conflict",
+      "armament.blast_interference",
+      "armament.battery_layout_conflict",
+      "armament.fire_control_unavailable"
+    ]
+  }
+}

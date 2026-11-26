@@ -49,7 +49,7 @@
 - [x] **tests**: `tests/test_navspec_armament_validator.py` (17件、progress §23 の10テスト網羅、all pass)
 - [x] **validator docs**: `docs/navspec_armament_validator_rules.md`
 - [x] **commit B**: `02c9c5b feat(navspec): add classic armament validator` (4 files, +1032)
-- [x] **push**: `git push -u origin navspec-armament-stage4` 完了 (PR URL: https://github.com/eightman999/autoresearch-mlx/pull/new/navspec-armament-stage4)
+- [x] **push**: `git push -u origin navspec-armament-stage4` 完了 (PR URL: https://github.com/eightman999/autoresearch-naval/pull/new/navspec-armament-stage4)
 
 ---
 

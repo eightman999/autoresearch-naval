@@ -1,0 +1,142 @@
+{
+ "description": "shipknow_parse fix (torpedo tubes mis-read as guns + variant label glue); old=data/navspec/shipknow_v0/records.jsonl, new=data/navspec/shipknow_v0_1/records.jsonl",
+ "records": 10644,
+ "records_changed": {
+  "total": 606,
+  "tube_items_changed": 99,
+  "grenade_launcher_reclass": 37,
+  "other_weapon_items_label_glue_or_variant_mixing": 426,
+  "sensors_only": 28,
+  "variant_label_or_multi_flag_only": 16
+ },
+ "fields_changed_counts": {
+  "weapons": 562,
+  "main_gun": 110,
+  "multi_variant_fields": 84,
+  "variant_note": 77,
+  "armament_n_other": 38,
+  "armament_other_pieces": 38,
+  "sensors": 36,
+  "sensor_kinds": 17,
+  "armament_parse_ok": 9
+ },
+ "armament_parse_ok_false_to_true": [
+  "c02757",
+  "c02834",
+  "c02997",
+  "c04773",
+  "c04906",
+  "c09052",
+  "c09109",
+  "c09901",
+  "c09905"
+ ],
+ "weapon_kind_item_counts_old_to_new": {
+  "aircraft_helicopter": [
+   666,
+   667
+  ],
+  "asw_rocket": [
+   619,
+   628
+  ],
+  "aviation_facility": [
+   357,
+   365
+  ],
+  "depth_charge": [
+   1919,
+   2004
+  ],
+  "grenade_launcher": [
+   52,
+   87
+  ],
+  "gun": [
+   13997,
+   14042
+  ],
+  "mg": [
+   3647,
+   3670
+  ],
+  "mine": [
+   867,
+   915
+  ],
+  "minesweeping_gear": [
+   1221,
+   1258
+  ],
+  "other": [
+   391,
+   343
+  ],
+  "rocket_launcher": [
+   128,
+   142
+  ],
+  "sam": [
+   499,
+   507
+  ],
+  "ssm": [
+   508,
+   513
+  ],
+  "torpedo_tube": [
+   3776,
+   3855
+  ]
+ },
+ "machine_checks_old_to_new": {
+  "gun_items_with_caliber_in_{450,457,483,500,533,550,610,650}": [
+   21,
+   2
+  ],
+  "gun_items_with_caliber_in_{450,457,483,500,533,550,610,650}_remaining": [
+   "c05705 Duilio 450/20 Armstrong 100ton MLR (real gun)",
+   "c09440 Furious 457/40 BL Mk I (real gun)"
+  ],
+  "caliber_length_ge_200 (glued hull-number label)": [
+   11,
+   1
+  ],
+  "caliber_length_lt_10_or_gt_100_gun_mg_ciws": [
+   338,
+   328
+  ],
+  "torpedo_tube_items": [
+   3776,
+   3855
+  ],
+  "torpedo_tube_caliber_outside_200_700": [
+   2,
+   2
+  ],
+  "kind_other_items": [
+   391,
+   343
+  ],
+  "records_with_kind_other": [
+   288,
+   253
+  ],
+  "records_with_multi_variant_armament": [
+   1192,
+   1276
+  ],
+  "first_variant_items_still_containing_a_colon": [
+   null,
+   0
+  ]
+ },
+ "known_limitations": [
+  "ship-name lists containing weapon words (Thetford Mines, Gearing) are not recognised as labels (c01501, c09500)",
+  "nested '1 x (a + b) ...' items stay kind=other",
+  "'fitted for' / 'provision for' / bare 'TT' items stay kind=other",
+  "OCR-spaced numbers (c07138 '3 24', c10909 '45 0')",
+  "sensors: 71 pieces with several 'label:' marks (variant mixing) are not split; 'CCS' glued to a hull number is lost (e.g. c01746)",
+  "c00098 '7.7/8013m' length (numeric label with letter suffix)"
+ ]
+}

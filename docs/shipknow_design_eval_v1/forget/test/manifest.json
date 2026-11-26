@@ -1,0 +1,276 @@
+{
+ "name": "shipknow_v1_2_rag",
+ "derived_from": "shipknow_v0_2 (same example ids / splits / assistant targets)",
+ "k": 3,
+ "retriever": {
+  "module": "tools/shipknow_retriever.py",
+  "params": {
+   "T1": {
+    "w": {
+     "logd": 0.16800000000000004,
+     "logL": 1.0,
+     "logB": 0.24,
+     "logT": 0.27999999999999997,
+     "speed": 1.25,
+     "logP": 0.4,
+     "year": 0.32000000000000006,
+     "logC": 0.5,
+     "logE": 0.2,
+     "shafts": 0.1,
+     "yearN": 0.0,
+     "logS": 0.0,
+     "armB": 0.0,
+     "armD": 0.0
+    },
+    "pen_missing": 0.41999999999999993,
+    "country": 0.35,
+    "weapons": 0.5599999999999999,
+    "cal": 0.22049999999999997,
+    "sensors": 0.44999999999999996,
+    "propulsion": 0.30000000000000004
+   },
+   "T2": {
+    "w": {
+     "logd": 0.294,
+     "logL": 0.19599999999999998,
+     "logB": 0.41999999999999993,
+     "logT": 0.27999999999999997,
+     "speed": 0.5,
+     "logP": 0.27999999999999997,
+     "year": 3.0000000000000004,
+     "logC": 1.1250000000000002,
+     "logE": 0.2,
+     "shafts": 0.028000000000000004,
+     "yearN": 0.0,
+     "logS": 0.0,
+     "armB": 0.0,
+     "armD": 0.0
+    },
+    "pen_missing": 1.0,
+    "country": 0.35,
+    "type": 3.0,
+    "fine": 0.35,
+    "propulsion": 0.08000000000000002
+   },
+   "T3": {
+    "w": {
+     "logd": 5.625,
+     "logL": 0.4,
+     "logB": 0.8999999999999999,
+     "logT": 1.5000000000000002,
+     "speed": 0.5,
+     "logP": 1.05,
+     "year": 0.22400000000000003,
+     "logC": 0.30000000000000004,
+     "logE": 0.2,
+     "shafts": 0.1,
+     "yearN": 0.0,
+     "logS": 0.0,
+     "armB": 0.0,
+     "armD": 0.0
+    },
+    "pen_missing": 1.0,
+    "country": 0.2,
+    "type": 0.16799999999999998,
+    "fine": 0.12000000000000002,
+    "weapons": 0.21,
+    "cal": 0.06000000000000001,
+    "propulsion": 0.1
+   }
+  },
+  "pool": "train split class records only",
+  "train_examples": "leave-group-out (own splits.json group excluded)",
+  "distance_inputs": "only fields visible in the example's user JSON"
+ },
+ "examples": {
+  "train": {
+   "T1": 16920,
+   "T2": 16546,
+   "T3": 16634
+  },
+  "valid": {
+   "T1": 2078,
+   "T2": 2012,
+   "T3": 2044
+  },
+  "test": {
+   "T1": 2082,
+   "T2": 2032,
+   "T3": 2032
+  }
+ },
+ "token_stats": {
+  "train": {
+   "T1": {
+    "examples": 16920,
+    "tokens_total": 15652240,
+    "tokens_avg": 925.1,
+    "tokens_p95": 1214,
+    "tokens_max": 1470
+   },
+   "T2": {
+    "examples": 16546,
+    "tokens_total": 14928771,
+    "tokens_avg": 902.3,
+    "tokens_p95": 1170,
+    "tokens_max": 1431
+   },
+   "T3": {
+    "examples": 16634,
+    "tokens_total": 12378433,
+    "tokens_avg": 744.2,
+    "tokens_p95": 899,
+    "tokens_max": 1078
+   },
+   "all": {
+    "examples": 50100,
+    "tokens_total": 42959444,
+    "tokens_max": 1470
+   }
+  },
+  "valid": {
+   "T1": {
+    "examples": 2078,
+    "tokens_total": 1909260,
+    "tokens_avg": 918.8,
+    "tokens_p95": 1236,
+    "tokens_max": 1446
+   },
+   "T2": {
+    "examples": 2012,
+    "tokens_total": 1809908,
+    "tokens_avg": 899.6,
+    "tokens_p95": 1188,
+    "tokens_max": 1369
+   },
+   "T3": {
+    "examples": 2044,
+    "tokens_total": 1511040,
+    "tokens_avg": 739.3,
+    "tokens_p95": 906,
+    "tokens_max": 1050
+   },
+   "all": {
+    "examples": 6134,
+    "tokens_total": 5230208,
+    "tokens_max": 1446
+   }
+  },
+  "test": {
+   "T1": {
+    "examples": 2082,
+    "tokens_total": 1892059,
+    "tokens_avg": 908.8,
+    "tokens_p95": 1211,
+    "tokens_max": 1450
+   },
+   "T2": {
+    "examples": 2032,
+    "tokens_total": 1806400,
+    "tokens_avg": 889.0,
+    "tokens_p95": 1177,
+    "tokens_max": 1334
+   },
+   "T3": {
+    "examples": 2032,
+    "tokens_total": 1491876,
+    "tokens_avg": 734.2,
+    "tokens_p95": 899,
+    "tokens_max": 1031
+   },
+   "all": {
+    "examples": 6146,
+    "tokens_total": 5190335,
+    "tokens_max": 1450
+   }
+  }
+ },
+ "tokenizer": "tokenizers:Qwen3.5-0.8B/tokenizer.json (token counts depend on this file: Qwen3.5-0.8B tokenizer.json = exact, Qwen2.5 = proxy)",
+ "train_time_estimate": {
+  "train_tokens": 42959444,
+  "assumed_tok_per_sec": 2850.0,
+  "hours": 4.19
+ },
+ "coarse_types": [
+  "battleship",
+  "battlecruiser",
+  "ship_of_the_line",
+  "ironclad",
+  "coastal_defense_monitor",
+  "aircraft_carrier",
+  "armored_protected_cruiser",
+  "heavy_cruiser",
+  "light_cruiser",
+  "cruiser",
+  "destroyer",
+  "frigate",
+  "corvette",
+  "escort",
+  "torpedo_boat",
+  "fast_attack_craft",
+  "patrol",
+  "coast_guard",
+  "gunboat_river",
+  "submarine",
+  "mine_warfare",
+  "amphibious",
+  "auxiliary",
+  "training",
+  "early_warship",
+  "sailing_ship"
+ ],
+ "weapon_kinds": [
+  "gun",
+  "ciws",
+  "mg",
+  "torpedo_tube",
+  "ssm",
+  "sam",
+  "ballistic_missile",
+  "asw_rocket",
+  "rocket_launcher",
+  "grenade_launcher",
+  "depth_charge",
+  "mine",
+  "minesweeping_gear",
+  "aircraft_helicopter",
+  "aviation_facility",
+  "small_arms"
+ ],
+ "t3_fields": [
+  "displacement_normal_t",
+  "displacement_full_t",
+  "length_m",
+  "beam_m",
+  "draught_m",
+  "speed_kn",
+  "power_hp",
+  "complement"
+ ],
+ "rounding_rules": {
+  "displacement_*_t": "1 t (<50 t), 5 t (<500 t), 10 t (>=500 t)",
+  "length_m": "0.1 m (<100 m), 0.5 m (>=100 m)",
+  "beam_m": "0.1 m",
+  "draught_m": "0.05 m (<3 m), 0.1 m (>=3 m)",
+  "speed_kn": "0.5 kn",
+  "power_hp": "10 hp (<1000), 100 hp (<20000), 500 hp (>=20000)",
+  "complement": "1 (<50), 5 (<500), 10 (>=500)",
+  "endurance_nm": "50 nm (<1000), 100 nm (>=1000)",
+  "shafts": "1",
+  "armour_belt_mm / armour_deck_mm": "1 mm (maximum thickness over the belt / deck entries)",
+  "year_in_navy": "shown only when it differs from year"
+ },
+ "system_prompts": {
+  "T1": "Task T1 (ship type). From the partial specification of a warship class, reply with JSON only: {\"ship_type\": <battleship|battlecruiser|ship_of_the_line|ironclad|coastal_defense_monitor|aircraft_carrier|armored_protected_cruiser|heavy_cruiser|light_cruiser|cruiser|destroyer|frigate|corvette|escort|torpedo_boat|fast_attack_craft|patrol|coast_guard|gunboat_river|submarine|mine_warfare|amphibious|auxiliary|training|early_warship|sailing_ship>, \"ship_type_fine\": <singular type slug, e.g. missile-destroyer>}. weapons: n=mounts, per=barrels/tubes per mount (omitted if 1), cal=caliber in mm. year = design/build era; year_in_navy (only if different) = year it entered this navy (acquisition year for transfers); armour_*_mm = max thickness. The input also has \"neighbors\": reference warship classes similar to this one, retrieved from the training set (nearest first, \"d\" = distance, smaller is closer). They are hints, not the answer: use them where they fit and correct them where they do not.",
+  "T2": "Task T2 (armament and sensors). Armament and sensors are hidden: infer them from the type, year, country and hull numbers. Reply with JSON only: {\"weapons\": [{\"kind\": <gun|ciws|mg|torpedo_tube|ssm|sam|ballistic_missile|asw_rocket|rocket_launcher|grenade_launcher|depth_charge|mine|minesweeping_gear|aircraft_helicopter|aviation_facility|small_arms>, \"n\": mounts, \"per\": barrels per mount (omit if 1), \"cal\": mm (if any)}], \"sensors\": [<sorted kinds of air_search_radar|surface_radar|fire_control_radar|navigation_radar|radar|sonar|esm_ecm|decoy|eo_director|combat_system>]}. Order weapons by kind, then descending caliber. Output only the keys listed in \"want\". year = design/build era; year_in_navy (only if different) = year it entered this navy (acquisition year for transfers); armour_*_mm = max thickness. The input also has \"neighbors\": reference warship classes similar to this one, retrieved from the training set (nearest first, \"d\" = distance, smaller is closer). They are hints, not the answer: use them where they fit and correct them where they do not.",
+  "T3": "Task T3 (missing numbers). Estimate the fields listed in \"predict\" from the other fields of the warship class. Reply with JSON only, exactly those fields as numbers (t, m, hp, kn, persons). weapons: n=mounts, per=barrels/tubes per mount (omitted if 1), cal=caliber in mm. year = design/build era; year_in_navy (only if different) = year it entered this navy (acquisition year for transfers); armour_*_mm = max thickness. The input also has \"neighbors\": reference warship classes similar to this one, retrieved from the training set (nearest first, \"d\" = distance, smaller is closer). They are hints, not the answer: use them where they fit and correct them where they do not."
+ },
+ "never_in_prompts": [
+  "ship/class names",
+  "raw TYPE",
+  "source_url",
+  "record ids",
+  "Naval_service",
+  "Project_history"
+ ]
+}

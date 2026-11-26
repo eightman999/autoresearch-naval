@@ -1,0 +1,33 @@
+{
+ "n": 3,
+ "json_invalid_rate": 0.0,
+ "schema_invalid_rate": 0.0,
+ "req_satisfied": 1.0,
+ "validator_pass": 1.0,
+ "validator_pass_without_requirements": 1.0,
+ "valid_and_ok": 1.0,
+ "any_warning_rate_among_valid": 0.6667,
+ "req_satisfied_by_part": {
+  "displacement": {
+   "n": 3,
+   "rate": 1.0
+  },
+  "speed": {
+   "n": 3,
+   "rate": 1.0
+  },
+  "equipment": {
+   "n": 3,
+   "rate": 1.0
+  },
+  "type": {
+   "n": 3,
+   "rate": 1.0
+  },
+  "complement": {
+   "n": 1,
+   "rate": 1.0
+  }
+ },
+ "violation_codes": {}
+}

@@ -26,9 +26,18 @@ NavSpec 実験環境です。Apple Silicon 上の MLX を使う小規模な学�
 - [uv](https://docs.astral.sh/uv/)
 
 ```bash
-git clone https://github.com/eightman999/autoresearch-mlx.git autoresearch-naval
+git clone https://github.com/eightman999/autoresearch-naval.git
 cd autoresearch-naval
 uv sync
+```
+
+標準の高速検証は、リポジトリルートで次を実行します。
+
+```bash
+./verify.sh --check
+./verify.sh
+uv run pytest -q
+uv run python -m pytest -q
 ```
 
 LoRA の推論・学習では、初回に Qwen のベースモデル取得が必要になる場合があります。モデルと
@@ -64,8 +73,47 @@ uv run python validate_navspec_output.py data/navspec/generated/example.json
 uv run python tools/navspec_gui.py
 ```
 
-タブ構成: 仕様表 / 設計コンセプト / パッチ詳細 / 不可理由 / 生JSON。
+タブ構成: 仕様表 / 設計コンセプト / パッチ詳細 / 詳細兵装 / 検証trace / 不可理由 / 生JSON。
 依存関係追加なし（Python 標準の Tkinter を使用）。
+
+### 詳細兵装付きCLI
+
+詳細兵装は既存のclassic出力を置き換えず、明示的にpipeline resultとして取得できます。
+
+```bash
+# normal
+uv run python tools/navspec_armament_pipeline.py \
+  --nation Japan --year 1941 --ship-type battleship \
+  --displacement-t 30000 --beam-m 38 --output /tmp/navspec-normal.json
+
+# impossible（Stage 2相当の下流skip）
+uv run python tools/navspec_armament_pipeline.py \
+  --nation 'United States' --year 1944 --ship-type destroyer \
+  --constraints-json '{"main_gun_caliber_mm_min":203,"main_gun_barrels_min":6,"speed_kt_min":40,"belt_armor_mm_min":150,"range_nm_min":10000}'
+
+# warning-only（status=okのままwarningを保持）
+uv run python tools/navspec_armament_pipeline.py \
+  --nation Japan --year 1941 --ship-type battleship \
+  --displacement-t 30000 --beam-m 1
+```
+
+モデルのStage 2/numeric cacheを使う二段CLIでは、`--with-armament`を付けると同じ
+`navspec.pipeline_result.v1` facadeを接続できます。`--trace-output`は結果をJSONLで保存し、
+`--output-format pipeline-result`はjson reportのresultsを統合結果へ切り替えます。
+既存のclassic `final_json`を使う場合はオプションを付けないでください。
+
+GUIを開かず同じfacadeを実プロセスで確認するには、次を実行します。
+
+```bash
+uv run python tools/navspec_gui.py --smoke all
+```
+
+Tk画面を実際に起動し、入力欄から normal / impossible / warning-only を順に操作する
+deterministic smoke は次で確認できます。
+
+```bash
+uv run python tools/navspec_gui.py --smoke-ui all
+```
 
 ## データセットを再構築する
 

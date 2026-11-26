@@ -1,0 +1,77 @@
+{
+ "network_requests_total": 2112,
+ "network_requests_logged": 2109,
+ "by_host": {
+  "mirror": 1053,
+  "origin": 1056
+ },
+ "status_by_host": {
+  "mirror:200": 1052,
+  "mirror:404": 1,
+  "origin:200": 1048,
+  "origin:404": 7,
+  "origin:500": 1
+ },
+ "non_200": [
+  {
+   "url": "https://www.navypedia.org/ships/bahamas/baha_cf_yellow%20elder.htm",
+   "status": 404,
+   "err": ""
+  },
+  {
+   "url": "https://www.navypedia.org/ships/sarawak/sa_of_aden.htm",
+   "status": 404,
+   "err": ""
+  },
+  {
+   "url": "https://myownonpmirror.com/ships/sarawak/sa_of_aden.html",
+   "status": 404,
+   "err": ""
+  },
+  {
+   "url": "https://www.navypedia.org/ships/uk/brit_cv1_furious.htm",
+   "status": 500,
+   "err": ""
+  },
+  {
+   "url": "https://www.navypedia.org/ships/bangladesh/ban_es_somudra%20joy.htm",
+   "status": 404,
+   "err": ""
+  },
+  {
+   "url": "https://www.navypedia.org/ships/egypt/eg_es_mohammed%20_ali.htm",
+   "status": 404,
+   "err": ""
+  },
+  {
+   "url": "https://www.navypedia.org/ships/germany/ger_esc_st_jochen%20_homann.htm",
+   "status": 404,
+   "err": ""
+  },
+  {
+   "url": "https://www.navypedia.org/ships/germany/ger_ss_delphin%202.htm",
+   "status": 404,
+   "err": ""
+  },
+  {
+   "url": "https://www.navypedia.org/ships/usa/us_aws_talbot%20county.htm",
+   "status": 404,
+   "err": ""
+  }
+ ],
+ "wall_clock_span_sec": 2960,
+ "active_request_time_sec_approx": 2312,
+ "avg_response_sec": {
+  "mirror": 0.16,
+  "origin": 0.82
+ },
+ "max_rate_note": "各ホスト 1 req/s 以下 (最小間隔 1.05s)。ミラー・現行の 2 本を並列に走らせたので合計では最大 ~2 req/s だが、ホストごとは 1 req/s 以下。",
+ "blocking": "Cloudflare/CAPTCHA/ログイン要求は検出されず。HTTP 429/403 なし。",
+ "robots": {
+  "myownonpmirror.com": "404 (robots.txt 無し)",
+  "www.navypedia.org": "200: User-agent: *  Disallow: (全許可)",
+  "navypedia.org": "200: 同上"
+ },
+ "user_agent": "nsdb-completeness-audit/1.0 (personal research; read-only; <=1 req/s)",
+ "cache_bytes": 17398369
+}

@@ -1,0 +1,27 @@
+{
+  "model": "Qwen/Qwen3.5-0.8B",
+  "adapter": "shipknow/out/pilot/best",
+  "merged": false,
+  "n": 6084,
+  "tasks": [
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "per_task": 0,
+  "seed": 0,
+  "temperature": 0.7,
+  "t3_samples": 5,
+  "max_new_tokens": {
+    "T1": 64,
+    "T2": 320,
+    "T3": 64
+  },
+  "batch_size": 32,
+  "peak_gib": 5.09,
+  "T1_greedy_sec": 137.0,
+  "T1_ranking_sec": 385.9,
+  "T2_greedy_sec": 310.0,
+  "T3_greedy_sec": 106.1,
+  "T3_sampling_sec": 502.2
+}

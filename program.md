@@ -7,6 +7,15 @@
 `val_bpb` を最小化する」汎用ループではない。仕様の妥当性、矛盾判定、理由コード、数値品質、
 既存評価への非回帰を同等に扱う。
 
+標準の高速検証は、リポジトリルートで次を実行する。
+
+```bash
+./verify.sh --check
+./verify.sh
+uv run pytest -q
+uv run python -m pytest -q
+```
+
 ## 作業開始時
 
 1. `git status --short` で既存の変更・生成物を確認し、依頼範囲以外には触れない。

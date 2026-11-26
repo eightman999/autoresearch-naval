@@ -1,0 +1,4387 @@
+{
+ "crawl": {
+  "origin": {
+   "stopped": null,
+   "stats": {
+    "network_requests": 0,
+    "cache_hits": 997,
+    "elapsed_sec": 2.0,
+    "cache_bytes": 14183104
+   },
+   "countries": 181,
+   "errors": []
+  },
+  "mirror": {
+   "stopped": null,
+   "stats": {
+    "network_requests": 0,
+    "cache_hits": 1007,
+    "elapsed_sec": 3.1,
+    "cache_bytes": 14183104
+   },
+   "countries": 181,
+   "errors": []
+  }
+ },
+ "counts": {
+  "live_class_pages": 10928,
+  "mirror_class_pages": 10928,
+  "nsdb_class_pages_distinct": 10717,
+  "live_type_pages": 815,
+  "mirror_type_pages": 822,
+  "live_in_nsdb": 10716,
+  "live_not_in_nsdb": 212,
+  "nsdb_not_in_live": 1,
+  "mirror_in_nsdb": 10716,
+  "mirror_not_in_nsdb": 212,
+  "nsdb_not_in_mirror": 1,
+  "live_not_in_mirror": 4,
+  "mirror_not_in_live": 4,
+  "pct_live_covered_by_nsdb": 98.06,
+  "pct_nsdb_present_on_live": 99.99,
+  "live_discoverable_by_current_fetcher_filter": 10928,
+  "live_not_discoverable_by_filter": 0,
+  "mirror_discoverable_by_current_fetcher_filter": 10928,
+  "NSDB_new_db_class_pages(mirror, 2026-07-10)": 10921,
+  "NSDB_new_db_cache_urls": 10921,
+  "NSDB_new_vs_mirror_crawl": {
+   "in_both": 10921,
+   "only_newdb": 0,
+   "only_crawl": 7
+  }
+ },
+ "live_not_in_nsdb": {
+  "total": 212,
+  "by_country": [
+   [
+    "ITALY",
+    72
+   ],
+   [
+    "DENMARK",
+    22
+   ],
+   [
+    "POLAND",
+    15
+   ],
+   [
+    "FALKLAND ISLANDS",
+    12
+   ],
+   [
+    "YUGOSLAVIA / SERBIA",
+    11
+   ],
+   [
+    "HUNGARY",
+    10
+   ],
+   [
+    "CZECHOSLOVAKIA",
+    6
+   ],
+   [
+    "DOMINICAN REPUBLIC",
+    6
+   ],
+   [
+    "PORTUGAL",
+    5
+   ],
+   [
+    "SARAWAK",
+    4
+   ],
+   [
+    "SOLOMON ISLANDS",
+    4
+   ],
+   [
+    "URUGUAY",
+    4
+   ],
+   [
+    "CUBA",
+    3
+   ],
+   [
+    "MARSHALL ISLANDS",
+    3
+   ],
+   [
+    "MICRONESIA",
+    3
+   ],
+   [
+    "MONTENEGRO",
+    3
+   ],
+   [
+    "MONTSERRAT",
+    3
+   ],
+   [
+    "ROMANIA",
+    3
+   ],
+   [
+    "VANUATU",
+    3
+   ],
+   [
+    "GERMANY",
+    2
+   ],
+   [
+    "GUINEA-BISSAU",
+    2
+   ],
+   [
+    "PAKISTAN",
+    2
+   ],
+   [
+    "BAHAMAS",
+    1
+   ],
+   [
+    "BANGLADESH",
+    1
+   ],
+   [
+    "DJIBOUTI",
+    1
+   ],
+   [
+    "EGYPT",
+    1
+   ],
+   [
+    "GEORGIA",
+    1
+   ],
+   [
+    "GUATEMALA",
+    1
+   ],
+   [
+    "GUINEA",
+    1
+   ],
+   [
+    "LAOS",
+    1
+   ],
+   [
+    "MALAWI",
+    1
+   ],
+   [
+    "MALTA",
+    1
+   ],
+   [
+    "MANCHUKUO",
+    1
+   ],
+   [
+    "PARAGUAY",
+    1
+   ],
+   [
+    "UNITED KINGDOM",
+    1
+   ],
+   [
+    "UNITED STATES OF AMERICA",
+    1
+   ]
+  ],
+  "by_type_page": [
+   [
+    "/ships/italy/it_cg.html (12. PARAMILITARY SERVICES)",
+    72
+   ],
+   [
+    "/ships/denmark/dk_cg.html (10. FISHERY PROTECTION SERVICE AND HOME GUARD)",
+    22
+   ],
+   [
+    "/ships/poland/pl_cg.html (10. BOARD GUARD CRAFT)",
+    15
+   ],
+   [
+    "/ships/falklands/falk_cg.html (1. FISHERIES PATROL)",
+    12
+   ],
+   [
+    "/ships/yugoslavia/yu_ls.html (8. AMPHIBIOUS FORCES)",
+    11
+   ],
+   [
+    "/ships/hungary/hu_cf.html (2. RIVER BOATS)",
+    7
+   ],
+   [
+    "/ships/dominicanrep/dom_ls.html (5. AMPHIBIOUS CRAFT)",
+    6
+   ],
+   [
+    "/ships/czechoslovakia/cz_cf.html (2. RIVER BOATS)",
+    5
+   ],
+   [
+    "/ships/portugal/pr_ls.html (8. AMPHIBIOUS CRAFT)",
+    5
+   ],
+   [
+    "/ships/sarawak/sa_of.html (1. OTHER FIGHTING SHIPS)",
+    4
+   ],
+   [
+    "/ships/solomon_islands/soi_cg.html (1. POLICE SERVICE)",
+    4
+   ],
+   [
+    "/ships/uruguay/uru_ls.html (6. AMPHIBIOUS CRAFT)",
+    4
+   ],
+   [
+    "/ships/cuba/cub_ls.html (5. AMPHIBIOUS CRAFT)",
+    3
+   ],
+   [
+    "/ships/hungary/hu_of.html (1. RIVER FIGHTING SHIPS)",
+    3
+   ],
+   [
+    "/ships/marshall_islands/mars_cg.html (1. MARITIME AUTHORITY)",
+    3
+   ],
+   [
+    "/ships/micronesia/micr_cg.html (1. DIVISION OF SURVEILLANCE ATTORNEY GENERAL'S OFFICE)",
+    3
+   ],
+   [
+    "/ships/montenegro/mone_ls.html (3. AMPHIBIOUS CRAFT)",
+    3
+   ],
+   [
+    "/ships/montserrat/monts_cg.html (1. POLICE FORCE)",
+    3
+   ],
+   [
+    "/ships/romania/ro_cm.html (9. CONVERTED MERCHANT VESSELS)",
+    3
+   ],
+   [
+    "/ships/vanuatu/van_cg.html (1. MARINE POLICE)",
+    3
+   ],
+   [
+    "/ships/guinea_bissau/gub_ls.html (2. AMPHIBIOUS CRAFT)",
+    2
+   ],
+   [
+    "/ships/pakistan/pak_ls.html (6. AMPHIBIOUS CRAFT)",
+    2
+   ],
+   [
+    "/ships/bahamas/baha_cf.html (1. COASTAL FORCES)",
+    1
+   ],
+   [
+    "/ships/bangladesh/ban_es.html (2. ESCORTS)",
+    1
+   ],
+   [
+    "/ships/czechoslovakia/cz_of.html (1. RIVER SHIPS)",
+    1
+   ],
+   [
+    "/ships/djibouti/dji_ls.html (2. AMPHIBIOUS CRAFT)",
+    1
+   ],
+   [
+    "/ships/egypt/eg_es.html (3. ESCORTS)",
+    1
+   ],
+   [
+    "/ships/georgia/geo_ls.html (2. AMPHIBIOUS CRAFT)",
+    1
+   ],
+   [
+    "/ships/germany/ger_escorts.html (6. ESCORTS)",
+    1
+   ],
+   [
+    "/ships/germany/ger_submarines.html (5. SUBMARINES)",
+    1
+   ],
+   [
+    "/ships/guatemala/gua_ls.html (2. AMPHIBIOUS CRAFT)",
+    1
+   ],
+   [
+    "/ships/guinea/gui_ls.html (3. AMPHIBIOUS CRAFT)",
+    1
+   ],
+   [
+    "/ships/laos/lao_ls.html (2. AMPHIBIOUS CRAFT)",
+    1
+   ],
+   [
+    "/ships/malawi/malaw_cg.html (1. ARMY)",
+    1
+   ],
+   [
+    "/ships/malta/malt_ls.html (3. AMPHIBIOUS CRAFT)",
+    1
+   ],
+   [
+    "/ships/manchukuo/ma_cm.html (4. CONVERTED MERCHANT SHIPS)",
+    1
+   ],
+   [
+    "/ships/paraguay/par_ls.html (4. AMPHIBIOUS CRAFT)",
+    1
+   ],
+   [
+    "/ships/uk/uk_carriers.html (2. AIRCRAFT CARRYING SHIPS)",
+    1
+   ],
+   [
+    "/ships/usa/usa_amphib.html (9. AMPHIBIOUS SHIPS AND CRAFT)",
+    1
+   ]
+  ],
+  "not_visited_by_fetcher_type_filter": 0,
+  "not_class_like_link_text": 0,
+  "also_in_mirror": 208,
+  "list": [
+   {
+    "canon": "/ships/bahamas/baha_cf_yellow%20elder.html",
+    "text": "3. YELLOW ELDER patrol boats (1986)",
+    "country": "BAHAMAS",
+    "type_page": "/ships/bahamas/baha_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/bahamas/baha_cf_yellow%20elder.htm",
+    "cause": "URL に空白(%20)。現行サイトは 404、ミラーには存在"
+   },
+   {
+    "canon": "/ships/bangladesh/ban_es_somudra%20joy.html",
+    "text": "5. SOMUDRA JOY frigates (1969-1971/2013-2015)",
+    "country": "BANGLADESH",
+    "type_page": "/ships/bangladesh/ban_es.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/bangladesh/ban_es_somudra%20joy.htm",
+    "cause": "URL に空白(%20)。現行サイトは 404、ミラーには存在"
+   },
+   {
+    "canon": "/ships/cuba/cub_ls_709.html",
+    "text": "2. project 709 landing craft (1960s/1990)",
+    "country": "CUBA",
+    "type_page": "/ships/cuba/cub_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/cuba/cub_ls_709.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/cuba/cub_ls_771.html",
+    "text": "1. 690 medium landing ships (1967-1969/1982)",
+    "country": "CUBA",
+    "type_page": "/ships/cuba/cub_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/cuba/cub_ls_771.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/cuba/cub_ls_t4.html",
+    "text": "1. 'T4' landing craft (1967-1974)",
+    "country": "CUBA",
+    "type_page": "/ships/cuba/cub_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/cuba/cub_ls_t4.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/czechoslovakia/cz_cf_1.html",
+    "text": "3. NO1 river motor launches (1948)",
+    "country": "CZECHOSLOVAKIA",
+    "type_page": "/ships/czechoslovakia/cz_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/czechoslovakia/cz_cf_1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/czechoslovakia/cz_cf_dc1.html",
+    "text": "2. DČ-1 river motor gunboat (1949)",
+    "country": "CZECHOSLOVAKIA",
+    "type_page": "/ships/czechoslovakia/cz_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/czechoslovakia/cz_cf_dc1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/czechoslovakia/cz_cf_md1.html",
+    "text": "1. MD-1 river motor gunboats (1920)",
+    "country": "CZECHOSLOVAKIA",
+    "type_page": "/ships/czechoslovakia/cz_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/czechoslovakia/cz_cf_md1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/czechoslovakia/cz_cf_omh3.html",
+    "text": "1. OMH3 river motor launches (1924)",
+    "country": "CZECHOSLOVAKIA",
+    "type_page": "/ships/czechoslovakia/cz_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/czechoslovakia/cz_cf_omh3.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/czechoslovakia/cz_cf_oms12.html",
+    "text": "2. OMS12 river motor launches (1934-1936)",
+    "country": "CZECHOSLOVAKIA",
+    "type_page": "/ships/czechoslovakia/cz_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/czechoslovakia/cz_cf_oms12.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/czechoslovakia/cz_of_president_masaryk.html",
+    "text": "1. PRESIDENT MASARYK river monitor (1932)",
+    "country": "CZECHOSLOVAKIA",
+    "type_page": "/ships/czechoslovakia/cz_of.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/czechoslovakia/cz_of_president_masaryk.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_aldebaran.html",
+    "text": "5. ALDEBARAN Home Guard boats (1992 - 2001)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_aldebaran.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_beskytteren.html",
+    "text": "1. BESKYTTEREN patrol ship (1900)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_beskytteren.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_cm_wwi.html",
+    "text": "2. merchant vessels, converted to fishery protection before and during WWI",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_cm_wwi.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_diana.html",
+    "text": "4. DIANA patrol ship (1917)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_diana.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_eno.html",
+    "text": "7. ENØ Home Guard boats (2003-2011)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_eno.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_freja.html",
+    "text": "10. FREJA fishery protection vessel (1939)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_freja.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_havornen.html",
+    "text": "13. HAVØRNEN fishery protection vessel (1979)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_havornen.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_havornen95.html",
+    "text": "15. HAVØRNEN fishery protection vessel (1995)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_havornen95.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_hejmdal.html",
+    "text": "8. HEJMDAL fishery protection vessel (1935)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_hejmdal.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_hvidbjornen.html",
+    "text": "5. HVIDBJØRNEN fishery protection vessel (1929)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_hvidbjornen.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_ingolf.html",
+    "text": "7. INGOLF fishery protection vessel (1934)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_ingolf.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_islands_falk.html",
+    "text": "3. ISLANDS FALK patrol ship (1906)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_islands_falk.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_maagen.html",
+    "text": "6. MAAGEN fishery protection cutter (1932)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_maagen.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_mhv20.html",
+    "text": "4. MHV20 Home Guard boats (1974-1981)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_mhv20.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_mhv90.html",
+    "text": "3. MHV90 Home Guard boats (1973 - 1975)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_mhv90.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_nordylland.html",
+    "text": "12. NORDYLLAND fishery protection vessels (1968)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_nordylland.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_saturn.html",
+    "text": "1. DMH70 Home Guard boats (1958)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_saturn.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_sens_vaever.html",
+    "text": "2. SENS VAEVER fishery protection craft (1960)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_sens_vaever.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_sisak.html",
+    "text": "6. SISAK I boats of Greenland police (1999-2001)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_sisak.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_ternen.html",
+    "text": "9. TERNEN fishery protection cutter (1937)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_ternen.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_vestkysten.html",
+    "text": "14. VESTKYSTEN fishery protection vessel (1987)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_vestkysten.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/denmark/dk_cg_vitus_bering.html",
+    "text": "11. VITUS BERING fishery protection vessel (1943/1948)",
+    "country": "DENMARK",
+    "type_page": "/ships/denmark/dk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/denmark/dk_cg_vitus_bering.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/djibouti/dji_ls_dague.html",
+    "text": "1. ex-DAGUE utility landing craft (1987/2012)",
+    "country": "DJIBOUTI",
+    "type_page": "/ships/djibouti/dji_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/djibouti/dji_ls_dague.htm",
+    "cause": "原因不明 (現行・ミラーとも 200 で取得可。2026-02 取得時の一時エラー等の疑い)"
+   },
+   {
+    "canon": "/ships/dominicanrep/dom_ls_17dejulio.html",
+    "text": "3. 17 DE JULIO tank landing craft (1943-1944/1948)",
+    "country": "DOMINICAN REPUBLIC",
+    "type_page": "/ships/dominicanrep/dom_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/dominicanrep/dom_ls_17dejulio.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/dominicanrep/dom_ls_17dejulio57.html",
+    "text": "4. 17 DE JULIO utility landing craft (1957)",
+    "country": "DOMINICAN REPUBLIC",
+    "type_page": "/ships/dominicanrep/dom_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/dominicanrep/dom_ls_17dejulio57.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/dominicanrep/dom_ls_bdi101.html",
+    "text": "1. BDI101 infantry landing craft (1942-1944/1947-1952)",
+    "country": "DOMINICAN REPUBLIC",
+    "type_page": "/ships/dominicanrep/dom_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/dominicanrep/dom_ls_bdi101.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/dominicanrep/dom_ls_neyba.html",
+    "text": "5. NEYBA utility landing craft (1978/2006)",
+    "country": "DOMINICAN REPUBLIC",
+    "type_page": "/ships/dominicanrep/dom_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/dominicanrep/dom_ls_neyba.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/dominicanrep/dom_ls_samana.html",
+    "text": "2. SAMANÁ tank landing craft (1943/1948)",
+    "country": "DOMINICAN REPUBLIC",
+    "type_page": "/ships/dominicanrep/dom_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/dominicanrep/dom_ls_samana.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/dominicanrep/dom_ls_sirio.html",
+    "text": "1. SAN RAFAEL medium landing ships (1944-1945/1946-1958)",
+    "country": "DOMINICAN REPUBLIC",
+    "type_page": "/ships/dominicanrep/dom_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/dominicanrep/dom_ls_sirio.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/egypt/eg_es_mohammed%20_ali.html",
+    "text": "4. MOHAMMED ALI frigates (1940/1949-1950)",
+    "country": "EGYPT",
+    "type_page": "/ships/egypt/eg_es.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/egypt/eg_es_mohammed%20_ali.htm",
+    "cause": "URL に空白(%20)。現行サイトは 404、ミラーには存在"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_beaulieu.html",
+    "text": "1. BEAULIEU patrol boats (1968/1987)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_beaulieu.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_cordella.html",
+    "text": "6. CORDELLA patrol ship (1973/1993)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_cordella.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_criscilla.html",
+    "text": "9. CRISCILLA patrol ship (1973/1998)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_criscilla.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_dorada.html",
+    "text": "8. DORADA patrol ship (1994/1997)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_dorada.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_falkland_desire.html",
+    "text": "3. FALKLAND DESIRE patrol ship (1969/1987)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_falkland_desire.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_falkland_right.html",
+    "text": "2. FALKLAND RIGHT patrol ship (1960s/1986)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_falkland_right.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_falkland_right87.html",
+    "text": "5. FALKLAND RIGHT patrol ship (1963/1989)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_falkland_right87.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_falklands_sound.html",
+    "text": "1. FALKLAND SOUND patrol ship (1960s/1986)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_falklands_sound.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_fox.html",
+    "text": "7. FOX patrol ship (1968/1996)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_fox.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_mount_kent.html",
+    "text": "4. MOUNT KENT patrol ship (1967/1987)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_mount_kent.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_protegat.html",
+    "text": "11. PROTEGAT patrol ship (1987/2008)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_protegat.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/falklands/falk_cg_sigma.html",
+    "text": "10. SIGMA patrol ship (1972/2000)",
+    "country": "FALKLAND ISLANDS",
+    "type_page": "/ships/falklands/falk_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/falklands/falk_cg_sigma.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/georgia/geo_ls_guria.html",
+    "text": "1. GURIA small landing ships (1974-1975/2001)",
+    "country": "GEORGIA",
+    "type_page": "/ships/georgia/geo_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/georgia/geo_ls_guria.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/germany/ger_esc_st_jochen%20_homann.html",
+    "text": "42. JOCHEN HOMANN patrols (1943)",
+    "country": "GERMANY",
+    "type_page": "/ships/germany/ger_escorts.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/germany/ger_esc_st_jochen%20_homann.htm",
+    "cause": "URL に空白(%20)。現行サイトは 404、ミラーには存在"
+   },
+   {
+    "canon": "/ships/germany/ger_ss_delphin%202.html",
+    "text": "7. \"GROSSER DELPHIN\" type midget submarine",
+    "country": "GERMANY",
+    "type_page": "/ships/germany/ger_submarines.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/germany/ger_ss_delphin%202.htm",
+    "cause": "URL に空白(%20)。現行サイトは 404、ミラーには存在"
+   },
+   {
+    "canon": "/ships/guatemala/gua_ls_chinaltenango.html",
+    "text": "1. CHINALTENANGO landing craft (1953-1965/1965)",
+    "country": "GUATEMALA",
+    "type_page": "/ships/guatemala/gua_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/guatemala/gua_ls_chinaltenango.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/guinea/gui_ls_1785.html",
+    "text": "1. pr. 1785 landing craft (1962-1974/1974)",
+    "country": "GUINEA",
+    "type_page": "/ships/guinea/gui_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/guinea/gui_ls_1785.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/guinea_bissau/gub_ls_ldm101.html",
+    "text": "2. LDM101 landing craft (1964-1966/1993)",
+    "country": "GUINEA-BISSAU",
+    "type_page": "/ships/guinea_bissau/gub_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/guinea_bissau/gub_ls_ldm101.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/guinea_bissau/gub_ls_t4.html",
+    "text": "1. T4 landing craft (1975-1978)",
+    "country": "GUINEA-BISSAU",
+    "type_page": "/ships/guinea_bissau/gub_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/guinea_bissau/gub_ls_t4.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_cf_compo.html",
+    "text": "1. COMPO armoured river motor gunboats (1916/1919-1929)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_cf_compo.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_cf_huszar.html",
+    "text": "1. HÜSZAR armoured river motor gunboats (1916/1918)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_cf_huszar.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_cf_komarom.html",
+    "text": "2. KOMAROM armoured river motor gunboats (1918/1919)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_cf_komarom.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_cf_pm1.html",
+    "text": "3. PM1 armoured river motor gunboats (1940-1949)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_cf_pm1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_cf_pn21.html",
+    "text": "4. PN21 armoured river motor gunboats (1950-1951)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_cf_pn21.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_cf_pn31.html",
+    "text": "5. PN31 armoured river motor gunboats (1952-1956)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_cf_pn31.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_cf_siofok.html",
+    "text": "2. SIOFOK armoured river motor gunboats (1916/1920-1927)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_cf.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_cf_siofok.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_of_leitha.html",
+    "text": "1. LEITHA river monitors (1872/1919)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_of.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_of_leitha.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_of_szamos.html",
+    "text": "2. SZAMOS river monitor (1892/1919)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_of.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_of_szamos.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/hungary/hu_of_ujvidek.html",
+    "text": "3. INN river monitor (1915/1919)",
+    "country": "HUNGARY",
+    "type_page": "/ships/hungary/hu_of.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/hungary/hu_of_ujvidek.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_calabrese.html",
+    "text": "12. CALABRESE patrol boats (1954-1958/1968-1970)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_calabrese.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2006.html",
+    "text": "7. CP2006 patrol boats (1973-1974)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2006.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2010.html",
+    "text": "8. CP2010 patrol boats (1973-1975)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2010.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2018.html",
+    "text": "10. CP2018 patrol boats (1974-1975)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2018.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2024.html",
+    "text": "9. CP2024 patrol boat (1973)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2024.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2025.html",
+    "text": "12. CP2025 patrol boats (1975-1976)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2025.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2032.html",
+    "text": "13. CP2032 patrol boats (1975-1976)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2032.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2036.html",
+    "text": "16. CP2036 patrol boats (1976-1978)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2036.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2046.html",
+    "text": "19. CP2046 patrol boats (1978)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2046.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2049.html",
+    "text": "20. CP2049 patrol boats (1978-1979)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2049.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2066.html",
+    "text": "21. CP2066 patrol boats (1979-1980)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2066.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2069.html",
+    "text": "23. CP2069 patrol boats (1980-1983)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2069.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2078.html",
+    "text": "24. CP2078 patrol boats (1983-1991)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2078.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2084.html",
+    "text": "32. CP2084 patrol boats (2001-2003)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2084.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2104.html",
+    "text": "34. CP2104 patrol boats (2005-2008)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2104.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp2201.html",
+    "text": "27. CP2201 patrol boats (1986)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp2201.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp226.html",
+    "text": "2. CP226 patrol boats (1963)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp226.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp228.html",
+    "text": "3. CP228 patrol boats (1965-1966)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp228.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp231.html",
+    "text": "4. CP231 patrol boats (1968-1970)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp231.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp239.html",
+    "text": "6. CP239 patrol boats (1973-1974)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp239.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp244.html",
+    "text": "14. CP244 patrol boat (1976)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp244.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp245.html",
+    "text": "15. CP245 patrol boat (1976)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp245.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp246.html",
+    "text": "17. CP246 patrol boat (1977)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp246.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp247.html",
+    "text": "22. CP247 patrol boats (1980-1981)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp247.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp254.html",
+    "text": "25. CP254 patrol boats (1984-1989)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp254.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp256.html",
+    "text": "26. CP256 patrol boats (1985)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp256.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp261.html",
+    "text": "31. CP261 patrol boats (2000)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp261.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_cp265.html",
+    "text": "33. CP265 patrol boats (2001-2005)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_cp265.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_fiorillo.html",
+    "text": "5. MICHELE FIORILLO patrol boat (1968)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_fiorillo.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_gabriele.html",
+    "text": "11. GABRIELE patrol boats (1966 - 1967)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_gabriele.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_meattini.html",
+    "text": "13. MEATTINI patrol boats (1970 - 1978)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_meattini.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cf_novaro.html",
+    "text": "18. DANTE NOVARO patrol boat (1977)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cf_novaro.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_alberti.html",
+    "text": "4. ALBERTI patrol boats (1943/1954-1956)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_alberti.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_alberti95.html",
+    "text": "21. ALBERTI patrol boats (1995-1997)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_alberti95.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_apruzzi.html",
+    "text": "24. APRUZZI patrol boats (1998-1999)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_apruzzi.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_audax.html",
+    "text": "1. AUDAX patrol boat (1954)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_audax.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_bigliani.html",
+    "text": "16. BIGLIANI patrol boats (1987)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_bigliani.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_buratti.html",
+    "text": "28. BRIGADIERE BURATTI patrol boats (2007-2012)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_buratti.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_cappelletti.html",
+    "text": "6. CAPPELLETTI patrol boats (1954)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_cappelletti.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_caron.html",
+    "text": "2. CARON patrol boats (1934)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_caron.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_cavallari.html",
+    "text": "29. ORESTE CAVALLARI patrol boats (1989-1991)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_cavallari.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_corrubia.html",
+    "text": "9. CORRUBIA patrol boats (1958)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_corrubia.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_corrubia90.html",
+    "text": "18. CORRUBIA patrol boats (1990-1991)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_corrubia90.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_cp314.html",
+    "text": "28. CP314 patrol boats (1988-1991)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_cp314.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_dattilo.html",
+    "text": "2. LUIGI DATTILO patrol ships (2013-2014)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_dattilo.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_de_rosa.html",
+    "text": "30. SALVATORE DE ROSA patrol boats (2009-2010)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_de_rosa.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_denaro.html",
+    "text": "2. GIOVANNI DENARO patrol craft (1998)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_denaro.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_di_bartolo.html",
+    "text": "26. DI BARTOLO patrol boats (2003-2007)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_di_bartolo.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_diciotti.html",
+    "text": "3. UBALDO DICIOTTI patrol craft (2002-2004)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_diciotti.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_galiano.html",
+    "text": "19. GALIANO patrol boats (1991-1992)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_galiano.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_genna.html",
+    "text": "15. GENNA patrol boat (1980/1984)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_genna.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_gl205.html",
+    "text": "7. GL.205 patrol boats (1956)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_gl205.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_gl303.html",
+    "text": "8. GL.303 patrol boats (1956-1959)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_gl303.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_greco.html",
+    "text": "29. BRIGADIERE GRECO patrol boats (2008)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_greco.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_gregoretti.html",
+    "text": "1. BRUNO GREGORETTI patrol ship (2013)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_gregoretti.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_gregoretti75.html",
+    "text": "11. BRUNO GREGORETTI patrol boat (1975)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_gregoretti75.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_ingianni.html",
+    "text": "1. GIULIO INGIANNI patrol craft (1992)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_ingianni.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_lagana.html",
+    "text": "27. LAGANÀ patrol boats (2004-2006)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_lagana.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_marongiu.html",
+    "text": "1. D'AMATO MARONGIU patrol boat (1930)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_marongiu.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_mazzei.html",
+    "text": "23. MAZZEI patrol boats (1998)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_mazzei.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_mazzinghi.html",
+    "text": "30. FRANCESCO MAZZINGHI patrol boats (1991-1992)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_mazzinghi.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_monte_cimone.html",
+    "text": "10. MONTE CIMONE patrol boats (1959)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_monte_cimone.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_monte_sperone.html",
+    "text": "3. MONTE SPERONE patrol craft (2014)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_monte_sperone.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_ottonelli.html",
+    "text": "22. OTTONELLI patrol boats (1996-1997)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_ottonelli.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_paolini.html",
+    "text": "5. PAOLINI patrol boats (1940s/1954)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_paolini.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_saettia.html",
+    "text": "2. SAETTIA patrol craft (1999)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_saettia.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_spanedda.html",
+    "text": "3. SPANEDDA patrol boat (1938)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_spanedda.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_v5001.html",
+    "text": "20. V5001 interceptor craft (1993 - 1997)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_v5001.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_v5100.html",
+    "text": "17. V5100 patrol boats (1988-1992)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_v5100.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_v5800.html",
+    "text": "14. V5800 patrol launches (1979 - 1985)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_v5800.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_v6001.html",
+    "text": "25. V6001 interceptor craft (1998 - 2003)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_v6001.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/italy/it_cg_zara.html",
+    "text": "1. ANTONIO ZARA patrol craft (1990)",
+    "country": "ITALY",
+    "type_page": "/ships/italy/it_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/italy/it_cg_zara.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/laos/lao_ls_lcm6.html",
+    "text": "1. LCM(6) type landing craft (1943-1945/1950s-1960s)",
+    "country": "LAOS",
+    "type_page": "/ships/laos/lao_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/laos/lao_ls_lcm6.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/malawi/malaw_cg_chikala.html",
+    "text": "1. CHIKALA patrol boat (1984)",
+    "country": "MALAWI",
+    "type_page": "/ships/malawi/malaw_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/malawi/malaw_cg_chikala.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/malta/malt_ls_lc1.html",
+    "text": "1. LC1 landing craft (1965/1987)",
+    "country": "MALTA",
+    "type_page": "/ships/malta/malt_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/malta/malt_ls_lc1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/manchukuo/ma_cm_wwii_pg.html",
+    "text": "1. river gunboats of inter-war period",
+    "country": "MANCHUKUO",
+    "type_page": "/ships/manchukuo/ma_cm.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/manchukuo/ma_cm_wwii_pg.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/marshall_islands/mars_cg_ionmeto_1.html",
+    "text": "1. IONMETO 1 patrol boat (1970s/1987)",
+    "country": "MARSHALL ISLANDS",
+    "type_page": "/ships/marshall_islands/mars_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/marshall_islands/mars_cg_ionmeto_1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/marshall_islands/mars_cg_ionmeto_2.html",
+    "text": "2. IONMETO 2 patrol boat (1953/1987)",
+    "country": "MARSHALL ISLANDS",
+    "type_page": "/ships/marshall_islands/mars_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/marshall_islands/mars_cg_ionmeto_2.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/marshall_islands/mars_cg_ionmeto_3.html",
+    "text": "3. IONMETO 3 patrol boat (1991)",
+    "country": "MARSHALL ISLANDS",
+    "type_page": "/ships/marshall_islands/mars_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/marshall_islands/mars_cg_ionmeto_3.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/micronesia/micr_cg_palikir.html",
+    "text": "1. PALIKIR patrol boats (1990-1997)",
+    "country": "MICRONESIA",
+    "type_page": "/ships/micronesia/micr_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/micronesia/micr_cg_palikir.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/micronesia/micr_cg_paluwlap.html",
+    "text": "2. PALUWLAP patrol boats (1958/1990)",
+    "country": "MICRONESIA",
+    "type_page": "/ships/micronesia/micr_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/micronesia/micr_cg_paluwlap.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/micronesia/micr_cg_ppbr.html",
+    "text": "1. PPBR Guardian patrol craft",
+    "country": "MICRONESIA",
+    "type_page": "/ships/micronesia/micr_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/micronesia/micr_cg_ppbr.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/montenegro/mone_ls_djc627.html",
+    "text": "1. DJČ627 landing craft (1985/2006)",
+    "country": "MONTENEGRO",
+    "type_page": "/ships/montenegro/mone_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/montenegro/mone_ls_djc627.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/montenegro/mone_ls_krk.html",
+    "text": "2. KRK small landing ship (1990/2006)",
+    "country": "MONTENEGRO",
+    "type_page": "/ships/montenegro/mone_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/montenegro/mone_ls_krk.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/montenegro/mone_ls_lubin.html",
+    "text": "1. LUBIN multipurpose transport (1984/2006)",
+    "country": "MONTENEGRO",
+    "type_page": "/ships/montenegro/mone_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/montenegro/mone_ls_lubin.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/montserrat/monts_cg_emerald_star.html",
+    "text": "1. EMERALD STAR patrol launch (1971)",
+    "country": "MONTSERRAT",
+    "type_page": "/ships/montserrat/monts_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/montserrat/monts_cg_emerald_star.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/montserrat/monts_cg_heliconia_star.html",
+    "text": "3. HELICONIA STAR patrol boat (2018)",
+    "country": "MONTSERRAT",
+    "type_page": "/ships/montserrat/monts_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/montserrat/monts_cg_heliconia_star.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/montserrat/monts_cg_shamrock.html",
+    "text": "2. SHAMROCK patrol launch (1990)",
+    "country": "MONTSERRAT",
+    "type_page": "/ships/montserrat/monts_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/montserrat/monts_cg_shamrock.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/pakistan/pak_ls_l215.html",
+    "text": "1. L215 landing craft, air-cushion (2014)",
+    "country": "PAKISTAN",
+    "type_page": "/ships/pakistan/pak_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/pakistan/pak_ls_l215.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/pakistan/pak_ls_lcm.html",
+    "text": "2. LCM landing craft (2016)",
+    "country": "PAKISTAN",
+    "type_page": "/ships/pakistan/pak_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/pakistan/pak_ls_lcm.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/paraguay/par_ls_edvp01.html",
+    "text": "1. EDVP01 landing launches (1981-1993)",
+    "country": "PARAGUAY",
+    "type_page": "/ships/paraguay/par_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/paraguay/par_ls_edvp01.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cf_kp166.html",
+    "text": "8. KP-161 patrol craft (project 918M, 1973 - 1983)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cf_kp166.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_apc.html",
+    "text": "2. board guard craft converted from merchant vessels after WWII",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_apc.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_baca.html",
+    "text": "3. BACA fishery protection vessels (1949)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_baca.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_batory.html",
+    "text": "1. BATORY board guard launch (1932)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_batory.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_kaper1.html",
+    "text": "4. KAPER-1 board guard ships (project SKS-40, 1991 - 1994)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_kaper1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_kp101.html",
+    "text": "4. KP-101 board guard boats (1954-1955)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_kp101.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_kp108.html",
+    "text": "5. KP-108 board guard boats (1956-1958)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_kp108.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_kp129.html",
+    "text": "6. KP-129 board guard boats (project 724, 1963 - 1964)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_kp129.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_kp141.html",
+    "text": "7. KP-141 board guard boats (project 90, 1973 - 1977)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_kp141.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_op201.html",
+    "text": "1. OP-201 board guard ship (1956)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_op201.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_op202.html",
+    "text": "2. OP-202 board guard ships (1958)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_op202.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_op205.html",
+    "text": "3. OP-205 board guard ships (project 902, 1959 - 1960)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_op205.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_patrol1.html",
+    "text": "11. PATROL-1 patrol boats (2010)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_patrol1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_straznik1.html",
+    "text": "9. STRAŻNIK-1 patrol boats (project SAR-1500SG, 2000)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_straznik1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/poland/pl_cg_straznik3.html",
+    "text": "10. STRAŻNIK-3 patrol boats (project IC 16M III, 2007)",
+    "country": "POLAND",
+    "type_page": "/ships/poland/pl_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/poland/pl_cg_straznik3.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/portugal/pr_ls_alfange.html",
+    "text": "1. ALFANGE small landing ships (1965)",
+    "country": "PORTUGAL",
+    "type_page": "/ships/portugal/pr_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/portugal/pr_ls_alfange.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/portugal/pr_ls_bombarda.html",
+    "text": "2. BOMBARDA small landing ships (1969-1985)",
+    "country": "PORTUGAL",
+    "type_page": "/ships/portugal/pr_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/portugal/pr_ls_bombarda.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/portugal/pr_ls_ld101.html",
+    "text": "1. LD101 landing craft (1961-1975)",
+    "country": "PORTUGAL",
+    "type_page": "/ships/portugal/pr_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/portugal/pr_ls_ld101.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/portugal/pr_ls_ldm101.html",
+    "text": "2. LDM101 landing craft (1964-1966)",
+    "country": "PORTUGAL",
+    "type_page": "/ships/portugal/pr_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/portugal/pr_ls_ldm101.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/portugal/pr_ls_ldm401.html",
+    "text": "3. LDM401 landing craft (1967-1973)",
+    "country": "PORTUGAL",
+    "type_page": "/ships/portugal/pr_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/portugal/pr_ls_ldm401.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/romania/ro_cm_amc2.html",
+    "text": "1. auxiliary minelayers of WWII",
+    "country": "ROMANIA",
+    "type_page": "/ships/romania/ro_cm.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/romania/ro_cm_amc2.htm",
+    "cause": "原因不明 (現行・ミラーとも 200 で取得可。2026-02 取得時の一時エラー等の疑い)"
+   },
+   {
+    "canon": "/ships/romania/ro_cm_ams2.html",
+    "text": "2. auxiliary minesweepers of WWII",
+    "country": "ROMANIA",
+    "type_page": "/ships/romania/ro_cm.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/romania/ro_cm_ams2.htm",
+    "cause": "原因不明 (現行・ミラーとも 200 で取得可。2026-02 取得時の一時エラー等の疑い)"
+   },
+   {
+    "canon": "/ships/romania/ro_cm_es2.html",
+    "text": "1. auxiliary escorts of WWII",
+    "country": "ROMANIA",
+    "type_page": "/ships/romania/ro_cm.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/romania/ro_cm_es2.htm",
+    "cause": "原因不明 (現行・ミラーとも 200 で取得可。2026-02 取得時の一時エラー等の疑い)"
+   },
+   {
+    "canon": "/ships/sarawak/sa_of_aden.html",
+    "text": "3. ADEN paddle gunboat (1884)",
+    "country": "SARAWAK",
+    "type_page": "/ships/sarawak/sa_of.html",
+    "in_mirror": false,
+    "url": "https://www.navypedia.org/ships/sarawak/file:///C:/seawar/ships/sarawak/sa_of_aden.htm",
+    "cause": "壊れた href (file:///C:/seawar/...)。現行・ミラーとも 404 (リンク切れ)"
+   },
+   {
+    "canon": "/ships/sarawak/sa_of_aline.html",
+    "text": "1. ALINE gunboat (1875)",
+    "country": "SARAWAK",
+    "type_page": "/ships/sarawak/sa_of.html",
+    "in_mirror": false,
+    "url": "https://www.navypedia.org/ships/sarawak/file:///C:/seawar/ships/sarawak/sa_of_aline.htm",
+    "cause": "壊れた href (file:///C:/seawar/...)。現行・ミラーとも 404 (リンク切れ)"
+   },
+   {
+    "canon": "/ships/sarawak/sa_of_kaka.html",
+    "text": "4. KAKA paddle gunboat (1901)",
+    "country": "SARAWAK",
+    "type_page": "/ships/sarawak/sa_of.html",
+    "in_mirror": false,
+    "url": "https://www.navypedia.org/ships/sarawak/file:///C:/seawar/ships/sarawak/sa_of_kaka.htm",
+    "cause": "壊れた href (file:///C:/seawar/...)。現行・ミラーとも 404 (リンク切れ)"
+   },
+   {
+    "canon": "/ships/sarawak/sa_of_lorna_doone.html",
+    "text": "2. LORNA DOONE gunboat (1881)",
+    "country": "SARAWAK",
+    "type_page": "/ships/sarawak/sa_of.html",
+    "in_mirror": false,
+    "url": "https://www.navypedia.org/ships/sarawak/file:///C:/seawar/ships/sarawak/sa_of_lorna_doone.htm",
+    "cause": "壊れた href (file:///C:/seawar/...)。現行・ミラーとも 404 (リンク切れ)"
+   },
+   {
+    "canon": "/ships/solomon_islands/soi_cg_gizo.html",
+    "text": "4. GIZO patrol craft (2019-)",
+    "country": "SOLOMON ISLANDS",
+    "type_page": "/ships/solomon_islands/soi_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/solomon_islands/soi_cg_gizo.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/solomon_islands/soi_cg_lata.html",
+    "text": "3. LATA patrol boats (1988-1991)",
+    "country": "SOLOMON ISLANDS",
+    "type_page": "/ships/solomon_islands/soi_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/solomon_islands/soi_cg_lata.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/solomon_islands/soi_cg_savo.html",
+    "text": "2. SAVO patrol boat (1984/1987)",
+    "country": "SOLOMON ISLANDS",
+    "type_page": "/ships/solomon_islands/soi_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/solomon_islands/soi_cg_savo.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/solomon_islands/soi_cg_tulagi.html",
+    "text": "1. TULAGI patrol boat (1979)",
+    "country": "SOLOMON ISLANDS",
+    "type_page": "/ships/solomon_islands/soi_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/solomon_islands/soi_cg_tulagi.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/uk/brit_cv1_furious.html",
+    "text": "1. FURIOUS light battlecruiser - fleet aircraft carrier ([1], 1917)",
+    "country": "UNITED KINGDOM",
+    "type_page": "/ships/uk/uk_carriers.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/uk/brit_cv1_furious.htm",
+    "cause": "現行サイトが HTTP 500 を返すページ (ミラーには存在)"
+   },
+   {
+    "canon": "/ships/uruguay/uru_ls_ld40.html",
+    "text": "1. LD40 landing craft (1950s/1972)",
+    "country": "URUGUAY",
+    "type_page": "/ships/uruguay/uru_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/uruguay/uru_ls_ld40.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/uruguay/uru_ls_ld42.html",
+    "text": "2. LD42 landing craft (1978)",
+    "country": "URUGUAY",
+    "type_page": "/ships/uruguay/uru_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/uruguay/uru_ls_ld42.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/uruguay/uru_ls_ld43.html",
+    "text": "3. LD43 landing craft (1978)",
+    "country": "URUGUAY",
+    "type_page": "/ships/uruguay/uru_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/uruguay/uru_ls_ld43.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/uruguay/uru_ls_ld45.html",
+    "text": "4. LD45 landing craft (1980-1982)",
+    "country": "URUGUAY",
+    "type_page": "/ships/uruguay/uru_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/uruguay/uru_ls_ld45.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/usa/us_aws_talbot%20county.html",
+    "text": "4. LST1153 tank landing ships (1947 - 1949)",
+    "country": "UNITED STATES OF AMERICA",
+    "type_page": "/ships/usa/usa_amphib.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/usa/us_aws_talbot%20county.htm",
+    "cause": "URL に空白(%20)。現行サイトは 404、ミラーには存在"
+   },
+   {
+    "canon": "/ships/vanuatu/van_cg_mala.html",
+    "text": "1. MALA patrol boat (/1981)",
+    "country": "VANUATU",
+    "type_page": "/ships/vanuatu/van_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/vanuatu/van_cg_mala.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/vanuatu/van_cg_ppbr.html",
+    "text": "3. PPBR patrol craft",
+    "country": "VANUATU",
+    "type_page": "/ships/vanuatu/van_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/vanuatu/van_cg_ppbr.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/vanuatu/van_cg_tukoro.html",
+    "text": "2. TUKORO patrol boat (1987)",
+    "country": "VANUATU",
+    "type_page": "/ships/vanuatu/van_cg.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/vanuatu/van_cg_tukoro.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_d203.html",
+    "text": "3. D203 small landing ships (1945/1945, 1945)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_d203.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_d206.html",
+    "text": "2. D206 small landing ships (1942/1945)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_d206.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_djc101.html",
+    "text": "4. DČ101 landing craft (1982)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_djc101.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_djc601.html",
+    "text": "2. DJČ601 landing craft (1976-1977)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_djc601.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_djc613.html",
+    "text": "3. DJČ613 landing craft (1978)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_djc613.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_djc621.html",
+    "text": "5. DJČ621 landing craft (1983-1987)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_djc621.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_dtm221.html",
+    "text": "4. DTM221 landing craft (1950-1959)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_dtm221.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_krk.html",
+    "text": "6. KRK small landing ships (1990)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_krk.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_lcu1.html",
+    "text": "1. catamaran landing craft (1950s)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_lcu1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_lubin.html",
+    "text": "5. LUBIN multipurpose transports (1984)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_lubin.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   },
+   {
+    "canon": "/ships/yugoslavia/yu_ls_ms1.html",
+    "text": "1. MS1 small landing ships (1941-1942/1944)",
+    "country": "YUGOSLAVIA / SERBIA",
+    "type_page": "/ships/yugoslavia/yu_ls.html",
+    "in_mirror": true,
+    "url": "https://www.navypedia.org/ships/yugoslavia/yu_ls_ms1.htm",
+    "cause": "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)"
+   }
+  ],
+  "causes": {
+   "URL に空白(%20)。現行サイトは 404、ミラーには存在": 6,
+   "艦種ページのラベルが取得時の艦種リストに無かった疑い (その艦種ページの艦級が全滅)": 197,
+   "原因不明 (現行・ミラーとも 200 で取得可。2026-02 取得時の一時エラー等の疑い)": 4,
+   "壊れた href (file:///C:/seawar/...)。現行・ミラーとも 404 (リンク切れ)": 4,
+   "現行サイトが HTTP 500 を返すページ (ミラーには存在)": 1
+  },
+  "label_driven_labels": [
+   "AMPHIBIOUS CRAFT",
+   "AMPHIBIOUS FORCES",
+   "ARMY",
+   "BOARD GUARD CRAFT",
+   "CONVERTED MERCHANT SHIPS",
+   "DIVISION OF SURVEILLANCE ATTORNEY GENERAL'S OFFICE",
+   "FISHERIES PATROL",
+   "FISHERY PROTECTION SERVICE AND HOME GUARD",
+   "MARINE POLICE",
+   "MARITIME AUTHORITY",
+   "PARAMILITARY SERVICES",
+   "POLICE FORCE",
+   "POLICE SERVICE",
+   "RIVER BOATS",
+   "RIVER FIGHTING SHIPS",
+   "RIVER SHIPS"
+  ]
+ },
+ "nsdb_not_in_live": {
+  "total": 1,
+  "by_country": [
+   [
+    "Jamaica",
+    1
+   ]
+  ],
+  "in_mirror": 0,
+  "list": [
+   {
+    "canon": "/ships/jamaica/jam_cg.html",
+    "country": "Jamaica",
+    "class_name": "JAMAICA Class",
+    "type": "",
+    "in_mirror": false,
+    "hosts": [
+     "origin"
+    ]
+   }
+  ]
+ },
+ "mirror_vs_live": {
+  "mirror_only": {
+   "total": 4,
+   "by_country": [
+    [
+     "UNITED KINGDOM",
+     4
+    ]
+   ],
+   "list": [
+    {
+     "canon": "/ships/uk/brit_bb1_agamemnon-2.html",
+     "text": "48"
+    },
+    {
+     "canon": "/ships/uk/brit_bb1_colossus-2.html",
+     "text": "54 . COLOSSUS battleships (2, 1911)"
+    },
+    {
+     "canon": "/ships/uk/brit_bb1_hood-2.html",
+     "text": "69. HOOD battlecruisers (1(3), 1920)"
+    },
+    {
+     "canon": "/ships/uk/brit_bb1_royal_sovereign-2.html",
+     "text": "65. REVENGE battleships (5, 1916 - 1917)"
+    }
+   ]
+  },
+  "live_only": {
+   "total": 4,
+   "by_country": [
+    [
+     "SARAWAK",
+     4
+    ]
+   ],
+   "list": [
+    {
+     "canon": "/ships/sarawak/sa_of_aden.html",
+     "text": "3. ADEN paddle gunboat (1884)"
+    },
+    {
+     "canon": "/ships/sarawak/sa_of_aline.html",
+     "text": "1. ALINE gunboat (1875)"
+    },
+    {
+     "canon": "/ships/sarawak/sa_of_kaka.html",
+     "text": "4. KAKA paddle gunboat (1901)"
+    },
+    {
+     "canon": "/ships/sarawak/sa_of_lorna_doone.html",
+     "text": "2. LORNA DOONE gunboat (1881)"
+    }
+   ]
+  }
+ },
+ "by_country": [
+  {
+   "dir": "uk",
+   "nsdb_country": "United-Kingdom",
+   "live": 1092,
+   "mirror": 1096,
+   "nsdb": 1091,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "france",
+   "nsdb_country": "France",
+   "live": 791,
+   "mirror": 791,
+   "nsdb": 792,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "russia",
+   "nsdb_country": "Russian",
+   "live": 787,
+   "mirror": 786,
+   "nsdb": 786,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "germany",
+   "nsdb_country": "Germany",
+   "live": 680,
+   "mirror": 680,
+   "nsdb": 679,
+   "live_missing_in_nsdb": 2,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "japan",
+   "nsdb_country": "Japan",
+   "live": 552,
+   "mirror": 552,
+   "nsdb": 552,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "usa",
+   "nsdb_country": "United-States",
+   "live": 548,
+   "mirror": 548,
+   "nsdb": 547,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "italy",
+   "nsdb_country": "Italy",
+   "live": 471,
+   "mirror": 471,
+   "nsdb": 399,
+   "live_missing_in_nsdb": 72,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "china",
+   "nsdb_country": "China",
+   "live": 408,
+   "mirror": 408,
+   "nsdb": 408,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "netherlands",
+   "nsdb_country": "Netherlands",
+   "live": 217,
+   "mirror": 217,
+   "nsdb": 217,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "spain",
+   "nsdb_country": "Spain",
+   "live": 217,
+   "mirror": 217,
+   "nsdb": 217,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "turkey",
+   "nsdb_country": "Turkey",
+   "live": 172,
+   "mirror": 172,
+   "nsdb": 172,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "sweden",
+   "nsdb_country": "Sweden",
+   "live": 166,
+   "mirror": 166,
+   "nsdb": 166,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "greece",
+   "nsdb_country": "Greece",
+   "live": 144,
+   "mirror": 144,
+   "nsdb": 144,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "denmark",
+   "nsdb_country": "Denmark",
+   "live": 141,
+   "mirror": 141,
+   "nsdb": 119,
+   "live_missing_in_nsdb": 22,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "indonesia",
+   "nsdb_country": "Indonesia",
+   "live": 133,
+   "mirror": 133,
+   "nsdb": 133,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "norway",
+   "nsdb_country": "Norway",
+   "live": 131,
+   "mirror": 131,
+   "nsdb": 131,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "india",
+   "nsdb_country": "India",
+   "live": 127,
+   "mirror": 127,
+   "nsdb": 127,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "thailand",
+   "nsdb_country": "Thailand",
+   "live": 119,
+   "mirror": 119,
+   "nsdb": 119,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "austrohungary",
+   "nsdb_country": "Austria-Hungary",
+   "live": 115,
+   "mirror": 115,
+   "nsdb": 115,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "portugal",
+   "nsdb_country": "Portugal",
+   "live": 110,
+   "mirror": 110,
+   "nsdb": 105,
+   "live_missing_in_nsdb": 5,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "brazil",
+   "nsdb_country": "Brazil",
+   "live": 109,
+   "mirror": 109,
+   "nsdb": 109,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "taiwan",
+   "nsdb_country": "Taiwan",
+   "live": 104,
+   "mirror": 104,
+   "nsdb": 104,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "australia",
+   "nsdb_country": "Australia",
+   "live": 102,
+   "mirror": 102,
+   "nsdb": 102,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "finland",
+   "nsdb_country": "Finland",
+   "live": 101,
+   "mirror": 101,
+   "nsdb": 101,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "korea_south",
+   "nsdb_country": "South-Korea",
+   "live": 96,
+   "mirror": 96,
+   "nsdb": 96,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "poland",
+   "nsdb_country": "Poland",
+   "live": 91,
+   "mirror": 91,
+   "nsdb": 76,
+   "live_missing_in_nsdb": 15,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "egypt",
+   "nsdb_country": "Egypt",
+   "live": 90,
+   "mirror": 90,
+   "nsdb": 89,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "canada",
+   "nsdb_country": "Canada",
+   "live": 89,
+   "mirror": 89,
+   "nsdb": 89,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "argentina",
+   "nsdb_country": "Argentina",
+   "live": 87,
+   "mirror": 87,
+   "nsdb": 87,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "chile",
+   "nsdb_country": "Chile",
+   "live": 81,
+   "mirror": 81,
+   "nsdb": 81,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "romania",
+   "nsdb_country": "Romania",
+   "live": 75,
+   "mirror": 75,
+   "nsdb": 72,
+   "live_missing_in_nsdb": 3,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "malaysia",
+   "nsdb_country": "Malaysia",
+   "live": 74,
+   "mirror": 74,
+   "nsdb": 74,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "yugoslavia",
+   "nsdb_country": "Yugoslavia",
+   "live": 73,
+   "mirror": 73,
+   "nsdb": 62,
+   "live_missing_in_nsdb": 11,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "vietnam",
+   "nsdb_country": "Vietnam",
+   "live": 71,
+   "mirror": 71,
+   "nsdb": 71,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "philippines",
+   "nsdb_country": "Philippines",
+   "live": 69,
+   "mirror": 69,
+   "nsdb": 69,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "colombia",
+   "nsdb_country": "Colombia",
+   "live": 65,
+   "mirror": 65,
+   "nsdb": 65,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "iran",
+   "nsdb_country": "Iran",
+   "live": 64,
+   "mirror": 64,
+   "nsdb": 64,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "korea_north",
+   "nsdb_country": "North-Korea",
+   "live": 59,
+   "mirror": 59,
+   "nsdb": 59,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "bulgaria",
+   "nsdb_country": "Bulgaria",
+   "live": 57,
+   "mirror": 57,
+   "nsdb": 57,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "mexico",
+   "nsdb_country": "Mexico",
+   "live": 56,
+   "mirror": 56,
+   "nsdb": 56,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "pakistan",
+   "nsdb_country": "Pakistan",
+   "live": 56,
+   "mirror": 56,
+   "nsdb": 54,
+   "live_missing_in_nsdb": 2,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "peru",
+   "nsdb_country": "Peru",
+   "live": 52,
+   "mirror": 52,
+   "nsdb": 52,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "bangladesh",
+   "nsdb_country": "Bangladesh",
+   "live": 50,
+   "mirror": 50,
+   "nsdb": 49,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "israel",
+   "nsdb_country": "Israel",
+   "live": 50,
+   "mirror": 50,
+   "nsdb": 50,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "nigeria",
+   "nsdb_country": "Nigeria",
+   "live": 48,
+   "mirror": 48,
+   "nsdb": 48,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "venezuela",
+   "nsdb_country": "Venezuela",
+   "live": 47,
+   "mirror": 47,
+   "nsdb": 47,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "cuba",
+   "nsdb_country": "Cuba",
+   "live": 46,
+   "mirror": 46,
+   "nsdb": 43,
+   "live_missing_in_nsdb": 3,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "myanmar",
+   "nsdb_country": "Myanmar",
+   "live": 46,
+   "mirror": 46,
+   "nsdb": 46,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "sri_lanka",
+   "nsdb_country": "Sri-Lanka",
+   "live": 44,
+   "mirror": 44,
+   "nsdb": 44,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "uae",
+   "nsdb_country": "UnitedArab",
+   "live": 43,
+   "mirror": 43,
+   "nsdb": 43,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "dominicanrep",
+   "nsdb_country": "Dominican-Republic",
+   "live": 39,
+   "mirror": 39,
+   "nsdb": 33,
+   "live_missing_in_nsdb": 6,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "singapore",
+   "nsdb_country": "Singapore",
+   "live": 37,
+   "mirror": 37,
+   "nsdb": 37,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "oman",
+   "nsdb_country": "Oman",
+   "live": 36,
+   "mirror": 36,
+   "nsdb": 36,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "germany_east",
+   "nsdb_country": "German-respublic",
+   "live": 35,
+   "mirror": 35,
+   "nsdb": 34,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "iraq",
+   "nsdb_country": "Iraq",
+   "live": 35,
+   "mirror": 35,
+   "nsdb": 35,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "new_zealand",
+   "nsdb_country": "NewZealand",
+   "live": 35,
+   "mirror": 35,
+   "nsdb": 35,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "ecuador",
+   "nsdb_country": "Ecuador",
+   "live": 33,
+   "mirror": 33,
+   "nsdb": 33,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "estonia",
+   "nsdb_country": "Estonia",
+   "live": 33,
+   "mirror": 33,
+   "nsdb": 33,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "morocco",
+   "nsdb_country": "Morocco",
+   "live": 33,
+   "mirror": 33,
+   "nsdb": 33,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "ukraine",
+   "nsdb_country": "Ukraine",
+   "live": 31,
+   "mirror": 31,
+   "nsdb": 31,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "algeria",
+   "nsdb_country": "Algeria",
+   "live": 30,
+   "mirror": 30,
+   "nsdb": 30,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "belgium",
+   "nsdb_country": "Belgium",
+   "live": 30,
+   "mirror": 30,
+   "nsdb": 30,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "libya",
+   "nsdb_country": "Libya",
+   "live": 30,
+   "mirror": 30,
+   "nsdb": 30,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "vietnam_south",
+   "nsdb_country": "Vietnam2",
+   "live": 30,
+   "mirror": 30,
+   "nsdb": 30,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "croatia",
+   "nsdb_country": "Croatia",
+   "live": 29,
+   "mirror": 29,
+   "nsdb": 29,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "panama",
+   "nsdb_country": "Panama",
+   "live": 29,
+   "mirror": 29,
+   "nsdb": 29,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "tunisia",
+   "nsdb_country": "Tunisia",
+   "live": 29,
+   "mirror": 29,
+   "nsdb": 29,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "uruguay",
+   "nsdb_country": "Uruguay",
+   "live": 29,
+   "mirror": 29,
+   "nsdb": 25,
+   "live_missing_in_nsdb": 4,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "albania",
+   "nsdb_country": "Albania",
+   "live": 28,
+   "mirror": 28,
+   "nsdb": 28,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "cambodia",
+   "nsdb_country": "Cambodia",
+   "live": 27,
+   "mirror": 27,
+   "nsdb": 27,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "ethiopia",
+   "nsdb_country": "Ethiopia",
+   "live": 27,
+   "mirror": 27,
+   "nsdb": 27,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "kuwait",
+   "nsdb_country": "Kuwait",
+   "live": 26,
+   "mirror": 26,
+   "nsdb": 26,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "south_africa",
+   "nsdb_country": "South-Africa",
+   "live": 26,
+   "mirror": 26,
+   "nsdb": 26,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "yemen_south",
+   "nsdb_country": "Yemen2",
+   "live": 26,
+   "mirror": 26,
+   "nsdb": 26,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "saudi_arabia",
+   "nsdb_country": "Saudi-Arabia",
+   "live": 25,
+   "mirror": 25,
+   "nsdb": 25,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "senegal",
+   "nsdb_country": "Senegal",
+   "live": 25,
+   "mirror": 13,
+   "nsdb": 25,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "bahrain",
+   "nsdb_country": "Bahrain",
+   "live": 23,
+   "mirror": 23,
+   "nsdb": 23,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "qatar",
+   "nsdb_country": "Qatar",
+   "live": 22,
+   "mirror": 34,
+   "nsdb": 22,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "trinidad_tobago",
+   "nsdb_country": "Trinidad-and-Tobago",
+   "live": 21,
+   "mirror": 21,
+   "nsdb": 21,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "angola",
+   "nsdb_country": "Angola",
+   "live": 20,
+   "mirror": 20,
+   "nsdb": 20,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "azerbaijan",
+   "nsdb_country": "Azerbaijan",
+   "live": 20,
+   "mirror": 20,
+   "nsdb": 20,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "mauritania",
+   "nsdb_country": "Mauritania",
+   "live": 20,
+   "mirror": 20,
+   "nsdb": 20,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "syria",
+   "nsdb_country": "Syria",
+   "live": 20,
+   "mirror": 20,
+   "nsdb": 20,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "cameroon",
+   "nsdb_country": "Cameroon",
+   "live": 19,
+   "mirror": 19,
+   "nsdb": 19,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "georgia",
+   "nsdb_country": "Georgia",
+   "live": 19,
+   "mirror": 19,
+   "nsdb": 18,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "haiti",
+   "nsdb_country": "Haiti",
+   "live": 18,
+   "mirror": 18,
+   "nsdb": 18,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "lebanon",
+   "nsdb_country": "Lebanon",
+   "live": 18,
+   "mirror": 18,
+   "nsdb": 18,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "malta",
+   "nsdb_country": "Malta",
+   "live": 18,
+   "mirror": 18,
+   "nsdb": 17,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "tanzania",
+   "nsdb_country": "Tanzania",
+   "live": 18,
+   "mirror": 18,
+   "nsdb": 18,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "hong_kong",
+   "nsdb_country": "Hong-Kong",
+   "live": 17,
+   "mirror": 17,
+   "nsdb": 17,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "hungary",
+   "nsdb_country": "Hungary",
+   "live": 17,
+   "mirror": 17,
+   "nsdb": 7,
+   "live_missing_in_nsdb": 10,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "kenya",
+   "nsdb_country": "Kenya",
+   "live": 17,
+   "mirror": 17,
+   "nsdb": 17,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "latvia",
+   "nsdb_country": "Latvia",
+   "live": 17,
+   "mirror": 17,
+   "nsdb": 17,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "maldives",
+   "nsdb_country": "Maldive",
+   "live": 16,
+   "mirror": 16,
+   "nsdb": 16,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "cyprus",
+   "nsdb_country": "Cyprus",
+   "live": 15,
+   "mirror": 15,
+   "nsdb": 15,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "guinea_bissau",
+   "nsdb_country": "Guinea-bissau",
+   "live": 15,
+   "mirror": 15,
+   "nsdb": 13,
+   "live_missing_in_nsdb": 2,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "honduras",
+   "nsdb_country": "Honduras",
+   "live": 15,
+   "mirror": 15,
+   "nsdb": 15,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "mozambique",
+   "nsdb_country": "Mozambique",
+   "live": 15,
+   "mirror": 15,
+   "nsdb": 15,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "brunei",
+   "nsdb_country": "Brunei",
+   "live": 14,
+   "mirror": 14,
+   "nsdb": 14,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "gabon",
+   "nsdb_country": "Gabon",
+   "live": 14,
+   "mirror": 14,
+   "nsdb": 14,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "ghana",
+   "nsdb_country": "Ghana",
+   "live": 14,
+   "mirror": 14,
+   "nsdb": 14,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "guinea",
+   "nsdb_country": "Guinea",
+   "live": 14,
+   "mirror": 14,
+   "nsdb": 13,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "manchukuo",
+   "nsdb_country": "Manchukuo",
+   "live": 14,
+   "mirror": 14,
+   "nsdb": 13,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "nicaragua",
+   "nsdb_country": "Nicaragua",
+   "live": 14,
+   "mirror": 14,
+   "nsdb": 14,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "kazakhstan",
+   "nsdb_country": "Kazakhstan",
+   "live": 13,
+   "mirror": 13,
+   "nsdb": 13,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "lithuania",
+   "nsdb_country": "Lithuania",
+   "live": 13,
+   "mirror": 13,
+   "nsdb": 13,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "bahamas",
+   "nsdb_country": "Bahamas",
+   "live": 12,
+   "mirror": 12,
+   "nsdb": 11,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "el_salvador",
+   "nsdb_country": "El-Salvador",
+   "live": 12,
+   "mirror": 12,
+   "nsdb": 12,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "equatorial_guinea",
+   "nsdb_country": "EquatorialGuinea",
+   "live": 12,
+   "mirror": 12,
+   "nsdb": 12,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "falklands",
+   "nsdb_country": "Falkland",
+   "live": 12,
+   "mirror": 12,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 12,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "madagascar",
+   "nsdb_country": "Madagascar",
+   "live": 12,
+   "mirror": 12,
+   "nsdb": 12,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "djibouti",
+   "nsdb_country": "Djibouti",
+   "live": 11,
+   "mirror": 11,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "paraguay",
+   "nsdb_country": "Paraguay",
+   "live": 11,
+   "mirror": 11,
+   "nsdb": 10,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "seychelles",
+   "nsdb_country": "Seychelles",
+   "live": 11,
+   "mirror": 11,
+   "nsdb": 11,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "cote_divoire",
+   "nsdb_country": "Cote-dIvoire",
+   "live": 10,
+   "mirror": 10,
+   "nsdb": 10,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "eire",
+   "nsdb_country": "Ireland",
+   "live": 10,
+   "mirror": 10,
+   "nsdb": 10,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "namibia",
+   "nsdb_country": "Namibia",
+   "live": 10,
+   "mirror": 10,
+   "nsdb": 10,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "congo",
+   "nsdb_country": "Congo",
+   "live": 9,
+   "mirror": 9,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "costa_rica",
+   "nsdb_country": "Costa-Rica",
+   "live": 9,
+   "mirror": 9,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "iceland",
+   "nsdb_country": "Iceland",
+   "live": 9,
+   "mirror": 9,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "mauritius",
+   "nsdb_country": "Mauritius",
+   "live": 9,
+   "mirror": 9,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "sudan",
+   "nsdb_country": "Sudan",
+   "live": 9,
+   "mirror": 9,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "suriname",
+   "nsdb_country": "Suriname",
+   "live": 9,
+   "mirror": 9,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "turkmenistan",
+   "nsdb_country": "Turkmenistan",
+   "live": 9,
+   "mirror": 9,
+   "nsdb": 9,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "cape_verde",
+   "nsdb_country": "Cape",
+   "live": 8,
+   "mirror": 8,
+   "nsdb": 8,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "czechoslovakia",
+   "nsdb_country": "Czech-Republic",
+   "live": 8,
+   "mirror": 8,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 6,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "gambia",
+   "nsdb_country": "Gambia",
+   "live": 8,
+   "mirror": 8,
+   "nsdb": 8,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "yemen_north",
+   "nsdb_country": "Yemen",
+   "live": 8,
+   "mirror": 8,
+   "nsdb": 8,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "guatemala",
+   "nsdb_country": "Guatemala",
+   "live": 7,
+   "mirror": 7,
+   "nsdb": 6,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "montenegro",
+   "nsdb_country": "Montenegro",
+   "live": 7,
+   "mirror": 7,
+   "nsdb": 4,
+   "live_missing_in_nsdb": 3,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "somalia",
+   "nsdb_country": "Somalia",
+   "live": 7,
+   "mirror": 7,
+   "nsdb": 7,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "jamaica",
+   "nsdb_country": "Jamaica",
+   "live": 7,
+   "mirror": 7,
+   "nsdb": 8,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 1
+  },
+  {
+   "dir": "austria",
+   "nsdb_country": "Austria",
+   "live": 6,
+   "mirror": 6,
+   "nsdb": 6,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "barbados",
+   "nsdb_country": "Barbados",
+   "live": 6,
+   "mirror": 6,
+   "nsdb": 6,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "liberia",
+   "nsdb_country": "Liberia",
+   "live": 6,
+   "mirror": 6,
+   "nsdb": 6,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "sierra_leone",
+   "nsdb_country": "SierraLeone",
+   "live": 6,
+   "mirror": 6,
+   "nsdb": 6,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "tonga",
+   "nsdb_country": "Tonga",
+   "live": 6,
+   "mirror": 6,
+   "nsdb": 6,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "zaire",
+   "nsdb_country": "Zaire",
+   "live": 6,
+   "mirror": 6,
+   "nsdb": 6,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "benin",
+   "nsdb_country": "Benin",
+   "live": 5,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "east_timor",
+   "nsdb_country": "East-timor",
+   "live": 5,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "fiji",
+   "nsdb_country": "Fiji",
+   "live": 5,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "guyana",
+   "nsdb_country": "Guyana",
+   "live": 5,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "papua_new_guinea",
+   "nsdb_country": "Papua",
+   "live": 5,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "saint_lucia",
+   "nsdb_country": "SaintLucia",
+   "live": 5,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "saint_vincent",
+   "nsdb_country": "SaintVincent",
+   "live": 5,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "abkhazia",
+   "nsdb_country": "Abkhazia",
+   "live": 4,
+   "mirror": 5,
+   "nsdb": 5,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "comoros",
+   "nsdb_country": "Comoros",
+   "live": 4,
+   "mirror": 4,
+   "nsdb": 4,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "grenada",
+   "nsdb_country": "Grenada",
+   "live": 4,
+   "mirror": 4,
+   "nsdb": 4,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "laos",
+   "nsdb_country": "Laos",
+   "live": 4,
+   "mirror": 4,
+   "nsdb": 3,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "palau",
+   "nsdb_country": "Palau",
+   "live": 4,
+   "mirror": 4,
+   "nsdb": 4,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "sarawak",
+   "nsdb_country": "Sarawak",
+   "live": 4,
+   "mirror": 0,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 4,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "slovenia",
+   "nsdb_country": "Slovenia",
+   "live": 4,
+   "mirror": 4,
+   "nsdb": 4,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "solomon_islands",
+   "nsdb_country": "Solomon",
+   "live": 4,
+   "mirror": 4,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 4,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "virgin_islands",
+   "nsdb_country": "Virgin",
+   "live": 4,
+   "mirror": 4,
+   "nsdb": 4,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "antigua_barbuda",
+   "nsdb_country": "Antigua",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 3,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "caymans",
+   "nsdb_country": "Cayman-islands",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 3,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "jordan",
+   "nsdb_country": "Jordan",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 3,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "marshall_islands",
+   "nsdb_country": "Marshall",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 3,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "micronesia",
+   "nsdb_country": "Micronesia",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 3,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "montserrat",
+   "nsdb_country": "Montserrat",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 3,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "tuvalu",
+   "nsdb_country": "Tuvalu",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 3,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "vanuatu",
+   "nsdb_country": "Vanuatu",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 3,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "zimbabwe",
+   "nsdb_country": "Zimbabwe",
+   "live": 3,
+   "mirror": 3,
+   "nsdb": 3,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "belize",
+   "nsdb_country": "Belize",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "bolivia",
+   "nsdb_country": "Bolivia",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "cook_islands",
+   "nsdb_country": "Cook-Islands",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "dominica",
+   "nsdb_country": "Dominica",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "faroe",
+   "nsdb_country": "Faeroe",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "kiribati",
+   "nsdb_country": "Kiribati",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "saint_kitts_and_nevis",
+   "nsdb_country": "saintkittsnevis",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "samoa",
+   "nsdb_country": "Samoa",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "switzerland",
+   "nsdb_country": "Switzerland",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "sao_tome_principe",
+   "nsdb_country": "Saotome",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "togo",
+   "nsdb_country": "Togo",
+   "live": 2,
+   "mirror": 2,
+   "nsdb": 2,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "anguilla",
+   "nsdb_country": "Anguilla",
+   "live": 1,
+   "mirror": 1,
+   "nsdb": 1,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "bermuda",
+   "nsdb_country": "Bermuda",
+   "live": 1,
+   "mirror": 1,
+   "nsdb": 1,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "macedonia",
+   "nsdb_country": "Macedonia",
+   "live": 1,
+   "mirror": 1,
+   "nsdb": 1,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "malawi",
+   "nsdb_country": "Malawi",
+   "live": 1,
+   "mirror": 1,
+   "nsdb": 0,
+   "live_missing_in_nsdb": 1,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "turks_and_caicos",
+   "nsdb_country": "Turks-and-Caicos-Islands",
+   "live": 1,
+   "mirror": 1,
+   "nsdb": 1,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "uzbekistan",
+   "nsdb_country": "Uzbekistan",
+   "live": 1,
+   "mirror": 1,
+   "nsdb": 1,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  },
+  {
+   "dir": "zambia",
+   "nsdb_country": "Zambia",
+   "live": 1,
+   "mirror": 1,
+   "nsdb": 1,
+   "live_missing_in_nsdb": 0,
+   "nsdb_not_on_live": 0
+  }
+ ],
+ "nsdb_zero_class_countries_on_site": [
+  {
+   "Short": "Falkland",
+   "dir": "falklands",
+   "live_classes": 12,
+   "mirror_classes": 12
+  },
+  {
+   "Short": "Malawi",
+   "dir": "malawi",
+   "live_classes": 1,
+   "mirror_classes": 1
+  },
+  {
+   "Short": "Marshall",
+   "dir": "marshall_islands",
+   "live_classes": 3,
+   "mirror_classes": 3
+  },
+  {
+   "Short": "Micronesia",
+   "dir": "micronesia",
+   "live_classes": 3,
+   "mirror_classes": 3
+  },
+  {
+   "Short": "Montserrat",
+   "dir": "montserrat",
+   "live_classes": 3,
+   "mirror_classes": 3
+  },
+  {
+   "Short": "Sarawak",
+   "dir": "sarawak",
+   "live_classes": 4,
+   "mirror_classes": 0
+  },
+  {
+   "Short": "Solomon",
+   "dir": "solomon_islands",
+   "live_classes": 4,
+   "mirror_classes": 4
+  },
+  {
+   "Short": "Vanuatu",
+   "dir": "vanuatu",
+   "live_classes": 3,
+   "mirror_classes": 3
+  }
+ ],
+ "type_pages_skipped_by_fetcher_filter": {
+  "count": 0,
+  "classes_only_under_skipped": 0,
+  "list": [],
+  "of_which_in_nsdb": 0
+ },
+ "live_type_page_coverage_worst": [
+  {
+   "type_page": "/ships/italy/it_cg.html",
+   "text": "12. PARAMILITARY SERVICES",
+   "country": "ITALY",
+   "classes": 72,
+   "in_nsdb": 0,
+   "missing": 72
+  },
+  {
+   "type_page": "/ships/denmark/dk_cg.html",
+   "text": "10. FISHERY PROTECTION SERVICE AND HOME GUARD",
+   "country": "DENMARK",
+   "classes": 22,
+   "in_nsdb": 0,
+   "missing": 22
+  },
+  {
+   "type_page": "/ships/poland/pl_cg.html",
+   "text": "10. BOARD GUARD CRAFT",
+   "country": "POLAND",
+   "classes": 15,
+   "in_nsdb": 0,
+   "missing": 15
+  },
+  {
+   "type_page": "/ships/falklands/falk_cg.html",
+   "text": "1. FISHERIES PATROL",
+   "country": "FALKLAND ISLANDS",
+   "classes": 12,
+   "in_nsdb": 0,
+   "missing": 12
+  },
+  {
+   "type_page": "/ships/yugoslavia/yu_ls.html",
+   "text": "8. AMPHIBIOUS FORCES",
+   "country": "YUGOSLAVIA / SERBIA",
+   "classes": 11,
+   "in_nsdb": 0,
+   "missing": 11
+  },
+  {
+   "type_page": "/ships/hungary/hu_cf.html",
+   "text": "2. RIVER BOATS",
+   "country": "HUNGARY",
+   "classes": 7,
+   "in_nsdb": 0,
+   "missing": 7
+  },
+  {
+   "type_page": "/ships/dominicanrep/dom_ls.html",
+   "text": "5. AMPHIBIOUS CRAFT",
+   "country": "DOMINICAN REPUBLIC",
+   "classes": 6,
+   "in_nsdb": 0,
+   "missing": 6
+  },
+  {
+   "type_page": "/ships/czechoslovakia/cz_cf.html",
+   "text": "2. RIVER BOATS",
+   "country": "CZECHOSLOVAKIA",
+   "classes": 5,
+   "in_nsdb": 0,
+   "missing": 5
+  },
+  {
+   "type_page": "/ships/portugal/pr_ls.html",
+   "text": "8. AMPHIBIOUS CRAFT",
+   "country": "PORTUGAL",
+   "classes": 5,
+   "in_nsdb": 0,
+   "missing": 5
+  },
+  {
+   "type_page": "/ships/sarawak/sa_of.html",
+   "text": "1. OTHER FIGHTING SHIPS",
+   "country": "SARAWAK",
+   "classes": 4,
+   "in_nsdb": 0,
+   "missing": 4
+  },
+  {
+   "type_page": "/ships/solomon_islands/soi_cg.html",
+   "text": "1. POLICE SERVICE",
+   "country": "SOLOMON ISLANDS",
+   "classes": 4,
+   "in_nsdb": 0,
+   "missing": 4
+  },
+  {
+   "type_page": "/ships/uruguay/uru_ls.html",
+   "text": "6. AMPHIBIOUS CRAFT",
+   "country": "URUGUAY",
+   "classes": 4,
+   "in_nsdb": 0,
+   "missing": 4
+  },
+  {
+   "type_page": "/ships/cuba/cub_ls.html",
+   "text": "5. AMPHIBIOUS CRAFT",
+   "country": "CUBA",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/hungary/hu_of.html",
+   "text": "1. RIVER FIGHTING SHIPS",
+   "country": "HUNGARY",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/marshall_islands/mars_cg.html",
+   "text": "1. MARITIME AUTHORITY",
+   "country": "MARSHALL ISLANDS",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/micronesia/micr_cg.html",
+   "text": "1. DIVISION OF SURVEILLANCE ATTORNEY GENERAL'S OFFICE",
+   "country": "MICRONESIA",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/montenegro/mone_ls.html",
+   "text": "3. AMPHIBIOUS CRAFT",
+   "country": "MONTENEGRO",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/montserrat/monts_cg.html",
+   "text": "1. POLICE FORCE",
+   "country": "MONTSERRAT",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/romania/ro_cm.html",
+   "text": "9. CONVERTED MERCHANT VESSELS",
+   "country": "ROMANIA",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/vanuatu/van_cg.html",
+   "text": "1. MARINE POLICE",
+   "country": "VANUATU",
+   "classes": 3,
+   "in_nsdb": 0,
+   "missing": 3
+  },
+  {
+   "type_page": "/ships/guinea_bissau/gub_ls.html",
+   "text": "2. AMPHIBIOUS CRAFT",
+   "country": "GUINEA-BISSAU",
+   "classes": 2,
+   "in_nsdb": 0,
+   "missing": 2
+  },
+  {
+   "type_page": "/ships/pakistan/pak_ls.html",
+   "text": "6. AMPHIBIOUS CRAFT",
+   "country": "PAKISTAN",
+   "classes": 2,
+   "in_nsdb": 0,
+   "missing": 2
+  },
+  {
+   "type_page": "/ships/bahamas/baha_cf.html",
+   "text": "1. COASTAL FORCES",
+   "country": "BAHAMAS",
+   "classes": 10,
+   "in_nsdb": 9,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/bangladesh/ban_es.html",
+   "text": "2. ESCORTS",
+   "country": "BANGLADESH",
+   "classes": 14,
+   "in_nsdb": 13,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/czechoslovakia/cz_of.html",
+   "text": "1. RIVER SHIPS",
+   "country": "CZECHOSLOVAKIA",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/djibouti/dji_ls.html",
+   "text": "2. AMPHIBIOUS CRAFT",
+   "country": "DJIBOUTI",
+   "classes": 2,
+   "in_nsdb": 1,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/egypt/eg_es.html",
+   "text": "3. ESCORTS",
+   "country": "EGYPT",
+   "classes": 23,
+   "in_nsdb": 22,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/georgia/geo_ls.html",
+   "text": "2. AMPHIBIOUS CRAFT",
+   "country": "GEORGIA",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/germany/ger_submarines.html",
+   "text": "5. SUBMARINES",
+   "country": "GERMANY",
+   "classes": 101,
+   "in_nsdb": 100,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/germany/ger_escorts.html",
+   "text": "6. ESCORTS",
+   "country": "GERMANY",
+   "classes": 88,
+   "in_nsdb": 87,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/guatemala/gua_ls.html",
+   "text": "2. AMPHIBIOUS CRAFT",
+   "country": "GUATEMALA",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/guinea/gui_ls.html",
+   "text": "3. AMPHIBIOUS CRAFT",
+   "country": "GUINEA",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/laos/lao_ls.html",
+   "text": "2. AMPHIBIOUS CRAFT",
+   "country": "LAOS",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/malawi/malaw_cg.html",
+   "text": "1. ARMY",
+   "country": "MALAWI",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/malta/malt_ls.html",
+   "text": "3. AMPHIBIOUS CRAFT",
+   "country": "MALTA",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/manchukuo/ma_cm.html",
+   "text": "4. CONVERTED MERCHANT SHIPS",
+   "country": "MANCHUKUO",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/paraguay/par_ls.html",
+   "text": "4. AMPHIBIOUS CRAFT",
+   "country": "PARAGUAY",
+   "classes": 1,
+   "in_nsdb": 0,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/uk/uk_carriers.html",
+   "text": "2. AIRCRAFT CARRYING SHIPS",
+   "country": "UNITED KINGDOM",
+   "classes": 39,
+   "in_nsdb": 38,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/usa/usa_amphib.html",
+   "text": "9. AMPHIBIOUS SHIPS AND CRAFT",
+   "country": "UNITED STATES OF AMERICA",
+   "classes": 96,
+   "in_nsdb": 95,
+   "missing": 1
+  },
+  {
+   "type_page": "/ships/abkhazia/abk_cf.html",
+   "text": "1. COASTAL FORCES",
+   "country": "ABKHAZIA",
+   "classes": 3,
+   "in_nsdb": 3,
+   "missing": 0
+  }
+ ],
+ "live_error_pages": [],
+ "mirror_error_pages": []
+}

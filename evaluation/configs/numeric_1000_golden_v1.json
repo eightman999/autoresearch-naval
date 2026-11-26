@@ -1,0 +1,8 @@
+{
+  "name": "numeric-1000-golden-v1",
+  "runner": "golden",
+  "contract": "data/navspec/lora/contracts/navspec_end_to_end_eval_contract_v1.json",
+  "seed": 0,
+  "temperature": 0.0,
+  "notes": "numeric 1000件の契約基準線。既存model reportとは別にgolden replayを記録する。"
+}

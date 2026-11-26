@@ -1,0 +1,40 @@
+name: fast
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.8.5"
+
+      - name: Install fast dependencies only
+        run: uv sync --locked --only-group fast
+
+      - name: Check repository prerequisites
+        run: ./verify.sh --check
+
+      - name: Run fast tests
+        run: uv run --frozen --no-sync --only-group fast python -m pytest tests/ -q
+
+      - name: Ensure fast tests did not modify the checkout
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

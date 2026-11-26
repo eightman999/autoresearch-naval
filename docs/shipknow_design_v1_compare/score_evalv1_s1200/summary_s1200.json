@@ -1,0 +1,1362 @@
+{
+ "seeds": [
+  1001
+ ],
+ "n_rows": 350,
+ "overall": {
+  "n": 250,
+  "n_json_ok": 250,
+  "json_ok_rate": 1.0,
+  "schema_ok_rate": 0.812,
+  "schema_ok_rate_among_json_ok": 0.812,
+  "missing_required_rate": 0.188,
+  "missing_rate_by_field": {
+   "ship_type": 0.188,
+   "ship_type_fine": 0.188,
+   "displacement": 0.188,
+   "length_m": 0.188,
+   "beam_m": 0.188,
+   "draught_m": 0.188,
+   "propulsion": 0.192,
+   "shafts": 0.188,
+   "power_hp": 0.188,
+   "speed_kn": 0.188,
+   "endurance_nm": 0.272,
+   "complement": 0.212,
+   "armour": 0.868,
+   "weapons": 0.188,
+   "sensors": 0.484,
+   "air": 0.808
+  },
+  "req_sat_mean_determinable": 0.7617,
+  "req_sat_mean_strict": 0.7606,
+  "all_req_satisfied_rate": 0.564,
+  "req_by_type": {
+   "aircraft_count": {
+    "n": 24,
+    "n_determinable": 24,
+    "rate_determinable": 0.1667,
+    "rate_strict": 0.1667
+   },
+   "aircraft_fit": {
+    "n": 51,
+    "n_determinable": 51,
+    "rate_determinable": 0.5098,
+    "rate_strict": 0.5098
+   },
+   "complement": {
+    "n": 56,
+    "n_determinable": 50,
+    "rate_determinable": 1.0,
+    "rate_strict": 0.8929
+   },
+   "displacement": {
+    "n": 250,
+    "n_determinable": 202,
+    "rate_determinable": 1.0,
+    "rate_strict": 0.808
+   },
+   "endurance": {
+    "n": 42,
+    "n_determinable": 37,
+    "rate_determinable": 1.0,
+    "rate_strict": 0.881
+   },
+   "gun_barrels": {
+    "n": 50,
+    "n_determinable": 50,
+    "rate_determinable": 0.56,
+    "rate_strict": 0.56
+   },
+   "main_gun": {
+    "n": 150,
+    "n_determinable": 150,
+    "rate_determinable": 0.7867,
+    "rate_strict": 0.7867
+   },
+   "propulsion": {
+    "n": 72,
+    "n_determinable": 66,
+    "rate_determinable": 0.8636,
+    "rate_strict": 0.7917
+   },
+   "sensor": {
+    "n": 125,
+    "n_determinable": 125,
+    "rate_determinable": 0.64,
+    "rate_strict": 0.64
+   },
+   "ship_type": {
+    "n": 250,
+    "n_determinable": 250,
+    "rate_determinable": 0.812,
+    "rate_strict": 0.812
+   },
+   "ship_type_fine": {
+    "n": 17,
+    "n_determinable": 17,
+    "rate_determinable": 0.9412,
+    "rate_strict": 0.9412
+   },
+   "speed": {
+    "n": 250,
+    "n_determinable": 203,
+    "rate_determinable": 0.9704,
+    "rate_strict": 0.788
+   },
+   "torpedo_tubes": {
+    "n": 38,
+    "n_determinable": 38,
+    "rate_determinable": 0.7368,
+    "rate_strict": 0.7368
+   },
+   "weapon": {
+    "n": 154,
+    "n_determinable": 154,
+    "rate_determinable": 0.6104,
+    "rate_strict": 0.6104
+   }
+  },
+  "consistency_pass_rate": 0.896,
+  "mean_warnings": 0.148,
+  "mean_soft_warnings": 0.796,
+  "warning_codes": {
+   "ratio_high:fr": 5,
+   "ratio_high:cb_full": 3,
+   "ratio_high:cb_normal": 3,
+   "air_without_entry": 3,
+   "era_early:air:helicopter": 3,
+   "ratio_high:adm": 2,
+   "ratio_high:hp_t": 2,
+   "type_equipment_mismatch:air": 2,
+   "armament_excess": 2,
+   "ratio_low:lb": 2,
+   "era_early:ssm": 2,
+   "ratio_low:hp_t": 1,
+   "era_early:combat_system": 1,
+   "era_early:decoy": 1,
+   "ratio_low:cb_standard": 1
+  },
+  "plausible_all_rate": 0.5373,
+  "plausible_frac_mean": 0.8389,
+  "plausible_by_field": {
+   "displacement": 0.8857,
+   "length_m": 0.8557,
+   "speed_kn": 0.7164,
+   "power_hp": 0.8693,
+   "main_gun_cal": 0.8954,
+   "complement": 0.8466
+  },
+  "plausible_group_level": {
+   "country": 96,
+   "region": 75,
+   "region20": 28,
+   "world": 45,
+   "world20": 3,
+   "none": 3
+  },
+  "copy_any_rate": 0.012,
+  "copy_near_any_rate": 0.112,
+  "copy_nbr_rate": 0.004,
+  "copy_nbr_share_of_copy": 0.3333,
+  "e": {
+   "n": 50,
+   "recognized_infeasible_rate": 0.0,
+   "relaxed_rate": 0.94,
+   "filled_with_numbers_rate": 0.04,
+   "satisfied_and_consistent_rate": 0.02,
+   "invalid_rate": 0.0,
+   "marker_kinds": {},
+   "all_req_satisfied_rate": 0.06
+  }
+ },
+ "by_category": {
+  "A": {
+   "n": 50,
+   "n_json_ok": 50,
+   "json_ok_rate": 1.0,
+   "schema_ok_rate": 0.98,
+   "schema_ok_rate_among_json_ok": 0.98,
+   "missing_required_rate": 0.02,
+   "missing_rate_by_field": {
+    "ship_type": 0.02,
+    "ship_type_fine": 0.02,
+    "displacement": 0.02,
+    "length_m": 0.02,
+    "beam_m": 0.02,
+    "draught_m": 0.02,
+    "propulsion": 0.02,
+    "shafts": 0.02,
+    "power_hp": 0.02,
+    "speed_kn": 0.02,
+    "endurance_nm": 0.16,
+    "complement": 0.02,
+    "armour": 0.82,
+    "weapons": 0.02,
+    "sensors": 0.48,
+    "air": 0.92
+   },
+   "req_sat_mean_determinable": 0.98,
+   "req_sat_mean_strict": 0.98,
+   "all_req_satisfied_rate": 0.98,
+   "req_by_type": {
+    "aircraft_fit": {
+     "n": 2,
+     "n_determinable": 2,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "complement": {
+     "n": 16,
+     "n_determinable": 15,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.9375
+    },
+    "displacement": {
+     "n": 50,
+     "n_determinable": 49,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.98
+    },
+    "main_gun": {
+     "n": 32,
+     "n_determinable": 32,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "sensor": {
+     "n": 6,
+     "n_determinable": 6,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "ship_type": {
+     "n": 50,
+     "n_determinable": 50,
+     "rate_determinable": 0.98,
+     "rate_strict": 0.98
+    },
+    "ship_type_fine": {
+     "n": 13,
+     "n_determinable": 13,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "speed": {
+     "n": 50,
+     "n_determinable": 49,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.98
+    },
+    "weapon": {
+     "n": 21,
+     "n_determinable": 21,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    }
+   },
+   "consistency_pass_rate": 0.94,
+   "mean_warnings": 0.08,
+   "mean_soft_warnings": 0.78,
+   "warning_codes": {
+    "ratio_high:cb_full": 2,
+    "ratio_high:adm": 1,
+    "ratio_high:cb_normal": 1
+   },
+   "plausible_all_rate": 0.8367,
+   "plausible_frac_mean": 0.95,
+   "plausible_by_field": {
+    "displacement": 1.0,
+    "length_m": 0.9388,
+    "speed_kn": 0.9388,
+    "power_hp": 0.9184,
+    "main_gun_cal": 1.0,
+    "complement": 0.9184
+   },
+   "plausible_group_level": {
+    "country": 31,
+    "region": 16,
+    "region20": 2,
+    "world": 1
+   },
+   "copy_any_rate": 0.02,
+   "copy_near_any_rate": 0.1,
+   "copy_nbr_rate": 0.02,
+   "copy_nbr_share_of_copy": 1.0
+  },
+  "B": {
+   "n": 50,
+   "n_json_ok": 50,
+   "json_ok_rate": 1.0,
+   "schema_ok_rate": 0.94,
+   "schema_ok_rate_among_json_ok": 0.94,
+   "missing_required_rate": 0.06,
+   "missing_rate_by_field": {
+    "ship_type": 0.06,
+    "ship_type_fine": 0.06,
+    "displacement": 0.06,
+    "length_m": 0.06,
+    "beam_m": 0.06,
+    "draught_m": 0.06,
+    "propulsion": 0.08,
+    "shafts": 0.06,
+    "power_hp": 0.06,
+    "speed_kn": 0.06,
+    "endurance_nm": 0.14,
+    "complement": 0.06,
+    "armour": 0.82,
+    "weapons": 0.06,
+    "sensors": 0.52,
+    "air": 0.9
+   },
+   "req_sat_mean_determinable": 0.9264,
+   "req_sat_mean_strict": 0.9264,
+   "all_req_satisfied_rate": 0.84,
+   "req_by_type": {
+    "complement": {
+     "n": 33,
+     "n_determinable": 31,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.9394
+    },
+    "displacement": {
+     "n": 50,
+     "n_determinable": 47,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.94
+    },
+    "endurance": {
+     "n": 30,
+     "n_determinable": 28,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.9333
+    },
+    "gun_barrels": {
+     "n": 14,
+     "n_determinable": 14,
+     "rate_determinable": 0.8571,
+     "rate_strict": 0.8571
+    },
+    "main_gun": {
+     "n": 30,
+     "n_determinable": 30,
+     "rate_determinable": 0.8667,
+     "rate_strict": 0.8667
+    },
+    "propulsion": {
+     "n": 20,
+     "n_determinable": 20,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "sensor": {
+     "n": 10,
+     "n_determinable": 10,
+     "rate_determinable": 0.9,
+     "rate_strict": 0.9
+    },
+    "ship_type": {
+     "n": 50,
+     "n_determinable": 50,
+     "rate_determinable": 0.94,
+     "rate_strict": 0.94
+    },
+    "speed": {
+     "n": 50,
+     "n_determinable": 47,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.94
+    },
+    "torpedo_tubes": {
+     "n": 10,
+     "n_determinable": 10,
+     "rate_determinable": 0.9,
+     "rate_strict": 0.9
+    },
+    "weapon": {
+     "n": 9,
+     "n_determinable": 9,
+     "rate_determinable": 0.7778,
+     "rate_strict": 0.7778
+    }
+   },
+   "consistency_pass_rate": 0.98,
+   "mean_warnings": 0.02,
+   "mean_soft_warnings": 0.74,
+   "warning_codes": {
+    "ratio_high:cb_normal": 1
+   },
+   "plausible_all_rate": 0.5532,
+   "plausible_frac_mean": 0.8532,
+   "plausible_by_field": {
+    "displacement": 0.9024,
+    "length_m": 0.8511,
+    "speed_kn": 0.7447,
+    "power_hp": 0.9111,
+    "main_gun_cal": 0.9118,
+    "complement": 0.8444
+   },
+   "plausible_group_level": {
+    "country": 25,
+    "world": 3,
+    "region": 18,
+    "region20": 4
+   },
+   "copy_any_rate": 0.02,
+   "copy_near_any_rate": 0.12,
+   "copy_nbr_rate": 0.0,
+   "copy_nbr_share_of_copy": 0.0
+  },
+  "C": {
+   "n": 50,
+   "n_json_ok": 50,
+   "json_ok_rate": 1.0,
+   "schema_ok_rate": 0.88,
+   "schema_ok_rate_among_json_ok": 0.88,
+   "missing_required_rate": 0.12,
+   "missing_rate_by_field": {
+    "ship_type": 0.12,
+    "ship_type_fine": 0.12,
+    "displacement": 0.12,
+    "length_m": 0.12,
+    "beam_m": 0.12,
+    "draught_m": 0.12,
+    "propulsion": 0.12,
+    "shafts": 0.12,
+    "power_hp": 0.12,
+    "speed_kn": 0.12,
+    "endurance_nm": 0.22,
+    "complement": 0.14,
+    "armour": 0.94,
+    "weapons": 0.12,
+    "sensors": 0.38,
+    "air": 0.8
+   },
+   "req_sat_mean_determinable": 0.81,
+   "req_sat_mean_strict": 0.8078,
+   "all_req_satisfied_rate": 0.44,
+   "req_by_type": {
+    "aircraft_count": {
+     "n": 7,
+     "n_determinable": 7,
+     "rate_determinable": 0.4286,
+     "rate_strict": 0.4286
+    },
+    "aircraft_fit": {
+     "n": 4,
+     "n_determinable": 4,
+     "rate_determinable": 0.5,
+     "rate_strict": 0.5
+    },
+    "displacement": {
+     "n": 50,
+     "n_determinable": 44,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.88
+    },
+    "endurance": {
+     "n": 6,
+     "n_determinable": 6,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "gun_barrels": {
+     "n": 25,
+     "n_determinable": 25,
+     "rate_determinable": 0.6,
+     "rate_strict": 0.6
+    },
+    "main_gun": {
+     "n": 40,
+     "n_determinable": 40,
+     "rate_determinable": 0.85,
+     "rate_strict": 0.85
+    },
+    "propulsion": {
+     "n": 42,
+     "n_determinable": 38,
+     "rate_determinable": 0.8947,
+     "rate_strict": 0.8095
+    },
+    "sensor": {
+     "n": 55,
+     "n_determinable": 55,
+     "rate_determinable": 0.7273,
+     "rate_strict": 0.7273
+    },
+    "ship_type": {
+     "n": 50,
+     "n_determinable": 50,
+     "rate_determinable": 0.88,
+     "rate_strict": 0.88
+    },
+    "speed": {
+     "n": 50,
+     "n_determinable": 44,
+     "rate_determinable": 0.9545,
+     "rate_strict": 0.84
+    },
+    "torpedo_tubes": {
+     "n": 24,
+     "n_determinable": 24,
+     "rate_determinable": 0.75,
+     "rate_strict": 0.75
+    },
+    "weapon": {
+     "n": 22,
+     "n_determinable": 22,
+     "rate_determinable": 0.6818,
+     "rate_strict": 0.6818
+    }
+   },
+   "consistency_pass_rate": 0.92,
+   "mean_warnings": 0.1,
+   "mean_soft_warnings": 0.86,
+   "warning_codes": {
+    "air_without_entry": 1,
+    "ratio_high:cb_normal": 1,
+    "ratio_high:cb_full": 1,
+    "ratio_high:adm": 1,
+    "ratio_low:hp_t": 1
+   },
+   "plausible_all_rate": 0.3182,
+   "plausible_frac_mean": 0.7705,
+   "plausible_by_field": {
+    "displacement": 0.881,
+    "length_m": 0.8636,
+    "speed_kn": 0.5227,
+    "power_hp": 0.8409,
+    "main_gun_cal": 0.75,
+    "complement": 0.7949
+   },
+   "plausible_group_level": {
+    "region": 14,
+    "region20": 7,
+    "world": 10,
+    "country": 18,
+    "world20": 1
+   },
+   "copy_any_rate": 0.0,
+   "copy_near_any_rate": 0.18,
+   "copy_nbr_rate": 0.0,
+   "copy_nbr_share_of_copy": null
+  },
+  "D": {
+   "n": 50,
+   "n_json_ok": 50,
+   "json_ok_rate": 1.0,
+   "schema_ok_rate": 0.86,
+   "schema_ok_rate_among_json_ok": 0.86,
+   "missing_required_rate": 0.14,
+   "missing_rate_by_field": {
+    "ship_type": 0.14,
+    "ship_type_fine": 0.14,
+    "displacement": 0.14,
+    "length_m": 0.14,
+    "beam_m": 0.14,
+    "draught_m": 0.14,
+    "propulsion": 0.14,
+    "shafts": 0.14,
+    "power_hp": 0.14,
+    "speed_kn": 0.14,
+    "endurance_nm": 0.18,
+    "complement": 0.18,
+    "armour": 0.86,
+    "weapons": 0.14,
+    "sensors": 0.3,
+    "air": 0.56
+   },
+   "req_sat_mean_determinable": 0.7911,
+   "req_sat_mean_strict": 0.7878,
+   "all_req_satisfied_rate": 0.5,
+   "req_by_type": {
+    "aircraft_fit": {
+     "n": 22,
+     "n_determinable": 22,
+     "rate_determinable": 0.8636,
+     "rate_strict": 0.8636
+    },
+    "complement": {
+     "n": 2,
+     "n_determinable": 2,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "displacement": {
+     "n": 50,
+     "n_determinable": 42,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.84
+    },
+    "endurance": {
+     "n": 1,
+     "n_determinable": 1,
+     "rate_determinable": 1.0,
+     "rate_strict": 1.0
+    },
+    "main_gun": {
+     "n": 32,
+     "n_determinable": 32,
+     "rate_determinable": 0.6562,
+     "rate_strict": 0.6562
+    },
+    "propulsion": {
+     "n": 3,
+     "n_determinable": 2,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.6667
+    },
+    "sensor": {
+     "n": 37,
+     "n_determinable": 37,
+     "rate_determinable": 0.6216,
+     "rate_strict": 0.6216
+    },
+    "ship_type": {
+     "n": 50,
+     "n_determinable": 50,
+     "rate_determinable": 0.86,
+     "rate_strict": 0.86
+    },
+    "ship_type_fine": {
+     "n": 4,
+     "n_determinable": 4,
+     "rate_determinable": 0.75,
+     "rate_strict": 0.75
+    },
+    "speed": {
+     "n": 50,
+     "n_determinable": 43,
+     "rate_determinable": 0.9535,
+     "rate_strict": 0.82
+    },
+    "weapon": {
+     "n": 49,
+     "n_determinable": 49,
+     "rate_determinable": 0.7755,
+     "rate_strict": 0.7755
+    }
+   },
+   "consistency_pass_rate": 0.84,
+   "mean_warnings": 0.24,
+   "mean_soft_warnings": 0.92,
+   "warning_codes": {
+    "ratio_high:fr": 3,
+    "era_early:combat_system": 1,
+    "era_early:decoy": 1,
+    "ratio_low:cb_standard": 1,
+    "ratio_high:hp_t": 1,
+    "air_without_entry": 1,
+    "ratio_low:slender": 1,
+    "type_equipment_mismatch:air": 1,
+    "heli_hull_too_short": 1,
+    "armament_excess": 1
+   },
+   "plausible_all_rate": 0.561,
+   "plausible_frac_mean": 0.8252,
+   "plausible_by_field": {
+    "displacement": 0.8,
+    "length_m": 0.8049,
+    "speed_kn": 0.7805,
+    "power_hp": 0.8293,
+    "main_gun_cal": 0.8611,
+    "complement": 0.8718
+   },
+   "plausible_group_level": {
+    "region20": 7,
+    "world20": 1,
+    "region": 11,
+    "country": 10,
+    "world": 19,
+    "none": 2
+   },
+   "copy_any_rate": 0.02,
+   "copy_near_any_rate": 0.16,
+   "copy_nbr_rate": 0.0,
+   "copy_nbr_share_of_copy": 0.0
+  },
+  "E": {
+   "n": 50,
+   "n_json_ok": 50,
+   "json_ok_rate": 1.0,
+   "schema_ok_rate": 0.4,
+   "schema_ok_rate_among_json_ok": 0.4,
+   "missing_required_rate": 0.6,
+   "missing_rate_by_field": {
+    "ship_type": 0.6,
+    "ship_type_fine": 0.6,
+    "displacement": 0.6,
+    "length_m": 0.6,
+    "beam_m": 0.6,
+    "draught_m": 0.6,
+    "propulsion": 0.6,
+    "shafts": 0.6,
+    "power_hp": 0.6,
+    "speed_kn": 0.6,
+    "endurance_nm": 0.66,
+    "complement": 0.66,
+    "armour": 0.9,
+    "weapons": 0.6,
+    "sensors": 0.74,
+    "air": 0.86
+   },
+   "req_sat_mean_determinable": 0.3009,
+   "req_sat_mean_strict": 0.3009,
+   "all_req_satisfied_rate": 0.06,
+   "req_by_type": {
+    "aircraft_count": {
+     "n": 17,
+     "n_determinable": 17,
+     "rate_determinable": 0.0588,
+     "rate_strict": 0.0588
+    },
+    "aircraft_fit": {
+     "n": 23,
+     "n_determinable": 23,
+     "rate_determinable": 0.1304,
+     "rate_strict": 0.1304
+    },
+    "complement": {
+     "n": 5,
+     "n_determinable": 2,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.4
+    },
+    "displacement": {
+     "n": 50,
+     "n_determinable": 20,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.4
+    },
+    "endurance": {
+     "n": 5,
+     "n_determinable": 2,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.4
+    },
+    "gun_barrels": {
+     "n": 11,
+     "n_determinable": 11,
+     "rate_determinable": 0.0909,
+     "rate_strict": 0.0909
+    },
+    "main_gun": {
+     "n": 16,
+     "n_determinable": 16,
+     "rate_determinable": 0.3125,
+     "rate_strict": 0.3125
+    },
+    "propulsion": {
+     "n": 7,
+     "n_determinable": 6,
+     "rate_determinable": 0.1667,
+     "rate_strict": 0.1429
+    },
+    "sensor": {
+     "n": 17,
+     "n_determinable": 17,
+     "rate_determinable": 0.1176,
+     "rate_strict": 0.1176
+    },
+    "ship_type": {
+     "n": 50,
+     "n_determinable": 50,
+     "rate_determinable": 0.4,
+     "rate_strict": 0.4
+    },
+    "speed": {
+     "n": 50,
+     "n_determinable": 20,
+     "rate_determinable": 0.9,
+     "rate_strict": 0.36
+    },
+    "torpedo_tubes": {
+     "n": 4,
+     "n_determinable": 4,
+     "rate_determinable": 0.25,
+     "rate_strict": 0.25
+    },
+    "weapon": {
+     "n": 53,
+     "n_determinable": 53,
+     "rate_determinable": 0.2453,
+     "rate_strict": 0.2453
+    }
+   },
+   "consistency_pass_rate": 0.8,
+   "mean_warnings": 0.3,
+   "mean_soft_warnings": 0.68,
+   "warning_codes": {
+    "era_early:air:helicopter": 3,
+    "ratio_low:lb": 2,
+    "era_early:ssm": 2,
+    "ratio_high:fr": 2,
+    "ratio_low:crew_t": 1,
+    "ratio_low:adm": 1,
+    "ratio_high:hp_t": 1,
+    "armament_excess": 1,
+    "type_equipment_mismatch:air": 1,
+    "air_without_entry": 1
+   },
+   "plausible_all_rate": 0.2,
+   "plausible_frac_mean": 0.7117,
+   "plausible_by_field": {
+    "displacement": 0.6842,
+    "length_m": 0.75,
+    "speed_kn": 0.4,
+    "power_hp": 0.8,
+    "main_gun_cal": 1.0,
+    "complement": 0.7059
+   },
+   "plausible_group_level": {
+    "region20": 8,
+    "country": 12,
+    "world": 12,
+    "region": 16,
+    "none": 1,
+    "world20": 1
+   },
+   "copy_any_rate": 0.0,
+   "copy_near_any_rate": 0.0,
+   "copy_nbr_rate": 0.0,
+   "copy_nbr_share_of_copy": null,
+   "e": {
+    "n": 50,
+    "recognized_infeasible_rate": 0.0,
+    "relaxed_rate": 0.94,
+    "filled_with_numbers_rate": 0.04,
+    "satisfied_and_consistent_rate": 0.02,
+    "invalid_rate": 0.0,
+    "marker_kinds": {},
+    "all_req_satisfied_rate": 0.06
+   }
+  }
+ },
+ "by_seed": {
+  "1001": {
+   "n": 250,
+   "n_json_ok": 250,
+   "json_ok_rate": 1.0,
+   "schema_ok_rate": 0.812,
+   "schema_ok_rate_among_json_ok": 0.812,
+   "missing_required_rate": 0.188,
+   "missing_rate_by_field": {
+    "ship_type": 0.188,
+    "ship_type_fine": 0.188,
+    "displacement": 0.188,
+    "length_m": 0.188,
+    "beam_m": 0.188,
+    "draught_m": 0.188,
+    "propulsion": 0.192,
+    "shafts": 0.188,
+    "power_hp": 0.188,
+    "speed_kn": 0.188,
+    "endurance_nm": 0.272,
+    "complement": 0.212,
+    "armour": 0.868,
+    "weapons": 0.188,
+    "sensors": 0.484,
+    "air": 0.808
+   },
+   "req_sat_mean_determinable": 0.7617,
+   "req_sat_mean_strict": 0.7606,
+   "all_req_satisfied_rate": 0.564,
+   "req_by_type": {
+    "aircraft_count": {
+     "n": 24,
+     "n_determinable": 24,
+     "rate_determinable": 0.1667,
+     "rate_strict": 0.1667
+    },
+    "aircraft_fit": {
+     "n": 51,
+     "n_determinable": 51,
+     "rate_determinable": 0.5098,
+     "rate_strict": 0.5098
+    },
+    "complement": {
+     "n": 56,
+     "n_determinable": 50,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.8929
+    },
+    "displacement": {
+     "n": 250,
+     "n_determinable": 202,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.808
+    },
+    "endurance": {
+     "n": 42,
+     "n_determinable": 37,
+     "rate_determinable": 1.0,
+     "rate_strict": 0.881
+    },
+    "gun_barrels": {
+     "n": 50,
+     "n_determinable": 50,
+     "rate_determinable": 0.56,
+     "rate_strict": 0.56
+    },
+    "main_gun": {
+     "n": 150,
+     "n_determinable": 150,
+     "rate_determinable": 0.7867,
+     "rate_strict": 0.7867
+    },
+    "propulsion": {
+     "n": 72,
+     "n_determinable": 66,
+     "rate_determinable": 0.8636,
+     "rate_strict": 0.7917
+    },
+    "sensor": {
+     "n": 125,
+     "n_determinable": 125,
+     "rate_determinable": 0.64,
+     "rate_strict": 0.64
+    },
+    "ship_type": {
+     "n": 250,
+     "n_determinable": 250,
+     "rate_determinable": 0.812,
+     "rate_strict": 0.812
+    },
+    "ship_type_fine": {
+     "n": 17,
+     "n_determinable": 17,
+     "rate_determinable": 0.9412,
+     "rate_strict": 0.9412
+    },
+    "speed": {
+     "n": 250,
+     "n_determinable": 203,
+     "rate_determinable": 0.9704,
+     "rate_strict": 0.788
+    },
+    "torpedo_tubes": {
+     "n": 38,
+     "n_determinable": 38,
+     "rate_determinable": 0.7368,
+     "rate_strict": 0.7368
+    },
+    "weapon": {
+     "n": 154,
+     "n_determinable": 154,
+     "rate_determinable": 0.6104,
+     "rate_strict": 0.6104
+    }
+   },
+   "consistency_pass_rate": 0.896,
+   "mean_warnings": 0.148,
+   "mean_soft_warnings": 0.796,
+   "warning_codes": {
+    "ratio_high:fr": 5,
+    "ratio_high:cb_full": 3,
+    "ratio_high:cb_normal": 3,
+    "air_without_entry": 3,
+    "era_early:air:helicopter": 3,
+    "ratio_high:adm": 2,
+    "ratio_high:hp_t": 2,
+    "type_equipment_mismatch:air": 2,
+    "armament_excess": 2,
+    "ratio_low:lb": 2,
+    "era_early:ssm": 2,
+    "ratio_low:hp_t": 1,
+    "era_early:combat_system": 1,
+    "era_early:decoy": 1,
+    "ratio_low:cb_standard": 1
+   },
+   "plausible_all_rate": 0.5373,
+   "plausible_frac_mean": 0.8389,
+   "plausible_by_field": {
+    "displacement": 0.8857,
+    "length_m": 0.8557,
+    "speed_kn": 0.7164,
+    "power_hp": 0.8693,
+    "main_gun_cal": 0.8954,
+    "complement": 0.8466
+   },
+   "plausible_group_level": {
+    "country": 96,
+    "region": 75,
+    "region20": 28,
+    "world": 45,
+    "world20": 3,
+    "none": 3
+   },
+   "copy_any_rate": 0.012,
+   "copy_near_any_rate": 0.112,
+   "copy_nbr_rate": 0.004,
+   "copy_nbr_share_of_copy": 0.3333,
+   "e": {
+    "n": 50,
+    "recognized_infeasible_rate": 0.0,
+    "relaxed_rate": 0.94,
+    "filled_with_numbers_rate": 0.04,
+    "satisfied_and_consistent_rate": 0.02,
+    "invalid_rate": 0.0,
+    "marker_kinds": {},
+    "all_req_satisfied_rate": 0.06
+   }
+  }
+ },
+ "pair_rows": {
+  "n": 100,
+  "n_json_ok": 100,
+  "json_ok_rate": 1.0,
+  "schema_ok_rate": 0.95,
+  "schema_ok_rate_among_json_ok": 0.95,
+  "missing_required_rate": 0.05,
+  "missing_rate_by_field": {
+   "ship_type": 0.05,
+   "ship_type_fine": 0.05,
+   "displacement": 0.05,
+   "length_m": 0.05,
+   "beam_m": 0.05,
+   "draught_m": 0.05,
+   "propulsion": 0.05,
+   "shafts": 0.05,
+   "power_hp": 0.07,
+   "speed_kn": 0.05,
+   "endurance_nm": 0.19,
+   "complement": 0.08,
+   "armour": 0.92,
+   "weapons": 0.05,
+   "sensors": 0.43,
+   "air": 0.8
+  },
+  "req_sat_mean_determinable": 0.9336,
+  "req_sat_mean_strict": 0.9336,
+  "all_req_satisfied_rate": 0.87,
+  "req_by_type": {
+   "aircraft_fit": {
+    "n": 7,
+    "n_determinable": 7,
+    "rate_determinable": 1.0,
+    "rate_strict": 1.0
+   },
+   "complement": {
+    "n": 10,
+    "n_determinable": 10,
+    "rate_determinable": 1.0,
+    "rate_strict": 1.0
+   },
+   "displacement": {
+    "n": 100,
+    "n_determinable": 95,
+    "rate_determinable": 1.0,
+    "rate_strict": 0.95
+   },
+   "endurance": {
+    "n": 6,
+    "n_determinable": 4,
+    "rate_determinable": 1.0,
+    "rate_strict": 0.6667
+   },
+   "gun_barrels": {
+    "n": 12,
+    "n_determinable": 12,
+    "rate_determinable": 0.75,
+    "rate_strict": 0.75
+   },
+   "main_gun": {
+    "n": 74,
+    "n_determinable": 74,
+    "rate_determinable": 0.9459,
+    "rate_strict": 0.9459
+   },
+   "sensor": {
+    "n": 14,
+    "n_determinable": 14,
+    "rate_determinable": 1.0,
+    "rate_strict": 1.0
+   },
+   "ship_type": {
+    "n": 100,
+    "n_determinable": 100,
+    "rate_determinable": 0.95,
+    "rate_strict": 0.95
+   },
+   "speed": {
+    "n": 100,
+    "n_determinable": 95,
+    "rate_determinable": 0.9684,
+    "rate_strict": 0.92
+   },
+   "weapon": {
+    "n": 12,
+    "n_determinable": 12,
+    "rate_determinable": 1.0,
+    "rate_strict": 1.0
+   }
+  },
+  "consistency_pass_rate": 0.93,
+  "mean_warnings": 0.08,
+  "mean_soft_warnings": 0.72,
+  "warning_codes": {
+   "ratio_low:crew_t": 3,
+   "ratio_high:cb_full": 2,
+   "ratio_low:lb": 1,
+   "armament_excess": 1,
+   "ratio_low:cb_normal": 1
+  },
+  "plausible_all_rate": 0.7158,
+  "plausible_frac_mean": 0.9256,
+  "plausible_by_field": {
+   "displacement": 0.9286,
+   "length_m": 0.9368,
+   "speed_kn": 0.9368,
+   "power_hp": 0.9231,
+   "main_gun_cal": 0.9375,
+   "complement": 0.8876
+  },
+  "plausible_group_level": {
+   "region20": 4,
+   "region": 2,
+   "country": 94
+  },
+  "copy_any_rate": 0.01,
+  "copy_near_any_rate": 0.13,
+  "copy_nbr_rate": 0.01,
+  "copy_nbr_share_of_copy": 1.0
+ },
+ "diversity": {
+  "n_problems_multi_seed": 0,
+  "n_seed_pairs": 0,
+  "seed_identical_rate": null,
+  "seed_weapon_jaccard_mean": null,
+  "seed_fine_type_agree_rate": null,
+  "seed_numeric_cv_median": null,
+  "cross_problem_identical_rate": 0.164,
+  "cross_problem_template_rate": 0.188,
+  "distinct_output_ratio": 0.84
+ },
+ "diversity_by_category": {
+  "A": {
+   "n_problems_multi_seed": 0,
+   "n_seed_pairs": 0,
+   "seed_identical_rate": null,
+   "seed_weapon_jaccard_mean": null,
+   "seed_fine_type_agree_rate": null,
+   "seed_numeric_cv_median": null,
+   "cross_problem_identical_rate": 0.0,
+   "cross_problem_template_rate": 0.0,
+   "distinct_output_ratio": 1.0
+  },
+  "B": {
+   "n_problems_multi_seed": 0,
+   "n_seed_pairs": 0,
+   "seed_identical_rate": null,
+   "seed_weapon_jaccard_mean": null,
+   "seed_fine_type_agree_rate": null,
+   "seed_numeric_cv_median": null,
+   "cross_problem_identical_rate": 0.06,
+   "cross_problem_template_rate": 0.06,
+   "distinct_output_ratio": 0.96
+  },
+  "C": {
+   "n_problems_multi_seed": 0,
+   "n_seed_pairs": 0,
+   "seed_identical_rate": null,
+   "seed_weapon_jaccard_mean": null,
+   "seed_fine_type_agree_rate": null,
+   "seed_numeric_cv_median": null,
+   "cross_problem_identical_rate": 0.04,
+   "cross_problem_template_rate": 0.12,
+   "distinct_output_ratio": 0.98
+  },
+  "D": {
+   "n_problems_multi_seed": 0,
+   "n_seed_pairs": 0,
+   "seed_identical_rate": null,
+   "seed_weapon_jaccard_mean": null,
+   "seed_fine_type_agree_rate": null,
+   "seed_numeric_cv_median": null,
+   "cross_problem_identical_rate": 0.1,
+   "cross_problem_template_rate": 0.14,
+   "distinct_output_ratio": 0.92
+  },
+  "E": {
+   "n_problems_multi_seed": 0,
+   "n_seed_pairs": 0,
+   "seed_identical_rate": null,
+   "seed_weapon_jaccard_mean": null,
+   "seed_fine_type_agree_rate": null,
+   "seed_numeric_cv_median": null,
+   "cross_problem_identical_rate": 0.6,
+   "cross_problem_template_rate": 0.6,
+   "distinct_output_ratio": 0.42
+  }
+ },
+ "pairs": {
+  "n_pair_seed": 50,
+  "accuracy": 0.8,
+  "both_valid_rate": 1.0,
+  "identical_output_rate": 0.04,
+  "by_kind": {
+   "combo_cal_barrels": {
+    "n": 1,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   },
+   "combo_disp_speed": {
+    "n": 1,
+    "accuracy": 0.0,
+    "identical_rate": 0.0
+   },
+   "combo_sam_heli": {
+    "n": 1,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   },
+   "complement_half": {
+    "n": 3,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   },
+   "country_change": {
+    "n": 4,
+    "accuracy": 0.75,
+    "identical_rate": 0.0
+   },
+   "disp_down25": {
+    "n": 5,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   },
+   "endurance_x2": {
+    "n": 3,
+    "accuracy": 0.6667,
+    "identical_rate": 0.3333
+   },
+   "gun_barrels_up": {
+    "n": 5,
+    "accuracy": 0.4,
+    "identical_rate": 0.0
+   },
+   "gun_cal_up": {
+    "n": 6,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   },
+   "heli_add": {
+    "n": 6,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   },
+   "sam_add": {
+    "n": 3,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   },
+   "speed_up4": {
+    "n": 5,
+    "accuracy": 0.6,
+    "identical_rate": 0.2
+   },
+   "year_earlier20": {
+    "n": 4,
+    "accuracy": 0.5,
+    "identical_rate": 0.0
+   },
+   "year_later20": {
+    "n": 3,
+    "accuracy": 1.0,
+    "identical_rate": 0.0
+   }
+  },
+  "by_seed": {
+   "1001": 0.8
+  },
+  "by_metric": {
+   "aviation:present_B": {
+    "n": 6,
+    "n_determinable": 6,
+    "rate": 1.0
+   },
+   "complement:decrease": {
+    "n": 3,
+    "n_determinable": 3,
+    "rate": 1.0
+   },
+   "displacement:decrease": {
+    "n": 6,
+    "n_determinable": 6,
+    "rate": 1.0
+   },
+   "endurance:increase": {
+    "n": 3,
+    "n_determinable": 2,
+    "rate": 0.6667
+   },
+   "gun_barrels:increase": {
+    "n": 6,
+    "n_determinable": 6,
+    "rate": 0.5
+   },
+   "helicopter:present_B": {
+    "n": 7,
+    "n_determinable": 7,
+    "rate": 1.0
+   },
+   "main_gun_cal:increase": {
+    "n": 7,
+    "n_determinable": 7,
+    "rate": 1.0
+   },
+   "missiles:present_B": {
+    "n": 3,
+    "n_determinable": 3,
+    "rate": 1.0
+   },
+   "modern_count:decrease": {
+    "n": 4,
+    "n_determinable": 4,
+    "rate": 0.5
+   },
+   "modern_count:increase": {
+    "n": 3,
+    "n_determinable": 3,
+    "rate": 1.0
+   },
+   "power_per_disp:decrease": {
+    "n": 1,
+    "n_determinable": 1,
+    "rate": 1.0
+   },
+   "power_per_disp:increase": {
+    "n": 7,
+    "n_determinable": 5,
+    "rate": 0.4286
+   },
+   "sam:present_B": {
+    "n": 4,
+    "n_determinable": 4,
+    "rate": 1.0
+   },
+   "speed:increase": {
+    "n": 5,
+    "n_determinable": 4,
+    "rate": 0.8
+   },
+   "torpedo_tubes:decrease": {
+    "n": 2,
+    "n_determinable": 2,
+    "rate": 1.0
+   }
+  },
+  "accuracy_majority_over_seeds": 0.8
+ },
+ "pair_diversity": {
+  "n_problems_multi_seed": 0,
+  "n_seed_pairs": 0,
+  "seed_identical_rate": null,
+  "seed_weapon_jaccard_mean": null,
+  "seed_fine_type_agree_rate": null,
+  "seed_numeric_cv_median": null,
+  "cross_problem_identical_rate": 0.05,
+  "cross_problem_template_rate": 0.05,
+  "distinct_output_ratio": 0.96
+ }
+}

@@ -1,0 +1,172 @@
+{
+ "n_old": 10644,
+ "n_new": 10580,
+ "old_only": 4,
+ "new_only": 200,
+ "old_dup_url_rows": 260,
+ "matched": 10380,
+ "year_diff": {
+  ">10": 411,
+  "0": 4607,
+  "±1-2": 3234,
+  "±3-10": 1949,
+  "null_old": 178,
+  "null_new": 1
+ },
+ "year_big_examples": [
+  [
+   "A-01 Class",
+   "Abkhazia",
+   1992,
+   1970
+  ],
+  [
+   "pr.P1415/RV1415 Class",
+   "Abkhazia",
+   2004,
+   1980
+  ],
+  [
+   "R117 Class",
+   "Albania",
+   1999,
+   1970
+  ],
+  [
+   "R2242002) Class",
+   "Albania",
+   2002,
+   1973
+  ],
+  [
+   "R1252004) Class",
+   "Albania",
+   2004,
+   1973
+  ]
+ ],
+ "yamato": [
+  [
+   "YAMATO Class",
+   1942,
+   1941
+  ]
+ ],
+ "numeric": {
+  "displacement_normal_t": {
+   "same": 8503,
+   "gained": 2,
+   "changed": 1,
+   "~same(<=2%)": 1
+  },
+  "displacement_full_t": {
+   "same": 6883,
+   "changed": 5
+  },
+  "length_m": {
+   "same": 10213,
+   "changed": 15,
+   "gained": 1,
+   "lost": 7,
+   "~same(<=2%)": 1
+  },
+  "beam_m": {
+   "same": 10053,
+   "lost": 11,
+   "~same(<=2%)": 2,
+   "gained": 1
+  },
+  "draught_m": {
+   "same": 9695,
+   "changed": 4,
+   "~same(<=2%)": 1
+  },
+  "power_hp": {
+   "same": 9413,
+   "gained": 3
+  },
+  "speed_kn": {
+   "same": 9709,
+   "gained": 91
+  },
+  "complement": {
+   "same": 9344,
+   "changed": 1
+  },
+  "shafts": {
+   "same": 9773,
+   "gained": 1
+  }
+ },
+ "coarse_type_same": 10254,
+ "coarse_type_changed": 126,
+ "coarse_type_changes_top": [
+  [
+   "ship_of_the_line",
+   "early_warship",
+   85
+  ],
+  [
+   "escort",
+   "mine_warfare",
+   7
+  ],
+  [
+   "escort",
+   "early_warship",
+   4
+  ],
+  [
+   "mine_warfare",
+   "patrol",
+   3
+  ],
+  [
+   "coast_guard",
+   "patrol",
+   3
+  ],
+  [
+   "frigate",
+   "ironclad",
+   3
+  ],
+  [
+   "early_warship",
+   "gunboat_river",
+   3
+  ],
+  [
+   "patrol",
+   "gunboat_river",
+   2
+  ]
+ ],
+ "weapons": {
+  "same": 10340,
+  "changed": 38,
+  "gained": 1,
+  "lost": 1
+ },
+ "sensor_kinds": {
+  "same": 10251,
+  "changed": 125,
+  "lost": 3,
+  "gained": 1
+ },
+ "new_fields_filled": {
+  "displacement_standard_t": 5296,
+  "ships_kind": 10580,
+  "when_date_raw": 10245,
+  "year_commissioned": 10369,
+  "armour_belt_mm": 744,
+  "armour_ct_mm": 737,
+  "armour_deck_mm": 908,
+  "armour_parts": 1078,
+  "armour_raw": 1100,
+  "armour_turret_mm": 512,
+  "year_laid_launched": 6732,
+  "diving_depth_m": 832,
+  "armour_material": 376
+ }
+}

@@ -88,18 +88,30 @@ def key(s: Any) -> str:
     return re.sub(r"[^a-z0-9]", "", strip_accents(s).lower())
 
 
+def _when_date_year(text: Any) -> int | None:
+    """`CLASS.WHEN_DATE`（"(1941 - 1942)"、"(1990s)"）の最小の年。"""
+    ys = [int(y) for y in re.findall(r"(?<!\d)(1[89]\d{2}|20\d{2})(?!\d)", str(text or ""))]
+    return min(ys) if ys else None
+
+
 def load_nsdb_classes(db_path: Path) -> list[dict[str, Any]]:
     """NSDB の艦級を、装備を解析した形で返す。
 
-    年は艦級名に埋まっていればそれを使い (`IOWA1944) Class` → 1944)、
-    無ければ所属艦の進水年の最小値で補う (`NORTHCAROLINA Class` など)。
+    年の決め方は DB の形式で分かれる。
+    - 再取得した新 DB (`CLASS.WHEN_DATE` がある): 艦級名に年は入らない。`CLASS.WHEN_DATE`（見出しの日付）を
+      使い、無ければ所属艦の進水年の最小値（`SHIPS.source_url` で対応付け）で補う。
+    - 旧 DB: 年は艦級名に埋まっていればそれを使い (`IOWA1944) Class` → 1944)、
+      無ければ所属艦の進水年の最小値で補う (`NORTHCAROLINA Class` など)。
     """
     con = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
     try:
+        has_when = "WHEN_DATE" in {r[1] for r in con.execute("pragma table_info(CLASS)")}
         ship_years: dict[str, list[int]] = collections.defaultdict(list)
+        # 新 DB は艦級名ではなく source_url で艦級と所属艦を結ぶ（同名の艦級が国をまたいで存在するため）
+        ship_key = "source_url" if has_when else "CLASS"
         for cls, launched, when in con.execute(
-            "select CLASS, Launched, WHEN_DATE from SHIPS "
-            "where CLASS is not null and CLASS != ''"
+            f"select {ship_key}, Launched, WHEN_DATE from SHIPS "
+            f"where {ship_key} is not null and {ship_key} != ''"
         ):
             for field in (launched, when):
                 if not field:
@@ -110,17 +122,28 @@ def load_nsdb_classes(db_path: Path) -> list[dict[str, Any]]:
                     break
 
         out: list[dict[str, Any]] = []
-        for name, ship_type, country, armament in con.execute(
-            "select CLASS_NAME, TYPE, COUNTRY, Armament from CLASS "
+        extra = ", WHEN_DATE, source_url" if has_when else ""
+        for name, ship_type, country, armament, *rest in con.execute(
+            f"select CLASS_NAME, TYPE, COUNTRY, Armament{extra} from CLASS "
             "where Armament is not null and Armament != ''"
         ):
-            m = re.search(r"(1[89]\d{2}|20\d{2})", str(name))
-            if m:
-                year, year_from = int(m.group(1)), "class_name"
-            elif ship_years.get(name):
-                year, year_from = min(ship_years[name]), "ship_launch"
+            if has_when:
+                when, url = rest
+                wy = _when_date_year(when)
+                if wy is not None:
+                    year, year_from = wy, "class_when_date"
+                elif ship_years.get(url):
+                    year, year_from = min(ship_years[url]), "ship_launch"
+                else:
+                    continue
             else:
-                continue
+                m = re.search(r"(1[89]\d{2}|20\d{2})", str(name))
+                if m:
+                    year, year_from = int(m.group(1)), "class_name"
+                elif ship_years.get(name):
+                    year, year_from = min(ship_years[name]), "ship_launch"
+                else:
+                    continue
             entries = [
                 {
                     "mount_count": int(a),

@@ -1,0 +1,113 @@
+{
+  "consistency": {
+    "both_match": 980,
+    "mismatch_rows": [],
+    "note": "現在の DB + tools/navspec_armament_validator.py で各行を判定し直し、v2.1 の正解と比較（ラベルは書き換えない）",
+    "reason_codes_match": 980,
+    "rows": 980,
+    "status_match": 980
+  },
+  "dataset": "stage4a_armament_verdict_v3",
+  "db_facts": {
+    "db_counts": {
+      "fire_control": 17,
+      "mounts": 71,
+      "weapons": 71
+    },
+    "db_dir": "/Users/eightman/dev/apps/autoresearch-naval/data/navspec/armament",
+    "excluded": "validator の判定結果・閾値比較の結果は含めない（生の値のみ）",
+    "fire_control_fields": [
+      "nation",
+      "year_introduced",
+      "radar"
+    ],
+    "found_false_counts": {
+      "fire_control": 81
+    },
+    "key": "db_facts",
+    "missing_id": {
+      "found": false
+    },
+    "mount_fields": [
+      "weapon_id",
+      "nation",
+      "year_introduced",
+      "barrels_per_mount",
+      "turret_weight_t"
+    ],
+    "rows_with_null_year_mount": 51,
+    "weapon_fields": [
+      "nation",
+      "year_introduced",
+      "compatible_mount_ids"
+    ]
+  },
+  "derivation": "v2.1 の行・分割・assistant を維持。user JSON に db_facts（candidate が参照する weapon/mount/fire_control の生 DB 値）を追加し、system プロンプトに定数と DB 値の読み方を追記",
+  "format": "mlx_lm ChatDataset/messages, compact JSON; status key emitted first",
+  "max_output_tokens": 64,
+  "purpose": "R3: v2.1 の user JSON に判定に要る生の DB 値 (db_facts) を足した判定タスク",
+  "reason_code_counts": {
+    "armament.armament_displacement_conflict": 41,
+    "armament.fire_control_unavailable": 81,
+    "armament.firing_arc_conflict": 180,
+    "armament.mount_unavailable_for_era": 151,
+    "armament.mount_unavailable_for_nation": 170,
+    "armament.turret_weight_exceeds_hull_limit": 40,
+    "armament.weapon_mount_incompatible": 278
+  },
+  "rows": 980,
+  "schema": "schemas/navspec_armament_verdict_stage4a.schema.json",
+  "schema_version": "navspec.armament_verdict.v1",
+  "source": "data/navspec/lora/stage4a_armament_verdict_v2_1",
+  "source_manifest": {
+    "dataset": "stage4a_armament_verdict_v2_1",
+    "rows": 980,
+    "split_counts": {
+      "test": 142,
+      "train": 679,
+      "valid": 159
+    }
+  },
+  "split_counts": {
+    "test": 142,
+    "train": 679,
+    "valid": 159
+  },
+  "status_counts": {
+    "impossible": 543,
+    "ok": 437
+  },
+  "system_prompt": "You are navspec-armament-judge. Given the ship context and proposed main battery, return only JSON matching navspec.armament_verdict.v1. The top-level keys must be schema_version,status,reason_codes. Use status=impossible when any armament rule is violated; otherwise use status=ok. reason_codes must contain only the error reason codes, as a JSON string array. The user JSON includes db_facts: raw database records for every weapon_id, mount_id and fire_control_id the candidate references (found=false means the id is not in the database). A mount is unavailable for the era when its year_introduced, or the battery weapon's year_introduced if the mount's is null, is later than year. A single mount whose turret_weight_t is more than 15% of hull.displacement_t violates turret_weight_exceeds_hull_limit. The sum of turret_weight_t x mount_count over all batteries above 50% of hull.displacement_t violates armament_displacement_conflict.",
+  "task": "judge_navspec_armament",
+  "token_stats": {
+    "all": {
+      "prompt_avg": 574.8,
+      "prompt_max": 619,
+      "rows": 980,
+      "total_avg": 611.0,
+      "total_max": 675
+    },
+    "test": {
+      "prompt_avg": 579.9,
+      "prompt_max": 610,
+      "rows": 142,
+      "total_avg": 616.3,
+      "total_max": 674
+    },
+    "tokenizer": "Qwen/Qwen3.5-0.8B",
+    "train": {
+      "prompt_avg": 573.6,
+      "prompt_max": 619,
+      "rows": 679,
+      "total_avg": 609.7,
+      "total_max": 661
+    },
+    "valid": {
+      "prompt_avg": 575.3,
+      "prompt_max": 615,
+      "rows": 159,
+      "total_avg": 612.2,
+      "total_max": 675
+    }
+  }
+}

@@ -103,9 +103,17 @@ def classic_validate_status(case: dict[str, Any]) -> dict[str, Any]:
 
 def classic_make_output(case: dict[str, Any], contradiction: dict[str, Any]) -> dict[str, Any]:
     """classic で正式な ok / impossible 出力を構築。"""
+    # 評価セットの標準形式は case 自体を ``input`` に入れる。classic の
+    # output builder は入力フィールドをトップレベルで読むため、ここだけ
+    # 正規化して既存の直接形式（row == case）も維持する。
+    canonical_case = dict(case)
+    input_case = case.get("input")
+    if isinstance(input_case, dict):
+        canonical_case.pop("input", None)
+        canonical_case.update(input_case)
     if contradiction.get("status") == "impossible":
-        return make_impossible_output(case, contradiction)
-    return make_ok_output(case)
+        return make_impossible_output(canonical_case, contradiction)
+    return make_ok_output(canonical_case)
 
 
 def patch_numeric_spec(
@@ -397,14 +405,33 @@ def assemble_pipeline(
     generator_name: str,
     status_model_name: str,
     validator_name: str,
+    *,
+    armament_enabled: bool = False,
+    armament_strategy: str = "representative",
+    armament_seed: int = 0,
+    armament_data_dir: Path | None = None,
+    armament_adapter_name: str = "none",
 ) -> list[dict[str, Any]]:
-    """classic validation + patch + final JSON 構築。"""
+    """classic validation + patch + final JSON 構築。
+
+    ``armament_enabled`` は後方互換のため既定で無効。明示的に有効化した
+    場合だけ、既存の ``final_json`` に加えて pipeline result を生成する。
+    """
+    armament_runner = None
+    armament_skip_builder = None
+    if armament_enabled:
+        from navspec_armament_pipeline import build_stage2_skip_result, run_armament_pipeline
+
+        armament_runner = run_armament_pipeline
+        armament_skip_builder = build_stage2_skip_result
     results = []
     fallback_count = 0
     numeric_call_count = 0
+    armament_count = 0
+    armament_fallback_count = 0
     latencies: list[float] = []
 
-    for row, s2 in zip(rows, stage2_outputs):
+    for row_index, (row, s2) in enumerate(zip(rows, stage2_outputs)):
         t0 = time.time()
         case = row.get("input") or row
         case_full = {"input": case, **{k: v for k, v in row.items() if k != "input"}}
@@ -452,10 +479,36 @@ def assemble_pipeline(
             generator_name, status_model_name, validator_name,
         )
 
+        pipeline_result = None
+        if armament_runner is not None:
+            if classic_status == "impossible" and armament_skip_builder is not None:
+                pipeline_result = armament_skip_builder(
+                    case_full,
+                    stage2_output=stage2_parsed if isinstance(stage2_parsed, dict) else None,
+                    seed=armament_seed + row_index,
+                    data_dir=armament_data_dir if armament_data_dir is not None else ROOT / "data" / "navspec" / "armament",
+                    model_name=status_model_name,
+                    adapter_name=armament_adapter_name,
+                )
+            else:
+                pipeline_result = armament_runner(
+                    case_full,
+                    stage2_output=stage2_parsed if isinstance(stage2_parsed, dict) else None,
+                    numeric_spec=final_json.get("spec") if final_json.get("status") == "ok" else None,
+                    strategy=armament_strategy,
+                    seed=armament_seed + row_index,
+                    data_dir=armament_data_dir if armament_data_dir is not None else ROOT / "data" / "navspec" / "armament",
+                    model_name=status_model_name,
+                    adapter_name=armament_adapter_name,
+                )
+            armament_count += 1
+            if pipeline_result.get("fallback", {}).get("used"):
+                armament_fallback_count += 1
+
         elapsed = time.time() - t0
         latencies.append(elapsed)
 
-        results.append({
+        result_row = {
             "id": row.get("id"),
             "category": row.get("category"),
             "ship_type": case.get("ship_type", ""),
@@ -475,7 +528,11 @@ def assemble_pipeline(
             } if patch_result else None,
             "assemble_latency_s": round(elapsed, 4),
             "expected_output": expected,
-        })
+        }
+        if pipeline_result is not None:
+            result_row["pipeline_result"] = pipeline_result
+            result_row["detailed_armament"] = pipeline_result.get("detailed_armament")
+        results.append(result_row)
 
     summary_extra = {
         "total": len(results),
@@ -483,6 +540,10 @@ def assemble_pipeline(
         "numeric_call_rate": round(numeric_call_count / len(results), 4) if results else 0,
         "fallback_count": fallback_count,
         "fallback_rate": round(fallback_count / len(results), 4) if results else 0,
+        "armament_enabled": armament_enabled,
+        "armament_count": armament_count,
+        "armament_fallback_count": armament_fallback_count,
+        "armament_fallback_rate": round(armament_fallback_count / armament_count, 4) if armament_count else 0,
         "assemble_latency_mean": round(sum(latencies) / len(latencies), 4) if latencies else 0,
     }
     return results, summary_extra
@@ -575,6 +636,37 @@ def main() -> None:
     parser.add_argument("--md-report", type=Path, default=None)
     parser.add_argument("--stage2-cache", type=Path, default=None, help="reuse stage2 raw outputs JSONL")
     parser.add_argument("--numeric-cache", type=Path, default=None, help="reuse numeric raw outputs JSONL")
+    parser.add_argument(
+        "--with-armament",
+        action="store_true",
+        help="status/numeric確定後に詳細兵装を追加し、pipeline_resultをreportへ含める",
+    )
+    parser.add_argument(
+        "--armament-strategy",
+        choices=["representative", "mid_caliber", "random"],
+        default="representative",
+    )
+    parser.add_argument("--armament-seed", type=int, default=0)
+    parser.add_argument(
+        "--armament-data-dir",
+        type=Path,
+        default=ROOT / "data" / "navspec" / "armament",
+    )
+    parser.add_argument("--armament-adapter-name", default="none")
+    parser.add_argument(
+        "--pipeline-result-output",
+        "--trace-output",
+        dest="pipeline_result_output",
+        type=Path,
+        default=None,
+        help="詳細兵装付きnavspec.pipeline_result.v1をJSONLで保存",
+    )
+    parser.add_argument(
+        "--output-format",
+        choices=["legacy", "pipeline-result"],
+        default="legacy",
+        help="json-reportのresults形式。pipeline-resultは--with-armamentと併用する",
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -594,6 +686,8 @@ def main() -> None:
         print(f"cases: {len(rows)}")
         print(f"stage2 adapter: {args.stage2_adapter}")
         print(f"numeric adapter: {args.numeric_adapter}")
+        print(f"armament enabled: {args.with_armament}")
+        print(f"output format: {args.output_format}")
         print(f"contract: {args.contract}")
         return
 
@@ -643,6 +737,11 @@ def main() -> None:
     results, extra = assemble_pipeline(
         rows, stage2_outputs, numeric_outputs, contract,
         args.generator_name, args.status_model_name, args.validator_name,
+        armament_enabled=args.with_armament,
+        armament_strategy=args.armament_strategy,
+        armament_seed=args.armament_seed,
+        armament_data_dir=args.armament_data_dir,
+        armament_adapter_name=args.armament_adapter_name,
     )
 
     eval_summary = evaluate_pipeline(results, contract)
@@ -654,9 +753,22 @@ def main() -> None:
     eval_summary["cases"] = str(args.cases)
     eval_summary["elapsed_total_seconds"] = round(time.time() - t_total, 1)
 
-    report = {"summary": eval_summary, "results": results}
+    if args.output_format == "pipeline-result" and not args.with_armament:
+        raise SystemExit("--output-format pipeline-result requires --with-armament")
+    report_results = results
+    if args.output_format == "pipeline-result":
+        report_results = [r["pipeline_result"] for r in results]
+    report = {"summary": eval_summary, "results": report_results}
     args.json_report.parent.mkdir(parents=True, exist_ok=True)
     args.json_report.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True, default=str), encoding="utf-8")
+
+    if args.pipeline_result_output:
+        if not args.with_armament:
+            raise SystemExit("--pipeline-result-output requires --with-armament")
+        args.pipeline_result_output.parent.mkdir(parents=True, exist_ok=True)
+        with args.pipeline_result_output.open("w", encoding="utf-8") as handle:
+            for row in results:
+                handle.write(json.dumps(row["pipeline_result"], ensure_ascii=False, sort_keys=True) + "\n")
 
     print(json.dumps({k: v for k, v in eval_summary.items() if k != "results"}, ensure_ascii=False, indent=2, sort_keys=True, default=str))
     print(f"json_report: {args.json_report}")

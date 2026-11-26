@@ -1,0 +1,31 @@
+{
+ "A": {
+  "infeasible": 4,
+  "feasible": 45,
+  "json_invalid": 1
+ },
+ "B": {
+  "feasible": 50
+ },
+ "C": {
+  "feasible": 45,
+  "infeasible": 4,
+  "relaxed": 1
+ },
+ "D": {
+  "feasible": 47,
+  "infeasible": 2,
+  "relaxed": 1
+ },
+ "E": {
+  "infeasible": 25,
+  "feasible": 17,
+  "json_invalid": 3,
+  "relaxed": 5
+ },
+ "P": {
+  "feasible": 91,
+  "infeasible": 8,
+  "relaxed": 1
+ }
+}

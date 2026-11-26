@@ -1,0 +1,14 @@
+{
+  "best_step": 1400,
+  "best_valid_loss": 0.2532140702594728,
+  "best_on": "main",
+  "steps": 1567,
+  "train_sec": 14287.7,
+  "train_sec_excl_eval": 13008.5,
+  "sec_per_step_mean": 8.302,
+  "tokens_per_s_mean": 2020.3,
+  "peak_gib": 9.14,
+  "peak_train_gib": 3.93,
+  "gradient_checkpointing": true,
+  "train_tokens": 13140295
+}
